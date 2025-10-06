@@ -6,7 +6,9 @@ layout: home
 
 # {{ site.title }}
 
-Source: [techie-joe/core-lab](https://github.com/techie-joe/core-lab)
+We are testing [techie-joe/core](https://github.com/techie-joe/core)
+
+Lab source: [techie-joe/core-lab](https://github.com/techie-joe/core-lab)
 
 ## Pages
 
