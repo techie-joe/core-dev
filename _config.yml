@@ -9,3 +9,29 @@ title: Core Laboratory
 description: This lab is made to test the Core.
 # title: # the title of your site (best without the punctuation dot).
 # description: # a short description of your site's purpose.
+
+# exclude these files from Jekyll production site (_site).
+exclude:
+- ".editorconfig"
+- ".github"
+- ".gitignore"
+- ".sass-cache"
+- ".jekyll-cache"
+- ".jekyll-metadata"
+- "*.gem"
+- "*.gemspec"
+- Gemfile
+- Gemfile.lock
+- ".bundle"
+- vendor
+- script
+- node_modules
+- package-lock.json
+- package.json
+- gulpfile.js
+- gulplist.js
+- site
+- CNAME
+- "*.ignore"
+- ".backup"
+- ".localhost"
