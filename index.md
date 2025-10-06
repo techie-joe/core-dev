@@ -1,12 +1,16 @@
 ---
 title: Home
-description: Introduction to the Core template.
+description: Introduction to the Core Laboratory.
 layout: home
 ---
 
 # {{ site.title }}
 
-{{ site.description }}
+We are testing [techie-joe/core](https://github.com/techie-joe/core).
+
+This is where the Core meets its challenges.
+Dedicated to test the Core, we want to ensure its integrity and performance.
+We push the limits so you don't have to.
 
 ## Pages
 
