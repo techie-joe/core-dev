@@ -1,0 +1,35 @@
+{
+  "name": "core-lab",
+  "version": "0.1.0",
+  "description": "This lab is made to test the Core.",
+  "homepage": "https://github.com/techie-joe/core-lab#readme",
+  "bugs": {
+    "url": "https://github.com/techie-joe/core-lab/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techie-joe/core-lab.git"
+  },
+  "license": "MIT",
+  "author": "Techie Joe",
+  "type": "commonjs",
+  "main": "index.html",
+  "scripts": {
+    "build": "webpack",
+    "watch": "gulp watch",
+    "test": "npm run test"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-file": "^0.4.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.89.2"
+  }
+}
