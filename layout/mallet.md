@@ -5,4 +5,4 @@ layout: mallet
 ---
 ###### _{{ page.title }}_
 
-{% include demo-advance.md %}
+{% include demo-new.md %}
