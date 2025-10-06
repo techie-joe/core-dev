@@ -1,2 +1,1 @@
-# core-lab
-Core laboratory
+# Core laboratory
