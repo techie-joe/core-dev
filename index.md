@@ -6,9 +6,9 @@ layout: home
 
 # {{ site.title }}
 
-Test subject: [techie-joe/core](https://github.com/techie-joe/core)
+**[techie-joe/core](https://github.com/techie-joe/core)**
 
-Test project: [techie-joe/core-lab](https://github.com/techie-joe/core-lab)
+**[techie-joe/core-lab](https://github.com/techie-joe/core-lab)**
 
 ## Pages
 
