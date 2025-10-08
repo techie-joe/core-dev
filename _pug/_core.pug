@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <!--
-    page.path   : layout/core.md
-    page.layout : core
-  -->
-  <head>
+block vars
+  - layout = '_core'
+  -
+    htmlClass = []
+    bodyClass = []
+    mainClass = []
+
+doctype html
+html(lang=lang class=htmlClass.join(' '))
+  .
+    <!--
+      page.path   : layout/core.md
+      page.layout : core
+    -->
+  head.
     <meta charset="utf-8" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
     <title>Core layout | Core Laboratory</title>
@@ -27,26 +35,16 @@
     <meta id="_color-scheme" name="color-scheme" content="light dark" />
     <!-- start custom head snippets -->
     <!-- customize with your own _includes/custom-head.html file -->
-    <link id="_style" rel="stylesheet" href="/nova/site/css/nova.css?v=0.1.0" />
+    <link id="_style" rel="stylesheet" href="https://techie-joe.github.io/core-dev/assets/core/css/style.css?v=97524c3e75a85d8edd5785d36836255fcfbcafb0" />
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
-  </head>
-  <body>
-    <div class="_view">
-      <div class="_layout _960 _m_center">
-        <div class="_main">
-          <div class="_article">
-            <h1>Index</h1>
-            <p><a href="core.html">Core</a></p>
-            <p><a href="nova.html">Nova</a></p>
-            <p><a href="nova-legacy.html">Nova Legacy</a></p>
-          </div>
-        </div>
-      </div>
-    </div><div><a id="_credit" href="//techie-joe.github.io/core" title="Go to the Core">✨ Made with Core</a></div>
-    <script>window.ghost = 'bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLHRoZW1lanMucGFnZXMuZGV2';</script>
-    <script src="https://techie-joe.github.io/core-dev/assets/core/js/script.js?v=97524c3e75a85d8edd5785d36836255fcfbcafb0"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script><script>anchors?.add();</script>
-    <!-- start custom body snippets -->
-    <!-- customize with your own _includes/custom-body.html file -->
-  </body>
-</html>
+  body
+    ._view: ._layout._960._m_center
+      ._main: ._article
+        block content
+    .
+      <div><a id="_credit" href="//techie-joe.github.io/core" title="Go to the Core">✨ Made with Core</a></div>
+      <script>window.ghost = 'bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLHRoZW1lanMucGFnZXMuZGV2';</script>
+      <script src="https://techie-joe.github.io/core-dev/assets/core/js/script.js?v=97524c3e75a85d8edd5785d36836255fcfbcafb0"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script><script>anchors?.add();</script>
+      <!-- start custom body snippets -->
+      <!-- customize with your own _includes/custom-body.html file -->

@@ -8,13 +8,11 @@ layout: home
 
 {{ site.description }}
 
-Development Project: **[techie-joe/core-dev](https://github.com/techie-joe/core-dev)**
-
 Development Site: **[techie-joe.github.io/core-dev](https://techie-joe.github.io/core-dev)**
-
-Main Source: **[techie-joe/core](https://github.com/techie-joe/core)**
+Development Source: **[techie-joe/core-dev](https://github.com/techie-joe/core-dev)**
 
 Main Site: **[techie-joe.github.io/core](https://techie-joe.github.io/core)**
+Main Source: **[techie-joe/core](https://github.com/techie-joe/core)**
 
 ## Pages
 
