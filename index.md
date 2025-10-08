@@ -6,9 +6,11 @@ layout: home
 
 # {{ site.title }}
 
-**[techie-joe/core](https://github.com/techie-joe/core)**
+Project: **[techie-joe.github.io/core-lab](https://techie-joe.github.io/core-lab)**
 
-**[techie-joe/core-lab](https://github.com/techie-joe/core-lab)**
+Subject: **[techie-joe.github.io/core](https://techie-joe.github.io/core)**
+
+Source: **[techie-joe/core](https://github.com/techie-joe/core)**
 
 ## Pages
 
