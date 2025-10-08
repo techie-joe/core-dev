@@ -1,12 +1,14 @@
 ---
 title: Home
-description: Introduction to the Core Laboratory.
+description: Introduction to the Core Development.
 layout: home
 ---
 
 # {{ site.title }}
 
-Project: **[techie-joe.github.io/core-lab](https://techie-joe.github.io/core-lab)**
+{{ site.description }}
+
+Project: **[techie-joe.github.io/core-dev](https://techie-joe.github.io/core-dev)**
 
 Subject: **[techie-joe.github.io/core](https://techie-joe.github.io/core)**
 
