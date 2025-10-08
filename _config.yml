@@ -30,7 +30,6 @@ exclude:
 - package.json
 - gulpfile.js
 - gulplist.js
-- site
 - CNAME
 - "*.ignore"
 - ".backup"

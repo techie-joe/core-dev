@@ -17,6 +17,7 @@ Source: **[techie-joe/core](https://github.com/techie-joe/core)**
 ## Pages
 
 {% include pages.md %}
+- [Site](site)
 
 ## Posts
 
