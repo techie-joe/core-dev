@@ -16,8 +16,8 @@ const
   watchList = buildList;
 if (!buildList || !watchList) { throw new Error('Error reading gulp list'); }
 const
-  site = '/',
-  assets = '/assets',
+  site = './',
+  assets = './assets',
   log = console.log,
   slog = (what, source) => log(`Writing ${what} from: '${source || '(none)'}'`),
   redMessage = (message) => '\x1B[31m' + message + '\x1B[0m',
@@ -55,7 +55,7 @@ const
     slog('HTML', source);
     return src(source)
       .on('error', onError)
-      .pipe(pug({ pretty: true }))
+      .pipe(pug({ basedir:__dirname, pretty:true }))
       .pipe(ext('.html'))
       .pipe(dest(destination));
   },
@@ -63,7 +63,7 @@ const
     slog('TXT', source);
     return src(source)
       .on('error', onError)
-      .pipe(pug())
+      .pipe(pug({ basedir:__dirname }))
       .pipe(ext('.txt'))
       .pipe(dest(destination));
   },
@@ -71,7 +71,7 @@ const
     slog('MD', source);
     return src(source)
       .on('error', onError)
-      .pipe(pug())
+      .pipe(pug({ basedir:__dirname }))
       .pipe(ext('.md'))
       .pipe(dest(destination));
   },
