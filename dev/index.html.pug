@@ -1,7 +1,38 @@
-extends /_pug/nova
+include /_pug/vars
 
-block content
-  h1| Index
-  p: a(href="core.html") Core
-  p: a(href="nova.html") Nova
-  p: a(href="nova-legacy.html") Nova Legacy
+block vars
+  -
+    layout = 'nova'
+    title = `Core layout | Core Laboratory`
+
+doctype html
+html(lang=lang class=htmlClass.join(' '))
+  |<!-- page.layout : !{layout} -->
+  head.
+    <meta charset="utf-8" />
+    <title>!{title}</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <!-- End Jekyll SEO tag -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,shrink-to-fit=no" />
+    <meta id="_theme-color"  name="theme-color"  content="" />
+    <meta id="_color-scheme" name="color-scheme" content="light dark" />
+    <!-- start custom head snippets -->
+    <!-- customize with your own _includes/custom-head.html file -->
+    <link id="_github_style" rel="stylesheet" href="!{siteurl}assets/github/css/style.css?v=0.1.0" />
+    <link id="_style" rel="stylesheet" href="/nova/site/css/nova.css?v=0.1.0" />
+    <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
+  body
+    style.
+    ._view: ._layout._960._m_center
+      ._main: ._article
+        block content
+          |index
+          //- include _demo_new.html
+    .
+      <div><a class="_credit" href="!{siteurl}dev" title="Go to the Core">✨ Made with Core</a></div>
+      <script>window.ghost = 'bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLHRoZW1lanMucGFnZXMuZGV2';</script>
+      <script src="https://techie-joe.github.io/core-dev/assets/core/js/script.js?v=97524c3e75a85d8edd5785d36836255fcfbcafb0"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script><script>anchors?.add();</script>
+      <!-- start custom body snippets -->
+      <!-- customize with your own _includes/custom-body.html file -->
