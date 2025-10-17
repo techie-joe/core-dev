@@ -20,6 +20,7 @@ package-lock.json
 CNAME
 
 # ignore files and folders used by Developers
+*.x
 *.ignore
-*.localhost
 *.backup
+*.localhost
