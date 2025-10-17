@@ -6,7 +6,7 @@ layout: home
 
 # {{ site.title }}
 
-This project is made to test and develop **[techie-joe/core](https://github.com/techie-joe/core)**
+This project is made to test and develop **[the Core](https://github.com/techie-joe/core)**.
 
 ## Pages
 
