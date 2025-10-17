@@ -5,21 +5,21 @@
 // To list available tasks, run: > gulp --tasks
 // ==============================================================
 const
-  buildList = (() => {
-    const o = {};
-    o.scss = `_scss/**/*.scss`;
-    ['html', 'txt', 'md'].forEach(type => {
-      o[type] = `**/*.${type}.pug`;
-    });
-    return o;
-  })(),
-  watchList = buildList;
-if (!buildList || !watchList) { throw new Error('Error reading gulp list'); }
-const
   site = './',
   assets = './assets',
+  buildList = ((o={}) => {
+    o.scss = `_scss/**/*.scss`;
+    ['html', 'txt', 'md'].forEach(type => {
+      o[type] = [`**/*.${type}.pug`,'!**/*.x/**'];
+    });
+    return o;
+  })(), watchList = buildList;
+if (!site || !assets || !buildList || !watchList) {
+  throw new Error('Error reading gulp list');
+}
+const
   log = console.log,
-  slog = (what, source) => log(`Writing ${what} from: '${source || '(none)'}'`),
+  slog = (what, source) => log(`Writing ${what} from: ${source || '(none)'}`),
   redMessage = (message) => '\x1B[31m' + message + '\x1B[0m',
   onError = function (error) {
     const
@@ -47,7 +47,7 @@ const
       log(`Watching: ${redMessage('[Error]')}\n- [src]: ${src || '(undefined)'}\n- [dest]: ${dest || '(undefined)'}`);
     }
     else {
-      log(`Watching:${Array.isArray(src)?src.map(item => '\n- ' + item).join('\n'):' '+src}`);
+      log(`Watching: ${src}`);
       watch(src, opt, fn(src, dest));
     }
   },
