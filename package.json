@@ -1,14 +1,14 @@
 {
-  "name": "core-lab",
+  "name": "core-dev",
   "version": "0.1.0",
-  "description": "This lab is made to test the Core.",
-  "homepage": "https://github.com/techie-joe/core-lab#readme",
+  "description": "This project is made to test and develop the Core.",
+  "homepage": "https://github.com/techie-joe/core-dev#readme",
   "bugs": {
-    "url": "https://github.com/techie-joe/core-lab/issues"
+    "url": "https://github.com/techie-joe/core-dev/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/techie-joe/core-lab.git"
+    "url": "git+https://github.com/techie-joe/core-dev.git"
   },
   "license": "MIT",
   "author": "Techie Joe",
