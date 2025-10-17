@@ -1,6 +1,6 @@
 ---
 title: Home
-description: Introduction to the Core Development.
+description: Introduction to the project.
 layout: home
 ---
 
