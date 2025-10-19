@@ -25,7 +25,10 @@ html(lang=lang||'en-US' class=htmlClass.join(' '))
       <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
     style.
   body
-    ._view: ._layout: main._main: article._article: block content
+    ._view: ._layout: main._main
+      header._header.
+        <h1><a href="!{site_url}x">!{site_title}</a></h1>
+      article._article: block content
     +credit  
     .
       <script>window.ghost = 'bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLHRoZW1lanMucGFnZXMuZGV2';</script>

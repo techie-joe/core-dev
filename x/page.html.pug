@@ -1,0 +1,10 @@
+extends /_pug/core
+block append vars
+  -
+    title  = `Page`
+
+block content
+  pre| Page
+  //- pre.
+    title      : [ !{title||'(untitled)'} ]
+    site_title : [ !{site_title?' | '+site_title:''} ]

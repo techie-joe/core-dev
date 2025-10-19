@@ -1,12 +1,10 @@
 extends /_pug/core
 block append vars
   -
-    title  = `Home`
+    title  = `Index`
 
 block content
-  <h1><a href="!{site_url}x">!{site_title}</a></h1>
-  include _demo_old.html
-  //- include _demo_new.html
-  //- pre.
-    title      : [ !{title||'(untitled)'} ]
-    site_title : [ !{site_title?' | '+site_title:''} ]
+  +_a("home.html")| Home
+  +_a("page.html")| Page
+  +_a("demo-old.html")| Old
+  +_a("demo-new.html")| New
