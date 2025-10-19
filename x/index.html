@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en-US"><!-- page.layout : core -->
+<html class="_core_layout" lang="en-US"><!-- page.layout : pug/core -->
+  <!-- page.path   : {{ page.path }} -->
   <head><meta charset="utf-8" />
-    <title>Home | Core Development</title>
     <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <title>Home | Core Development</title>
     <!-- End Jekyll SEO tag -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,shrink-to-fit=no" />
-    <meta id="_themeColor"  name="theme-color"  content="#222" />
-    <meta id="_colorScheme" name="color-scheme" content="light dark" />
-    <!-- start custom head snippets -->
-    <!-- customize with your own _includes/custom-head.html file -->
-    <link id="_github_style" rel="stylesheet" href="/core-dev/assets/github/css/style.css?v=0.0.1" />
-    <link id="_style" rel="stylesheet" href="/core-dev/assets/github/css/style.css?v=0.0.1" />
+    <meta id="_theme-color"  name="theme-color"  content="#222" />
+    <meta id="_color-scheme" name="color-scheme" content="light dark" />
+    <link id="_github_style" rel="stylesheet" href="/core-dev/assets/core/css/github.css?v=0.0.1" />
+    <link id="_style" rel="stylesheet" href="/core-dev/assets/core/css/style.css?v=0.0.1" />
+    <!-- custom-head -->
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
     <style></style>
   </head>
   <body>
     <div class="_view">
-      <div class="_layout _960 _m_center">
-        <div class="_main">
-          <div class="_article"><h1 id="_title"><a href="/core-dev/x">Core Development</a></h1><h6 id="legacy--the-classic-demo-page"><em>Legacy — the classic demo page</em></h6>
+      <div class="_layout">
+        <main class="_main">
+          <article class="_article"><h1><a href="/core-dev/x">Core Development</a></h1><h6 id="legacy--the-classic-demo-page"><em>Legacy — the classic demo page</em></h6>
 
 <p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>.</p>
 
@@ -184,14 +184,11 @@
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The final element.
 </code></pre></div></div>
-          </div>
-        </div>
+          </article>
+        </main>
       </div>
-    </div><div><a class="_credit" href="/core-dev/x" title="Go to the Core">✨ Made with Core</a></div>
-    <script>window.ghost = 'bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLHRoZW1lanMucGFnZXMuZGV2';</script>
-    <script src="/core-dev/assets/core/js/script.js?v=0.0.1"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script><script>anchors?.add();</script> -->
-    <!-- start custom body snippets -->
-    <!-- customize with your own _includes/custom-body.html file -->
+    </div><div class="_credit"><a class="_credit_link" href="/core-dev/x" title="Go to the Core">✨ Made with Core</a></div><script>window.ghost = 'bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLHRoZW1lanMucGFnZXMuZGV2';</script>
+    <script src="/core-dev/assets/core/js/script.js?v=0.0.1"></script><!-- anchors <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script><script>anchors?.add();</script> -->
+    <!-- custom-body -->
   </body>
 </html>

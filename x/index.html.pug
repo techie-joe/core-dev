@@ -1,38 +1,12 @@
-include /_pug/vars
--
-  layout = 'core'
-  title  = `Home`
+extends /_pug/core
+block append vars
+  -
+    title  = `Home`
 
-doctype html
-html(lang=lang||'en' class=htmlClass.join(' '))
-  |<!-- page.layout : !{layout || '(unknown)'} -->
-  head
-    .
-      <meta charset="!{charset || 'utf-8'}" />
-      <title>!{title||'(untitled)'} | !{siteTitle}</title>
-      <!-- Begin Jekyll SEO tag v2.8.0 -->
-      <!-- End Jekyll SEO tag -->
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-      <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,shrink-to-fit=no" />
-      <meta id="_themeColor"  name="theme-color"  content="!{themeColor}" />
-      <meta id="_colorScheme" name="color-scheme" content="!{colorScheme}" />
-      <!-- start custom head snippets -->
-      <!-- customize with your own _includes/custom-head.html file -->
-      <link id="_github_style" rel="stylesheet" href="!{siteUrl}assets/github/css/style.css?v=!{version}" />
-      <link id="_style" rel="stylesheet" href="!{siteUrl}assets/github/css/style.css?v=!{version}" />
-      <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
-    style.
-  body
-    ._view: ._layout._960._m_center
-      ._main: ._article
-        block content
-          <h1 id="_title"><a href="!{siteUrl}x">!{siteTitle}</a></h1>
-          include _demo_old.html
-          //- include _demo_new.html
-    .
-      <div><a class="_credit" href="!{siteUrl}x" title="Go to the Core">✨ Made with Core</a></div>
-      <script>window.ghost = 'bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLHRoZW1lanMucGFnZXMuZGV2';</script>
-      <script src="!{siteUrl}assets/core/js/script.js?v=!{version}"></script>
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script><script>anchors?.add();</script> -->
-      <!-- start custom body snippets -->
-      <!-- customize with your own _includes/custom-body.html file -->
+block content
+  <h1><a href="!{site_url}x">!{site_title}</a></h1>
+  include _demo_old.html
+  //- include _demo_new.html
+  //- pre.
+    title      : [ !{title||'(untitled)'} ]
+    site_title : [ !{site_title?' | '+site_title:''} ]
