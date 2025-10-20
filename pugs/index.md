@@ -1,6 +1,7 @@
 ---
 title: Pugs
 description: Pug development section.
+layout: html
 ---
 ```
 include_relative ../README.md
