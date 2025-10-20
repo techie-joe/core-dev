@@ -7,14 +7,17 @@
 const
   site = './',
   assets = './assets',
-  buildList = ((o={}) => {
-    o.scss = `_scss/**/*.scss`;
+  scss_dev = './_scss.x',
+  build_source = ((o={}) => {
+    o['scss_dev'] = [`_scss.x/**/*.scss`, '!**/*.x/**'];
+    o['scss'] = [`_scss/**/*.scss`,'!**/*.x/**'];
     ['html', 'txt', 'md'].forEach(type => {
       o[type] = [`**/*.${type}.pug`,'!**/*.x/**'];
     });
     return o;
-  })(), watchList = buildList;
-if (!site || !assets || !buildList || !watchList) {
+  })(),
+  watch_source = build_source;
+if (!site || !assets || !build_source || !watch_source) {
   throw new Error('Error reading gulp list');
 }
 const
@@ -88,20 +91,22 @@ const
   };
 const
   builders = parallel(
-    html(buildList.html, site),
-    txt(buildList.txt, site),
-    md(buildList.md, site),
-    scss(buildList.scss, assets),
+    html(build_source.html, site),
+    txt(build_source.txt, site),
+    md(build_source.md, site),
+    scss(build_source.scss, assets),
+    scss(build_source.scss_dev, scss_dev),
   ),
   watchers = parallel(
-    watch_(html, watchList.html, site),
-    watch_(txt, watchList.txt, site),
-    watch_(md, watchList.md, site),
-    watch_(scss, watchList.scss, assets),
+    watch_(html, watch_source.html, site),
+    watch_(txt, watch_source.txt, site),
+    watch_(md, watch_source.md, site),
+    watch_(scss, watch_source.scss, assets),
+    watch_(scss, watch_source.scss_dev, scss_dev),
   ),
   test = async () => {
-    log('Build List:', buildList);
-    log('Watch List:', watchList);
+    log('Build Source:', build_source);
+    log('Watch Source:', watch_source);
   };
 Object.assign(exports, {
   test,

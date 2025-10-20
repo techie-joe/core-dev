@@ -1,0 +1,2 @@
+## _pugs
+Pug pages
