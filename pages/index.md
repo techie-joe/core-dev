@@ -14,3 +14,4 @@ permalink: pages
 {: style="margin-top:3rem" }
 
 {% include back.html %}
+{% include gohome.html %}
