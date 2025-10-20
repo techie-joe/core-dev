@@ -4,7 +4,11 @@ block append vars
     title  = `Index`
 
 block content
-  +_a("home.html")| Home
-  +_a("page.html")| Page
-  +_a("demo-old.html")| Old
-  +_a("demo-new.html")| New
+  div: p
+    +_a("home.html")| Home
+    +_a("page.html")| Page
+    +_a("demo-old.html")| Old
+    +_a("demo-new.html")| New
+  pre.
+    site_url: !{site_url}
+    pugs_url: !{pugs_url}
