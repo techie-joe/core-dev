@@ -1,14 +1,24 @@
-extends /_pug/core
+extends /_pugs/core
 block append vars
   -
+    path   = 'index.html'
     title  = `Index`
-
-block content
-  div: p
+block append style
+  style.
+block header
+  ._flex
+    div._fill: +logo
+    div._fit: +theme_switch
+block nav
+  div
     +_a("home.html")| Home
     +_a("page.html")| Page
     +_a("demo-old.html")| Old
     +_a("demo-new.html")| New
-  pre.
+block content
+  pre._m0.
     site_url: !{site_url}
     home_url: !{home_url}
+    build   : 17.!{now.getHours()+'.'+now.getMinutes()+now.getSeconds()}
+block footer
+  code // footer

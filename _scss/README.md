@@ -1,2 +1,0 @@
-## _scss
-Scss styles

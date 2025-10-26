@@ -1,2 +1,0 @@
-## _layouts
-Jekyll layouts
