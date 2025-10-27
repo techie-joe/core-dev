@@ -11,7 +11,7 @@ The primary goal of this project is to provide users with a **quick and easy way
 
 ---
 
-![Thumbnail of the Core](thumbnail.png)
+![Thumbnail of the Core](https://techie-joe.github.io/core/thumbnail.png)
 
 ---
 

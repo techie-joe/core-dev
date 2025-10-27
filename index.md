@@ -6,9 +6,7 @@ layout: home
 
 # {{ site.title }}
 
-**[Core](https://github.com/techie-joe/core)** is a Jekyll theme for GitHub Pages.  
-
-This project is made to test and develop it.
+This project is made to test and develop: **[techie-joe/core](https://github.com/techie-joe/core)**
 
 **[Lets Go](x)**
 

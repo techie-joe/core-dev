@@ -55,7 +55,7 @@ mixin icons
   link(rel="apple-touch-icon" type="image/png"     sizes="180x180" href=site_url+"/icons/apple-touch-icon.png")/
   link(rel="icon"             type="image/png"     sizes="32x32"   href=site_url+"/icons/favicon-32x32.png")/
   link(rel="icon"             type="image/png"     sizes="16x16"   href=site_url+"/icons/favicon-16x16.png")/
-  link(rel="shortcut icon"             type="image/x-icon"  sizes="any"     href=site_url+"/icons/favicon.ico")/
+  link(rel="shortcut icon"    type="image/x-icon"  sizes="any"     href=site_url+"/icons/favicon.ico")/
 
 mixin manifest
   //- enable manifest if you're building a PWA Apps
@@ -90,12 +90,13 @@ mixin anchor
     anchors?.add();
 
 mixin google_analytics
-  script(async src="https://www.googletagmanager.com/gtag/js?id="+google_analytics)
-  script.
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){window.dataLayer.push(arguments);}
-    gtag('js',new Date());
-    gtag('config','!{ google_analytics }');
+  if google_analytics
+    script(async src="https://www.googletagmanager.com/gtag/js?id="+google_analytics)
+    script.
+      window.dataLayer=window.dataLayer||[];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js',new Date());
+      gtag('config','!{ google_analytics }');
 
 mixin fouc
   style.
