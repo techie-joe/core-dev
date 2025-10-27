@@ -3,15 +3,14 @@ html,body { margin:0 }
 ._nav,
 ._header,
 ._footer,
-._main { border:1px solid #888;margin:.5rem;padding:.5rem; }
-._nav,
-._header { border-color:#8880; }
+._main { border:1px solid transparent;margin:.5rem;padding:.5rem; }
 ._flex { display:flex }
 ._fill { flex:1 }
 ._fit  { flex:0 }
 ._pointer { cursor:pointer }
 ._m0 { margin:0 }
 ._scrollable { overflow:auto }
+._no_u { text-decoration:none !important }
 // ---------------------------------------------------------------
 ._logo {
   font-family: 'Arial', system-ui, sans-serif;
@@ -20,7 +19,7 @@ html,body { margin:0 }
   a:hover { color:#4488ff }
 }
 ._theme_switch {
-  font-size: 1.1em;
+  font-size: 1.15em;
   a { text-decoration:none !important; color:inherit; cursor:pointer; }
   a:hover { color:#4488ff }
 }

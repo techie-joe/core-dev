@@ -2,23 +2,15 @@ extends /_pugs/core
 block append vars
   -
     path   = 'index.html'
-    title  = `Index`
-block append style
-  style.
-block header
-  ._flex
-    div._fill: +logo
-    div._fit: +theme_switch
-block nav
-  div
-    +_a("home.html")| Home
-    +_a("page.html")| Page
-    +_a("demo-old.html")| Old
-    +_a("demo-new.html")| New
+    title  = `Index`    
+    isHome = true
 block content
-  pre._m0.
-    site_url: !{site_url}
-    home_url: !{home_url}
-    build   : 17.!{now.getHours()+'.'+now.getMinutes()+now.getSeconds()}
-block footer
-  code // footer
+  pre._m0._scrollable.
+    // home
+
+    site_url : #[a._no_u(href=site_url)|!{site_url}]
+    home_url : #[a._no_u(href=home_url)|!{home_url}]
+    version  : !{version}
+    revision : !{[30,now.getHours(),now.getMinutes()+now.getSeconds()].join('.')}
+
+    google_analytics : !{ google_analytics||'(undefined)' }

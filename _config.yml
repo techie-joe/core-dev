@@ -2,13 +2,35 @@ remote_theme: techie-joe/core
 # the location of the remote_theme.
 
 plugins:
+# - jekyll-paginate
+# - jekyll-sitemap
 - jekyll-remote-theme
 # add jekyll-remote-theme to the plugins list.
+
+version: '0.0.2'
 
 title: Core Development
 description: This project is made to test and develop the Core.
 # title: # the title of your site (best without the punctuation dot).
 # description: # a short description of your site's purpose.
+
+# google_analytics: # your Google Analytics tracking ID.
+# to track your website using Google Analytics.
+
+# show_downloads: # true or false (unquoted).
+# indicate whether to provide a download URL.
+
+# github:
+#   zip_url: http://example.com/download.zip
+#   another_url: another_value
+
+# theme
+theme_color: '#222'
+color_scheme: light dark
+ghost: bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlv
+
+sass:
+  style: compressed
 
 # exclude these files from Jekyll production site (_site).
 exclude:
