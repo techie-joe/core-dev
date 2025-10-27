@@ -8,6 +8,8 @@ layout: home
 
 This project is made to test and develop **[the Core](https://github.com/techie-joe/core)**.
 
+**[Lets Go](x)**
+
 ## Pages
 
 {% include pages.md %}
