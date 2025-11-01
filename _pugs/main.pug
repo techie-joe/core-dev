@@ -63,14 +63,7 @@ mixin manifest
 
 mixin logo
   ._logo: block logo
-    if !isHome
-      a(href=home_url) #{site_title}
-
-mixin nav
-  +_a("home.html")| Home
-  +_a("page.html")| Page
-  +_a("demo-old.html")| Old
-  +_a("demo-new.html")| New
+    a(href=home_url) #{site_title}
 
 mixin credit
   ._credit: block credit

@@ -1,16 +1,17 @@
 extends /_pugs/core
 block append vars
   -
-    path   = 'index.html'
-    title  = `Index`
-block logo
-  span._pointer #{site_title}
-block nav
-  +_a("home.html")| Home
-  +_a("page.html")| Page
-  +_a("demo-old.html")| Old
-  +_a("demo-new.html")| New
-block content
+    path   = 'home.html'
+    title  = `Home`
+//- block logo
+  //- span._pointer #{site_title}
+//- block nav
+  //- 
+    +_a("home.html")| Home
+    +_a("page.html")| Page
+    +_a("demo-old.html")| Old
+    +_a("demo-new.html")| New
+//- block content
   pre._m0._scrollable.
 
     site_url : #[a._no_u(href=site_url)|!{site_url}]
