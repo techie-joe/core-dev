@@ -5,14 +5,15 @@
 // To list available tasks, run: > gulp --tasks
 // ==============================================================
 const
-  site = './x',
-  assets = './assets',
-  scss_dev = './_scss.x',
+  site = './',
+  assets = './assets/',
   build_source = ((o={}) => {
-    o['scss_dev'] = [`_scss.x/**/*.scss`, '!**/*.x/**'];
-    o['scss'] = [`_scss/**/*.scss`,'!**/*.x/**'];
+    o['scss']     = ['!**/*.x/**',`_scss/**/*.scss`];
+    o['scss_dev'] = ['!**/*.x/**',`_scss_dev/**/*.scss`];
     ['html', 'txt', 'md'].forEach(type => {
-      o[type] = [`x/**/*.${type}.pug`,'!**/*.x/**'];
+      ['go/**/'].forEach(folder => {
+        o[type] = ['!**/*.x/**',`${folder}*.${type}.pug`];
+      });
     });
     return o;
   })(),
@@ -95,14 +96,14 @@ const
     txt(build_source.txt, site),
     md(build_source.md, site),
     scss(build_source.scss, assets),
-    scss(build_source.scss_dev, scss_dev),
+    scss(build_source.scss_dev, site),
   ),
   watchers = parallel(
     watch_(html, watch_source.html, site),
     watch_(txt, watch_source.txt, site),
     watch_(md, watch_source.md, site),
     watch_(scss, watch_source.scss, assets),
-    watch_(scss, watch_source.scss_dev, scss_dev),
+    watch_(scss, watch_source.scss_dev, site),
   ),
   test = async () => {
     log('Build Source:', build_source);

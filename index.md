@@ -8,7 +8,7 @@ layout: home
 
 This project is made to test and develop: **[techie-joe/core](https://github.com/techie-joe/core)**
 
-**[Lets Go](x)**
+**[Lets Go](go)**
 
 ## Pages
 

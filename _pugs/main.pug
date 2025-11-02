@@ -73,8 +73,8 @@ mixin theme_switch(title='Change Theme (Alt+T)')
   ._theme_switch._needjs: a(href='#' onclick!=onclick(js.themeChange) title=title): block theme_switch
     +isvg(svgi.compare)
 
-mixin themejs(ghost=[ "localhost", "techie-joe.github.io" ])
-  script|window.ghost='!{btoa(ghost)}';
+mixin themejs
+  script|window.ghost='!{ghost}';
   +js(`${site_url}/assets/themejs/themejs_v2.0.js?v=${version}`)
 
 mixin anchor
