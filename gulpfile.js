@@ -8,11 +8,11 @@ const
   site = './',
   assets = './assets/',
   build_source = ((o={}) => {
-    o['scss']     = ['!**/*.x/**',`_scss/**/*.scss`];
-    o['scss_dev'] = ['!**/*.x/**',`_scss_dev/**/*.scss`];
+    o['scss']     = [`_scss/**/*.scss`,'!**/*.x/**'];
+    o['scss_dev'] = [`_scss_dev/**/*.scss`,'!**/*.x/**'];
     ['html', 'txt', 'md'].forEach(type => {
       ['go/**/'].forEach(folder => {
-        o[type] = ['!**/*.x/**',`${folder}*.${type}.pug`];
+        o[type] = [`${folder}*.${type}.pug`,'!**/*.x/**'];
       });
     });
     return o;
