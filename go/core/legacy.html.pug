@@ -1,0 +1,12 @@
+extends _html
+block append vars
+  -
+    path   = 'legacy.html'
+    title  = `Legacy`
+block style
+  style.
+    ._main { border: 1px solid #8888 }
+block content
+  include ./legacy_.html
+block footer
+  code // by Techie Joe !{year}
