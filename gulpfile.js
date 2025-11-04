@@ -5,8 +5,9 @@
 // To list available tasks, run: > gulp --tasks
 // ==============================================================
 const
-  site = './',
+  site = './go',
   assets = './assets/',
+  scss_dev = './_scss_dev/',
   build_source = ((o={}) => {
     o['scss']     = [`_scss/**/*.scss`,'!**/*.x/**'];
     o['scss_dev'] = [`_scss_dev/**/*.scss`,'!**/*.x/**'];
@@ -96,14 +97,14 @@ const
     txt(build_source.txt, site),
     md(build_source.md, site),
     scss(build_source.scss, assets),
-    scss(build_source.scss_dev, site),
+    scss(build_source.scss_dev, scss_dev),
   ),
   watchers = parallel(
     watch_(html, watch_source.html, site),
     watch_(txt, watch_source.txt, site),
     watch_(md, watch_source.md, site),
     watch_(scss, watch_source.scss, assets),
-    watch_(scss, watch_source.scss_dev, site),
+    watch_(scss, watch_source.scss_dev, scss_dev),
   ),
   test = async () => {
     log('Build Source:', build_source);
