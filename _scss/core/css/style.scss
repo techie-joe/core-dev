@@ -1,77 +1,25 @@
 @use "rouge";
+$text-blue: #57F;
+$text-red: #E22;
+$text-green:#2A4;
+$text-purple: #A6D;
 // ---------------------------------------------------------------
-html,body { margin:0 }
-body { overflow-y:scroll }
-._nav,
-._header,
-._footer,
-._main { border:1px solid transparent;margin:.5rem;padding:.5rem }
-// ---------------------------------------------------------------
-article {
-  blockquote { border-left: 5px solid #888; padding: 0 .5rem; }
-  hr { border: 1px solid #888 }
-  pre { padding:.5rem;overflow:auto }
-  table {
-    & { border-collapse: collapse }
-    &, td, th { border: 1px solid #888 }
-    td, th { padding:.5rem }
-  }
-  dt { font-style: italic }
-  details summary { @extend ._pointer; }
-}
-a {
-  &:link { color:#57F }
-  &:visited { color:#A6D }
-}
-// ---------------------------------------------------------------
-._logo {
-  font-family: 'Arial', system-ui, sans-serif;
-  font-weight: 600;
-}
-._nav { font-family: 'Arial', system-ui, sans-serif; }
-._logo,
-._theme_switch,
-._nav {
-  a { text-decoration:none !important; color:inherit }
-  a:hover { color:#57F }
-}
-._credit {
-  position: absolute;
-  position: fixed;
-  top: auto;
-  left: auto;
-  right: 16px;
-  bottom: 6px;
-}
-._credit_link {
-  font-family: 'Arial', system-ui, sans-serif;
-  font-size: .8rem;
-  padding: .2em .4em;
-  box-shadow: 0 2px 2px rgba(#000,.5);
-  border-radius: 5px;
-  background: #000 !important;
-  color: #fff !important;
-  text-decoration: none !important;
-}
-// ---------------------------------------------------------------
-._960 { width:960px; @extend .mc; }
-._flex { display:flex }
-._fill { flex:1 }
-._fit  { flex:0 }
-._pointer { cursor:pointer }
-._scrollable { overflow:auto }
-._no_u { text-decoration:none !important }
-// ---------------------------------------------------------------
+.text-primary{ @extend .text-blue; }
+.text-blue{color:$text-blue !important}
+.text-red{color:$text-red !important}
+.text-green{color:$text-green !important}
+.text-purple{color:$text-purple !important}
+.text-white{color:#fff !important}
+.text-black{color:#000 !important}
+.text-gray,.text-grey{color:#888 !important}
+.text-slategray,.text-slategrey{color:#789 !important}
 .hero {
-  display: block;
-  font-size: 2.25em;
-  margin-block-start: .67em;
-  margin-block-end: .67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  display:block;
+  font-size:2.25em;
+  margin-block-start:.67em;
+  margin-block-end:.67em;
   font-weight: bold;
 }
-
 .indent{text-indent:2rem}
 .big-first.indent{text-indent:0 !important}
 .big-first.indent::first-letter{margin-left:2rem}
@@ -83,17 +31,6 @@ a {
   margin-right:.1em;
   font-family:"Georgia","Constantia,Cambria","Book Antiqua","Palatino Linotype","Big Caslon",serif;
 }
-
-.text-primary{ @extend .text-blue; }
-.text-blue{color:#57F !important}
-.text-red{color:#E22 !important}
-.text-green{color:#2A4 !important}
-.text-purple{color:#A6D !important}
-.text-white{color:#fff !important}
-.text-black{color:#000 !important}
-.text-gray,.text-grey{color:grey !important}
-.text-slategray,.text-slategrey{color:#789 !important}
-
 .text-justify{text-align:justify}
 
 .full-width { width:100% }
@@ -116,3 +53,62 @@ a {
   display:inline-block;
   vertical-align:text-bottom;
 }
+// ---------------------------------------------------------------
+html,body { margin:0 }
+body { overflow-y:scroll }
+a {
+  &:link { color:$text-blue }
+  &:visited { color:$text-purple }
+  &:hover { color:$text-blue }
+}
+article {
+  blockquote { border-left: 5px solid #888; padding: 0 .5rem; }
+  hr { border: 1px solid #888 }
+  pre { padding:.5rem;overflow:auto }
+  table {
+    & { border-collapse: collapse }
+    &, td, th { border: 1px solid #888 }
+    td, th { padding:.5rem }
+  }
+  dt { font-style: italic }
+  details summary { @extend ._pointer; }
+}
+// ---------------------------------------------------------------
+._nav,
+._header,
+._footer,
+._main { border:1px solid transparent;margin:.5rem;padding:.5rem }
+// ---------------------------------------------------------------
+._logo { font-weight: 600 }
+._logo, ._nav, ._credit_link {
+  font-family: 'Arial', system-ui, sans-serif;
+}
+._logo, ._theme_switch, ._nav {
+  a { text-decoration:none !important; color:inherit }
+  a:hover { color:$text-blue }
+}
+._credit {
+  position:absolute;
+  position:fixed;
+  top:auto;
+  left:auto;
+  right:16px;
+  bottom:6px;
+}
+._credit_link {
+  font-size: .8rem;
+  padding: .2em .4em;
+  box-shadow: 0 2px 2px rgba(#000,.5);
+  border-radius: 5px;
+  background: #000 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+// ---------------------------------------------------------------
+._960 { width:960px; @extend .mc; }
+._flex { display:flex }
+._fill { flex:1 }
+._fit  { flex:0 }
+._pointer { cursor:pointer }
+._scrollable { overflow:auto }
+._no_u { text-decoration:none !important }
