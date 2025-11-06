@@ -4,7 +4,7 @@
 
 <p><img src="https://techie-joe.github.io/core/images/299-400x300.jpg" alt="Featured image" class="float-right ml mb" width="400" height="300" /></p>
 
-<p class="text-justify big-first">Writing an article can be exciting when you can add few things here and there. The <code class="language-plaintext highlighter-rouge">big-first</code> class will enlarge the first letter of a paragraph. While <code class="language-plaintext highlighter-rouge">text-justify</code> neatly aligns your text to its container. You can also include images and <a href="#">hyperlinks</a> to make things more engaging.</p>
+<p class="text-justify big-first">Writing an article can be exciting when you can add few things here and there. The <code class="language-plaintext highlighter-rouge">big-first</code> class will enlarge the first letter of a paragraph. While <code class="language-plaintext highlighter-rouge">text-justify</code> neatly aligns your text to its container. You can also include images and <a href="#" onclick="event.preventDefault();">hyperlinks</a> to make things more engaging.</p>
 
 <p><strong>Please leave some whitespace between paragraphs.</strong></p>
 
@@ -17,13 +17,9 @@ Indentation gives a sense of order and clarity, making an article easier to read
   <p>Take a look at <a href="https://techie-joe.github.io/core/legacy" target="_blank">the legacy</a> for the classic demo page.</p>
 </blockquote>
 
-<h3 id="horizontal-rule">Horizontal rule</h3>
-
-<p>There's a horizontal rule below this line.</p>
-
 <hr />
 
-<h3 id="invisible-comments">Invisible comments</h3>
+<p>There's a horizontal rule above this line.</p>
 
 <p>There's a comment block below this line.</p>
 
@@ -184,18 +180,11 @@ or add some <code class="language-plaintext highlighter-rouge">code</code>.</p>
 <dd>A programming language that adds interactivity to websites.</dd>
 </dl>
 
-<h2 id="hyperlinks">Hyperlinks</h2>
-
-<h3 id="text-link">Text link</h3>
-
-<p>You can link to <a href="./posts" title="View posts">posts</a> and <a href="./pages" title="View pages">pages</a>.</p>
-
-<p>If you link to a missing page, you'll see <a href="./404" title="The error page">an error page</a>.</p>
-
 <h3 id="button-link">Button link</h3>
 
-<p><a href="#" class="button -l -primary">Primary Button Link</a>
-<a href="#" class="button -l -flat">Secondary Button Link</a></p>
+<p><a href="#" onclick="event.preventDefault();" class="button -l -primary">Primary Button Link</a>
+<a href="#" onclick="event.preventDefault();" class="button -l -flat">Secondary Button Link</a>
+<a href="#" onclick="event.preventDefault();theme.change()" class="button -l -flat" title="Change Theme (Alt+T)">Theme Change</a></p>
 
 <h3 id="footnote-link">Footnote link</h3>
 

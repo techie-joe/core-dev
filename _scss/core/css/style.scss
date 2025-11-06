@@ -8,8 +8,8 @@
 ._main { border:1px solid transparent;margin:.5rem;padding:.5rem }
 ._960 { width:960px; @extend .mc; }
 // ---------------------------------------------------------------
+._logo { font-family: 'Arial', system-ui, sans-serif !important; }
 ._logo { font-weight: 600 }
-._logo, ._nav { font-family: 'Arial', system-ui, sans-serif; }
 ._logo, ._nav, ._theme_switch {
   a { text-decoration:none !important; color:inherit }
   a:hover { color:$text-blue }
