@@ -1,0 +1,105 @@
+@use "_color" as *;
+// ---------------------------------------------------------------
+html,body{margin:0}
+body{overflow-y:scroll}
+hr { border: 1px solid #888 }
+pre { padding:.5rem;overflow:auto }
+blockquote { border-left: .25rem solid #888;padding: 0 .5rem; }
+details summary { @extend .pointer; }
+dt { font-style: italic }
+a {
+  &:link { color:$text-blue }
+  &:visited { color:$text-purple }
+  &:hover { color:$text-blue }
+}
+
+.scrollable{overflow:auto}
+.pointer { cursor:pointer }
+
+.text-white{color:#fff}
+.text-black{color:#000}
+.text-gray,.text-grey{color:#888}
+.text-slategray,.text-slategrey{color:#789}
+.text-green{color:$text-green}
+.text-red{color:$text-red}
+.text-purple{color:$text-purple}
+.text-blue{color:$text-blue}
+
+.text-primary{ @extend .text-blue; }
+.text-secondary{ @extend .text-green; }
+
+.text-right{text-align:right}
+.text-left{text-align:left}
+.text-justify{text-align:justify}
+
+.hero {
+  display:block;
+  font-size:2.25em;
+  margin-block-start:.67em;
+  margin-block-end:.67em;
+  font-weight: bold;
+}
+
+.indent{text-indent:2em}
+.big-first.indent{text-indent:0}
+.big-first.indent::first-letter{margin-left:2em}
+.big-first::first-letter{
+  float:left;
+  font-size:4em;
+  font-weight:700;
+  line-height:.9;
+  margin-right:.1em;
+  font-family:"Georgia","Constantia,Cambria","Book Antiqua","Palatino Linotype","Big Caslon",serif;
+}
+
+.isvg svg {
+  width:1em;
+  height:1em;
+  display:inline-block;
+  vertical-align:text-bottom;
+}
+
+a.button {
+  border: 1px solid;
+  padding: .25em .5em;
+  border-radius: .25em;
+  text-decoration: none;
+}
+
+.footnote { padding:0 .15em }
+.footnote,
+.reversefootnote { text-decoration:none !important }
+
+.flex { display:flex }
+.fill { flex:1 }
+.fit  { flex:0 }
+
+.full-width{width:100%}
+
+.float-left{float:left}
+.float-right{float:right}
+
+.centered { display:block;@extend .mc; }
+
+.mc { margin-left:auto;margin-right:auto }
+.m0 { margin:0 }
+.ma { margin:1em }
+.mv0 { margin-top:0;margin-bottom:0 }
+.mh0 { margin-left:0;margin-right:0 }
+.mv { margin-top:1em;margin-bottom:1em }
+.mh { margin-left:1em;margin-right:1em }
+.ml { margin-left:1em }
+.mr { margin-right:1em }
+.mt { margin-top:1em }
+.mb { margin-bottom:1em }
+
+.no_u { text-decoration:none !important }
+.no_wrap { white-space:nowrap !important }
+// ---------------------------------------------------------------
+article {
+  table {
+    & { border-collapse: collapse }
+    &, td, th { border: 1px solid #888 }
+    td, th { padding:.5em }
+  }
+}

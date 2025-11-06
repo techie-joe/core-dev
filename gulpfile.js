@@ -5,14 +5,14 @@
 // To list available tasks, run: > gulp --tasks
 // ==============================================================
 const
-  site = './go',
+  site = './',
   assets = './assets/',
   scss_dev = './_scss_dev/',
   build_source = ((o={}) => {
     o['scss']     = [`_scss/**/*.scss`,'!**/*.x/**'];
     o['scss_dev'] = [`_scss_dev/**/*.scss`,'!**/*.x/**'];
     ['html', 'txt', 'md'].forEach(type => {
-      ['go/**/'].forEach(folder => {
+      ['_pugs/**/'].forEach(folder => {
         o[type] = [`${folder}*.${type}.pug`,'!**/*.x/**'];
       });
     });
