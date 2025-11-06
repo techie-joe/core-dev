@@ -1,0 +1,47 @@
+include main
+block vars
+  -
+    layout = 'core'
+    htmlClass = ['_core_layout']
+    bodyClass = []
+    mainClass = []
+block html
+  doctype html
+  html(lang=lang||'en-US' class=htmlClass.join(' '))
+    |<!-- page.path   : !{path} -->
+    |<!-- page.layout : pugs/!{layout} -->
+    head
+      meta(charset=charset||'utf-8')/
+      |<!-- Begin Jekyll SEO tag v2.8.0 -->
+      title !{title||'(untitled)'}!{site_title?' | '+site_title:''}
+      |<!-- End Jekyll SEO tag -->
+      meta(name="viewport" content="width=device-width,initial-scale=1")/
+      meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")/
+      meta#_color_scheme(name="color-scheme" content=color_scheme||'')/
+      meta#_theme_color(name="theme-color" content=theme_color||'')/
+      block style
+        link#_style(rel="stylesheet" href!=`${site_url}/assets/core/css/style.css?v=${version}`)/
+        link#_style_mallet(rel="stylesheet" href!=`${site_url}/assets/mallet/css/style.css?v=${version}`)/
+      |<!-- custom-head -->
+      //- +fonts
+      //- +icons
+      //- +manifest
+      |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+    body
+      ._views: ._view
+        header._header: ._layoutx: block header
+          //- code // header
+          .flex
+            .fill: +logo
+            .fit: +theme_switch
+        nav._nav: ._layoutx._960: block nav
+          code // nav
+        main._main: article._article._layoutx._960: block content
+          code // content for : !{title}
+        footer._footer: ._layoutx._960: block footer
+          code // footer
+      |<!-- custom-body -->
+      +credit
+      +themejs
+      //- +anchor
+      +google_analytics

@@ -28,8 +28,9 @@ a {
 .text-primary{ @extend .text-blue; }
 .text-secondary{ @extend .text-green; }
 
-.text-right{text-align:right}
 .text-left{text-align:left}
+.text-right{text-align:right}
+.text-center{text-align:center}
 .text-justify{text-align:justify}
 
 .hero {
@@ -64,6 +65,11 @@ a.button {
   padding: .25em .5em;
   border-radius: .25em;
   text-decoration: none;
+}
+
+.box {
+  border: 1px solid #888;
+  padding: .5rem;
 }
 
 .footnote { padding:0 .15em }
@@ -101,5 +107,7 @@ article {
     & { border-collapse: collapse }
     &, td, th { border: 1px solid #888 }
     td, th { padding:.5em }
+    &.simple { td, th { border-width:1px 0 } }
+    &.borderless { td, th { border:0 } }
   }
 }
