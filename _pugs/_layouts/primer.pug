@@ -30,14 +30,14 @@ block html
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
       ._views: ._view: .container-lg.px-3.my-5
-        header._header: ._layout: block header
+        header._header: ._layout.markdown-body: block header
           //- code // header
           h1: +logo
-        nav._nav: ._layout._960: block nav
+        nav._nav: ._layout.markdown-body: block nav
           code // nav
         main._main: article._article._layout.markdown-body: block content
           code // content for : !{title}
-        footer._footer: ._layout._960: block footer
+        footer._footer: ._layout.markdown-body: block footer
           code // footer
       |<!-- custom-body -->
       +credit
