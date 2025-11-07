@@ -1,6 +1,6 @@
 ---
-title: Primer Layout
-description: The Primer Layout.
-layout: primer
+title: Nova Layout
+description: The Nova Layout.
+layout: nova
 ---
 {% include demo_.md %}
