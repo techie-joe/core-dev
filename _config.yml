@@ -9,8 +9,8 @@ plugins:
 
 version: '0.0.2'
 
-title: CoreDev
-description: This project is made to test and develop the Core.
+title: Dove
+description: Dove is a theme development project.
 # title: # the title of your site (best without the punctuation dot).
 # description: # a short description of your site's purpose.
 

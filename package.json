@@ -1,14 +1,14 @@
 {
-  "name": "core-dev",
+  "name": "dove",
   "version": "0.0.2",
-  "description": "This project is made to test and develop the Core.",
-  "homepage": "https://github.com/techie-joe/core-dev#readme",
+  "description": "Dove is a theme development project.",
+  "homepage": "https://github.com/techie-joe/dove#readme",
   "bugs": {
-    "url": "https://github.com/techie-joe/core-dev/issues"
+    "url": "https://github.com/techie-joe/dove/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/techie-joe/core-dev.git"
+    "url": "git+https://github.com/techie-joe/dove.git"
   },
   "license": "MIT",
   "author": "Techie Joe",
