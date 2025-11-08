@@ -34,16 +34,17 @@ block html
           //- p: code // header
           h1: a(href=home_url) #{site_title}
         block content
+          h2 !{title}
           p: code // content for : !{title}
         .footer.border-top.border-gray-light.mt-5.pt-3.text-right.text-gray
           block footer
-            //- p: code // footer
-            if path
-              - source_url = `https://github.com/techie-joe/dove/edit/main/_pugs/${path}.pug`;
-            if source_url
-              p This site is open source. #[a(href=source_url)| Improve this page].
-            +credit
+            p: code // footer
+          if path
+            - source_url = `https://github.com/techie-joe/dove/edit/main/_pugs/${path}.pug`;
+          if source_url
+            p This site is open source. #[a(href=source_url)| Improve this page].
         |<!-- custom-body -->
-        //- +themejs
+        +credit
+        +themejs
         +anchor
         +google_analytics

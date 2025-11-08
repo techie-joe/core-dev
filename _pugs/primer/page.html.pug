@@ -3,14 +3,3 @@ block append vars
   -
     path   = 'primer/page.html'
     title  = `Page`
-block content
-  h2 Welcome to another page
-  p: code // yay
-  div(style="margin-top:8rem")
-  hr/
-  p
-    +back_button
-    +l
-    +gohome_button
-    b!=' : '
-    a(href="legacy.html") Next page

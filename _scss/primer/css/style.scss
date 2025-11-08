@@ -1,54 +1,8 @@
-@use "_color" as *;
+@use "_primer";
+@use "_credit";
 // ---------------------------------------------------------------
-// primer
-html,body{margin:0}
-body{overflow-y:scroll}
-hr { border: 1px solid #888 }
-pre { padding:.5rem;overflow:auto }
-blockquote { border-left: .25rem solid #888;padding: 0 .5rem; }
-details summary { @extend .pointer; }
-dt { font-style: italic }
-a {
-  &:link { color:$text-blue }
-  &:visited { color:$text-purple }
-  &:hover { color:$text-blue }
-}
-
-.text-white{color:#fff}
-.text-black{color:#000}
-.text-gray,.text-grey{color:#888}
-.text-slategray,.text-slategrey{color:#789}
-.text-green{color:$text-green}
-.text-red{color:$text-red}
-.text-purple{color:$text-purple}
-.text-blue{color:$text-blue}
-
-.text-primary{ @extend .text-blue; }
-.text-secondary{ @extend .text-green; }
-
-.text-left{text-align:left}
-.text-right{text-align:right}
-.text-center{text-align:center}
-.text-justify{text-align:justify}
-
-.footnote { padding:0 .15em }
-.footnote,
-.reversefootnote { text-decoration:none !important }
-
-.float-left{float:left}
-.float-right{float:right}
-
-.centered { display:block;@extend .mc; }
-
-article {
-  table {
-    & { border-collapse: collapse }
-    &, td, th { border: 1px solid #888 }
-    td, th { padding:.5em }
-    &.simple { td, th { border-width:1px 0 } }
-    &.borderless { td, th { border:0 } }
-  }
-}
+// core fix
+.bg-primary.text-white { color:#000 !important }
 // ---------------------------------------------------------------
 // core styles
 .scrollable{overflow:auto}

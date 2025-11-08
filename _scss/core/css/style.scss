@@ -1,6 +1,7 @@
 @use "_color" as *;
 @use "_base";
 @use "_rouge";
+@use "_credit";
 // ---------------------------------------------------------------
 ._nav,
 ._header,
@@ -13,22 +14,4 @@
 ._logo, ._nav, ._theme_switch {
   a { text-decoration:none !important; color:inherit }
   a:hover { color:$text-blue }
-}
-._credit {
-  position:absolute;
-  position:fixed;
-  top:auto;
-  left:auto;
-  right:16px;
-  bottom:6px;
-}
-._credit_link {
-  font-family: 'Arial', system-ui, sans-serif !important;
-  font-size: .8rem !important;
-  padding: .2em .4em !important;
-  box-shadow: 0 2px 2px rgba(#000,.5) !important;
-  border-radius: 5px !important;
-  background: #000 !important;
-  color: #fff !important;
-  text-decoration: none !important;
 }
