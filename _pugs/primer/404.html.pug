@@ -8,6 +8,8 @@ block content
   h1 Oops! Nothing found
   p #{ description }
   div(style="margin-top:8rem")
+  hr/
   p
-    !='{% include back.html %}'
-    !='{% include gohome.html %}'
+    +back_button
+    +l
+    +gohome_button
