@@ -1,6 +1,7 @@
 include main
 block vars
-  - color_scheme = 'light'
+  -
+    color_scheme = 'light'
   -
     layout = 'primer'
     htmlClass = ['_primer_layout']
@@ -21,7 +22,6 @@ block html
       meta#_color_scheme(name="color-scheme" content=color_scheme||'')/
       meta#_theme_color(name="theme-color" content=theme_color||'')/
       block style
-        link#_style(rel="stylesheet" href!=`${site_url}/assets/core/css/style.css?v=${version}`)/
         link#_style_primer(rel="stylesheet" href!=`${site_url}/assets/primer/css/style.css?v=${version}`)/
       |<!-- custom-head -->
       //- +fonts
@@ -29,18 +29,18 @@ block html
       //- +manifest
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
-      ._views: ._view: .container-lg.px-3.my-5
-        header._header: ._layout.markdown-body: block header
-          //- code // header
-          h1: +logo
-        nav._nav: ._layout.markdown-body: block nav
-          code // nav
-        main._main: article._article._layout.markdown-body: block content
-          code // content for : !{title}
-        footer._footer: ._layout.markdown-body: block footer
-          code // footer
-      |<!-- custom-body -->
-      +credit
-      //- +themejs
-      //- +anchor
-      +google_analytics
+      .container-lg.px-3.my-5.markdown-body
+        block header
+          //- p: code // header
+          h1: a(href=home_url) #{site_title}
+        block content
+          p: code // content for : !{title}
+        block footer
+          p: code // footer
+        .my-3.text-right
+          p!='{% include edit-link.html %}'
+          |<!-- custom-body -->
+          +credit
+          //- +themejs
+          //- +anchor
+          +google_analytics
