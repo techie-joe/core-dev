@@ -80,10 +80,10 @@ mixin themejs
   +js(`${site_url}/assets/themejs/themejs_v2.0.js?v=${version}`)
 
 mixin back_button
-  a(href="?back" onclick=onclick(js.goBack) title="Back to previous page") 👈 Back
+  a(href="?back" onclick=onclick(js.goBack) title="Back to previous page")&attributes(attributes) 👈 Back
 
 mixin gohome_button
-  a(href=home_url title="Go to Home Page") Home
+  a(href=home_url title="Go to Home Page")&attributes(attributes) Home
 
 mixin anchor
   script(src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous")

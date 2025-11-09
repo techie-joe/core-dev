@@ -5,6 +5,8 @@ body{overflow-y:scroll}
 hr { border: 1px solid #888 }
 pre { padding:.5rem;overflow:auto }
 blockquote { border-left: .25rem solid #888;padding: 0 .5rem; }
+dt { margin-top:.5em;font-weight:bold }
+dd { margin-bottom:.5em }
 dt { font-style: italic }
 a {
   &:link { color:$text-blue }
@@ -39,6 +41,10 @@ a {
 .centered { display:block;margin-left:auto;margin-right:auto; }
 
 article {
+  img {
+    max-width: 100%;
+    box-sizing: content-box;
+  }
   table {
     & { border-collapse: collapse }
     &, td, th { border: 1px solid #888 }

@@ -2,7 +2,7 @@
 @use "_primer";
 @use "_base";
 @use "_rouge";
-@use "_credit";
+@use "_core";
 // ---------------------------------------------------------------
 ._nav,
 ._header,
@@ -16,3 +16,4 @@
   a { text-decoration:none !important; color:inherit }
   a:hover { color:$text-blue }
 }
+._credit { right:16px }
