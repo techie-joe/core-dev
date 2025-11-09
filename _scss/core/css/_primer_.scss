@@ -1,6 +1,6 @@
 .scrollable{overflow:auto}
 
-details summary { @extend .pointer; }
+details summary,
 .pointer { cursor:pointer }
 
 .hero {
@@ -61,4 +61,11 @@ a.button {
   height:1em;
   display:inline-block;
   vertical-align:text-bottom;
+}
+
+article {
+  table {
+    &.simple { td, th { border-width:1px 0 } }
+    &.borderless { &, td, th { border:0 } }
+  }
 }

@@ -211,9 +211,9 @@ or add some <code class="language-plaintext highlighter-rouge">code</code>.</p>
 
 <h2 id="box">Box</h2>
 
-<p class="bg-primary text-white box text-center">Wrap texts in a <code class="language-plaintext highlighter-rouge">bg-primary.text-white.box</code></p>
+<p class="box text-center">Wrap texts in a <code class="language-plaintext highlighter-rouge">box</code></p>
 
-<p class="bg-secondary box text-center">… or use <code class="language-plaintext highlighter-rouge">bg-secondary.box</code></p>
+<p class="bg-primary text-white box text-center">… or use <code class="language-plaintext highlighter-rouge">bg-primary.text-white.box</code></p>
 
 <p class="bg-red text-white box text-center">Try other mix as well</p>
 
@@ -249,7 +249,7 @@ Long, single-line `code blocks` should not wrap. They should remain on a single 
 </div>
 </details>
 
-<details class="bg-secondary box">
+<details class="box">
 <summary>Style them with box. <i>(click for more)</i></summary>
 <div class="details">
 <p class="text-grey text-justify">But beware, this block has a mischievous streak: it expands with a dramatic flourish like curtains on opening night, then folds back up as if nothing ever happened, gaslighting your memory of what you just saw. Authors toss long-winded explanations, secret Easter eggs, or poorly formatted cat ASCII art inside it, knowing only the brave will click. In its most chaotic form, the details block nests within itself, collapsing collapsibles within collapsibles until the reader spirals into an abyss of disclosure toggles, wondering whether the summary is summary enough to summarize the summaries.</p>
@@ -323,7 +323,7 @@ Long, single-line `code blocks` should not wrap. They should remain on a single 
 
 <h3 id="simple-table">Simple table</h3>
 
-<table class="full-width simple" style="max-width:300px">
+<table class="simple">
   <thead>
     <tr>
       <th style="text-align: left">Name</th>
@@ -348,7 +348,7 @@ Long, single-line `code blocks` should not wrap. They should remain on a single 
 
 <h3 id="borderless-table">Borderless table</h3>
 
-<table class="full-width borderless" style="max-width:300px">
+<table class="borderless">
   <thead>
     <tr>
       <th style="text-align: left">Items</th>
@@ -377,34 +377,38 @@ Long, single-line `code blocks` should not wrap. They should remain on a single 
 
 <h3 id="complex-table">Complex table</h3>
 
-<p>You have to use HTML syntax for complex table.</p>
+<p>Use HTML syntax for complex table.</p>
 
 <table class="full-width" style="max-width:500px">
-<tr>
-    <th class="text-left">Label</th>
-    <th class="text-center">Status</th>
-    <th class="text-right">Value</th>
-</tr>
-<tr>
-    <td class="text-left">
-        <dl>
-        <dt>Item name</dt>
-        <dd>And its description.</dd>
-        </dl>
-    </td>
-    <td class="text-center">Good</td>
-    <td class="text-right">$78,910.12</td>
-</tr>
-<tr>
-    <td class="text-left">
-        <dl>
-        <dt>Another item</dt>
-        <dd>And its description.</dd>
-        </dl>
-    </td>
-    <td class="text-center"><span class="text-pending">Pending</span></td>
-    <td class="text-right"><span class="text-pending">- ($1,234.56)</span></td>
-</tr>
+<thead>
+  <tr>
+      <th class="text-left">Label</th>
+      <th class="text-center">Status</th>
+      <th class="text-right">Value</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+      <td class="text-left">
+          <dl>
+          <dt>Item name</dt>
+          <dd>And its description.</dd>
+          </dl>
+      </td>
+      <td class="text-center">Good</td>
+      <td class="text-right">$78,910.12</td>
+  </tr>
+  <tr>
+      <td class="text-left">
+          <dl>
+          <dt>Another item</dt>
+          <dd>And its description.</dd>
+          </dl>
+      </td>
+      <td class="text-center"><span class="text-pending">Pending</span></td>
+      <td class="text-right"><span class="text-pending">- ($1,234.56)</span></td>
+  </tr>
+</tbody>
 </table>
 
 <h2 id="footnotes">Footnotes</h2>

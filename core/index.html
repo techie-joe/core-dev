@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta id="_color_scheme" name="color-scheme" content="light dark"/>
     <meta id="_theme_color" name="theme-color" content="#222"/>
-    <link id="_style" rel="stylesheet" href="/dove/assets/core/css/style.css?v=0.0.2.3842"/><!-- custom-head -->
+    <link id="_style" rel="stylesheet" href="/dove/assets/core/css/style.css?v=0.0.2.3404"/><!-- custom-head -->
     <!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
@@ -247,9 +247,9 @@ or add some <code class="language-plaintext highlighter-rouge">code</code>.</p>
 
 <h2 id="box">Box</h2>
 
-<p class="bg-primary text-white box text-center">Wrap texts in a <code class="language-plaintext highlighter-rouge">bg-primary.text-white.box</code></p>
+<p class="box text-center">Wrap texts in a <code class="language-plaintext highlighter-rouge">box</code></p>
 
-<p class="bg-secondary box text-center">… or use <code class="language-plaintext highlighter-rouge">bg-secondary.box</code></p>
+<p class="bg-primary text-white box text-center">… or use <code class="language-plaintext highlighter-rouge">bg-primary.text-white.box</code></p>
 
 <p class="bg-red text-white box text-center">Try other mix as well</p>
 
@@ -285,7 +285,7 @@ Long, single-line `code blocks` should not wrap. They should remain on a single 
 </div>
 </details>
 
-<details class="bg-secondary box">
+<details class="box">
 <summary>Style them with box. <i>(click for more)</i></summary>
 <div class="details">
 <p class="text-grey text-justify">But beware, this block has a mischievous streak: it expands with a dramatic flourish like curtains on opening night, then folds back up as if nothing ever happened, gaslighting your memory of what you just saw. Authors toss long-winded explanations, secret Easter eggs, or poorly formatted cat ASCII art inside it, knowing only the brave will click. In its most chaotic form, the details block nests within itself, collapsing collapsibles within collapsibles until the reader spirals into an abyss of disclosure toggles, wondering whether the summary is summary enough to summarize the summaries.</p>
@@ -359,7 +359,7 @@ Long, single-line `code blocks` should not wrap. They should remain on a single 
 
 <h3 id="simple-table">Simple table</h3>
 
-<table class="full-width simple" style="max-width:300px">
+<table class="simple">
   <thead>
     <tr>
       <th style="text-align: left">Name</th>
@@ -384,7 +384,7 @@ Long, single-line `code blocks` should not wrap. They should remain on a single 
 
 <h3 id="borderless-table">Borderless table</h3>
 
-<table class="full-width borderless" style="max-width:300px">
+<table class="borderless">
   <thead>
     <tr>
       <th style="text-align: left">Items</th>
@@ -413,34 +413,38 @@ Long, single-line `code blocks` should not wrap. They should remain on a single 
 
 <h3 id="complex-table">Complex table</h3>
 
-<p>You have to use HTML syntax for complex table.</p>
+<p>Use HTML syntax for complex table.</p>
 
 <table class="full-width" style="max-width:500px">
-<tr>
-    <th class="text-left">Label</th>
-    <th class="text-center">Status</th>
-    <th class="text-right">Value</th>
-</tr>
-<tr>
-    <td class="text-left">
-        <dl>
-        <dt>Item name</dt>
-        <dd>And its description.</dd>
-        </dl>
-    </td>
-    <td class="text-center">Good</td>
-    <td class="text-right">$78,910.12</td>
-</tr>
-<tr>
-    <td class="text-left">
-        <dl>
-        <dt>Another item</dt>
-        <dd>And its description.</dd>
-        </dl>
-    </td>
-    <td class="text-center"><span class="text-pending">Pending</span></td>
-    <td class="text-right"><span class="text-pending">- ($1,234.56)</span></td>
-</tr>
+<thead>
+  <tr>
+      <th class="text-left">Label</th>
+      <th class="text-center">Status</th>
+      <th class="text-right">Value</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+      <td class="text-left">
+          <dl>
+          <dt>Item name</dt>
+          <dd>And its description.</dd>
+          </dl>
+      </td>
+      <td class="text-center">Good</td>
+      <td class="text-right">$78,910.12</td>
+  </tr>
+  <tr>
+      <td class="text-left">
+          <dl>
+          <dt>Another item</dt>
+          <dd>And its description.</dd>
+          </dl>
+      </td>
+      <td class="text-center"><span class="text-pending">Pending</span></td>
+      <td class="text-right"><span class="text-pending">- ($1,234.56)</span></td>
+  </tr>
+</tbody>
 </table>
 
 <h2 id="footnotes">Footnotes</h2>
@@ -476,6 +480,6 @@ Every new line in footnote should be prefixed with 2 space or 4 space indentatio
     <div class="_credit"><a class="_credit_link" href="https://techie-joe.github.io/core" title="Go to the Core">✨ Made with Core</a>
     </div>
     <script>window.ghost='bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlv';</script>
-    <script type="text/javascript" src="/dove/assets/themejs/themejs_v2.0.js?v=0.0.2.3842"></script>
+    <script type="text/javascript" src="/dove/assets/themejs/themejs_v2.0.js?v=0.0.2.3404"></script>
   </body>
 </html>

@@ -3,16 +3,53 @@
 html,body{margin:0}
 body{overflow-y:scroll}
 hr { border: 1px solid #888 }
+p,details { margin-block-start:1em;margin-block-end:1em }
 pre { padding:.5rem;overflow:auto }
 blockquote { border-left: .25rem solid #888;padding: 0 .5rem; }
-dt { margin-top:.5em;font-weight:bold }
-dd { margin-bottom:.5em }
+dt { margin-block-start:1em;font-weight:bold }
+dd { margin-block-end:1em }
 dt { font-style: italic }
 a {
   &:link { color:$text-blue }
   &:visited { color:$text-purple }
   &:hover { color:$text-blue }
 }
+
+.border-secondary{ @extend .border-green; }
+.border-primary{ @extend .border-blue; }
+.border-pending{ @extend .border-yellow; }
+
+.border-white{border-color:#fff}
+.border-black{border-color:#000}
+.border-gray,.border-grey{border-color:#888}
+.border-slategray,.border-slategrey{border-color:#789}
+.border-green{border-color:$text-green}
+.border-red{border-color:$text-red}
+.border-purple{border-color:$text-purple}
+.border-blue{border-color:$text-blue}
+.border-yellow{border-color:$text-yellow}
+.border-orange{border-color:$text-orange}
+.border-orange-light{border-color:$text-orange-light}
+
+.bg-secondary{ @extend .bg-green; }
+.bg-primary{ @extend .bg-blue; }
+.bg-pending{ @extend .bg-yellow; }
+
+.bg-white{background-color:#fff}
+.bg-black{background-color:#000}
+.bg-gray,.bg-grey{background-color:#888}
+.bg-slategray,.bg-slategrey{background-color:#789}
+.bg-green{background-color:$text-green}
+.bg-red{background-color:$text-red}
+.bg-purple{background-color:$text-purple}
+.bg-blue{background-color:$text-blue}
+.bg-yellow{background-color:$text-yellow}
+.bg-orange{background-color:$text-orange}
+.bg-orange-light{background-color:$text-orange-light}
+
+.text-secondary{ @extend .text-green; }
+.text-primary{ @extend .text-blue; }
+.text-pending{ @extend .text-yellow; }
 
 .text-white{color:#fff}
 .text-black{color:#000}
@@ -22,9 +59,9 @@ a {
 .text-red{color:$text-red}
 .text-purple{color:$text-purple}
 .text-blue{color:$text-blue}
-
-.text-primary{ @extend .text-blue; }
-.text-secondary{ @extend .text-green; }
+.text-yellow{color:$text-yellow}
+.text-orange{color:$text-orange}
+.text-orange-light{color:$text-orange-light}
 
 .text-left{text-align:left}
 .text-right{text-align:right}
@@ -49,7 +86,5 @@ article {
     & { border-collapse: collapse }
     &, td, th { border: 1px solid #888 }
     td, th { padding:.5em }
-    &.simple { td, th { border-width:1px 0 } }
-    &.borderless { td, th { border:0 } }
   }
 }

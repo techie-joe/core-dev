@@ -1,8 +1,12 @@
-@use "_color" as *;
 @use "sass:color";
 @use "_primer";
-@use "../../core/css/_base";
+@use "../../core/css/_primer_";
 @use "../../core/css/_core";
+// ---------------------------------------------------------------
+$text-blue: #0366d6;
+$text-green:#28a745;
+$text-purple: #6f42c1;
+$text-red: #cb2431;
 // ---------------------------------------------------------------
 // primer fix
 .text-gray,.text-grey{color:#888}
@@ -11,9 +15,29 @@
 .text-primary { color:$text-blue }
 .text-secondary { color:$text-green }
 
+.text-justify{text-align:justify}
+
 .bg-primary { background-color:$text-blue }
 
-.text-justify{text-align:justify}
+details { margin-bottom: 16px }
+
+.markdown-body {
+  .bg-primary {
+    code,tt { background-color: rgba(#1b1f23,.15); }
+  }
+  table {
+    & { display:table;border-collapse:collapse;border:1px solid;width:auto }
+    thead tr { background-color: #f6f8fa }
+    &, th, td { border-color:#dfe2e5 }
+    &.full-width { width:100% }
+    &.simple { td, th { border-width:1px 0 } }
+    &.borderless { &, tr, td, th { border:0;background:none } }
+  }
+}
+
+.footnote,
+.reversefootnote { text-decoration:none !important }
+
 // ---------------------------------------------------------------
 ._dark {
   body {
@@ -23,6 +47,16 @@
   .markdown-body {
     h1,h2 { border-color:#444 }
     code,tt { background-color: rgba(color.invert(#1b1f23),.15); }
+    .bg-primary {
+      code,tt { background-color: rgba(color.invert(#1b1f23),.23); }
+    }
+    table {
+      &, th, td { border-color:#444 }
+      tr { background-color: color.invert(#fff); }
+      tr:nth-child(2n),
+      thead tr { background-color: #111 }
+      &.borderless tr { background:none }
+    }
     .highlight,
     .highlight pre,
     pre { background-color: color.invert(#e6e8ea); }
@@ -36,12 +70,9 @@
       .k,.o,.kd { color:#fff }
       .kc { color:#dbd6d1 }
     }
-    table {
-      tr { background-color: color.invert(#fff); }
-      th, td { border-color:#444 }
-    }
   }
   hr { background-color: #444 }
+  blockquote,
   .box { border-color:#444 }
   .border-gray-light { border-color:#444 !important }
 }
