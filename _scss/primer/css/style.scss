@@ -1,19 +1,15 @@
+@use "_color" as *;
 @use "sass:color";
 @use "_primer";
 @use "../../core/css/_primer_";
 @use "../../core/css/_core";
 // ---------------------------------------------------------------
-$text-blue: #0366d6;
-$text-green:#28a745;
-$text-purple: #6f42c1;
-$text-red: #cb2431;
-// ---------------------------------------------------------------
 // primer fix
-.text-gray,.text-grey{color:#888}
-.text-slategray,.text-slategrey{color:#789}
+.text-gray,.text-grey { color:$text-grey }
+.text-slategray,.text-slategrey { color:$text-slategrey }
 
 .text-primary { color:$text-blue }
-.text-secondary { color:$text-green }
+.text-secondary { color:$text-slategrey }
 
 .text-justify{text-align:justify}
 
@@ -25,6 +21,7 @@ details { margin-bottom: 16px }
   .bg-primary {
     code,tt { background-color: rgba(#1b1f23,.15); }
   }
+  img { display:block }
   table {
     & { display:table;border-collapse:collapse;border:1px solid;width:auto }
     thead tr { background-color: #f6f8fa }
