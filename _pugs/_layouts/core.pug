@@ -21,10 +21,8 @@ block html
       meta#_theme_color(name="theme-color" content=theme_color||'')/
       block style
         link#_style(rel="stylesheet" href!=`${site_url}/assets/core/css/style.css?v=${version}`)/
-      |<!-- custom-head -->
-      //- +fonts
-      //- +icons
-      //- +manifest
+      block custom_head
+        +custom_head
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
       ._views: ._view
@@ -38,8 +36,5 @@ block html
         footer._footer: ._layout._960: block footer
           code // footer
       +theme_switch
-      |<!-- custom-body -->
-      +credit
-      +themejs
-      //- +anchor
-      +google_analytics
+      block custom_body
+        +custom_body

@@ -23,10 +23,8 @@ block html
       meta#_theme_color(name="theme-color" content=theme_color||'')/
       block style
         link#_style_primer(rel="stylesheet" href!=`${site_url}/assets/primer/css/style.css?v=${version}`)/
-      |<!-- custom-head -->
-      //- +fonts
-      //- +icons
-      //- +manifest
+      block custom_head
+        +custom_head
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
       .container-lg.px-3.my-5.markdown-body
@@ -44,8 +42,5 @@ block html
           if source_url
             p This site is open source. #[a(href=source_url)| Improve this page].
       +theme_switch
-      |<!-- custom-body -->
-      +credit
-      +themejs
-      +anchor
-      +google_analytics
+      block custom_body
+        +custom_body

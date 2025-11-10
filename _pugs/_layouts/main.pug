@@ -67,6 +67,12 @@ mixin logo
   ._logo: block logo
     a(href=home_url) #{site_title}
 
+mixin back_button
+  a(href="?back" onclick=onclick(js.goBack) title="Back to previous page")&attributes(attributes) 👈 Back
+
+mixin gohome_button
+  a(href=home_url title="Go to Home Page")&attributes(attributes) Home
+
 mixin credit
   ._credit: block credit
     a._credit_link(href='https://techie-joe.github.io/core' title="Go to the Core")| ✨ Made with Core
@@ -78,12 +84,6 @@ mixin theme_switch(title='Change Theme (Alt+T)')
 mixin themejs
   script|window.ghost='!{ghost}';
   +js(`${site_url}/assets/themejs/themejs_v2.0.js?v=${version}`)
-
-mixin back_button
-  a(href="?back" onclick=onclick(js.goBack) title="Back to previous page")&attributes(attributes) 👈 Back
-
-mixin gohome_button
-  a(href=home_url title="Go to Home Page")&attributes(attributes) Home
 
 mixin anchor
   script(src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous")
@@ -108,3 +108,16 @@ mixin fouc
         setTimeout(e=>{q.remove(c);q.remove(x)},300);
       });
     })();
+
+mixin custom_head
+  |<!-- custom-head -->
+  //- +fonts
+  //- +icons
+  //- +manifest
+
+mixin custom_body
+  |<!-- custom-body -->
+  +credit
+  +themejs
+  //- +anchor
+  +google_analytics

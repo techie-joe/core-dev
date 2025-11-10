@@ -2,7 +2,7 @@ mixin nav_(sub)
   +_a(home_url+"/"+sub+"/")| !{sub.replace(/\w\S*/g, w => w[0].toUpperCase() + w.slice(1).toLowerCase())}
   +l
   +isvg(svgi.angle)
+  +_a(home_url+"/"+sub+"/legacy.html")| Legacy
   +_a(home_url+"/"+sub+"/home.html")| Home
   +_a(home_url+"/"+sub+"/page.html")| Page
-  +_a(home_url+"/"+sub+"/legacy.html")| Legacy
   +_a(home_url+"/"+sub+"/404.html")| 404

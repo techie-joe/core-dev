@@ -23,10 +23,8 @@ block html
         link#_style(rel="stylesheet" href!=`${site_url}/assets/core/css/style.css?v=${version}`)/
         link#_style_nova(rel="stylesheet" href!=`${site_url}/assets/nova/css/nova.css?v=${version}`)/
         link#_style_basic(rel="stylesheet" href!=`${site_url}/assets/nova/css/basic.css?v=${version}`)/
-      |<!-- custom-head -->
-      //- +fonts
-      //- +icons
-      //- +manifest
+      block custom_head
+        +custom_head
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
       ._views: ._view
@@ -41,8 +39,5 @@ block html
           code // content for : !{title}
         footer._footer: ._layout._960: block footer
           code // footer
-      |<!-- custom-body -->
-      +credit
-      +themejs
-      //- +anchor
-      +google_analytics
+      block custom_body
+        +custom_body

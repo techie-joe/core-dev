@@ -3,28 +3,28 @@ block append vars
   -
     path   = 'index.html'
     title  = `Index`
+block append style
+  style.
+    h1.hero { font-family: 'Arial',system-ui,sans-serif }
 block nav
   style.
     ._nav { display:none !important }
 block logo
   span._pointer #{site_title}
 block content
-  code // !{description}
-  pre.scrollable.
-    source   : #[+a('https://github.com/techie-joe/dove') techie-joe/dove]
-    site_url : #[a._no_u(href=site_url)|!{site_url}]
-    home_url : #[a._no_u(href=home_url)|!{home_url}]
-    version  : !{version}
-    revision : !{[33,now.getHours(),now.getMinutes()*100+now.getSeconds()].join('.')}
-    ghost                : !{ghost}
-    google_analytics     : !{google_analytics||'(undefined)'}
-    cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
-  code // Markdowns
+  h1.hero 🕊️ !{description}
   nav: ul
     li: +a('home') Home
-  code // Layouts
-  nav: ul
     li: +nav_('core')
     li: +nav_('nova')
     li: +nav_('mallet')
     li: +nav_('primer')
+  pre.scrollable.
+    source   : #[+a('https://github.com/techie-joe/dove') techie-joe/dove]
+    version  : !{version}
+    revision : !{[33,now.getHours(),now.getMinutes()*100+now.getSeconds()].join('.')}
+    site_url : #[a._no_u(href=site_url)|!{site_url}]
+    home_url : #[a._no_u(href=home_url)|!{home_url}]
+    ghost                : !{ghost}
+    google_analytics     : !{google_analytics||'(undefined)'}
+    cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
