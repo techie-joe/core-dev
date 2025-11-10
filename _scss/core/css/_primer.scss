@@ -1,67 +1,73 @@
+@use "sass:color";
 @use "_color" as *;
 
 html,body{margin:0}
 body{overflow-y:scroll}
 hr { border: 1px solid #888 }
-p,details { margin-block-start:1em;margin-block-end:1em }
+h1,h2,h3,h4,h5,h6 { margin-block-start:1.25em;margin-block-end:1rem }
+p,details { margin-block-start:1rem;margin-block-end:1rem }
 pre { padding:.5rem;overflow:auto }
+code,tt { background-color: rgba(#888,.3);padding:0 .25em}
+pre { code,tt {background:none} }
 blockquote { border-left: .25rem solid #888;padding: 0 .5rem; }
-dt { margin-block-start:1em;font-weight:bold }
-dd { margin-block-end:1em }
+dt { margin-block-start:1rem;font-weight:bold }
+dd { margin-block-end:1rem }
 dt { font-style: italic }
 a {
-  &:link { color:$text-blue }
+  & { color:$text-blue }
   &:visited { color:$text-purple }
   &:hover { color:$text-blue }
 }
 
-.border-secondary{ @extend .border-green; }
 .border-primary{ @extend .border-blue; }
+.border-secondary{ @extend .border-slategrey; }
 .border-pending{ @extend .border-yellow; }
-
 .border-white{border-color:#fff}
 .border-black{border-color:#000}
-.border-gray,.border-grey{border-color:#888}
-.border-slategray,.border-slategrey{border-color:#789}
+.border-blue{border-color:$text-blue}
+.border-slategray,.border-slategrey{border-color:$text-slategrey}
+.border-gray,.border-grey{border-color:$text-grey}
+.border-yellow{border-color:$text-yellow}
 .border-green{border-color:$text-green}
 .border-red{border-color:$text-red}
+/*
 .border-purple{border-color:$text-purple}
-.border-blue{border-color:$text-blue}
-.border-yellow{border-color:$text-yellow}
 .border-orange{border-color:$text-orange}
 .border-orange-light{border-color:$text-orange-light}
+*/
 
-.bg-secondary{ @extend .bg-green; }
 .bg-primary{ @extend .bg-blue; }
+.bg-secondary{ @extend .bg-slategrey; }
 .bg-pending{ @extend .bg-yellow; }
-
 .bg-white{background-color:#fff}
 .bg-black{background-color:#000}
-.bg-gray,.bg-grey{background-color:#888}
-.bg-slategray,.bg-slategrey{background-color:#789}
+.bg-blue{background-color:$text-blue}
+.bg-slategray,.bg-slategrey{background-color:$text-slategrey}
+.bg-gray,.bg-grey{background-color:$text-grey}
+.bg-yellow{background-color:$text-yellow}
 .bg-green{background-color:$text-green}
 .bg-red{background-color:$text-red}
+/*
 .bg-purple{background-color:$text-purple}
-.bg-blue{background-color:$text-blue}
-.bg-yellow{background-color:$text-yellow}
 .bg-orange{background-color:$text-orange}
 .bg-orange-light{background-color:$text-orange-light}
+*/
 
-.text-secondary{ @extend .text-green; }
 .text-primary{ @extend .text-blue; }
+.text-secondary{ @extend .text-slategrey; }
 .text-pending{ @extend .text-yellow; }
+.text-white{color:#fff !important;}
+.text-black{color:#000 !important;}
+.text-blue{color:$text-blue !important;}
+.text-slategray,.text-slategrey{color:$text-slategrey !important;}
+.text-gray,.text-grey{color:$text-grey !important;}
+.text-yellow{color:$text-yellow !important;}
+.text-green{color:$text-green !important;}
+.text-red{color:$text-red !important;}
 
-.text-white{color:#fff}
-.text-black{color:#000}
-.text-gray,.text-grey{color:#888}
-.text-slategray,.text-slategrey{color:#789}
-.text-green{color:$text-green}
-.text-red{color:$text-red}
-.text-purple{color:$text-purple}
-.text-blue{color:$text-blue}
-.text-yellow{color:$text-yellow}
-.text-orange{color:$text-orange}
-.text-orange-light{color:$text-orange-light}
+.text-purple{color:$text-purple !important;}
+.text-orange{color:$text-orange !important;}
+.text-orange-light{color:$text-orange-light !important;}
 
 .text-left{text-align:left}
 .text-right{text-align:right}
