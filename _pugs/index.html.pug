@@ -17,14 +17,14 @@ block content
     li
       b !{site_title}
       +l
-      +isvg(svgi.angle)
-      +a([live_url,'home'].join('/'))| Home
+      +itext|&bull;
+      +_a([live_url,'home'].join('/'))| Home
     li: +nav_('core')
     li: +nav_('nova')
     li: +nav_('mallet')
     li: +nav_('prime')
   pre.scrollable.
-    source   : #[+a('https://github.com/techie-joe/dove') techie-joe/dove]
+    source   : #[a._no_u(href=source_url target="_edit") techie-joe/dove]
     version  : !{version}
     revision : !{revision}
     site_url : #[a._no_u(href=site_url)|!{site_url}]

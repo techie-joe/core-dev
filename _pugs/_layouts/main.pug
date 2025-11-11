@@ -92,7 +92,7 @@ mixin themejs
   +js(`${site_url}/assets/themejs/themejs_v2.0.js?v=${version}`)
 
 mixin edit_link(path)
-  a(href=`${edit_url}/edit/main/_pugs/${path}.pug` target="_edit"): block edit_link
+  a(href=`${source_url}/edit/main/_pugs/${path}.pug` target="_edit"): block edit_link
     | Improve this page
 
 mixin anchor

@@ -93,6 +93,15 @@ details summary,
 .mt,.mv { margin-top:1em }
 .mb,.mv { margin-bottom:1em }
 
+._icon { font-style:normal !important }
+.itext,.isvg {
+  width:1em;
+  height:1em;
+  display:inline-block;
+  vertical-align:text-bottom;
+  text-align: center;
+  line-height:1;
+}
 .isvg svg {
   width:1em;
   height:1em;
