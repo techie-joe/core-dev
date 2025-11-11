@@ -81,6 +81,7 @@ const
       .pipe(dest(destination));
   },
   sassOpt = {
+    loadPaths: ['_scss/_core', 'node_modules'],
     outputStyle: 'compressed' // compressed | expanded
   },
   scss = (source, destination, opt = sassOpt) => async function scss_writer() {

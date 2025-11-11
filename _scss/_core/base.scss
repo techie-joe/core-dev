@@ -1,5 +1,5 @@
 @use "sass:color";
-@use "_color" as *;
+@use "color" as *;
 
 html,body{margin:0}
 body{overflow-y:scroll}
