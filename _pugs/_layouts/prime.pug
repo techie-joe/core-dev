@@ -7,11 +7,12 @@ block vars
     htmlClass = ['_prime_layout']
     bodyClass = []
     mainClass = []
+block update_vars
 block html
   doctype html
   html(lang=lang||'en-US' class=htmlClass.join(' '))
-    |<!-- page.path   : !{path} -->
-    |<!-- page.layout : pugs/!{layout} -->
+    |<!-- path   : !{path} -->
+    |<!-- layout : pugs/!{layout} -->
     head
       meta(charset=charset||'utf-8')/
       |<!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -32,15 +33,12 @@ block html
           //- p: code // header
           h1: a(href=home_url) #{site_title}
         block content
-          h2 !{title}
+          h1 !{title}
           p: code // content for : !{title}
         .footer.border-top.border-gray-light.mt-5.pt-3.text-right.text-gray
           block footer
             p: code // footer
-          if path
-            - source_url = `https://github.com/techie-joe/dove/edit/main/_pugs/${path}.pug`;
-          if source_url
-            p This site is open source. #[a(href=source_url)| Improve this page].
+          p This site is open source. #[+edit_link(path)].
       +theme_switch
       block custom_body
         +custom_body

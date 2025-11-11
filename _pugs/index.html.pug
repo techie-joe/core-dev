@@ -1,4 +1,9 @@
-extends _html
+extends /_pugs/_layouts/prime
+block append vars
+  include /_pugs/_nav
+block footer
+  p: small.mono // by #{author} !{year}
+//- --------------------------------------------------------------
 block append vars
   -
     path   = 'index.html'
@@ -6,11 +11,6 @@ block append vars
 block append style
   style.
     h1.hero { font-family: 'Arial',system-ui,sans-serif }
-//- block nav
-  style.
-    ._nav { display:none !important }
-//- block logo
-  span._pointer #{site_title}
 block content
   h1.hero 🕊️ !{description}
   nav: ul

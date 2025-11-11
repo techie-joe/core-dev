@@ -44,7 +44,7 @@ details { margin-bottom: 16px }
     background-color: color.invert(#fff);
   }
   .markdown-body {
-    h1,h2 { border-color:#444 }
+    h1,h2 { border-color:#222 }
     code,tt { background-color: rgba(color.invert(#1b1f23),.15); }
     .bg-primary {
       code,tt { background-color: rgba(color.invert(#1b1f23),.23); }
@@ -72,7 +72,7 @@ details { margin-bottom: 16px }
   }
   hr { background-color: #444 }
   blockquote { border-color:#444 }
-  .border-gray-light { border-color:#444 !important }
+  .border-gray-light { border-color:#222 !important }
 }
 // ---------------------------------------------------------------
 ._theme_switch {

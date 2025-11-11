@@ -31,9 +31,10 @@ details summary,
 
 .button {
   display:inline-block;
-  border: 1px solid;
-  padding: .25em .5em;
-  border-radius: .25em;
+  border:1px solid;
+  padding:.5em;
+  border-radius:.25em;
+  line-height:1;
   @extend .no_u;
 }
 
