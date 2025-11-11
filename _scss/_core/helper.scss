@@ -3,6 +3,12 @@
 details summary,
 .pointer { cursor:pointer }
 
+.flex { display:flex }
+.fill { flex:1 }
+.fit  { flex:0 }
+
+.full-width{width:100%}
+
 .hero {
   display:block;
   font-size:2.5em;
@@ -31,38 +37,59 @@ a.button {
 }
 
 .box {
-  border: 1px solid #888;
-  padding: .5rem;
+  box-sizing:border-box;
+  padding:.5em;
 }
 
-.flex { display:flex }
-.fill { flex:1 }
-.fit  { flex:0 }
+.ba0 { border:0 }
+.bl0,.bh0 { border-left:0 }
+.br0,.bh0 { border-right:0 }
+.bt0,.bv0 { border-top:0 }
+.bb0,.bv0 { border-bottom:0 }
 
-.full-width{width:100%}
+.ba { border:1px solid #888 }
+.bl,.bh { border-left:1px solid #888 }
+.br,.bh { border-right:1px solid #888 }
+.bt,.bv { border-top:1px solid #888 }
+.bb,.bv { border-bottom:1px solid #888 }
 
-.p0 { padding:0 }
+.pa0 { padding:0 }
+.pl0,.ph0 { padding-left:0 }
+.pr0,.ph0 { padding-right:0 }
+.pt0,.pv0 { padding-top:0 }
+.pb0,.pv0 { padding-bottom:0 }
+
+.pa_5 { padding:.5em }
+.pl_5,.ph_5 { padding-left:.5em }
+.pr_5,.ph_5 { padding-right:.5em }
+.pt_5,.pv_5 { padding-top:.5em }
+.pb_5,.pv_5 { padding-bottom:.5em }
+
 .pa { padding:1em }
-.pv0 { padding-top:0;padding-bottom:0 }
-.ph0 { padding-left:0;padding-right:0 }
-.pv { padding-top:1em;padding-bottom:1em }
-.ph { padding-left:1em;padding-right:1em }
-.pl { padding-left:1em }
-.pr { padding-right:1em }
-.pt { padding-top:1em }
-.pb { padding-bottom:1em }
+.pl,.ph { padding-left:1em }
+.pr,.ph { padding-right:1em }
+.pt,.pv { padding-top:1em }
+.pb,.pv { padding-bottom:1em }
 
 .mc { margin-left:auto;margin-right:auto }
-.m0 { margin:0 }
+
+.ma0 { margin:0 }
+.ml0,.mh0 { margin-left:0 }
+.mr0,.mh0 { margin-right:0 }
+.mt0,.mv0 { margin-top:0 }
+.mb0,.mv0 { margin-bottom:0 }
+
+.ma_5 { margin:.5em }
+.ml_5,.mh_5 { margin-left:.5em }
+.mr_5,.mh_5 { margin-right:.5em }
+.mt_5,.mv_5 { margin-top:.5em }
+.mb_5,.mv_5 { margin-bottom:.5em }
+
 .ma { margin:1em }
-.mv0 { margin-top:0;margin-bottom:0 }
-.mh0 { margin-left:0;margin-right:0 }
-.mv { margin-top:1em;margin-bottom:1em }
-.mh { margin-left:1em;margin-right:1em }
-.ml { margin-left:1em }
-.mr { margin-right:1em }
-.mt { margin-top:1em }
-.mb { margin-bottom:1em }
+.ml,.mh { margin-left:1em }
+.mr,.mh { margin-right:1em }
+.mt,.mv { margin-top:1em }
+.mb,.mv { margin-bottom:1em }
 
 .no_u { text-decoration:none !important }
 .no_wrap { white-space:nowrap !important }
