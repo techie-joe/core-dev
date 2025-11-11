@@ -4,7 +4,9 @@
 @use "helper";
 @use "core";
 // ---------------------------------------------------------------
-// primer fix
+// fixes
+body{overflow-y:scroll}
+
 .text-gray,.text-grey { color:$text-grey }
 .text-slategray,.text-slategrey { color:$text-slategrey }
 
@@ -16,8 +18,6 @@
 .bg-primary { background-color:$text-blue }
 
 details { margin-bottom: 16px }
-
-a.button { display:inline-block;padding-top:.15em }
 
 .markdown-body {
   .bg-primary {

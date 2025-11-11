@@ -14,7 +14,11 @@ block append style
 block content
   h1.hero 🕊️ !{description}
   nav: ul
-    li: +a('home') Home
+    li
+      b !{site_title}
+      +l
+      +isvg(svgi.angle)
+      +a([live_url,'home'].join('/'))| Home
     li: +nav_('core')
     li: +nav_('nova')
     li: +nav_('mallet')
@@ -22,7 +26,7 @@ block content
   pre.scrollable.
     source   : #[+a('https://github.com/techie-joe/dove') techie-joe/dove]
     version  : !{version}
-    revision : !{[33,now.getHours(),now.getMinutes()*100+now.getSeconds()].join('.')}
+    revision : !{revision}
     site_url : #[a._no_u(href=site_url)|!{site_url}]
     home_url : #[a._no_u(href=home_url)|!{home_url}]
     ghost                : !{ghost}

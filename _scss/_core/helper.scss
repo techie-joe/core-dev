@@ -29,11 +29,12 @@ details summary,
   font-family:"Georgia","Constantia,Cambria","Book Antiqua","Palatino Linotype","Big Caslon",serif;
 }
 
-a.button {
+.button {
+  display:inline-block;
   border: 1px solid;
   padding: .25em .5em;
   border-radius: .25em;
-  text-decoration: none;
+  @extend .no_u;
 }
 
 .box {
@@ -91,9 +92,6 @@ a.button {
 .mt,.mv { margin-top:1em }
 .mb,.mv { margin-bottom:1em }
 
-.no_u { text-decoration:none !important }
-.no_wrap { white-space:nowrap !important }
-
 .isvg svg {
   width:1em;
   height:1em;
@@ -107,3 +105,6 @@ article {
     &.borderless { &, td, th { border:0 } }
   }
 }
+
+.no_u { text-decoration:none !important }
+.no_wrap { white-space:nowrap !important }

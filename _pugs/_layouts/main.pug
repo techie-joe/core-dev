@@ -7,7 +7,10 @@ include /_config
   today = now.toGMTString()
   year  = now.getFullYear()
 
-  version += '.'+(now.getMinutes()*100+now.getSeconds())
+  //- append 
+  subs = now.getHours()*100+now.getMinutes()*100+now.getSeconds()
+  version = [version,subs].join('.')
+  revision = [revision,subs].join('.')
 
   js   = {
     //- javascripts
@@ -15,8 +18,6 @@ include /_config
     themeChange : "theme.change();",
     print       : "window.print();",
   };
-
-  onclick = ( _script='' ) => 'event.preventDefault();' + _script;
 
   cssi = {
     //- CSS images
@@ -43,6 +44,11 @@ include /_config
     'family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700',
     'display=swap',
   ]
+
+//- functions
+-
+  onclick = ( _script='' ) => 'event.preventDefault();' + _script;
+  capitalize = s => s.replace(/\w\S*/g, w => w[0].toUpperCase() + w.slice(1).toLowerCase());
 
 include mixins
 

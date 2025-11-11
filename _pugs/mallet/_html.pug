@@ -1,6 +1,9 @@
 extends /_pugs/_layouts/mallet
 block append vars
   include /_pugs/_nav
+  -
+    path  = ['mallet',path].join('/')
+    title = [title,'Mallet'].join(' | ')
 block nav
   +nav_('mallet')
 block footer
