@@ -79,6 +79,10 @@ mixin back_button
 mixin gohome_button
   a(href=home_url title="Go to Home Page")&attributes(attributes) Home
 
+mixin copyright
+  ._copyright: block copyright
+    span._copyright_text| @ by #{author} !{year}
+
 mixin credit
   ._credit: block credit
     a._credit_link(href='https://techie-joe.github.io/core' title="Go to the Core")| ✨ Made with Core
@@ -127,6 +131,7 @@ mixin custom_head
 
 mixin custom_body
   |<!-- custom-body -->
+  +copyright
   +credit
   +themejs
   //- +anchor

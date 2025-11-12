@@ -1,11 +1,10 @@
 extends /_pugs/_layouts/prime
 block append vars
   include /_pugs/_nav
-block nav
+block append style
   style.
     ._nav { display:none !important }
 block footer
-  p: small.mono // by #{author} !{year}
 //- --------------------------------------------------------------
 block append vars
   -
@@ -16,12 +15,11 @@ block append style
     h1.hero { font-family: 'Arial',system-ui,sans-serif }
 block content
   h1.hero 🕊️ !{description}
+  nav: p
+      +_a([live_url,'home'].join('/'))| !{site_title}(md)
+      b!=' &bull; '
+      +_a(['/nova/site/themejs'].join('/'))| ThemeJs
   nav: ul
-    li
-      b !{site_title}
-      +l
-      +itext|&bull;
-      +_a([live_url,'home'].join('/'))| Home
     li: +nav_('core')
     li: +nav_('nova')
     li: +nav_('mallet')
