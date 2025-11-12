@@ -1,7 +1,7 @@
 extends /_pugs/_layouts/nova
-block append vars
-  include /_pugs/_nav
 block append update_vars
   - path  = ['nova',path].join('/')
 block nav
-  +nav_('nova')
+  +site_nav('nova')
+block footer
+  +site_footer

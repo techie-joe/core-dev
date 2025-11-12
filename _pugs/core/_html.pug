@@ -1,7 +1,7 @@
 extends /_pugs/_layouts/core
-block append vars
-  include /_pugs/_nav
 block append update_vars
   - path  = ['core',path].join('/')
 block nav
-  +nav_('core')
+  +site_nav('core')
+block footer
+  +site_footer

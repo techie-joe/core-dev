@@ -1,7 +1,7 @@
 extends /_pugs/_layouts/mallet
-block append vars
-  include /_pugs/_nav
 block append update_vars
   - path  = ['mallet',path].join('/')
 block nav
-  +nav_('mallet')
+  +site_nav('mallet')
+block footer
+  +site_footer

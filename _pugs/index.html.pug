@@ -1,9 +1,9 @@
 extends /_pugs/_layouts/prime
-block append vars
-  include /_pugs/_nav
 block append style
   style.
     ._nav { display:none !important }
+block footer
+  +site_footer
 //- --------------------------------------------------------------
 block append vars
   -
@@ -19,10 +19,10 @@ block content
       b!=' &bull; '
       +_a(['/nova/site/themejs'].join('/'))| ThemeJs
   nav: ul
-    li: +nav_('core')
-    li: +nav_('nova')
-    li: +nav_('mallet')
-    li: +nav_('prime')
+    li: +site_nav('core')
+    li: +site_nav('nova')
+    li: +site_nav('mallet')
+    li: +site_nav('prime')
   pre.scrollable.
     source   : #[a._no_u(href=source_url target="_edit") techie-joe/dove]
     version  : !{version}
@@ -32,4 +32,3 @@ block content
     ghost                : !{ghost}
     google_analytics     : !{google_analytics||'(undefined)'}
     cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
-block footer
