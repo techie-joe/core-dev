@@ -4,9 +4,15 @@
 @use "helper";
 @use "core";
 // ---------------------------------------------------------------
+._1020 { max-width:1020px; @extend .mc; position:relative }
+._960 { max-width:960px; @extend .mc; }
+// ---------------------------------------------------------------
 // fixes
-body{overflow-y:scroll}
+body {overflow-y:scroll}
 
+.hero { line-height:1.15 }
+
+.text-yellow{color:$text-yellow !important}
 .text-gray,.text-grey { color:$text-grey }
 .text-slategray,.text-slategrey { color:$text-slategrey }
 
@@ -18,6 +24,13 @@ body{overflow-y:scroll}
 .bg-primary { background-color:$text-blue }
 
 details { margin-bottom: 16px }
+
+hr.thin {
+  height:0;
+  background:none;
+  border-bottom:1px solid #888;
+  margin:16px 0;
+}
 
 .markdown-body {
   .bg-primary {
@@ -32,6 +45,7 @@ details { margin-bottom: 16px }
     &.simple { td, th { border-width:1px 0 } }
     &.borderless { &, tr, td, th { border:0;background:none } }
   }
+  ._footer {margin-bottom:4rem !important}
 }
 
 .itext, .isvg { line-height:.7 }
@@ -77,8 +91,8 @@ details { margin-bottom: 16px }
   .border-gray-light { border-color:#222 !important }
 }
 // ---------------------------------------------------------------
+._logo { display:block }
 ._theme_switch {
-  font-size:1.3em;
-  a { color:inherit }
+  a { font-size:1.5em;color:inherit }
   a:hover { color:$text-blue }
 }

@@ -3,5 +3,7 @@ block append vars
   include /_pugs/_nav
 block append update_vars
   - path  = ['prime',path].join('/')
+block nav
+  +nav_('prime')
 block footer
   p: small.mono // by #{author} !{year}

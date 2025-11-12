@@ -1,3 +1,7 @@
+.sans { font-family: 'Arial', system-ui, sans-serif }
+.serif { font-family: 'Times New Roman', 'Times', serif }
+.mono { font-family: 'Courier New', 'Courier', monospace, monospace }
+
 .scrollable{overflow:auto}
 
 details summary,
@@ -15,6 +19,7 @@ details summary,
   margin-block-start:.67em;
   margin-block-end:.67em;
   font-weight: bold;
+  line-height:1;
 }
 
 .indent{text-indent:2em}
@@ -33,6 +38,7 @@ details summary,
   display:inline-block;
   border:1px solid;
   padding:.5em;
+  margin:.25rem .25rem;
   border-radius:.25em;
   line-height:1;
   @extend .no_u;
@@ -118,3 +124,4 @@ article {
 
 .no_u { text-decoration:none !important }
 .no_wrap { white-space:nowrap !important }
+.hide { display:none !important }

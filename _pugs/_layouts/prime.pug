@@ -1,4 +1,6 @@
 include main
+mixin thin_hr
+  hr.thin.border-gray-light/
 block vars
   -
     color_scheme = 'light'
@@ -28,17 +30,27 @@ block html
         +custom_head
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
-      .container-lg.px-3.my-5.markdown-body
-        block header
-          //- p: code // header
-          h1: a(href=home_url) #{site_title}
-        block content
-          h1 !{title}
-          p: code // content for : !{title}
-        .footer.border-top.border-gray-light.mt-5.pt-3.text-right.text-gray
-          block footer
-            p: code // footer
-          p This site is open source. #[+edit_link(path)].
-      +theme_switch
-      block custom_body
-        +custom_body
+      ._views
+        ._view: ._layout._1020
+          .container-lg.px-3.my-5.markdown-body
+            block header
+              //- p: code // header
+              h1._logo: a(href=home_url) #{site_title}
+            nav._nav: ._layout
+              block nav
+                p: code // nav
+              +thin_hr
+            main._main: article._article._layout
+              block content
+                h1 !{title}
+                p: code // content for : !{title}
+            footer._footer: ._layout.footer.border-top.border-gray-light.mt-5.pt-3.text-right.text-gray
+              block footer
+                p: code // footer
+              p This site is open source. #[+edit_link(path)].
+          //- .container-lg
+        ._view: ._layout._1020
+          +theme_switch
+        ._view: ._layout._1020
+          block custom_body
+            +custom_body
