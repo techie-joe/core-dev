@@ -96,8 +96,8 @@ mixin themejs
   +js(`${site_url}/assets/themejs/themejs_v2.0.js?v=${version}`)
 
 mixin edit_link(path)
-  a(href=`${source_url}/edit/main/_pugs/${path}.pug` target="_edit"): block edit_link
-    | Improve this page
+  | This site is open source.
+  | #[a(href=`${source_url}/edit/main/_pugs/${path}.pug` target="_edit")| Improve this page].
 
 mixin anchor
   script(src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous")
