@@ -26,29 +26,24 @@ block html
         +custom_head
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
-      ._views#app._app.__fadein
-        ._view: ._layoutx._1020
-          #layout.container-lg.px-3.markdown-body
-            #header: #_header-bar: ._flex.my-2: ._flex-main
-              block header
-                //- p: code // header
-                h1#_title._logo: a(href=home_url) #{site_title}
-            nav._nav: ._layout
-              block nav
-                p: code // nav
-            main._main: article._article._layout
-              block content
-                h1 !{title}
-                p: code // content for : !{title}
-            footer#footer._footer.footer.mt-5: ._layout
-              block footer
-                .border-top.border-gray-light.pt-3
-                  p: code // footer
-              .border-top.border-gray-light.pt-3
-                p.text-right.text-grey: small: +edit_link(path)
-          //- .container-lg
-        ._view: ._layoutx._1020
-          +theme_switch
-      //- ._views
+      main#app._app.__fadein
+        #layout.container-lg.px-3.markdown-body
+          #header: #_header-bar: ._flex.my-2: ._flex-main
+            block header
+              //- p: code // header
+              h1#_title._logo: a(href=home_url) #{site_title}
+          nav._nav
+            block nav
+              p: code // nav
+          article._article
+            block content
+              h1 !{title}
+              p: code // content for : !{title}
+          footer#footer
+            block footer
+              p: code // footer
+            p.text-right.text-grey: small: +edit_link(path)
+        //- .container-lg
+        +theme_switch
       block custom_body
         +custom_body
