@@ -7,16 +7,13 @@
 ._960 { max-width:960px; @extend .mc; }
 //- --------------------------------------------------------------
 // fixes
-._nav { margin:1rem auto }
 .hero { line-height:1.1 }
-// ---------------------------------------------------------------
 .footnotes{border:none}
-#footer {
-  margin-bottom:3rem;
-  border-top: 2px solid grey;
-  border-top-color: rgba(128, 128, 128, .4);
-}
+._nav { padding:1rem 0;border-bottom: 2px solid rgba(128, 128, 128, .4); }
+#footer {margin-bottom:3rem}
+#footer { border-top: 2px solid rgba(128, 128, 128, .4); }
 .markdown-body {
+  summary { margin:0 }
   table {
     &.borderless {
       tr { background:none }
