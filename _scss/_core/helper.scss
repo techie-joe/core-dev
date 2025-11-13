@@ -120,6 +120,13 @@ article {
     &.simple { td, th { border-width:1px 0 } }
     &.borderless { &, td, th { border:0 } }
   }
+  .task-list { list-style:none }
+  input[type=checkbox].task-list-item-checkbox {
+    margin:0 .5em;
+    height:1em;
+    width:1em;
+    vertical-align:text-bottom;
+  }
   .footnotes {
     font-size:.9em;
     li::marker {font-size:.8em}

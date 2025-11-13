@@ -4,25 +4,37 @@
 @use "core";
 @use "_mallet";
 // ---------------------------------------------------------------
-._1020 { max-width:1020px; @extend .mc; }
 ._960 { max-width:960px; @extend .mc; }
 //- --------------------------------------------------------------
 // fixes
-// ._footer {margin-bottom:3rem}
+._nav { margin:1rem auto }
+.hero { line-height:1.1 }
 // ---------------------------------------------------------------
+.footnotes{border:none}
+#footer {
+  margin-bottom:3rem;
+  border-top: 2px solid grey;
+  border-top-color: rgba(128, 128, 128, .4);
+}
+.markdown-body {
+  table {
+    &.borderless {
+      tr { background:none }
+    }
+  }
+}
 /*
+body{color:#444}._dark body{color:#bbb}
 ._logo { font-family: 'Arial', system-ui, sans-serif; }
 ._logo { font-weight: 600 }
 ._logo, ._nav, ._theme_switch {
   a { text-decoration:none !important; color:inherit }
   a:hover { color:$text-blue }
 }
-body{color:#444}._dark body{color:#bbb}
 dt{margin-top:.5rem}
 
 th,dt,.hero,h1,h2,h3,h4,h5,h6{color:#000}._dark th,._dark dt,._dark .hero,._dark h1,._dark h2,._dark h3,._dark h4,._dark h5,._dark h6{color:#fff}
 ._app{overflow-y:scroll}
-.footnotes {border:none}
 .indent,.big-first.indent{text-indent:3em}
 .box{padding:.5em;border-radius:6px}
 
