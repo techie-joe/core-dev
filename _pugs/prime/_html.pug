@@ -2,9 +2,4 @@ extends /_pugs/_layouts/prime
 block append update_vars
   - path  = ['prime',path].join('/')
 block nav
-  +site_nav('prime')
-block footer
-  +site_footer
-block append site_footer
-  +_bull
-  b Prime
+  p: +site_nav('prime')

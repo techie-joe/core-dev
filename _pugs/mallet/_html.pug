@@ -2,9 +2,4 @@ extends /_pugs/_layouts/mallet
 block append update_vars
   - path  = ['mallet',path].join('/')
 block nav
-  +site_nav('mallet')
-block footer
-  +site_footer
-block append site_footer
-  +_bull
-  b Mallet
+  p: +site_nav('mallet')

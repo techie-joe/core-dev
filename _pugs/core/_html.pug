@@ -2,9 +2,4 @@ extends /_pugs/_layouts/core
 block append update_vars
   - path  = ['core',path].join('/')
 block nav
-  +site_nav('core')
-block footer
-  +site_footer
-block append site_footer
-  +_bull
-  b Core
+  p: +site_nav('core')

@@ -21,8 +21,7 @@ block html
       meta#_color_scheme(name="color-scheme" content=color_scheme||'')/
       meta#_theme_color(name="theme-color" content=theme_color||'')/
       block style
-        link#_style(rel="stylesheet" href!=`${site_url}/assets/core/css/style.css?v=${version}`)/
-        link#_style_mallet(rel="stylesheet" href!=`${site_url}/assets/mallet/css/style.css?v=${version}`)/
+        link#_style(rel="stylesheet" href!=`${site_url}/assets/mallet/css/style.css?v=${version}`)/
       block custom_head
         +custom_head
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
@@ -44,6 +43,6 @@ block html
         footer._footer: ._layoutx._960
           block footer
             p: code // footer
-          p.text-right.text-gray: small: +edit_link(path)
+          p.text-right.text-grey: small: +edit_link(path)
       block custom_body
         +custom_body

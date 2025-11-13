@@ -3,7 +3,8 @@ block append style
   style.
     ._nav { display:none !important }
 block footer
-  +site_footer
+  p: +site_footer
+  +thin_hr
 //- --------------------------------------------------------------
 block append vars
   -
@@ -16,8 +17,6 @@ block content
   h1.hero 🕊️ !{description}
   nav: p
       +_a([live_url,'home'].join('/'))| !{site_title}(md)
-      b!=' &bull; '
-      +_a(['/nova/site/themejs'].join('/'))| ThemeJs
   nav: ul
     li: +site_nav('core')
     li: +site_nav('nova')
