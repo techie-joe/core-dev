@@ -5,9 +5,9 @@
 @use "_mallet";
 // ---------------------------------------------------------------
 ._960 { max-width:960px; @extend .mc; }
-//- --------------------------------------------------------------
+// ---------------------------------------------------------------
 // fixes
-.hero { line-height:1.1 }
+.hero { color:#000;line-height:1.1 }
 .footnotes{border:none}
 ._nav { padding:1rem 0;border-bottom: 2px solid rgba(128, 128, 128, .4); }
 #footer {margin-bottom:3rem}
@@ -19,6 +19,16 @@
       tr { background:none }
     }
   }
+}
+article {
+  input[type=checkbox].task-list-item-checkbox {
+    height:1.4em;
+    width:1.4em;
+  }
+}
+//---------------------------------------------------------------
+._dark {
+  .hero { color:#fff }
 }
 /*
 body{color:#444}._dark body{color:#bbb}
