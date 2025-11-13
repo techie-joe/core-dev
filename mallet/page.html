@@ -8,34 +8,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta id="_color_scheme" name="color-scheme" content="light dark"/>
     <meta id="_theme_color" name="theme-color" content="#222"/>
-    <link id="_style" rel="stylesheet" href="/dove/assets/mallet/css/style.css?v=0.0.2.6255"/><!-- custom-head --><!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+    <link id="_style" rel="stylesheet" href="/dove/assets/mallet/css/style.css?v=0.0.2.1554"/><!-- custom-head --><!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
-    <div class="_views">
+    <div class="_views _app __fadein" id="app">
       <div class="_view">
-        <header class="_header">
-          <div class="_layoutx">
-            <div class="flex">
-              <div class="fill">
-                <div class="_logo"><a href="/dove">Dove</a>
+        <div class="_layoutx _1020">
+          <div class="container-lg px-3 markdown-body" id="layout">
+            <div id="header">
+              <div id="_header-bar">
+                <div class="_flex my-2">
+                  <div class="_flex-main">
+                    <h1 class="_logo" id="_title"><a href="/dove">Dove</a></h1>
+                  </div>
                 </div>
               </div>
-              <div class="fit">
-                <div class="_theme_switch _needjs"><a href="#" onclick="event.preventDefault();theme.change();" title="Change Theme (Alt+T)"><i class="_icon"><i class="isvg">
-                        <svg viewBox="0 0 24 24">
-                          <path d="M19,3H14V5H19V18L14,12V21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M10,18H5L10,12M10,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H10V23H12V1H10V3Z" fill="currentColor" fill-opacity="1"></path>
-                        </svg></i></i></a></div>
-              </div>
             </div>
-          </div>
-        </header>
-        <nav class="_nav">
-          <div class="_layoutx _960">
-            <p><b>Mallet</b>
+            <nav class="_nav">
+              <div class="_layout">
+                <p><b>Mallet</b>
 <i class="_icon"><i class="isvg">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                  </svg></i></i>
+                      <svg viewBox="0 0 24 24">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                      </svg></i></i>
 <a href="/dove/mallet/preview.html">Preview</a>
 <a href="/dove/mallet/legacy.html">Legacy</a>
 <i class="_icon"><i class="itext">&bull;</i></i>
@@ -43,23 +38,37 @@
 <a href="/dove/mallet/">Home</a>
 <a href="/dove/mallet/page.html">Page</a>
 <a href="/dove/mallet/404.html">404</a>
-            </p>
+                </p>
+              </div>
+            </nav>
+            <main class="_main">
+              <article class="_article _layout">
+                <h1>Page</h1>
+                <p><code>// content for : Page</code></p>
+              </article>
+            </main>
+            <footer class="_footer footer mt-5" id="footer">
+              <div class="_layout">
+                <div class="border-top border-gray-light pt-3">
+                  <p><code>// footer</code></p>
+                </div>
+                <div class="border-top border-gray-light pt-3">
+                  <p class="text-right text-grey"><small>
+                      This site is open source.
+                      <a href="https://github.com/techie-joe/dove/edit/main/_pugs/mallet/page.html.pug" target="_edit">Improve this page</a>.</small></p>
+                </div>
+              </div>
+            </footer>
           </div>
-        </nav>
-        <main class="_main">
-          <article class="_article _layoutx _960">
-            <h1>Page</h1>
-            <p><code>// content for : Page</code></p>
-          </article>
-        </main>
-        <footer class="_footer">
-          <div class="_layoutx _960">
-            <p><code>// footer</code></p>
-            <p class="text-right text-grey"><small>
-                This site is open source.
-                <a href="https://github.com/techie-joe/dove/edit/main/_pugs/mallet/page.html.pug" target="_edit">Improve this page</a>.</small></p>
-          </div>
-        </footer>
+        </div>
+      </div>
+      <div class="_view">
+        <div class="_layoutx _1020">
+          <div class="_theme_switch _needjs"><a href="#" onclick="event.preventDefault();theme.change();" title="Change Theme (Alt+T)"><i class="_icon"><i class="isvg">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M19,3H14V5H19V18L14,12V21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M10,18H5L10,12M10,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H10V23H12V1H10V3Z" fill="currentColor" fill-opacity="1"></path>
+                  </svg></i></i></a></div>
+        </div>
       </div>
     </div><!-- custom-body -->
     <div class="_copyright"><span class="_copyright_text">@ by Techie Joe 2025</span>
@@ -67,6 +76,6 @@
     <div class="_credit"><a class="_credit_link" href="https://techie-joe.github.io/core" title="Go to the Core">✨ Made with Core</a>
     </div>
     <script>window.ghost='bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlv';</script>
-    <script type="text/javascript" src="/dove/assets/themejs/themejs_v2.0.js?v=0.0.2.6255"></script>
+    <script type="text/javascript" src="/dove/assets/themejs/themejs_v2.0.js?v=0.0.2.1554"></script>
   </body>
 </html>

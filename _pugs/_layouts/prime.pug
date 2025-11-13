@@ -44,11 +44,12 @@ block html
               block content
                 h1 !{title}
                 p: code // content for : !{title}
-            footer._footer.footer.mt-5: ._layout.border-top.border-gray-light.pt-3
+            footer._footer.footer.mt-5: ._layout
               block footer
-                p: code // footer
-                +thin_hr
-              p.text-right.text-grey: small: +edit_link(path)
+                .border-top.border-gray-light.pt-3
+                  p: code // footer
+              .border-top.border-gray-light.pt-3
+                p.text-right.text-grey: small: +edit_link(path)
           //- .container-lg
         ._view: ._layout._1020
           +theme_switch

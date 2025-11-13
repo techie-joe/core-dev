@@ -1,10 +1,22 @@
-// @use "_color" as *;
+@use "color" as *;
 @use "sass:color";
 @use "_mallet";
-@use "helper";
+// @use "helper";
 @use "core";
+// ---------------------------------------------------------------
+._1020 { max-width:1020px; @extend .mc; }
+._960 { max-width:960px; @extend .mc; }
 //- --------------------------------------------------------------
 // fixes
+// ._footer {margin-bottom:3rem}
+// ---------------------------------------------------------------
+/*
+._logo { font-family: 'Arial', system-ui, sans-serif; }
+._logo { font-weight: 600 }
+._logo, ._nav, ._theme_switch {
+  a { text-decoration:none !important; color:inherit }
+  a:hover { color:$text-blue }
+}
 body{color:#444}._dark body{color:#bbb}
 dt{margin-top:.5rem}
 
@@ -18,6 +30,13 @@ th,dt,.hero,h1,h2,h3,h4,h5,h6{color:#000}._dark th,._dark dt,._dark .hero,._dark
 #_title,#_header-bar #_title a{color:#888}
 #_header-bar #_title a:hover{color: #4660e1}
 
-.markdown-body blockquote{box-shadow:none;margin:1rem 0;padding:0 1rem;border-left:.5em solid rgba(128, 128, 128, 0.5)}
-.markdown-body details{margin:.5rem 0}
-.markdown-body summary{margin-bottom:0}
+article {
+  pre {margin:.5rem;overflow:auto}
+}
+
+.markdown-body {
+  blockquote{box-shadow:none;margin:1rem 0;padding:0 1rem;border-left:.5em solid rgba(128, 128, 128, 0.5)}
+  details{margin:.5rem 0}
+  summary{margin-bottom:0}
+}
+*/

@@ -3,8 +3,7 @@ block append style
   style.
     ._nav { display:none !important }
 block footer
-  p: +site_footer
-  +thin_hr
+  .border-top.border-gray-light.pt-3: p: +site_footer
 //- --------------------------------------------------------------
 block append vars
   -
@@ -19,8 +18,8 @@ block content
       +_a([live_url,'home'].join('/'))| !{site_title}(md)
   nav: ul
     li: +site_nav('core')
-    li: +site_nav('nova')
     li: +site_nav('mallet')
+    li: +site_nav('nova')
     li: +site_nav('prime')
   pre.scrollable.
     source   : #[a._no_u(href=source_url target="_edit") techie-joe/dove]
