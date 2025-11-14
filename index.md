@@ -1,6 +1,6 @@
 ---
 title: Home
-description: Introduction to the Core.
+description: Introduction to Dove.
 layout: home
 permalink: home
 ---
@@ -8,6 +8,11 @@ permalink: home
 # {{ site.title }}(md)
 
 {{ site.description }}
+
+```yml
+# _config.yml
+hello: world
+```
 
 ## Pages
 
