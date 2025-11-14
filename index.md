@@ -5,7 +5,7 @@ layout: home
 permalink: home
 ---
 
-# {{ site.title }}
+# {{ site.title }}(md)
 
 {{ site.description }}
 
