@@ -25,11 +25,12 @@ block content
     li: +site_nav('nova')
     li: +site_nav('prime')
   pre.scrollable.
-    source   : #[a._no_u(href=source_url target="_edit") techie-joe/dove]
-    version  : !{version}
-    revision : !{revision}
-    site_url : #[a._no_u(href=site_url)|!{site_url}]
-    home_url : #[a._no_u(href=home_url)|!{home_url}]
-    ghost                : !{ghost}
-    google_analytics     : !{google_analytics||'(undefined)'}
-    cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
+    #[b.text-gray # _config.pug]
+      source   : #[a._no_u(href=source_url target="_edit") techie-joe/dove]
+      version  : !{version}
+      revision : !{revision}
+      site_url : #[a._no_u(href=site_url)|!{site_url}]
+      home_url : #[a._no_u(href=home_url)|!{home_url}]
+      ghost                : !{ghost}
+      google_analytics     : !{google_analytics||'(undefined)'}
+      cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
