@@ -50,7 +50,7 @@ include /_config
   onclick = ( _script='' ) => 'event.preventDefault();' + _script;
   capitalize = s => s.replace(/\w\S*/g, w => w[0].toUpperCase() + w.slice(1).toLowerCase());
 
-include mixins
+include _mixins
 
 mixin fonts
   if fonts

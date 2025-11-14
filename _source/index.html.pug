@@ -1,9 +1,12 @@
-extends /_pugs/_layouts/prime
+extends /_layouts/prime
 block append style
   style.
     ._nav { display:none !important }
 block footer
-  .border-top.border-gray-light.pt-3: p: +site_footer
+  +thin_hr
+  p: +site_footer
+  +thin_hr
+  p.text-right.text-grey: small: +edit_link(path)
 //- --------------------------------------------------------------
 block append vars
   -

@@ -1,8 +1,8 @@
-include main
+include _main
 block vars
   -
-    layout = 'nova'
-    htmlClass = ['_nova_layout']
+    layout = 'core'
+    htmlClass = ['_core_layout']
     bodyClass = []
     mainClass = []
 block update_vars
@@ -21,28 +21,30 @@ block html
       meta#_color_scheme(name="color-scheme" content=color_scheme||'')/
       meta#_theme_color(name="theme-color" content=theme_color||'')/
       block style
-        link#_style(rel="stylesheet" href!=`${site_url}/assets/nova/css/style.css?v=${version}`)/
+        link#_style(rel="stylesheet" href!=`${site_url}/assets/mallet/css/style.css?v=${version}`)/
       block custom_head
         +custom_head
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
-      ._views: ._view
-        header._header: ._layoutx
-          block header
-            //- code // header
-            .flex
-              .fill: +logo
-              .fit: +theme_switch
-        nav._nav: ._layoutx._960
-          block nav
-            p: code // nav
-        main._main: article._article._layoutx._960
-          block content
-            h1 !{title}
-            p: code // content for : !{title}
-        footer._footer: ._layoutx._960
-          block footer
-            p: code // footer
-          p.text-right.text-grey: small: +edit_link(path)
+      main#app._app.__fadein
+        #layout.container-lg.px-3.markdown-body
+          #header: #_header-bar: ._flex.my-2: ._flex-main
+            block header
+              //- p: code // header
+              h1#_title._logo: a(href=home_url) #{site_title}
+          nav._nav
+            block nav
+              p: code // nav
+          article._article
+            block content
+              h1 !{title}
+              p: code // content for : !{title}
+          footer#footer
+            block footer
+              p: code // footer
+              hr/
+              p.text-right.text-grey: small: +edit_link(path)
+        //- .container-lg
+        +theme_switch
       block custom_body
         +custom_body

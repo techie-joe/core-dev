@@ -2,7 +2,7 @@
 @use "sass:color";
 @use "_primer";
 @use "helper";
-@use "core";
+@use "dove";
 // ---------------------------------------------------------------
 ._1020 { max-width:1020px; @extend .mc; position:relative }
 ._960 { max-width:960px; @extend .mc; }

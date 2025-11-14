@@ -1,7 +1,7 @@
 @use "color" as *;
 @use "sass:color";
 @use "helper";
-@use "core";
+@use "dove";
 @use "_mallet";
 // ---------------------------------------------------------------
 ._960 { max-width:960px; @extend .mc; }

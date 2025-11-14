@@ -1,4 +1,4 @@
-include main
+include _main
 mixin thin_hr
   hr.thin.border-gray-light/
 block vars
@@ -46,9 +46,9 @@ block html
                 p: code // content for : !{title}
             footer._footer.footer.mt-5: ._layout
               block footer
-                .border-top.border-gray-light.pt-3
-                  p: code // footer
-              .border-top.border-gray-light.pt-3
+                +thin_hr
+                p: code // footer
+                +thin_hr
                 p.text-right.text-grey: small: +edit_link(path)
           //- .container-lg
         ._view: ._layout._1020
