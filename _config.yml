@@ -1,10 +1,10 @@
-remote_theme: techie-joe/core
+remote_theme: techie-joe/dove
 # the location of the remote_theme.
 
-plugins:
+# plugins:
 # - jekyll-paginate
 # - jekyll-sitemap
-- jekyll-remote-theme
+# - jekyll-remote-theme
 # add jekyll-remote-theme to the plugins list.
 
 version: '0.0.2'
