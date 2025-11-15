@@ -9,8 +9,8 @@ body { overflow:auto }
 ._app { overflow:initial;position:initial }
 dt { margin-block-start:1rem }
 dd { margin-block-end:1rem }
-#header { padding:1rem 0 }
-#_title._logo a { display:inline-block;margin: 13px 0 }
+#header { padding-top:1rem }
+#_title._logo a { display:inline-block;margin:13px 0 }
 .hero { color:#000;line-height:1.1 }
 ._nav { padding:1rem 0;border-bottom: 2px solid rgba(128, 128, 128, .4); }
 .markdown-body {
@@ -29,7 +29,7 @@ article {
     width:1.4em;
   }
 }
-.footnotes{border:none}
+.footnotes {border:none}
 #footer {margin-top:3rem;margin-bottom:3rem}
 ._theme_switch { font-size:1.5em }
 ._copyright_text,
