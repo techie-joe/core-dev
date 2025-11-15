@@ -4,19 +4,17 @@
 @use "dove";
 @use "_mallet";
 // ---------------------------------------------------------------
-._960 { max-width:960px; @extend .mc; }
-// ---------------------------------------------------------------
 // fixes
+body { overflow:auto }
+._app { overflow:initial;position:initial }
+dt { margin-block-start:1rem }
+dd { margin-block-end:1rem }
 #header { padding:1rem 0 }
-#_title._logo a {
-  display: inline-block;
-  margin: 13px 0;
-}
+#_title._logo a { display:inline-block;margin: 13px 0 }
 .hero { color:#000;line-height:1.1 }
-.footnotes{border:none}
 ._nav { padding:1rem 0;border-bottom: 2px solid rgba(128, 128, 128, .4); }
-#footer {margin-top:3rem;margin-bottom:3rem}
 .markdown-body {
+  blockquote { border-left:.5rem solid;box-shadow:none }
   summary { margin:0 }
   table {
     &.borderless {
@@ -31,43 +29,20 @@ article {
     width:1.4em;
   }
 }
+.footnotes{border:none}
+#footer {margin-top:3rem;margin-bottom:3rem}
 ._theme_switch { font-size:1.5em }
-._theme_switch,
-._credit { right:16px }
+._copyright_text,
+._credit_link { background-color:#ddd !important }
 //---------------------------------------------------------------
 ._dark {
   .hero { color:#fff }
-  .markdown-body table {
-    thead tr,
-    tr:nth-child(2n) { background-color: rgba(#000,.1) }
+  .markdown-body {
+    table {
+      thead tr,
+      tr:nth-child(2n) { background-color: rgba(#000,.1) }
+    }
   }
+  ._copyright_text,
+  ._credit_link { background-color:#222 !important }
 }
-/*
-body{color:#444}._dark body{color:#bbb}
-._logo { font-family: 'Arial', system-ui, sans-serif; }
-._logo { font-weight: 600 }
-._logo, ._nav, ._theme_switch {
-  a { text-decoration:none !important; color:inherit }
-  a:hover { color:$text-blue }
-}
-dt{margin-top:.5rem}
-
-th,dt,.hero,h1,h2,h3,h4,h5,h6{color:#000}._dark th,._dark dt,._dark .hero,._dark h1,._dark h2,._dark h3,._dark h4,._dark h5,._dark h6{color:#fff}
-._app{overflow-y:scroll}
-.indent,.big-first.indent{text-indent:3em}
-.box{padding:.5em;border-radius:6px}
-
-#_header-bar h1 { display:inline-block; margin:0; border:0; padding:0; font-size:1.2rem; line-height:1.5rem; }
-#_title,#_header-bar #_title a{color:#888}
-#_header-bar #_title a:hover{color: #4660e1}
-
-article {
-  pre {margin:.5rem;overflow:auto}
-}
-
-.markdown-body {
-  blockquote{box-shadow:none;margin:1rem 0;padding:0 1rem;border-left:.5em solid rgba(128, 128, 128, 0.5)}
-  details{margin:.5rem 0}
-  summary{margin-bottom:0}
-}
-*/
