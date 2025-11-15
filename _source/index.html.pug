@@ -1,4 +1,4 @@
-extends /_layouts/prime
+extends /_source/_layouts/prime
 block append style
   style.
     ._nav { display:none !important }
@@ -9,9 +9,8 @@ block footer
   p.text-right.text-grey: small: +edit_link(path)
 //- --------------------------------------------------------------
 block append vars
-  -
-    path   = 'index.html'
-    title  = `Index`
+  - path   = 'index.html'
+  - title  = `Index`
 block append style
   style.
     h1.hero { font-family: 'Arial',system-ui,sans-serif }
@@ -26,11 +25,11 @@ block content
     li: +site_nav('prime')
   pre.scrollable.
     #[b.text-gray # _config.pug]
-      source   : #[a._no_u(href=source_url target="_edit") techie-joe/dove]
-      version  : !{version}
-      revision : !{revision}
-      site_url : #[a._no_u(href=site_url)|!{site_url}]
-      home_url : #[a._no_u(href=home_url)|!{home_url}]
-      ghost                : !{ghost}
-      google_analytics     : !{google_analytics||'(undefined)'}
-      cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
+    source   : #[a._no_u(href=source_url target="_edit") techie-joe/dove]
+    version  : !{version}
+    revision : !{revision}
+    site_url : #[a._no_u(href=site_url)|!{site_url}]
+    home_url : #[a._no_u(href=home_url)|!{home_url}]
+    ghost                : !{ghost}
+    google_analytics     : !{google_analytics||'(undefined)'}
+    cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
