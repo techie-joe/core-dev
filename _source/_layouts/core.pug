@@ -27,7 +27,7 @@ block html
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
       ._views
-        ._view: ._layout._1020
+        ._view: ._layout
           header._header: ._layout
             block header
               //- p: code // header
@@ -45,7 +45,7 @@ block html
               p: code // footer
               hr/
               p.text-right.text-grey: small: +edit_link(path)
-        ._view: ._layout._1020
+        ._view: ._layout
           +theme_switch
         block custom_body
           +custom_body

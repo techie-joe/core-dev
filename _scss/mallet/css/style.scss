@@ -7,12 +7,20 @@
 // fixes
 body { overflow:auto }
 ._app { overflow:initial;position:initial }
+details { margin:.5rem 0 }
 dt { margin-block-start:1rem }
 dd { margin-block-end:1rem }
 #header { padding-top:1rem }
 #_title._logo a { display:inline-block;margin:13px 0 }
 .hero { color:#000;line-height:1.1 }
 ._nav { padding:1rem 0;border-bottom: 2px solid rgba(128, 128, 128, .4); }
+.text-yellow { color:$text-yellow !important }
+article {
+  input[type=checkbox].task-list-item-checkbox {
+    height:1.4em;
+    width:1.4em;
+  }
+}
 .markdown-body {
   blockquote { border-left:.5rem solid;box-shadow:none }
   summary { margin:0 }
@@ -20,13 +28,6 @@ dd { margin-block-end:1rem }
     &.borderless {
       tr { background:none !important }
     }
-  }
-}
-article {
-  details { margin:.5rem 0 }
-  input[type=checkbox].task-list-item-checkbox {
-    height:1.4em;
-    width:1.4em;
   }
 }
 .footnotes {border:none}

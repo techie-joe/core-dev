@@ -1,20 +1,25 @@
 @use "_color" as *;
 @use "sass:color";
-@use "_primer";
 @use "helper";
 @use "dove";
+@use "_primer";
 // ---------------------------------------------------------------
-._1020 { max-width:1020px; @extend .mc; position:relative }
+._1200 { max-width:1200px; @extend .mc; position:relative }
 ._960 { max-width:960px; @extend .mc; }
 // ---------------------------------------------------------------
 // fixes
 body {overflow-y:scroll}
-
+details { margin-bottom:16px }
+hr.thin {
+  height:0;
+  background:none;
+  border-bottom:1px solid #888;
+  margin:16px 0;
+}
 .hero { line-height:1.15 }
-
-.text-yellow{color:$text-yellow !important}
-.text-gray,.text-grey { color:$text-grey }
-.text-slategray,.text-slategrey { color:$text-slategrey }
+.text-yellow { color:$text-yellow !important }
+.text-gray,.text-grey { color:$text-grey !important }
+.text-slategray,.text-slategrey { color:$text-slategrey !important }
 
 .text-primary { color:$text-blue }
 .text-secondary { color:$text-slategrey }
@@ -22,21 +27,14 @@ body {overflow-y:scroll}
 .text-justify{text-align:justify}
 
 .bg-primary { background-color:$text-blue }
-
-details { margin-bottom: 16px }
-
-hr.thin {
-  height:0;
-  background:none;
-  border-bottom:1px solid #888;
-  margin:16px 0;
+.bg-primary {
+  code,tt { background-color: rgba(#1b1f23,.15); }
 }
 
-.markdown-body {
-  .bg-primary {
-    code,tt { background-color: rgba(#1b1f23,.15); }
-  }
+article {
   img { display:block }
+}
+.markdown-body {
   table {
     & { display:table;border-collapse:collapse;border:1px solid;width:auto }
     thead tr { background-color: #f6f8fa }
@@ -59,22 +57,19 @@ hr.thin {
     color: color.invert(#24292e);
     background-color: color.invert(#fff);
   }
+  hr { background-color: #444 }
+  blockquote { border-color:#444 }
   .markdown-body {
     h1,h2 { border-color:#222 }
-    code,tt { background-color: rgba(color.invert(#1b1f23),.15); }
-    .bg-primary {
-      code,tt { background-color: rgba(color.invert(#1b1f23),.23); }
-    }
-    table {
-      &, th, td { border-color:#444 }
-      tr { background-color: color.invert(#fff); }
-      tr:nth-child(2n),
-      thead tr { background-color: #111 }
-      &.borderless tr { background:none }
-    }
+  }
+  code,tt { background-color: rgba(color.invert(#1b1f23),.15); }
+  .bg-primary {
+    code,tt { background-color: rgba(color.invert(#1b1f23),.23); }
+  }
+  article {
+    pre,
     .highlight,
-    .highlight pre,
-    pre { background-color: color.invert(#e6e8ea); }
+    .highlight pre { background-color: color.invert(#e6e8ea); }
     .highlight {
       code { background:none }
       .err { color:#d22 }
@@ -85,9 +80,14 @@ hr.thin {
       .k,.o,.kd { color:#fff }
       .kc { color:#dbd6d1 }
     }
+    table {
+      &, th, td { border-color:#444 }
+      tr { background-color: color.invert(#fff); }
+      tr:nth-child(2n),
+      thead tr { background-color: #111 }
+      &.borderless tr { background:none }
+    }
   }
-  hr { background-color: #444 }
-  blockquote { border-color:#444 }
   .border-gray-light { border-color:#222 !important }
 }
 // ---------------------------------------------------------------
