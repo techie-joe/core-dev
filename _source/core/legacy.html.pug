@@ -1,8 +1,9 @@
 extends _html
 block append vars
-  -
-    path   = 'legacy.html'
-    title  = `Legacy`
+  - path   = 'legacy.html'
+  - title  = `Legacy`
 block content
   include /_includes/legacy.html
 block footer
+  hr/
+  p.text-right.text-grey: small: +edit_link(path)

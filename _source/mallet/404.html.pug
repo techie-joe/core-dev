@@ -1,9 +1,8 @@
 extends _html
 block append vars
-  -
-    path   = '404.html'
-    title  = `Not found`
-    description = `The content you are looking for is not here.`
+  - path   = '404.html'
+  - title  = `Not found`
+  - description = `The content you are looking for is not here.`
 block content
   .flex(style="margin:1rem auto 3rem auto")
     .fit(style="font-size:4rem;padding:.8rem;") 🤷
@@ -13,7 +12,7 @@ block content
   div(style="margin-top:3rem")
   hr/
   p
-    +back_button.button.text-secondary
+    +back_button.button.text-secondary._bt.-l
     +l
-    +gohome_button.button.text-secondary
+    +gohome_button.button.text-secondary._bt.-l
 block footer

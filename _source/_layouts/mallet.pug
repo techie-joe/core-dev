@@ -1,4 +1,7 @@
 include _main
+mixin mallet_theme_switch(title='Change Theme (Alt+T)')
+  ._theme_switch._needjs: a(href='#' onclick!=onclick(js.themeChange) title=title)._bt.-h: block theme_switch
+    +isvg(svgi.compare)
 block vars
   -
     layout = 'core'
@@ -28,7 +31,7 @@ block html
     body
       main#app._app.__fadein
         #layout.container-lg.px-3.markdown-body
-          #header: #_header-bar: ._flex.my-2: ._flex-main
+          #header: #_header-bar: ._flex: ._flex-main
             block header
               //- p: code // header
               h1#_title._logo: a(href=home_url) #{site_title}
@@ -41,10 +44,11 @@ block html
               p: code // content for : !{title}
           footer#footer
             block footer
+              hr/
               p: code // footer
               hr/
               p.text-right.text-grey: small: +edit_link(path)
         //- .container-lg
-        +theme_switch
+        +mallet_theme_switch
       block custom_body
         +custom_body

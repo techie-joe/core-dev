@@ -17,7 +17,7 @@
   position:absolute;
   position:fixed;
   top:auto;
-  bottom:3px;
+  bottom:0;
 }
 ._copyright {
   right:auto;
@@ -32,7 +32,7 @@
   font-family: 'Arial', system-ui, sans-serif !important;
   font-size:12px !important;
   padding:.5em !important;
-  border-radius:5px !important;
+  border-radius:5px 5px 0 0 !important;
   background: #fff !important;
   color:inherit !important;
   text-decoration: none !important;

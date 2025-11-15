@@ -7,28 +7,40 @@
 ._960 { max-width:960px; @extend .mc; }
 // ---------------------------------------------------------------
 // fixes
+#header { padding:1rem }
+#_title._logo a {
+  display: inline-block;
+  padding: 13px 0;
+}
 .hero { color:#000;line-height:1.1 }
 .footnotes{border:none}
 ._nav { padding:1rem 0;border-bottom: 2px solid rgba(128, 128, 128, .4); }
-#footer {margin-bottom:3rem}
-#footer { border-top: 2px solid rgba(128, 128, 128, .4); }
+#footer {margin-top:3rem;margin-bottom:3rem}
 .markdown-body {
   summary { margin:0 }
   table {
     &.borderless {
-      tr { background:none }
+      tr { background:none !important }
     }
   }
 }
 article {
+  details { margin:.5rem 0 }
   input[type=checkbox].task-list-item-checkbox {
     height:1.4em;
     width:1.4em;
   }
 }
+._theme_switch { font-size:1.5em }
+._theme_switch,
+._credit { right:16px }
 //---------------------------------------------------------------
 ._dark {
   .hero { color:#fff }
+  .markdown-body table {
+    thead tr,
+    tr:nth-child(2n) { background-color: rgba(#000,.1) }
+  }
 }
 /*
 body{color:#444}._dark body{color:#bbb}
