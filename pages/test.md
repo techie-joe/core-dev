@@ -6,6 +6,8 @@ permalink: test
 
 <h1 id="_hero-title">👔 Techie Joe's Website</h1>
 
+A personal hub of a full-stack developer. The place where I build, break, and refine ideas. This is where I share my work, share tools I create, and document my journey with you.
+
 ---
 
 | [My Code Library][library] | [Ace][ace] - [Mallet][mallet] - [Sites][sites] - [Dzikr][dzikr] |  
