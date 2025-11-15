@@ -27,10 +27,10 @@ block html
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
       ._views
-        ._view: ._layout
+        ._view: ._layout._1020
           header._header: ._layout
             block header
-              //- code // header
+              //- p: code // header
               +logo
           nav._nav: ._layout._960
             block nav
@@ -45,8 +45,8 @@ block html
               p: code // footer
               hr/
               p.text-right.text-grey: small: +edit_link(path)
-        ._view: ._layout
+        ._view: ._layout._1020
           +theme_switch
+        block custom_body
+          +custom_body
       //- ._views
-      block custom_body
-        +custom_body
