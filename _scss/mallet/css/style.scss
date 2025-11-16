@@ -20,7 +20,13 @@ dd { margin-block-end:1rem }
   padding: 0;
   font-size: 1.2rem;
   line-height: 1.5rem;
-  a { display:inline-block;margin:13px 0;color:#888 }
+  a {
+    text-decoration:none !important;
+    display:inline-block;
+    margin:13px 0;
+    color:#888;
+  }
+  a:hover { color:$text-blue }
 }
 .hero { color:#000;line-height:1.1 }
 ._nav { padding:1rem 0;border-bottom: 2px solid rgba(128, 128, 128, .4); }
