@@ -7,11 +7,21 @@
 // fixes
 body { overflow:auto }
 ._app { overflow:initial;position:initial }
+code { vertical-align:text-bottom }
 details { margin:.5rem 0 }
 dt { margin-block-start:1rem }
 dd { margin-block-end:1rem }
-#header { padding-top:1rem }
-#_title._logo a { display:inline-block;margin:13px 0 }
+.header { padding-top:1rem }
+._logo {
+  font-weight: 600;
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  a { display:inline-block;margin:13px 0;color:#888 }
+}
 .hero { color:#000;line-height:1.1 }
 ._nav { padding:1rem 0;border-bottom: 2px solid rgba(128, 128, 128, .4); }
 .text-yellow { color:$text-yellow !important }
@@ -31,7 +41,7 @@ article {
   }
 }
 .footnotes {border:none}
-#footer {margin-top:3rem;margin-bottom:3rem}
+.footer {margin-top:3rem;margin-bottom:3rem}
 ._theme_switch { font-size:1.5em }
 ._copyright_text,
 ._credit_link { background-color:#ddd !important }

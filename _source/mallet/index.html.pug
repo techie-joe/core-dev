@@ -2,3 +2,48 @@ extends _html
 block append vars
   - path   = 'index.html'
   - title  = `Home`
+//- block header
+  ._logo: a &nbsp;
+  style.
+    ._logo { opacity:0;cursor:default }
+block content
+  p: code // content for : !{title}
+
+//- .hero-box-1
+block prepend content
+  block hero-box
+    style.
+      .hero-box-1 { padding:0 }
+      .hero-box-1 .site-description {
+        margin-left:5.3rem;
+        font-weight: 300;
+        font-size: 1.1em;
+      }
+      .hero-box-1 .hero-hr { margin-top:45px }
+    .hero-box-1.box
+      h1#_hero-title ⚒️ Heroic Title
+      p.site-description Your site's description or mission statement.
+      hr.hero-hr/
+
+//- .hero-box-2
+block prepend content
+  block hero-box
+    style.
+      .hero-box-2 {
+        margin:.5rem 0;
+        padding: 1px 2rem 3rem;
+        background: linear-gradient(45deg, #37b4aa, #b05eef, transparent);
+        color: #fff;
+      }
+      .hero-box-2 hr { border-color: #cdb8e3 }
+      .hero-box-2 .site-description {
+        margin-left:5.3rem;
+        font-weight: 300;
+        font-size: 1.1em;
+        color: #000;
+      }
+      ._dark .hero-box-2 .site-description { color: #fff }
+    .hero-box-2.box
+      h1#_hero-title ⚒️ Heroic Title
+      p.site-description Your site's description or mission statement.
+    hr/

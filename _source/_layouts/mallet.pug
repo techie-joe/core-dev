@@ -1,19 +1,19 @@
 include _main
 mixin mallet_theme_switch(title='Change Theme (Alt+T)')
-  ._theme_switch._needjs: a(href='#' onclick!=onclick(js.themeChange) title=title)._bt.-h: block theme_switch
+  ._theme_switch._needjs: a(href='#' onclick!=onclick(js.themeChange) title=title)._bt.-h
     +isvg(svgi.compare)
 block vars
   -
-    layout = 'core'
-    htmlClass = ['_core_layout']
+    layout = 'mallet'
+    htmlClass = ['_mallet_layout']
     bodyClass = []
     mainClass = []
 block update_vars
 block html
   doctype html
   html(lang=lang||'en-US' class=htmlClass.join(' '))
-    |<!-- page.path   : !{path} -->
-    |<!-- page.layout : pugs/!{layout} -->
+    |<!-- path   : !{path} -->
+    |<!-- layout : pugs/!{layout} -->
     head
       meta(charset=charset||'utf-8')/
       |<!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -29,12 +29,12 @@ block html
         +custom_head
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
-      main#app._app.__fadein
+      main#_main._app.__fadein
         #layout.container-lg.px-3.markdown-body
-          #header: #_header-bar: ._flex: ._flex-main
+          header.header: #_header-bar: ._flex: ._flex-main
             block header
               //- p: code // header
-              h1#_title._logo: a(href=home_url) #{site_title}
+              ._logo: a(href=home_url) #{site_title}
           nav._nav
             block nav
               p: code // nav
@@ -42,7 +42,7 @@ block html
             block content
               h1 !{title}
               p: code // content for : !{title}
-          footer#footer
+          footer.footer
             block footer
               hr/
               p: code // footer
@@ -50,5 +50,5 @@ block html
               p.text-right.text-grey: small: +edit_link(path)
         //- .container-lg
         +mallet_theme_switch
-      block custom_body
-        +custom_body
+        block custom_body
+          +custom_body

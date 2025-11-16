@@ -70,7 +70,7 @@ mixin manifest
   link(rel="manifest" href!=`${site_url}/manifest.json?v=${version}`)/
 
 mixin logo
-  ._logo: block logo
+  ._logo
     a(href=home_url) #{site_title}
 
 mixin back_button
@@ -80,15 +80,15 @@ mixin gohome_button
   a(href=home_url title="Go to Home Page")&attributes(attributes) Home
 
 mixin copyright
-  ._copyright: block copyright
+  ._copyright
     span._copyright_text| @ by #{author} !{year}
 
 mixin credit
-  ._credit: block credit
+  ._credit
     a._credit_link(href='https://techie-joe.github.io/core' title="Go to the Core")| ✨ Made with Core
 
 mixin theme_switch(title='Change Theme (Alt+T)')
-  ._theme_switch._needjs: a(href='#' onclick!=onclick(js.themeChange) title=title): block theme_switch
+  ._theme_switch._needjs: a(href='#' onclick!=onclick(js.themeChange) title=title)
     +isvg(svgi.compare)
 
 mixin themejs
