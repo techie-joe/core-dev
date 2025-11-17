@@ -10,17 +10,17 @@ use_footer: false
 
 ```yml
 # _config.yml
-site.title           : {{ site.title }}
-site.description     : {{ site.description }}
-site_url             : {{ site.github.url }}
-home_url             : {{ site.github.url }}
-source               : [techie-joe/dove](https://github.com/techie-joe/dove)
-version              : {{ site.version }}
-revision             : {{ site.github.build_revision }}
-ghost                : {{ site.ghost || '(undefined)' }}
-google_analytics     : {{ site.google_analytics || '(undefined)' }}
-cloudflare_analytics : {{ site.cloudflare_analytics || '(undefined)' }}
-undefined : {{ site.undefined || '(undefined)' }}
+site.title           : {{ site.title | '(undefined)' }}
+site.description     : {{ site.description | '(undefined)' }}
+site_url             : {{ site.github.url | '(undefined)' }}
+home_url             : {{ site.github.url | '(undefined)' }}
+source               : https://github.com/techie-joe/dove
+version              : {{ site.version | '(undefined)' }}
+revision             : {{ site.github.build_revision | '(undefined)' }}
+ghost                : {{ site.ghost | '(undefined)' }}
+google_analytics     : {{ site.google_analytics | '(undefined)' }}
+cloudflare_analytics : {{ site.cloudflare_analytics | '(undefined)' }}
+undefined : {{ site.undefined | '(undefined)' }}
 ```
 
 ## Pages
