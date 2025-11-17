@@ -30,7 +30,7 @@ cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
 
 source_url   : {{ site.github.repository_url }} ( site.github.repository_url )
 ```
-{: style="max-height:235px" }
+{: style="max-height:235px;overflow:auto" }
 
 [Dove.html]({ site.baseurl })
 
