@@ -1,5 +1,3 @@
-###### site
-
 ```yml
 theme        : {{ site.theme }}
 remote_theme : {{ site.remote_theme }}
@@ -74,88 +72,6 @@ liquid:
   error_mode       : {{ site.liquid.error_mode }}
   strict_filters   : {{ site.liquid.strict_filters }}
   strict_variables : {{ site.liquid.strict_variables }}
-```
-
-###### site.github
-
-```yml
-project_title   : {{ site.github.project_title }}
-project_tagline : {{ site.github.project_tagline }}
-repository_name : {{ site.github.repository_name }}
-repository_nwo  : {{ site.github.repository_nwo }}
-repository_url  : {{ site.github.repository_url }}
-baseurl         : {{ site.github.baseurl }}
-url             : {{ site.github.url }}
-api_url         : {{ site.github.api_url }}
-language        : {{ site.github.language }}
-contributors    : {{ site.github.contributors.size | default:0 }}
-releases        : {{ site.github.releases.size | default:0 }}
-private         : {{ site.github.private }}
-show_downloads  : {{ site.github.show_downloads }}
-
-environment     : {{ site.github.environment }}
-hostname        : {{ site.github.hostname }}
-
-pages_env       : {{ site.github.pages_env }}
-pages_hostname  : {{ site.github.pages_hostname }}
-
-build_revision  : {{ site.github.build_revision }}
-source          : {{ site.github.source }}
-
-clone_url       : {{ site.github.clone_url }}
-wiki_url        : {{ site.github.wiki_url }}
-issues_url      : {{ site.github.issues_url }}
-releases_url    : {{ site.github.releases_url }}
-tar_url         : {{ site.github.tar_url }}
-zip_url         : {{ site.github.zip_url }}
-
-owner_name           : {{ site.github.owner_name }}
-owner_url            : {{ site.github.owner_url }}
-owner_gravatar_url   : {{ site.github.owner_gravatar_url }}
-public_repositories  : {{ site.github.public_repositories.size | default:0 }}
-organization_members : {{ site.github.organization_members }}
-```
-
-###### site.github.license
-
-```yml
-{%- for v in site.github.license %}
-{{ v[0] }}: {{ v[1] }}
-{%- endfor %}
-```
-
-###### site.github.owner
-
-```yml
-{%- for v in site.github.owner %}
-{{ v[0] }}: {{ v[1] }}
-{%- endfor %}
-```
-
-###### site.github.latest_release
-
-```yml
-{%- for v in site.github.latest_release %}
-{%- if v[0]!='author' %}
-{{ v[0] }}: {{ v[1] }}
-{%- else %}
-author:
-  {%- for v in site.github.latest_release.author %}
-  {{ v[0] }}: {{ v[1] }}
-  {%- endfor %}
-{%- endif %}
-{%- endfor %}
-{%- if site.github.latest_release %}
-# no release
-{%- endif %}
-```
-
-###### site.github.versions
-
-```yml
-{%- for v in site.github.versions %}
-{{ v[0] }}: {{ v[1] }}
-{%- endfor %}
 ```
 
 ###### site.sass
@@ -274,64 +190,5 @@ size: {{ site.documents.size | default:0 }}
 -
   collection : {{ file.collection }}
   url        : {{ file.url }}
-{%- endfor %}
-```
-
-###### site.static_files
-
-```yml
-size: {{ site.static_files.size | default:0 }}
-{%- for file in site.static_files %}
--
-  basename      : {{ file.basename }}
-  name          : {{ file.name }}
-  path          : {{ file.path }}
-  extname       : {{ file.extname }}
-  modified_time : {{ file.modified_time }}
-{%- endfor %}
-```
-
-###### site.posts
-
-```yml
-size: {{ site.posts.size | default:0 }}
-{%- for post in site.posts %}
--
-  title    : {{ post.title }}
-  date     : {{ post.date }}
-  layout   : {{ post.layout }}
-  ext      : {{ post.ext }}
-  slug     : {{ post.slug }}
-  id       : {{ post.id }}
-  url      : {{ post.url }}
-  previous : {{ post.previous.id }}
-  next     : {{ post.next.id }}
-  path          : {{ post.path }}
-  relative_path : {{ post.relative_path }}
-
-  excerpt       : {{ post.excerpt | jsonify }}
-  content.size  : {{ post.content.size | default:0 }}
-  output.size   : {{ post.output.size | default:0 }}
-
-  draft      : {{ post.draft }}
-  collection : {{ post.collection }}
-  categories : {{ post.categories | jsonify }}
-  tags       : {{ page.tags | jsonify }}
-{%- endfor %}
-```
-
-###### site.pages
-
-```yml
-size: {{ site.pages.size | default:0 }}
-{%- for page in site.pages %}
--
-  {%- for v in page %}
-  {%- if v[0]=='content' %}
-  {{ v[0] }}: [{{ v[1] | size }} characters]
-  {%- else %}
-  {{ v[0] }}: {{ v[1] }}
-  {%- endif %}
-  {%- endfor %}
 {%- endfor %}
 ```

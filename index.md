@@ -20,9 +20,9 @@ revision             : {{ site.revision | default: '(undefined)' }}{{'.'}}{{ sit
 ghost                : {{ site.ghost | default: '(undefined)' }}
 google_analytics     : {{ site.google_analytics | default: '(undefined)' }}
 cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
-
-fonts : {{ site.fonts | default: '(undefined)' }}
 ```
+
+[Dove.html]({ site.baseurl })
 
 ## Pages
 
