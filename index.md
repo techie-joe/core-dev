@@ -28,7 +28,7 @@ ghost        : {{ site.ghost | default: '(undefined)' }}
 google_analytics     : {{ site.google_analytics | default: '(undefined)' }}
 cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
 
-source_url   : {{ site.github.repository_url }} ( site.github.repository_url )
+source_url   : {{ site.github.repository_url }}
 ```
 {: id="pre_intro" }
 <style>article #pre_intro pre.highlight { max-height:235px }</style>
