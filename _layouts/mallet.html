@@ -25,15 +25,21 @@ layout: mallet
           <div class="_logo"><a href="{{ site.github.url }}">{{ site.title }}</a></div>
         </header>
         <nav class="_nav">
-          <p><code>// nav</code></p>
+          {% if page.use_nav == false %}
+          {%- else %}
+          <div><code>// nav</code></div>
+          {%- endif %}
         </nav>
         <article id="_article">{{ content }}</article>
         <footer class="footer">
+          {% if page.use_footer == false %}
+          {%- else %}
           <hr/>
           <p><code>// footer</code></p>
           <hr/>
           {% if site.github.private != true and site.github.license %}
           <div class="text-right text-gray">This site is open source. {% github_edit_link "Improve this page" %}.</div>
+          {%- endif %}
           {%- endif %}
         </div>
       </div>

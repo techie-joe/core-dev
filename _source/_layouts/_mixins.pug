@@ -22,11 +22,6 @@ mixin l
 mixin -
   li: block
 
-mixin ---
-  |---
-  block
-  |---
-
 mixin css(href,media)
   link(rel="stylesheet" media=media||'all' href=href)&attributes(attributes)/
 
@@ -36,7 +31,7 @@ mixin js(src)
 //- ==============================================================
 //- navigations
 //- ==============================================================
-//- a link must have href for good SEO, so # default were considered best
+//- a link must specify href for good SEO, # were considered best.
 
 mixin a(href,title)
   a(href=href||'#' title=title)&attributes(attributes): block

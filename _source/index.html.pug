@@ -17,19 +17,21 @@ block append style
 block content
   h1.hero 🕊️ !{description}
   nav: p
-      +_a([live_url,'home'].join('/'))| !{site_title}(md)
+      +_a([live_url,'md'].join('/'))| !{site_title}.md
   nav: ul
     li: +site_nav('core')
     li: +site_nav('mallet')
     li: +site_nav('nova')
     li: +site_nav('prime')
-  pre.scrollable.
+  pre.scrollable.highlight.
     #[b.text-gray # _config.pug]
-    source   : #[a._no_u(href=source_url target="_edit") techie-joe/dove]
-    version  : !{version}
-    revision : !{revision}
-    site_url : #[a._no_u(href=site_url)|!{site_url}]
-    home_url : #[a._no_u(href=home_url)|!{home_url}]
+    site_title           : !{site_title}
+    site_description     : !{site_description}
+    site_url             : #[a._no_u(href=site_url)|!{site_url}]
+    home_url             : #[a._no_u(href=home_url)|!{home_url}]
+    source               : #[a._no_u(href=source_url target="_edit") techie-joe/dove]
+    version              : !{version}
+    revision             : !{revision}
     ghost                : !{ghost}
     google_analytics     : !{google_analytics||'(undefined)'}
     cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
