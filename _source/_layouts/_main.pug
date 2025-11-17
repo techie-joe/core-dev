@@ -7,9 +7,7 @@ include /_config
   today = now.toGMTString()
   year  = now.getFullYear()
 
-  subs = now.getHours()*100+now.getMinutes()*100+now.getSeconds()
-  revision = [revision,subs].join('.')
-  v_v = [version,revision].join('.')
+  revision = [revision,now.getHours()*100+now.getMinutes()*100+now.getSeconds()].join('.')
 
   js   = {
     //- javascripts
@@ -73,7 +71,7 @@ mixin icons
 
 mixin manifest
   //- enable manifest if you're building a PWA Apps
-  link(rel="manifest" href!=`${site_url}/manifest.json?v=${v_v}`)/
+  link(rel="manifest" href!=`${site_url}/manifest.json?r=${revision}`)/
 
 //- ==============================================================
 
@@ -92,7 +90,7 @@ mixin copyright
 
 mixin credit
   ._credit
-    a._credit_link(href='https://techie-joe.github.io/core' title="Go to the Core")| ✨ Made with Core
+    a._credit_link(href='https://techie-joe.github.io/dove')| ✨ Made with Dove
 
 mixin theme_switch(title='Change Theme (Alt+T)')
   ._theme_switch._needjs: a(href='#' onclick!=onclick(js.themeChange) title=title)
@@ -100,7 +98,7 @@ mixin theme_switch(title='Change Theme (Alt+T)')
 
 mixin themejs
   script|window.ghost='!{ghost}';
-  +js(`${site_url}/assets/themejs/themejs_v2.0.js?v=${v_v}`)
+  +js(`${site_url}/assets/themejs/themejs_v2.0.js?r=${revision}`)
 
 mixin anchor
   script(src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous")

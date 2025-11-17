@@ -1,14 +1,11 @@
 ---
 title: Vars
 description: Variables on this site.
-permalink: vars
 layout: mallet
-color_scheme: dark
+use_nav: false
+use_footer: false
 ---
-
-# {{ page.title }}
-
-{{ page.description }}
+# {{ page.description }}
 
 ---
 
