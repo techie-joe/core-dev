@@ -2,9 +2,10 @@
 title: Vars
 description: Variables on this site.
 layout: mallet
-use_nav: falsex
-use_footer: falsex
+use_nav: false
+use_footer: false
 ---
+<style>article pre.highlight { max-height:50vh }</style>
 
 # {{ page.description }}
 
@@ -29,7 +30,7 @@ use_footer: falsex
 ###### site.posts
 {% include vars-site.posts.md %}
 
-{% comment %}
 ###### site.static_files
 {% include vars-site.static_files.md %}
-{% endcomment %}
+
+{% comment %}--- end of page ---{% endcomment %}

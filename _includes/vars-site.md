@@ -1,21 +1,30 @@
 ```yml
+# _config.yml
+
 theme        : {{ site.theme }}
 remote_theme : {{ site.remote_theme }}
 
-version      : {{ site.version }}
+title                : {{ site.title | default: '(undefined)' }}
+description          : {{ site.description | default: '(undefined)' }}
 
-title        : {{ site.title }}
-description  : {{ site.description }}
+site_url             : {{ site.baseurl }} ( site.baseurl )
+home_url             : {{ site.home_url | default: '(undefined)' }}
+source_url           : {{ site.github.repository_url }} ( site.github.repository_url )
 
-google_analytics     : {{ site.google_analytics }}
-cloudflare_analytics : {{ site.cloudflare_analytics }}
+version              : {{ site.version | default: '(undefined)' }}
+revision             : {{ site.revision | default: '(undefined)' }}{{'.'}}{{ site.github.build_revision | default: '(undefined)' }}
 
-theme_color  : {{ site.theme_color | jsonify }}
-color_scheme : {{ site.color_scheme }}
-ghost        : {{ site.ghost }}
+lang                 : {{ site.lang | default: '(undefined)' }}
+theme_color          : {{ site.theme_color | jsonify | default: '(undefined)' }}
+color_scheme         : {{ site.color_scheme | default: '(undefined)' }}
 
+ghost                : {{ site.ghost | default: '(undefined)' }}
+google_analytics     : {{ site.google_analytics | default: '(undefined)' }}
+cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
+```
+
+```yml
 time          : {{ site.time }}
-lang          : {{ site.lang }}
 encoding      : {{ site.encoding }}
 
 url           : {{ site.url }}

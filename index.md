@@ -12,9 +12,9 @@ use_footer: false
 # _config.yml
 site.title           : {{ site.title | default: '(undefined)' }}
 site.description     : {{ site.description | default: '(undefined)' }}
-site_url             : {{ site.baseurl }}
+site_url             : {{ site.baseurl }} ( site.baseurl )
 home_url             : {{ site.home_url | default: '(undefined)' }}
-source_url           : {{ site.github.repository_url }}
+source_url           : {{ site.github.repository_url }} ( site.github.repository_url )
 version              : {{ site.version | default: '(undefined)' }}
 revision             : {{ site.revision | default: '(undefined)' }}{{'.'}}{{ site.github.build_revision | default: '(undefined)' }}
 ghost                : {{ site.ghost | default: '(undefined)' }}
