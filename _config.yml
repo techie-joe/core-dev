@@ -7,13 +7,24 @@ plugins:
 # - jekyll-paginate
 # - jekyll-sitemap
 
-version: '0.0.2'
-revision: '2511.01'
+version       : '0.0.2'
+revision      : '2511.01'
 
-title: Dove
-description: Dove is a theme development project.
-# title: # the title of your site (best without the punctuation dot).
-# description: # a short description of your site's purpose.
+title         : Dove
+description   : Dove is a theme development project.
+# title       : # the title of your site (best without the punctuation dot).
+# description : # a short description of your site's purpose.
+
+author        : Techie Joe
+year          : 2025
+
+base_url      : '/dove'
+home_url      : '/dove/md'
+
+lang          : 'en-US'
+theme_color   : '#222'
+color_scheme  : light dark
+ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlv
 
 # google_analytics: # your Google Analytics tracking ID.
 # to track your website using Google Analytics.
@@ -27,15 +38,6 @@ description: Dove is a theme development project.
 # github:
 #   zip_url: http://example.com/download.zip
 #   another_url: another_value
-
-# theme
-theme_color: '#222'
-color_scheme: light dark
-ghost: bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlv
-
-# copyright
-author: Techie Joe
-year: 2025
 
 sass:
   style: compressed

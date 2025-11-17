@@ -1,31 +1,28 @@
 ```yml
-# _config.yml
+theme        : {{ site.theme | default: '(undefined)' }}
+remote_theme : {{ site.remote_theme | default: '(undefined)' }}
 
-theme        : {{ site.theme }}
-remote_theme : {{ site.remote_theme }}
+version      : {{ site.version | default: '(undefined)' }}
+revision     : {{ site.revision | default: '(undefined)' }}{{'.'}}{{ site.github.build_revision | default: '(undefined)' }}
 
-title                : {{ site.title | default: '(undefined)' }}
-description          : {{ site.description | default: '(undefined)' }}
+title        : {{ site.title | default: '(undefined)' }}
+description  : {{ site.description | default: '(undefined)' }}
 
-site_url             : {{ site.baseurl }} ( site.baseurl )
-home_url             : {{ site.home_url | default: '(undefined)' }}
-source_url           : {{ site.github.repository_url }} ( site.github.repository_url )
+author       : {{ site.author | default: '(undefined)' }}
+year         : {{ site.year | default: '(undefined)' }}
 
-version              : {{ site.version | default: '(undefined)' }}
-revision             : {{ site.revision | default: '(undefined)' }}{{'.'}}{{ site.github.build_revision | default: '(undefined)' }}
+base_url     : {{ site.base_url | default: '(undefined)' }}
+home_url     : {{ site.home_url | default: '(undefined)' }}
 
-lang                 : {{ site.lang | default: '(undefined)' }}
-theme_color          : {{ site.theme_color | jsonify | default: '(undefined)' }}
-color_scheme         : {{ site.color_scheme | default: '(undefined)' }}
+lang         : {{ site.lang | default: '(undefined)' }}
+theme_color  : {{ site.theme_color | jsonify | default: '(undefined)' }}
+color_scheme : {{ site.color_scheme | default: '(undefined)' }}
+ghost        : {{ site.ghost | default: '(undefined)' }}
 
-ghost                : {{ site.ghost | default: '(undefined)' }}
 google_analytics     : {{ site.google_analytics | default: '(undefined)' }}
 cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
-```
 
-```yml
 time          : {{ site.time }}
-encoding      : {{ site.encoding }}
 
 url           : {{ site.url }}
 baseurl       : {{ site.baseurl }}

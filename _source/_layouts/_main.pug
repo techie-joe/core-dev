@@ -64,14 +64,14 @@ mixin fonts
 
 mixin icons
   //- prioritization sequence: first match, exact-size, type, then "any".
-  link(rel="apple-touch-icon" type="image/png"     sizes="180x180" href=site_url+"/icons/apple-touch-icon.png")/
-  link(rel="icon"             type="image/png"     sizes="32x32"   href=site_url+"/icons/favicon-32x32.png")/
-  link(rel="icon"             type="image/png"     sizes="16x16"   href=site_url+"/icons/favicon-16x16.png")/
-  link(rel="shortcut icon"    type="image/x-icon"  sizes="any"     href=site_url+"/icons/favicon.ico")/
+  link(rel="apple-touch-icon" type="image/png"     sizes="180x180" href=base_url+"/icons/apple-touch-icon.png")/
+  link(rel="icon"             type="image/png"     sizes="32x32"   href=base_url+"/icons/favicon-32x32.png")/
+  link(rel="icon"             type="image/png"     sizes="16x16"   href=base_url+"/icons/favicon-16x16.png")/
+  link(rel="shortcut icon"    type="image/x-icon"  sizes="any"     href=base_url+"/icons/favicon.ico")/
 
 mixin manifest
   //- enable manifest if you're building a PWA Apps
-  link(rel="manifest" href!=`${site_url}/manifest.json?r=${revision}`)/
+  link(rel="manifest" href!=`${base_url}/manifest.json?r=${revision}`)/
 
 //- ==============================================================
 
@@ -98,7 +98,7 @@ mixin theme_switch(title='Change Theme (Alt+T)')
 
 mixin themejs
   script|window.ghost='!{ghost}';
-  +js(`${site_url}/assets/themejs/themejs_v2.0.js?r=${revision}`)
+  +js(`${base_url}/assets/themejs/themejs_v2.0.js?r=${revision}`)
 
 mixin anchor
   script(src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous")

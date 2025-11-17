@@ -16,18 +16,22 @@ block append style
     h1.hero { font-family: 'Arial',system-ui,sans-serif }
 block content
   h1.hero 🕊️ !{description}
-  pre.scrollable.highlight.
+  pre.scrollable.highlight(style="max-height:300px").
     #[b.text-gray # _config.pug]
-    site_title           : !{site_title}
-    site_description     : !{site_description}
-    site_url             : #[a._no_u(href=site_url)|!{site_url}]
-    home_url             : #[a._no_u(href=home_url)|!{home_url}]
-    source_url           : #[a._no_u(href=source_url target="_edit") !{source_url}]
-    version              : !{version}
-    revision             : !{revision}
-    ghost                : !{ghost}
+    version      : !{version}
+    revision     : !{revision}
+    title        : !{site_title}
+    description  : !{site_description}
+    author       : !{author}
+    year         : !{year}
+    base_url     : #[a._no_u(href=base_url)|!{base_url}]
+    home_url     : #[a._no_u(href=home_url)|!{home_url}]
+    ghost        : !{ghost}
+
     google_analytics     : !{google_analytics||'(undefined)'}
     cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
+
+    source_url   : #[a._no_u(href=source_url target="_edit") !{source_url}]
   nav: p
       +_a([live_url,'md'].join('/'))| !{site_title}.md
   nav: ul

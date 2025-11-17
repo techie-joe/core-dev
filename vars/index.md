@@ -1,6 +1,6 @@
 ---
-title: Vars
-description: Variables on this site.
+title: Variables
+description: Site variables.
 layout: mallet
 use_nav: false
 use_footer: false
