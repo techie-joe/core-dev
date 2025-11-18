@@ -33,7 +33,8 @@ source_url   : {{ site.github.repository_url }}
 {: id="pre_intro" }
 <style>article #pre_intro pre.highlight { max-height:235px }</style>
 
-[Dove.html]({ site.baseurl })
+[Dove.html]({{ site.baseurl }}){: target="_blank"}
+[Proto](https://techie-joe.github.io/proto){: target="_blank"}
 
 ## Pages
 
