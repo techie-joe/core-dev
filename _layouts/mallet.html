@@ -34,13 +34,15 @@ layout: mallet
         <article id="_article">{{ content }}</article>
         <footer class="footer">
           {% if page.use_footer == false %}
+          {%- elsif page.use_footer contains 'edit_link_only' %}
+            {% if site.github.private != true and site.github.license %}
+            <hr/><div class="text-right text-gray">This site is open source. {% github_edit_link "Improve this page" %}.</div>
+            {%- endif %}
           {%- else %}
-          <hr/>
-          <p><code>// footer</code></p>
-          {% if site.github.private != true and site.github.license %}
-          <hr/>
-          <div class="text-right text-gray">This site is open source. {% github_edit_link "Improve this page" %}.</div>
-          {%- endif %}
+            <hr/><p><code>// footer : {{ page.use_footer | default: '(undefined)' }}</code></p>
+            {% if site.github.private != true and site.github.license %}
+            <hr/><div class="text-right text-gray">This site is open source. {% github_edit_link "Improve this page" %}.</div>
+            {%- endif %}
           {%- endif %}
         </footer>
       </div>

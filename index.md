@@ -3,7 +3,7 @@ title: Dove.md
 description: Dove.markdown variant.
 permalink: md
 use_nav: false
-use_footer: false
+use_footer: ['edit_link_only']
 ---
 
 <h1 id="_hero-titlex" class="hero">🕊️ {{ site.title }}.md</h1>
@@ -34,6 +34,7 @@ source_url   : {{ site.github.repository_url }}
 <style>article #pre_intro pre.highlight { max-height:235px }</style>
 
 [Dove.html]({{ site.baseurl }}){: target="_blank"}
+&bull;
 [Proto](https://techie-joe.github.io/proto){: target="_blank"}
 
 ## Pages
