@@ -33,9 +33,9 @@ block content
 
     source_url   : #[a._no_u(href=source_url target="_edit") !{source_url}]
   nav: p
-      +_a([live_url,'md'].join('/'))(target="_blank")| !{site_title}.md
+      +_a([live_url,'md'].join('/'))| !{site_title}.md
       +_bull
-      +_a('https://techie-joe.github.io/proto')(target="_blank")| Proto
+      +_a('https://techie-joe.github.io/proto')| Proto
   nav: ul
     li: +site_nav('core')
     li: +site_nav('mallet')

@@ -22,7 +22,7 @@ layout: mallet
     <main id="_main" class="_app __fadein">
       <div id="_layout" class="container-lg px-3 markdown-body">
         <header class="header"><nav id="_header-bar"><div class="_flex"><div class="_flex-main">
-          <div class="_logo"><a href="{{ site.github.url }}">{{ site.title | '(untitled)' }}</a></div>
+          <div class="_logo"><a href="{{ site.github.url }}">{{ site.title | default: '(untitled)' }}</a></div>
         </header>
         <nav class="_nav">
           {% if page.use_nav == false %}
@@ -33,17 +33,7 @@ layout: mallet
         </nav>
         <article id="_article">{{ content }}</article>
         <footer class="footer">
-          {% if page.use_footer == false %}
-          {%- elsif page.use_footer contains 'edit_link_only' %}
-            {% if site.github.private != true and site.github.license %}
-            <hr/><div class="text-right text-gray">This site is open source. {% github_edit_link "Improve this page" %}.</div>
-            {%- endif %}
-          {%- else %}
-            <hr/><p><code>// footer : {{ page.use_footer | default: '(undefined)' }}</code></p>
-            {% if site.github.private != true and site.github.license %}
-            <hr/><div class="text-right text-gray">This site is open source. {% github_edit_link "Improve this page" %}.</div>
-            {%- endif %}
-          {%- endif %}
+          {% include footer.html %}
         </footer>
       </div>
       <div class="_theme_switch _needjs">
