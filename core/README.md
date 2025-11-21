@@ -24,12 +24,12 @@ The primary goal of this project is to provide users with a **quick and easy way
 To use the theme, add the following to your site's `_config.yml`:
 
 ```yml
-remote_theme: techie-joe/core
 # the location of the remote_theme.
+remote_theme: techie-joe/core
 
+# add jekyll-remote-theme to the plugins list.
 plugins:
 - jekyll-remote-theme
-# add jekyll-remote-theme to the plugins list.
 ```
 
 ## Customizing
@@ -39,8 +39,8 @@ plugins:
 Core will respect the following variables, if set in your site's `_config.yml`:
 
 ```yml
-title: # the title of your site (best without the punctuation dot).
-description: # a short description of your site's purpose.
+title       : The title of your site # (best without the punctuation dot).
+description : Short description of your site's purpose. 
 ```
 
 Additionally, you may choose to set the following optional variables:
@@ -48,6 +48,9 @@ Additionally, you may choose to set the following optional variables:
 ```yml
 google_analytics: # your Google Analytics tracking ID.
 # to track your website using Google Analytics.
+
+cloudflare_analytics: # your Cloudflare Analytics tracking ID.
+# to track your website using Cloudflare Analytics.
 
 show_downloads: # true or false (unquoted).
 # indicate whether to provide a download URL.

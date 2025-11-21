@@ -13,5 +13,4 @@ permalink: posts
 ---
 {: style="margin-top:3rem" }
 
-{% include back.html %}
-{% include gohome.html %}
+{% include nav_common.html %}

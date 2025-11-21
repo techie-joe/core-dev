@@ -1,5 +1,5 @@
-remote_theme: techie-joe/dove
 # the location of the remote_theme.
+remote_theme: techie-joe/dove
 
 # add jekyll-remote-theme to the plugins list.
 plugins:
@@ -12,8 +12,8 @@ revision      : '2511.01'
 
 title         : Dove
 description   : Dove is a theme development project.
-# title       : # the title of your site (best without the punctuation dot).
-# description : # a short description of your site's purpose.
+# title       : The title of your site # (best without the punctuation dot).
+# description : Short description of your site's purpose.
 
 author        : Techie Joe
 year          : 2025
