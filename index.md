@@ -2,6 +2,7 @@
 title: Dove.md
 description: Dove.markdown variant.
 permalink: md
+use_header: false
 use_nav: false
 use_footer: ['edit_link_only']
 ---
@@ -10,8 +11,6 @@ use_footer: ['edit_link_only']
 
 ```yml
 # _config.yml
-theme        : {{ site.theme | default: '(undefined)' }}
-remote_theme : {{ site.remote_theme | default: '(undefined)' }}
 version      : {{ site.version | default: '(undefined)' }}
 revision     : {{ site.revision | default: '(undefined)' }}{{'.'}}{{ site.github.build_revision | default: '(undefined)' }}
 title        : {{ site.title | default: '(undefined)' }}
@@ -20,6 +19,10 @@ author       : {{ site.author | default: '(undefined)' }}
 year         : {{ site.year | default: '(undefined)' }}
 base_url     : {{ site.base_url | default: '(undefined)' }}
 home_url     : {{ site.home_url | default: '(undefined)' }}
+
+theme        : {{ site.theme | default: '(undefined)' }}
+remote_theme : {{ site.remote_theme | default: '(undefined)' }}
+
 lang         : {{ site.lang | default: '(undefined)' }}
 theme_color  : {{ site.theme_color | jsonify | default: '(undefined)' }}
 color_scheme : {{ site.color_scheme | default: '(undefined)' }}
@@ -31,11 +34,15 @@ cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
 source_url   : {{ site.github.repository_url }}
 ```
 {: id="pre_intro" }
-<style>article #pre_intro pre.highlight { max-height:235px }</style>
+<style>article #pre_intro pre.highlight { max-height:213px }</style>
 
+**Dove**
+&bull;
 [Dove.html]({{ site.baseurl }})
 &bull;
-[Proto](https://techie-joe.github.io/proto)
+[Repository]({{ site.github.repository_url }}){: target="_edit" }
+&bull;
+[Proto](https://techie-joe.github.io/proto){: target="_test" }
 
 ## Pages
 

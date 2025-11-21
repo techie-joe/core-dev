@@ -16,7 +16,7 @@ block append style
     h1.hero { font-family: 'Arial',system-ui,sans-serif }
 block content
   h1.hero 🕊️ !{description}
-  pre.scrollable.highlight(style="max-height:235px").
+  pre.scrollable.highlight(style="max-height:213px").
     #[b.text-gray # _config.pug]
     version      : !{version}
     revision     : !{revision}
@@ -24,18 +24,26 @@ block content
     description  : !{site_description}
     author       : !{author}
     year         : !{year}
-    base_url     : #[a._no_u(href=base_url)|!{base_url}]
-    home_url     : #[a._no_u(href=home_url)|!{home_url}]
+    base_url     : !{base_url}
+    home_url     : !{home_url}
+
+    lang         : !{lang}
+    theme_color  : !{theme_color}
+    color_scheme : !{color_scheme}
     ghost        : !{ghost}
 
     google_analytics     : !{google_analytics||'(undefined)'}
     cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
 
-    source_url   : #[a._no_u(href=source_url target="_edit") !{source_url}]
+    source_url   : !{source_url}
   nav: p
+      b Dove
+      +_bull
       +_a([live_url,'md'].join('/'))| !{site_title}.md
       +_bull
-      +_a('https://techie-joe.github.io/proto')| Proto
+      +_a(source_url)(target="_edit")| Repository
+      +_bull
+      +_a('https://techie-joe.github.io/proto')(target="_test")| Proto
   nav: ul
     li: +site_nav('core')
     li: +site_nav('mallet')

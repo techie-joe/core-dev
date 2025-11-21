@@ -39,7 +39,7 @@ There’s a comment block below this line.
 
 {% comment %}This Liquid comment will not appear in the rendered Markdown{% endcomment %}
 
-Comment block should not appear in the rendered Markdown.
+Comment block will not appear in the rendered Markdown.
 
 ### Styles for text
 
