@@ -3,10 +3,8 @@ layout: primer
 ---
 <!doctype html>
 <html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no_js {{ page.layout }}_layout">
-  <!--
-    page.path   : {{ page.path }}
-    page.layout : {{ page.layout }}
-  -->
+  <!-- path   : {{ page.path }} -->
+  <!-- layout : dove/jekyll/{{ page.layout }} -->
   <head>
     <meta charset="{{ site.encoding | default: 'utf-8' }}" />
     {% seo %}

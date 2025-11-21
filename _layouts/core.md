@@ -3,8 +3,8 @@ layout: core
 ---
 <!doctype html>
 <html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="_{{ page.layout }}_layout">
-  <!-- page.path   : {{ page.path }} -->
-  <!-- page.layout : jekyll/{{ page.layout }} -->
+  <!-- path   : {{ page.path }} -->
+  <!-- layout : dove/jekyll/{{ page.layout }} -->
   <head>
     <meta charset="{{ site.encoding | default: 'utf-8' }}" />
     {% seo %}

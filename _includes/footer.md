@@ -1,1 +1,1 @@
-`{{ site.base_url }}/footer.md : {{ page.use_footer }}`
+`footer : {{ page.use_footer }}`
