@@ -38,14 +38,12 @@ layout: mallet
         </nav>
         <article id="_article">{{ content }}</article>
         <footer class="footer">
-          {% include footer.md %}
-          <hr/>
           {% if page.use_footer == false %}{%- else %}
-            {% if page.use_footer contains 'edit_link_only' %}{%- else %}
-            <hr/><p><code>// footer : {{ page.use_footer | default: '(undefined)' }}</code></p>
+            {% if page.use_footer contains 'edit_link_only' -%}{%- else -%}
+            {% include footer.md %}
             {%- endif %}
-            {% if site.github.private != true and site.github.license %}
-            <hr/><div class="text-right text-gray">This site is open source. {% github_edit_link "Improve this page" %}.</div>
+            {% if site.github.private != true and site.github.license -%}
+            <hr/><p class="text-right text-gray">This site is open source. {% github_edit_link "Improve this page" %}.</p>
             {%- endif %}
           {%- endif %}
         </footer>
