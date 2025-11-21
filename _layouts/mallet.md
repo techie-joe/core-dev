@@ -17,41 +17,42 @@ layout: mallet
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
   </head>
   <body>
-    <main id="_main" class="_app __fadein">
-      <div id="_layout" class="container-lg px-3 markdown-body">
-        <header class="header">
-          {% if page.use_header == false %}
-          <style>.header{display:none !important}</style>
-          {%- else %}
-          <nav id="_header-bar"><div class="_flex"><div class="_flex-main">
-            <div class="_logo"><a href="{{ site.home_url }}">{{ site.title | default: '(untitled)' }}</a></div>
-          </div></div></nav>
-          {%- endif %}
-        </header>
-        </header>
-        <nav class="_nav">
-          {% if page.use_nav == false %}
-          <style>._nav{display:none !important}</style>
-          {%- else %}
-          <div><code>// nav : {{ page.use_nav | default: '(undefined)' }}</code></div>
-          {%- endif %}
-        </nav>
-        <article id="_article">{{ content }}</article>
-        <footer class="footer">
-          {% if page.use_footer == false %}{%- else %}
-            {% if page.use_footer contains 'edit_link_only' -%}{%- else -%}
-            {% include footer.md %}
+    <div class="_views">
+      <div class="_view _app __fadein">
+        <div id="_layout" class="_layout container-lg px-3 markdown-body">
+          <header class="header">
+            {% if page.use_header == false -%}
+            <style>.header{display:none !important}</style>
+            {%- else -%}
+            <nav id="_header-bar"><div class="_flex"><div class="_flex-main">
+              <div class="_logo"><a href="{{ site.home_url }}">{{ site.title | default: '(untitled)' }}</a></div>
+            </div></div></nav>
             {%- endif %}
-            {% if site.github.private != true and site.github.license -%}
-            <hr/><p class="text-right text-gray">This site is open source. {% github_edit_link "Improve this page" %}.</p>
+          </header>
+          <nav class="_nav">
+            {% if page.use_nav == false -%}
+            <style>._nav{display:none !important}</style>
+            {%- else -%}
+            <div><code>// nav : {{ page.use_nav | default: '(undefined)' }}</code></div>
             {%- endif %}
-          {%- endif %}
-        </footer>
-      </div>
-      <div class="_theme_switch _needjs">
-        {% include theme_switch.html %}
-      </div>
-    </main>
-    {% include layout_body.html %}
+          </nav>
+          <main class="_main"><article class="_article">{{ content }}</article></main>
+          <footer class="_footer">
+            {% if page.use_footer == false -%}{%- else -%}
+              {% if page.use_footer contains 'edit_link_only' -%}{%- else -%}
+              {% include footer.md %}
+              {%- endif %}
+              {% if site.github.private != true and site.github.license -%}
+              <hr/><p class="text-right text-gray smaller">This site is open source. {% github_edit_link "Improve this page" %}.</p>
+              {%- endif %}
+            {%- endif %}
+          </footer>
+          <div class="_theme_switch _needjs">
+            {% include theme_switch.html %}
+          </div>
+        </div><!-- end of _layout -->
+      </div><!-- end of _view -->
+      {% include layout_body.html %}
+    </div><!-- end of _views -->
   </body>
 </html>

@@ -34,7 +34,7 @@ cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
 source_url   : {{ site.github.repository_url }}
 ```
 {: id="pre_intro" }
-<style>article #pre_intro pre.highlight { max-height:213px }</style>
+<style>article #pre_intro pre.highlight { max-height:203px }</style>
 
 **Dove**
 &bull;
