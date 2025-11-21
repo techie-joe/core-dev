@@ -12,7 +12,7 @@ layout: mallet
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,shrink-to-fit=no" />
     <meta id="_color-scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}" />
     <meta id="_theme-color"  name="theme-color"  content="{{ page.theme_color | default: site.theme_color | default: '' }}" />
-    <link id="_style" rel="stylesheet" href="{{ site.github.url }}/assets/mallet/css/style.css?r={{ site.revision }}.{{ site.github.build_revision }}" />
+    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/mallet/css/style.css?r={{ site.revision }}.{{ site.github.build_revision }}" />
     {% include layout_head.html %}
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
   </head>
@@ -24,7 +24,7 @@ layout: mallet
           <style>.header{display:none !important}</style>
           {%- else %}
           <nav id="_header-bar"><div class="_flex"><div class="_flex-main">
-            <div class="_logo"><a href="{{ site.github.url }}">{{ site.title | default: '(untitled)' }}</a></div>
+            <div class="_logo"><a href="{{ site.home_url }}">{{ site.title | default: '(untitled)' }}</a></div>
           </div></div></nav>
           {%- endif %}
         </header>

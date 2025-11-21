@@ -10,14 +10,14 @@ layout: primer
     {% seo %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,shrink-to-fit=no" />
-    <link id="_style" rel="stylesheet" href="{{ site.github.url }}/assets/primer/css/style.css?v={{ site.github.build_revision }}" />
+    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/primer/css/style.css?v={{ site.github.build_revision }}" />
     {% include layout_head.html %}
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
       {% if site.title and site.title != page.title %}
-      <h1><a href="{{ '/' | absolute_url }}">{{ site.title }}</a></h1>
+      <h1><a href="{{ site.home_url }}">{{ site.title }}</a></h1>
       {%- endif %}
       {{ content }}
       <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
