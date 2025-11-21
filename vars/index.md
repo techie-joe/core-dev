@@ -1,13 +1,13 @@
 ---
 title: Variables
-description: Site variables.
+description: Variables on this site.
 layout: mallet
 use_nav: false
 use_footer: false
 ---
-<style>article pre.highlight { max-height:50vh }</style>
+# {{ page.title }}
 
-# {{ page.description }}
+<style>article pre.highlight { max-height:50vh }</style>
 
 ###### layout
 {% include vars-layout.md %}

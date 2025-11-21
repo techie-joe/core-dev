@@ -4,7 +4,7 @@ layout: core
 <!doctype html>
 <html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="_{{ page.layout }}_layout">
   <!-- path   : {{ page.path }} -->
-  <!-- layout : dove/jekyll/{{ page.layout }} -->
+  <!-- layout : dove/_layouts/{{ page.layout }} -->
   <head>
     <meta charset="{{ site.encoding | default: 'utf-8' }}" />
     {% seo %}
