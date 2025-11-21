@@ -82,7 +82,7 @@ If you'd like to change the template's HTML layout:
 
 ### Customizing Google Analytics code
 
-Google has released several iterations to their Google Analytics code over the years since this template was first created. If you would like to take advantage of the latest code, paste it into `_includes/google-analytics.html` in your Jekyll site.
+Google has released several iterations to their Google Analytics code over the years since this template was first created. If you would like to take advantage of the latest code, paste it into `_includes/google_analytics.html` in your Jekyll site.
 
 ### Overriding GitHub-generated URLs
 

@@ -13,7 +13,7 @@ layout: mallet
     <meta id="_color-scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}" />
     <meta id="_theme-color"  name="theme-color"  content="{{ page.theme_color | default: site.theme_color | default: '' }}" />
     <link id="_style" rel="stylesheet" href="{{ site.github.url }}/assets/mallet/css/style.css?r={{ site.revision }}.{{ site.github.build_revision }}" />
-    {% include custom-head.html %}
+    {% include layout_head.html %}
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
   </head>
   <body>
@@ -52,6 +52,6 @@ layout: mallet
         {% include theme_switch.html %}
       </div>
     </main>
-    {% include custom-body.html %}
+    {% include layout_body.html %}
   </body>
 </html>

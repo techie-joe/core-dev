@@ -11,7 +11,7 @@ layout: primer
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,shrink-to-fit=no" />
     <link id="_style" rel="stylesheet" href="{{ site.github.url }}/assets/primer/css/style.css?v={{ site.github.build_revision }}" />
-    {% include custom-head.html %}
+    {% include layout_head.html %}
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
   </head>
   <body>
@@ -24,10 +24,8 @@ layout: primer
         {% if site.github.private != true and site.github.license %}
         This site is open source. {% github_edit_link "Improve this page" %}.
         {%- endif %}
-        <div class="pt-3">{% include credit.html %}</div>
       </div>
     </div>
-    {% include anchors.html %}
-    {% include custom-body.html %}
+    {% include layout_body.html %}
   </body>
 </html>

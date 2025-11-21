@@ -13,7 +13,7 @@ layout: core
     <meta id="_theme-color"  name="theme-color"  content="{{ page.theme_color | default: site.theme_color | default: '' }}" />
     <meta id="_color-scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}" />
     <link id="_style" rel="stylesheet" href="{{ site.github.url }}/assets/core/css/style.css?v={{ site.version || site.github.build_revision }}" />
-    {% include custom-head.html %}
+    {% include layout_head.html %}
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
   </head>
   <body>
@@ -31,6 +31,6 @@ layout: core
       </article></main>
       <footer class="_footer"><div class="_layout"></div></footer>
     </div></div>
-    {% include custom-body.html %}
+    {% include layout_body.html %}
   </body>
 </html>
