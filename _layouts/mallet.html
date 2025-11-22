@@ -1,6 +1,3 @@
----
-layout: mallet
----
 <!doctype html>
 <html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no_js {{ page.layout }}_layout">
   <!-- path   : {{ page.path }} -->
@@ -24,23 +21,21 @@ layout: mallet
             {% if page.use_header == false -%}
             <style>.header{display:none !important}</style>
             {%- else -%}
-            <nav id="_header-bar"><div class="_flex"><div class="_flex-main">
-              <div class="_logo"><a href="{{ site.home_url }}">{{ site.title | default: '(untitled)' }}</a></div>
-            </div></div></nav>
+            {% capture header -%}{% include header.md %}{%- endcapture %}{{ header | markdownify }}
             {%- endif %}
           </header>
           <nav class="_nav">
             {% if page.use_nav == false -%}
             <style>._nav{display:none !important}</style>
             {%- else -%}
-            <div><code>// nav : {{ page.use_nav | default: '(undefined)' }}</code></div>
+            {% capture nav -%}{% include nav.md %}{%- endcapture %}{{ nav | markdownify }}
             {%- endif %}
           </nav>
           <main class="_main"><article class="_article">{{ content }}</article></main>
           <footer class="_footer">
             {% if page.use_footer == false -%}{%- else -%}
               {% if page.use_footer contains 'edit_link_only' -%}{%- else -%}
-              {% include footer.md %}
+              {% capture footer -%}{% include footer.md %}{%- endcapture %}{{ foooter | markdownify }}
               {%- endif %}
               {% if site.github.private != true and site.github.license -%}
               <hr/><p class="text-right text-gray smaller">This site is open source. {% github_edit_link "Improve this page" %}.</p>
