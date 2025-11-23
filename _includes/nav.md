@@ -1,1 +1,1 @@
-<div><code>// nav : {{ page.use_nav | default: '(undefined)' }}</code></div>
+<style>._nav{display:none !important}</style>
