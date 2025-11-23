@@ -29,26 +29,29 @@ block html
         +custom_head
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
-      main#_main._app.__fadein
-        #layout.container-lg.px-3.markdown-body
-          header.header: #_header-bar: ._flex: ._flex-main
-            block header
-              //- p: code // header
-              ._logo: a(href=home_url) #{site_title}
-          nav._nav
-            block nav
-              p: code // nav
-          article._article
-            block content
-              h1 !{title}
-              p: code // content for : !{title}
-          footer.footer
-            block footer
-              hr/
-              p: code // footer
-              hr/
-              p.text-right.text-grey: small: +edit_link(path)
-        //- .container-lg
-        +mallet_theme_switch
+      ._views
+        ._view._app.__fadein
+          ._view_layout.container-lg.px-3.markdown-body
+            header.header
+              block header
+                //- p: code // header
+                ._logo: a(href=home_url) #{site_title}
+            nav._nav
+              block nav
+                p: code // nav
+            main._main: article._article
+              block content
+                h1 !{title}
+                p: code // content for : !{title}
+            footer._footer
+              block footer
+                hr/
+                p: code // footer
+                hr/
+                p.text-right.text-grey: small: +edit_link(path)
+            +mallet_theme_switch
+          //- ._view_layout
+        //- ._view
         block custom_body
           +custom_body
+      //- _views

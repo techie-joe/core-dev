@@ -23,7 +23,8 @@ dd { margin-block-end:1rem }
   a {
     text-decoration:none !important;
     display:inline-block;
-    margin:13px 0;
+    padding:13px 1rem; // 13px to match theme_switch
+    margin:0 -1rem;
     color:#888;
   }
   a:hover { color:$text-blue }
