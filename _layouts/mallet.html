@@ -2,6 +2,7 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no_js {{ page.layout | default: 'html' }}_layout">
   <!-- path   : {{ page.path }} -->
   <!-- layout : dove/_layouts/{{ page.layout }} -->
+  <!-- mallet.revision: 32 -->
   <head>
     <meta charset="{{ site.encoding | default: 'utf-8' }}" />
     {% seo %}
@@ -33,14 +34,14 @@
           </nav>
           <main class="_main"><article class="_article">{{ content }}</article></main>
           <footer class="_footer">
-            {% if page.use_footer == false -%}{%- else -%}
-              {% if page.use_footer contains 'edit_link_only' -%}{%- else -%}
+            {%- if page.use_footer == false -%}{%- else -%}
+              {%- if page.use_footer contains 'edit_link_only' -%}{%- else -%}
               {% capture footer -%}{% include footer.md %}{%- endcapture %}{{ foooter | markdownify }}
               {%- endif %}
               {% if site.github.private != true and site.github.license -%}
               <hr/><p class="text-right text-gray smaller">This site is open source. {% github_edit_link "Improve this page" %}.</p>
-              {%- endif %}
-            {%- endif %}
+              {%- endif -%}
+            {%- endif -%}
           </footer>
           <div class="_theme_switch _needjs">
             {% include theme_switch.html %}
