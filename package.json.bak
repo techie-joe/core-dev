@@ -15,8 +15,9 @@
   "type": "commonjs",
   "main": "index.html",
   "scripts": {
-    "build": "gulp",
-    "watch": "gulp watch"
+    "build": "webpack",
+    "watch": "gulp watch",
+    "test": "script/cibuild"
   },
   "dependencies": {
     "cors": "^2.8.5",

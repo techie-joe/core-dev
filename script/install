@@ -1,0 +1,27 @@
+#!/bin/sh
+# Install NPM dependencies to _sass directory and symlink to node_modules
+
+set -e
+
+npm install
+mv node_modules _sass
+ln -s _sass node_modules
+
+# Normalize.css is distributed as CSS, which Sass dosen't like. Convert to scss.
+if test -e "_sass/normalize.css/normalize.css"; then
+  mv -f _sass/normalize.css/normalize.css _sass/normalize.css/normalize.scss
+fi
+
+# Add our own theme scss file for consistency of naming in `assets/style.scss`
+content='
+@import "dove-support/index.scss";
+@import "dove-base/index.scss";
+@import "dove-utilities/index.scss";
+@import "dove-layout/index.scss";
+@import "dove-markdown/index.scss";
+@import "rouge";
+'
+echo "$content" >> _sass/dove.scss
+
+# Create rouge stylesheet
+rougify style github > _sass/rouge.scss

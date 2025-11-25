@@ -1,14 +1,16 @@
+theme: dove
+
 # the location of the remote_theme.
-remote_theme: techie-joe/dove
+# remote_theme: techie-joe/dove
 
 # add jekyll-remote-theme to the plugins list.
-plugins:
+# plugins:
 # - jekyll-remote-theme
 # - jekyll-paginate
 # - jekyll-sitemap
 
-version       : '0.0.2'
-revision      : '2511.01'
+version       : '0.0.3'
+revision      : '2511.03'
 
 title         : Dove
 description   : Dove is a theme development project.
@@ -18,13 +20,13 @@ description   : Dove is a theme development project.
 author        : Techie Joe
 year          : 2025
 
-base_url      : '/dove'
-home_url      : '/dove/md'
+base_url      : ''
+home_url      : '/'
 
 lang          : 'en-US'
 theme_color   : '#222'
 color_scheme  : light dark
-ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlv
+ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLGxvY2FsaG9zdDo0MDAw
 
 # google_analytics: # your Google Analytics tracking ID.
 # to track your website using Google Analytics.
@@ -41,6 +43,12 @@ ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlv
 
 sass:
   style: compressed
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
 
 # exclude these files from Jekyll production site (_site).
 exclude:
