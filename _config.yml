@@ -1,13 +1,13 @@
-theme: dove
-
 # the location of the remote_theme.
 # remote_theme: techie-joe/dove
+# theme: dove
 
 # add jekyll-remote-theme to the plugins list.
 # plugins:
-# - jekyll-remote-theme
-# - jekyll-paginate
-# - jekyll-sitemap
+  # - jekyll-seo-tag
+  # - jekyll-remote-theme
+  # - jekyll-paginate
+  # - jekyll-sitemap
 
 version       : '0.0.3'
 revision      : '2511.03'
