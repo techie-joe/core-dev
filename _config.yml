@@ -3,8 +3,9 @@
 # theme: dove
 
 # add jekyll-remote-theme to the plugins list.
-# plugins:
-  # - jekyll-seo-tag
+plugins:
+  - jekyll-seo-tag
+  - jekyll-github-metadata
   # - jekyll-remote-theme
   # - jekyll-paginate
   # - jekyll-sitemap
