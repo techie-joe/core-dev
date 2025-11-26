@@ -13,14 +13,15 @@ if test -e "_sass/normalize.css/normalize.css"; then
 fi
 
 # Add our own theme scss file for consistency of naming in `assets/style.scss`
-content='
-@import "dove-support/index.scss";
-@import "dove-base/index.scss";
-@import "dove-utilities/index.scss";
-@import "dove-layout/index.scss";
-@import "dove-markdown/index.scss";
-@import "rouge";
-'
+content=''
+# content='
+# @import "dove-support/index.scss";
+# @import "dove-base/index.scss";
+# @import "dove-utilities/index.scss";
+# @import "dove-layout/index.scss";
+# @import "dove-markdown/index.scss";
+# @import "rouge";
+# '
 echo "$content" >> _sass/dove.scss
 
 # Create rouge stylesheet
