@@ -130,17 +130,17 @@ mixin _bull
 
 mixin logo
   ._logo
-    a(href=home_url) #{site_title}
+    a(href=home_url+'/') #{site_title}
 
-mixin back_button
-  a(href="?back" onclick=onclick(js.goBack) title="Back to previous page")&attributes(attributes) 👈 Back
-
-mixin gohome_button
-  a(href=home_url title="Go to Home Page")&attributes(attributes) Home
+mixin nav_common
+  a(href="?back" onclick=onclick(js.goBack) title="Back to previous page").button.text-secondary._bt.-flat.-l 👈 Back
+  a(href=home_url+'/' title="Go to Home Page").button.text-secondary._bt.-flat.-l Home
+  a(href=home_url+'/pages' title="Go to Pages").button.text-secondary._bt.-flat.-l Pages
+  a(href=home_url+'/posts' title="Go to Posts").button.text-secondary._bt.-flat.-l Posts
 
 mixin edit_link(path)
   | This site is open source.
-  | #[a(href=`${source_url}/edit/main/_pugs/${path}.pug` target="_edit")| Improve this page].
+  | #[a(href=`${source_url}/edit/main/_source/${path}.pug` target="_edit")| Improve this page].
 
 mixin site_nav(sub)
   - sub_url = [base_url,sub].join('/')+'/'

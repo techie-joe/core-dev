@@ -18,7 +18,7 @@
       <header class="_header"><div class="_layout">
       {% if page.url == '' or page.url == '/' %}{% else -%}
         {% if page.show_title != 'hide' and site.show_title != 'hide' and site.title and site.title != page.title -%}
-          <a href="{{ site.home_url }}">{{ site.title }}</a>
+          <a href="{{ site.home_url }}/">{{ site.title }}</a>
         {%- endif %}
       {%- endif %}
       </div></header>

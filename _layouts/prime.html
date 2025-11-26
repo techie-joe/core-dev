@@ -16,7 +16,7 @@
       <div class="_view __fadein">
         <div class="_layout container-lg px-3 my-5 markdown-body">
           {% if page.use_header == false -%}{%- else -%}
-          <h1 class="header"><a class="_logo" href="{{ site.home_url }}">{{ site.title | default: '(untitled)' }}</a></h1>
+          <h1 class="header"><a class="_logo" href="{{ site.home_url }}/">{{ site.title | default: '(untitled)' }}</a></h1>
           {%- endif %}
           <nav class="_nav">
             {% if page.use_nav == false -%}
