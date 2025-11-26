@@ -20,8 +20,9 @@ description   : Dove is a theme development project.
 author        : Techie Joe
 year          : 2025
 
-base_url      : ''
-home_url      : '/'
+baseurl       : '/dove'
+base_url      : '/dove'
+home_url      : '/dove/md'
 
 lang          : 'en-US'
 theme_color   : '#222'

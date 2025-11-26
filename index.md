@@ -36,9 +36,9 @@ source_url   : {{ site.github.repository_url }}
 {: id="pre_intro" }
 <style>article #pre_intro pre.highlight { max-height:203px }</style>
 
-**Dove**
+**{{ site.title }}**
 &bull;
-[Dove.html]({{ site.baseurl }})
+[{{ site.title }}.html]({{ site.base_url | append: '/' }})
 &bull;
 [Repository]({{ site.github.repository_url }}){: target="_edit" }
 &bull;
