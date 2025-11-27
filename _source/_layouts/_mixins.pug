@@ -22,6 +22,11 @@ mixin l
 mixin -
   li: block
 
+mixin ---
+  !='---\nlayout: html\n'
+  block
+  !='\n---\n'
+
 mixin css(href,media)
   link(rel="stylesheet" media=media||'all' href=href)&attributes(attributes)/
 

@@ -23,7 +23,7 @@ year          : 2025
 
 baseurl       : '/dove'
 base_url      : '/dove'
-home_url      : '/dove/md'
+home_url      : '/dove'
 
 lang          : 'en-US'
 theme_color   : '#222'

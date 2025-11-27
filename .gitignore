@@ -18,7 +18,6 @@ package-lock.json
 CNAME
 
 # ignore files and folders used by Developers
-.well-known/
 .vscode/
 *.x
 *.ignore

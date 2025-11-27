@@ -1,13 +1,14 @@
 ---
-title: Dove.md
-description: Dove.markdown variant.
+title: Markdown
+description: Markdown index.
 permalink: md
-use_header: false
+use_header: true
 use_nav: false
-use_footer: ['edit_link_only']
+use_footer: true
+# use_footer: ['edit_link_only']
 ---
-
-<h1 id="_hero-titlex" class="hero">🕊️ {{ site.title }}.md</h1>
+# {{ page.title }}
+{: .mt-3 }
 
 ```yml
 # _config.yml
@@ -33,12 +34,14 @@ cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
 
 source_url   : {{ site.github.repository_url }}
 ```
-{: id="pre_intro" }
+{: #pre_intro.mb-3 }
 <style>article #pre_intro pre.highlight { max-height:203px }</style>
 
 **{{ site.title }}**
 &bull;
-[{{ site.title }}.html]({{ site.base_url | append: '/' }})
+[Home]({{ site.base_url }}/)
+&bull;
+[Test]({{ site.base_url }}/test)
 &bull;
 [Repository]({{ site.github.repository_url }}){: target="_edit" }
 &bull;

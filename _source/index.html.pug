@@ -1,18 +1,19 @@
 extends /_source/_layouts/prime
-block append style
-  style.
-    ._nav { display:none !important }
+block append vars
+  - path   = 'index.html'
+  - title  = `Index`
+block prepend html
+  +---.
+    title: 'Home'
 block footer
   +thin_hr
   p: +site_footer
   +thin_hr
   p.text-right.text-grey: small: +edit_link(path)
-//- --------------------------------------------------------------
-block append vars
-  - path   = 'index.html'
-  - title  = `Index`
 block append style
   style.
+    ._logo,
+    ._nav { display:none !important }
     h1.hero { font-family: 'Arial',system-ui,sans-serif }
 block content
   h1.hero 🕊️ !{description}
@@ -39,11 +40,14 @@ block content
   nav: p
       b Dove
       +_bull
-      +_a([base_url,'md'].join('/'))| !{site_title}.md
+      +_a([base_url,'md'].join('/'))| Markdown
+      +_bull
+      +_a([base_url,'test'].join('/'))| Test
       +_bull
       +_a(source_url)(target="_edit")| Repository
       +_bull
       +_a('https://techie-joe.github.io/proto')(target="_test")| Proto
+  hr.thin.border-gray-light/
   nav: ul
     li: +site_nav('core')
     li: +site_nav('mallet')
