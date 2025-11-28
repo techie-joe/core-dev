@@ -14,9 +14,32 @@ block append style
   style.
     ._logo,
     ._nav { display:none !important }
+    ._footer { margin-top:1rem !important }
     h1.hero { font-family: 'Arial',system-ui,sans-serif }
+    article .projects { padding-left: 0;list-style: inside }
 block content
   h1.hero 🕊️ !{description}
+  nav: p
+      b| Home
+      +_bull_
+      +_a([base_url,'md'].join('/'))| Markdown
+      +_bull_
+      +_a([base_url,'test'].join('/'))| Test
+  +thin_hr
+  nav: ul.projects
+    //- li
+      +_a("core/preview.html")| Core
+      +_bull_
+      +_a("mallet/preview.html")| Mallet
+      +_bull_
+      +_a("nova/preview.html")| Nova
+      +_bull_
+      +_a("prime/preview.html")| Prime
+    li: +site_nav('core')
+    li: +site_nav('mallet')
+    li: +site_nav('nova')
+    li: +site_nav('prime')
+  +thin_hr
   pre.scrollable.highlight(style="max-height:213px").
     #[b.text-gray # _config.pug]
     version      : !{version}
@@ -37,19 +60,10 @@ block content
     cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
 
     source_url   : !{source_url}
+  +thin_hr
   nav: p
-      b Dove
-      +_bull
-      +_a([base_url,'md'].join('/'))| Markdown
-      +_bull
-      +_a([base_url,'test'].join('/'))| Test
-      +_bull
+      b| !{site_title}
+      +_i_
       +_a(source_url)(target="_edit")| Repository
-      +_bull
+      +_bull_
       +_a('https://techie-joe.github.io/proto')(target="_test")| Proto
-  hr.thin.border-gray-light/
-  nav: ul
-    li: +site_nav('core')
-    li: +site_nav('mallet')
-    li: +site_nav('nova')
-    li: +site_nav('prime')

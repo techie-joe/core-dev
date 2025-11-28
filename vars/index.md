@@ -21,9 +21,6 @@ use_footer: false
 ###### site
 {% include vars-site.md %}
 
-###### site.github
-{% include vars-site.github.md %}
-
 ###### site.pages
 {% include vars-site.pages.md %}
 
@@ -32,5 +29,8 @@ use_footer: false
 
 ###### site.static_files
 {% include vars-site.static_files.md %}
+
+###### site.github
+{% include vars-site.github.md %}
 
 {% comment %}--- end of page ---{% endcomment %}

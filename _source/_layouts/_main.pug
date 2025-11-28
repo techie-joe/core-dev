@@ -123,10 +123,19 @@ mixin fouc
     })();
 
 //- ==============================================================
-mixin _bull
+
+mixin _bull_
   +l
   +itext|&bull;
   +l
+
+mixin _i_
+  +l
+  +isvg(svgi.angle)
+  +l
+
+mixin thin_hr
+  hr.thin.border-gray-light/
 
 mixin logo
   ._logo
@@ -145,21 +154,19 @@ mixin edit_link(path)
 mixin site_nav(sub)
   - sub_url = [base_url,sub].join('/')+'/'
   b !{capitalize(sub)}
-  +l
-  +isvg(svgi.angle)
+  +_i_
   +_a(sub_url+"preview.html")| Preview
   +_a(sub_url+"legacy.html")| Legacy
-  +_bull
+  +_bull_
   +_a(sub_url)| Home
   +_a(sub_url+"page.html")| Page
   +_a(sub_url+"404.html")| 404
 
 mixin site_footer
   b !{author}'s
-  +l
-  +isvg(svgi.angle)
+  +_i_
   +_a('https://techie-joe.github.io')| Website
-  +_bull
+  +_bull_
   +_a('https://github.com/techie-joe')| Profile
-  +_bull
+  +_bull_
   +_a(['/nova/site/themejs'].join('/'))| ThemeJs

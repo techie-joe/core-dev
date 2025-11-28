@@ -1,14 +1,18 @@
 ---
 title: Markdown
-description: Markdown index.
 permalink: md
-use_header: true
-use_nav: false
-use_footer: true
-# use_footer: ['edit_link_only']
 ---
-# {{ page.title }}
-{: .mt-3 }
+<style>
+._footer { margin-top:1rem !important }
+</style>
+
+# 🕊️ {{ site.title }} {{ page.title }}
+{: #markdown }
+
+{{ description | default: '<code>(description)</code>' }}
+
+---
+{: .mt-3.mb-0}
 
 ```yml
 # _config.yml
@@ -34,23 +38,22 @@ cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
 
 source_url   : {{ site.github.repository_url }}
 ```
-{: #pre_intro.mb-3 }
+{: #pre_intro }
 <style>article #pre_intro pre.highlight { max-height:203px }</style>
 
-**{{ site.title }}**
-&bull;
-[Home]({{ site.base_url }}/)
-&bull;
-[Test]({{ site.base_url }}/test)
-&bull;
-[Repository]({{ site.github.repository_url }}){: target="_edit" }
-&bull;
-[Proto](https://techie-joe.github.io/proto){: target="_test" }
+---
 
-## Pages
-
+{% capture pages %}
+### Pages
 {% include pages.md %}
+{%- endcapture %}
 
-## Posts
-
+{% capture posts %}
+### Posts
 {% include posts.md %}
+{%- endcapture %}
+
+<div class="flex" style="gap:3rem;margin:1rem auto 3rem auto">
+  <div class="f">{{ pages | markdownify }}</div>
+  <div class="fill">{{ posts | markdownify }}</div>
+</div>
