@@ -1,4 +1,6 @@
 ---
+layout: dove
+
 title: Posts
 description: List of all posts on this site.
 permalink: posts

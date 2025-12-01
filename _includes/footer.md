@@ -1,3 +1,1 @@
-<hr/>
-
-`dove/footer : {{ page.use_footer | default: '(undefined)' }}`
+{% capture thin_hr -%}<hr class="thin border-gray-light" />{%- endcapture %}

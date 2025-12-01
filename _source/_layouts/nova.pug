@@ -1,8 +1,8 @@
-include _main
+include _dove
 block vars
   -
     layout = 'nova'
-    htmlClass = ['_nova_html']
+    htmlClass = ['_nova_layout']
     bodyClass = []
     mainClass = []
 block update_vars
@@ -22,8 +22,8 @@ block html
       meta#_theme_color(name="theme-color" content=theme_color||'')/
       block style
         link#_style(rel="stylesheet" href!=`${base_url}/assets/nova/css/style.css?r=${revision}`)/
-      block custom_head
-        +custom_head
+      block layout_head
+        +layout_head
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
       ._views
@@ -47,6 +47,6 @@ block html
               p.text-right.text-grey: small: +edit_link(path)
         ._view: ._layout._1020
           +theme_switch
-        block custom_body
-          +custom_body
+        block layout_body
+          +layout_body
       //- ._views

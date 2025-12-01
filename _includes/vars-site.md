@@ -15,7 +15,7 @@ base_url     : {{ site.base_url | default: '(undefined)' }}
 home_url     : {{ site.home_url | default: '(undefined)' }}
 
 lang         : {{ site.lang | default: '(undefined)' }}
-theme_color  : {{ site.theme_color | jsonify | default: '(undefined)' }}
+theme_color  : {{ site.theme_color | default: '(undefined)' }}
 color_scheme : {{ site.color_scheme | default: '(undefined)' }}
 ghost        : {{ site.ghost | default: '(undefined)' }}
 

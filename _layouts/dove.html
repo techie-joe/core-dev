@@ -16,15 +16,12 @@
       <div class="_view">
         <div class="_layout _1200">
           <div class="container-lg px-3 my-5 markdown-body">
-            {% if page.use_header == false -%}{%- else -%}
-            <h1 class="_header"><a class="_logo" href="{{ site.home_url }}/">{{ site.title | default: '(untitled)' }}</a></h1>
-            {%- endif %}
             <nav class="_nav">
               <div class="_layout">
                 {% if page.use_nav == false -%}
                 <style>._nav{display:none !important}</style>
                 {%- else -%}
-                {% capture nav -%}{% include nav.md %}{%- endcapture %}{{ nav | markdownify }}
+                {% capture nav -%}{% include dove_nav.md %}{%- endcapture %}{{ nav | markdownify }}
                 {%- endif %}
               </div>
             </nav>
@@ -39,7 +36,7 @@
               <div class="_layout">
                 {% if page.use_footer == false -%}{%- else -%}
                   {% if page.use_footer contains 'edit_link_only' -%}{%- else -%}
-                  {% capture footer -%}{% include footer.md %}{%- endcapture %}{{ footer | markdownify }}
+                  {% capture footer -%}{% include dove_footer.md %}{%- endcapture %}{{ footer | markdownify }}
                   {%- endif %}
                   {% if site.github.private != true and site.github.license -%}
                   <hr class="thin border-gray-light" />

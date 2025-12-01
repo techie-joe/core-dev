@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Some articles are just so long they deserve a really long title to see if things will break well."
+title: "Some titles are just so long they deserve a check to see if things will break well, this should be long enough."
 categories: misc
 ---
 # {{ page.title }}

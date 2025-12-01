@@ -1,4 +1,4 @@
-include _main
+include _dove
 mixin mallet_theme_switch(title='Change Theme (Alt+T)')
   ._theme_switch._needjs: a(href='#' onclick!=onclick(js.themeChange) title=title)._bt.-h
     +isvg(svgi.compare)
@@ -25,8 +25,8 @@ block html
       meta#_theme_color(name="theme-color" content=theme_color||'')/
       block style
         link#_style(rel="stylesheet" href!=`${base_url}/assets/mallet/css/style.css?r=${revision}`)/
-      block custom_head
-        +custom_head
+      block layout_head
+        +layout_head
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
       ._views
@@ -52,6 +52,6 @@ block html
             +mallet_theme_switch
           //- ._view_layout
         //- ._view
-        block custom_body
-          +custom_body
+        block layout_body
+          +layout_body
       //- _views

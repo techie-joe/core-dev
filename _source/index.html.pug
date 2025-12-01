@@ -7,63 +7,53 @@ block prepend html
     title: 'Home'
 block footer
   +thin_hr
-  p: +site_footer
+  +site_footer
   +thin_hr
   p.text-right.text-grey: small: +edit_link(path)
 block append style
   style.
-    ._logo,
+    ._header,
     ._nav { display:none !important }
     ._footer { margin-top:1rem !important }
     h1.hero { font-family: 'Arial',system-ui,sans-serif }
-    article .projects { padding-left: 0;list-style: inside }
+    article .projects { margin:1rem 0;padding-left: 0;list-style: inside }
+    article .projects li { margin-left:0 }
 block content
-  h1.hero 🕊️ !{description}
-  nav: p
+  h1 🕊️ !{description}
+  nav: p(style="margin:1rem 0")
       b| Home
+      //- +_bull_
+      //- +_a([base_url,'md'].join('/'))| Markdown
       +_bull_
-      +_a([base_url,'md'].join('/'))| Markdown
+      +_a([base_url,'pages'].join('/'))| Pages
       +_bull_
-      +_a([base_url,'test'].join('/'))| Test
+      +_a([base_url,'posts'].join('/'))| Posts
   +thin_hr
-  nav: ul.projects
-    //- li
-      +_a("core/preview.html")| Core
-      +_bull_
-      +_a("mallet/preview.html")| Mallet
-      +_bull_
-      +_a("nova/preview.html")| Nova
-      +_bull_
-      +_a("prime/preview.html")| Prime
-    li: +site_nav('core')
-    li: +site_nav('mallet')
-    li: +site_nav('nova')
-    li: +site_nav('prime')
+  .flex(style="gap:3rem;margin:1rem auto 1rem auto")
+    .f
+      h3 Markdown
+      nav: ul.projects
+        li: +site_nav('core')
+        li: +site_nav('mallet')
+        li: +site_nav('nova')
+        li: +site_nav('prime')
+    .f
+      h3 Html
+      nav: ul.projects
+        li: +site_nav('core')
+        li: +site_nav('mallet')
+        li: +site_nav('nova')
+        li: +site_nav('prime')
   +thin_hr
-  pre.scrollable.highlight(style="max-height:213px").
-    #[b.text-gray # _config.pug]
-    version      : !{version}
-    revision     : !{revision}
-    title        : !{site_title}
-    description  : !{site_description}
-    author       : !{author}
-    year         : !{year}
-    base_url     : !{base_url}
-    home_url     : !{home_url}
-
-    lang         : !{lang}
-    theme_color  : !{theme_color}
-    color_scheme : !{color_scheme}
-    ghost        : !{ghost}
-
-    google_analytics     : !{google_analytics||'(undefined)'}
-    cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
-
-    source_url   : !{source_url}
-  +thin_hr
-  nav: p
-      b| !{site_title}
-      +_i_
-      +_a(source_url)(target="_edit")| Repository
-      +_bull_
-      +_a('https://techie-joe.github.io/proto')(target="_test")| Proto
+  +capture('pages')| {% include pages.md %}
+  +capture('posts')| {% include posts.md %}
+  .flex(style="gap:3rem;margin:1rem auto 1rem auto")
+    .f
+      h3 Pages
+      !='{{ pages | markdownify }}'
+    .f
+      h3 Posts
+      !='{{ posts | markdownify }}'
+  h3 Configurations
+  +capture('config')| {% include_relative config.md %}
+  !='{{ config | markdownify }}'

@@ -35,6 +35,8 @@ article {
   img { display:block }
 }
 .markdown-body {
+  ._header ._logo { margin-top: 0 !important }
+  .highlight { &,& pre { border-radius:5px }}
   table {
     & { display:table;border-collapse:collapse;border:1px solid;width:auto }
     thead tr { background-color: #f6f8fa }
@@ -77,8 +79,8 @@ article {
       .ne, .nf, .nl { color:#c33 }
       .ni { color: #a3a; }
       .nt { color: #449; }
-      .k,.o,.kd { color:#fff }
-      .kc { color:#dbd6d1 }
+      .o { color:#fff }
+      .k,.kd,.kc,.kp { color:#dbd6d1 }
     }
     table {
       &, th, td { border-color:#444 }

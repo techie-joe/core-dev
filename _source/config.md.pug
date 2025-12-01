@@ -1,0 +1,57 @@
+include ./_layouts/_dove
+mixin l
+  !='\n\n'
+mixin yml
+  !='```yml\n'
+  block
+  !='\n```\n'
++yml.
+  # _config.pug
+  version      : !{version}
+  revision     : !{revision}
+  title        : !{site_title}
+  description  : !{site_description}
+  author       : !{author}
+  year         : !{year}
+  base_url     : !{base_url}
+  home_url     : !{home_url}
+
+  lang         : !{lang}
+  theme_color  : !{theme_color}
+  color_scheme : !{color_scheme}
+  ghost        : !{ghost}
+
+  google_analytics     : !{google_analytics||'(undefined)'}
+  cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
+
+  source_url   : !{source_url}
+.
+  {: #config_pug }
+  <style>article #config_pug pre.highlight { max-height:213px }</style>
++l
++yml.
+  # _config.yml
+  version      : {{ site.version | default: '(undefined)' }}
+  revision     : {{ site.revision | default: '(undefined)' }}{{'.'}}{{ site.github.build_revision | default: '(undefined)' }}
+  title        : {{ site.title | default: '(undefined)' }}
+  description  : {{ site.description | default: '(undefined)' }}
+  author       : {{ site.author | default: '(undefined)' }}
+  year         : {{ site.year | default: '(undefined)' }}
+  base_url     : {{ site.base_url | default: '(undefined)' }}
+  home_url     : {{ site.home_url | default: '(undefined)' }}
+
+  theme        : {{ site.theme | default: '(undefined)' }}
+  remote_theme : {{ site.remote_theme | default: '(undefined)' }}
+
+  lang         : {{ site.lang | default: '(undefined)' }}
+  theme_color  : {{ site.theme_color | jsonify | default: '(undefined)' }}
+  color_scheme : {{ site.color_scheme | default: '(undefined)' }}
+  ghost        : {{ site.ghost | default: '(undefined)' }}
+
+  google_analytics     : {{ site.google_analytics | default: '(undefined)' }}
+  cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
+
+  source_url   : {{ site.github.repository_url }}
+.
+  {: #config_yml }
+  <style>article #config_yml pre.highlight { max-height:213px }</style>

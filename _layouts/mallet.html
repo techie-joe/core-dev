@@ -35,7 +35,7 @@
           <footer class="_footer">
             {%- if page.use_footer == false -%}{%- else -%}
               {%- if page.use_footer contains 'edit_link_only' -%}{%- else -%}
-              {% capture footer -%}{% include footer.md %}{%- endcapture %}{{ foooter | markdownify }}
+              {% capture footer -%}{% include footer.md %}{%- endcapture %}{{ footer | markdownify }}
               {%- endif %}
               {% if site.github.private != true and site.github.license -%}
               <hr/><p class="text-right text-gray smaller">This site is open source. {% github_edit_link "Improve this page" %}.</p>

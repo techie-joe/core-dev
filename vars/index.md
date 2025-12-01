@@ -1,8 +1,8 @@
 ---
+layout: dove
+
 title: Variables
 description: Variables on this site.
-layout: mallet
-use_nav: false
 use_footer: false
 ---
 # {{ page.title }}

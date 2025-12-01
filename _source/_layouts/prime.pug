@@ -1,8 +1,8 @@
-include _main
+include _dove
 block vars
   -
     layout = 'prime'
-    htmlClass = ['_prime_html']
+    htmlClass = ['_prime_layout']
     bodyClass = []
     mainClass = []
 block update_vars
@@ -22,21 +22,22 @@ block html
       meta#_theme_color(name="theme-color" content=theme_color||'')/
       block style
         link#_style(rel="stylesheet" href!=`${base_url}/assets/prime/css/style.css?r=${revision}`)/
-      block custom_head
-        +custom_head
+      block layout_head
+        +layout_head
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
       ._views
         ._view: ._layout._1200
           .container-lg.px-3.my-5.markdown-body
-            block header
-              //- p: code // header
-              h1._logo: a(href=home_url+'/') #{site_title}
+            header._header: ._layout
+              block header
+                //- p: code // header
+                h1._logo: a(href=home_url+'/') #{site_title}
             nav._nav: ._layout
               block nav
                 p: code // nav
               +thin_hr
-            main._main: article._article._layout
+            main._main: article._article: ._layout
               block content
                 h1 !{title}
                 p: code // content for : !{title}
@@ -46,9 +47,9 @@ block html
                 p: code // footer
                 +thin_hr
                 p.text-right.text-grey: small: +edit_link(path)
-          //- .container-lg
+          //- .container
         ._view: ._layout._1200
           +theme_switch
+        block layout_body
+          +layout_body
       //- ._views
-      block custom_body
-        +custom_body

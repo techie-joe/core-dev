@@ -1,18 +1,26 @@
----
-title: Markdown
-permalink: md
----
-<style>
-._footer { margin-top:1rem !important }
-</style>
+```yml
+# _config.pug
+version      : 0.0.3
+revision     : 2511.03.3104
+title        : Dove
+description  : Dove is a theme development project.
+author       : Techie Joe
+year         : 2025
+base_url     : /dove
+home_url     : /dove
 
-# 🕊️ {{ site.title }} {{ page.title }}
-{: #markdown }
+lang         : en-US
+theme_color  : #222
+color_scheme : light dark
+ghost        : bG9jYWxob3N0LGxvY2FsaG9zdDo0MDAwLHRlY2hpZS1qb2UuZ2l0aHViLmlv
 
-{{ description | default: '<code>(description)</code>' }}
+google_analytics     : (undefined)
+cloudflare_analytics : (undefined)
 
----
-{: .mt-3.mb-0}
+source_url   : https://github.com/techie-joe/dove
+```
+{: #config_pug }
+<style>article #config_pug pre.highlight { max-height:213px }</style>
 
 ```yml
 # _config.yml
@@ -38,22 +46,5 @@ cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
 
 source_url   : {{ site.github.repository_url }}
 ```
-{: #pre_intro }
-<style>article #pre_intro pre.highlight { max-height:203px }</style>
-
----
-
-{% capture pages %}
-### Pages
-{% include pages.md %}
-{%- endcapture %}
-
-{% capture posts %}
-### Posts
-{% include posts.md %}
-{%- endcapture %}
-
-<div class="flex" style="gap:3rem;margin:1rem auto 3rem auto">
-  <div class="f">{{ pages | markdownify }}</div>
-  <div class="fill">{{ posts | markdownify }}</div>
-</div>
+{: #config_yml }
+<style>article #config_yml pre.highlight { max-height:213px }</style>
