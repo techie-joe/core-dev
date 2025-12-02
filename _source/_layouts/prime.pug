@@ -30,21 +30,21 @@ block html
           .container-lg.px-3.my-5.markdown-body
             header._header: ._layout
               block header
-                //- p: code // header
                 h1!='{% include logo.html %}'
+                //- p: code // header
             nav._nav: ._layout
               block nav
-                //- p: code // nav
                 +thin_hr
+                //- p: code // nav
             main._main: article._article: ._layout
               block content
                 h1 !{title}
                 p: code // content for : !{title}
             footer._footer.footer.mt-5: ._layout
               block footer
-                //- p: code // footer
                 +thin_hr
                 p.text-right.text-grey: small: +edit_link(path)
+                //- p: code // footer
           //- .container
         ._view: ._layout._1200!='{% include theme_switch.html %}'
         !='{% include layout_body.html %}'

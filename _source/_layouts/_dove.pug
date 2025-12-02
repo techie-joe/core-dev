@@ -30,8 +30,8 @@ mixin site_nav(sub)
   - sub_url = [base_url,sub].join('/')+'/'
   b !{capitalize(sub)}
   +_i_
+  //- +_a(sub_url+"legacy.html")| Legacy
   +_a(sub_url+"preview.html")| Preview
-  +_a(sub_url+"legacy.html")| Legacy
   +_bull_
   +_a(sub_url)| Home
   +_a(sub_url+"page.html")| Page
