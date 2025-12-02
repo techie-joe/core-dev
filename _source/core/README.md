@@ -1,7 +1,3 @@
----
-title: About the Core
-description: Background information on the Core.
----
 > [!WARNING]  
 > **This project is under active development. Use with caution. Future update may break your site.**
 

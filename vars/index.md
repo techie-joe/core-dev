@@ -1,13 +1,13 @@
 ---
 layout: dove
+use_footer: edit_link_only
 
 title: Variables
 description: Variables on this site.
-use_footer: false
 ---
-# {{ page.title }}
-
 <style>article pre.highlight { max-height:50vh }</style>
+
+# {{ page.title }}
 
 ###### layout
 {% include vars-layout.md %}

@@ -126,8 +126,3 @@ mixin fouc
         setTimeout(e=>{q.remove(c);q.remove(x)},300);
       });
     })();
-
-mixin capture(id='')
-  !=`{% capture ${id} %}`
-  block
-  !='{% endcapture %}'

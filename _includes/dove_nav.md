@@ -3,12 +3,16 @@
 
 [Home]({{ site.base_url }}/)
 {{ bull }}
-{% if page.path == 'pages/index.md' -%}
+{% if page.path == 'pages.md' -%}
 **Pages**{%- else -%}[Pages]({{ site.base_url }}/pages)
 {%- endif %}
 {{ bull }}
-{% if page.path == 'pages/posts.md' -%}
+{% if page.path == 'posts.md' -%}
 **Posts**{%- else -%}[Posts]({{ site.base_url }}/posts)
+{%- endif %}
+{{ bull }}
+{% if page.path == 'vars/index.md' -%}
+**Variables**{%- else -%}[Variables]({{ site.base_url }}/vars)
 {%- endif %}
 {: style="margin:1rem 0" }
 

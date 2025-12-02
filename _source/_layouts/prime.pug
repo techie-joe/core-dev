@@ -35,16 +35,15 @@ block html
                 h1._logo: a(href=home_url+'/') #{site_title}
             nav._nav: ._layout
               block nav
-                p: code // nav
-              +thin_hr
+                //- p: code // nav
+                +thin_hr
             main._main: article._article: ._layout
               block content
                 h1 !{title}
                 p: code // content for : !{title}
             footer._footer.footer.mt-5: ._layout
               block footer
-                +thin_hr
-                p: code // footer
+                //- p: code // footer
                 +thin_hr
                 p.text-right.text-grey: small: +edit_link(path)
           //- .container

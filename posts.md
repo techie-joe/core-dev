@@ -1,16 +1,17 @@
 ---
 layout: dove
+use_footer: edit_link_only
 
-title: Pages
-description: List of all pages on this site.
-permalink: pages
+title: Posts
+description: List of all posts on this site.
+permalink: posts
 ---
 
 # {{ page.title }}
 
 {{ page.description }}
 
-{% include pages.md %}
+{% include posts.md %}
 
 ---
 {: style="margin-top:3rem" }

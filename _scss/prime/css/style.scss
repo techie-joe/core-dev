@@ -31,6 +31,10 @@ hr.thin {
   code,tt { background-color: rgba(#1b1f23,.15); }
 }
 
+.ba { border-color: #99a }
+
+.box { border-radius:5px }
+
 article {
   img { display:block }
 }
@@ -59,6 +63,7 @@ article {
     color: color.invert(#24292e);
     background-color: color.invert(#fff);
   }
+  .ba,
   blockquote { border-color:#3f4a54 }
   hr { background-color: #282f35 }
   .border-gray-light { border-color:#282f35 !important }
@@ -77,8 +82,8 @@ article {
       .gr, .gt { color: #e36; }
       .ne, .nf, .nl { color:#c33 }
       .ni { color: #a3a; }
-      .nt { color: #449; }
       .o { color:#fff }
+      .nt,.nc,.nn { color: #8080ab; }
       .k,.kd,.kc,.kp { color:#dbd6d1 }
     }
     table {

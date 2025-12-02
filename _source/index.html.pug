@@ -31,6 +31,8 @@ block nav
     +_a([base_url,'pages'].join('/'))| Pages
     +_bull_
     +_a([base_url,'posts'].join('/'))| Posts
+    +_bull_
+    +_a([base_url,'vars'].join('/'))| Variables
 block content
   .flex(style="gap:3rem;margin:1rem auto 1rem auto")
     .f(style="min-width:350px")
@@ -57,6 +59,7 @@ block content
     #posts_(style="min-width:150px")
       h3.mt-0 Posts
       !='{{ posts | markdownify }}'
+  +thin_hr
   h3 Configurations
   +capture('config')| {% include_relative config.md %}
   !='{{ config | markdownify }}'

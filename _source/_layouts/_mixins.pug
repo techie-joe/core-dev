@@ -27,6 +27,11 @@ mixin ---
   block
   !='\n---\n'
 
+mixin capture(id='')
+  !=`{% capture ${id} %}`
+  block
+  !='{% endcapture %}'
+
 mixin css(href,media)
   link(rel="stylesheet" media=media||'all' href=href)&attributes(attributes)/
 
