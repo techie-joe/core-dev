@@ -50,10 +50,8 @@ layout: html
                       <h2>Oops! Nothing found</h2>
                       <p>The content you are looking for is not here.</p>
                     </div>
-                  </div>
-                  <hr/>
-                  <p><a class="button text-secondary _bt -flat -l" href="?back" onclick="event.preventDefault();(function(w){var h=w.history;w.opener?w.close():h.length&gt;1?h.back():w.location.href='/';})(window)" title="Back to previous page">👈 Back</a><a class="button text-secondary _bt -flat -l" href="/dove/" title="Go to Home Page">Home</a><a class="button text-secondary _bt -flat -l" href="/dove/pages" title="Go to Pages">Pages</a><a class="button text-secondary _bt -flat -l" href="/dove/posts" title="Go to Posts">Posts</a>
-                  </p>
+                  </div><div style="margin-top:3rem"></div>
+                  <hr/>{% include nav_common.html %}
                 </div>
               </article>
             </main>
