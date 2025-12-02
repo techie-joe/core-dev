@@ -12,14 +12,16 @@ title: 'Home'
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta id="_color_scheme" name="color-scheme" content="light dark"/>
     <meta id="_theme_color" name="theme-color" content="#222"/>
-    <link id="_style" rel="stylesheet" href="/dove/assets/prime/css/style.css?r=2511.03.5726"/>
+    <link id="_style" rel="stylesheet" href="/dove/assets/prime/css/style.css?r=2511.03.1459"/>
     <style>
-      ._header,
-      ._nav { display:none !important }
       ._footer { margin-top:1rem !important }
       h1.hero { font-family: 'Arial',system-ui,sans-serif }
-      article .projects { margin:1rem 0;padding-left: 0;list-style: inside }
-      article .projects li { margin-left:0 }
+      article #pages_ ul,
+      article #posts_ ul,
+      article .rapat { margin:1rem 0;padding-left: 0;list-style: inside }
+      article #pages_ ul li,
+      article #posts_ ul li,
+      article .rapat li { margin-left:0 }
     </style><!-- layout_head --><!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
@@ -29,35 +31,30 @@ title: 'Home'
           <div class="container-lg px-3 my-5 markdown-body">
             <header class="_header">
               <div class="_layout">
-                <h1 class="_logo"><a href="/dove/">Dove</a></h1>
+                <h1>🕊️ Dove is a theme development project.</h1>
               </div>
             </header>
             <nav class="_nav">
               <div class="_layout">
-                <p><code>// nav</code></p>
-                <hr class="thin border-gray-light"/>
-              </div>
-            </nav>
-            <main class="_main">
-              <article class="_article">
-                <div class="_layout">
-                  <h1>🕊️ Dove is a theme development project.</h1>
-                  <nav>
-                    <p style="margin:1rem 0"><b>Home</b>
+                <p style="margin:1rem 0"><b>Home</b>
 <i class="_icon"><i class="itext">&bull;</i></i>
 
 <a href="/dove/pages">Pages</a>
 <i class="_icon"><i class="itext">&bull;</i></i>
 
 <a href="/dove/posts">Posts</a>
-                    </p>
-                  </nav>
-                  <hr class="thin border-gray-light"/>
+                </p>
+                <hr class="thin border-gray-light"/>
+              </div>
+            </nav>
+            <main class="_main">
+              <article class="_article">
+                <div class="_layout">
                   <div class="flex" style="gap:3rem;margin:1rem auto 1rem auto">
-                    <div class="f">
-                      <h3>Markdown</h3>
+                    <div class="f" style="min-width:350px">
+                      <h3 class="mt-0">Markdown</h3>
                       <nav>
-                        <ul class="projects">
+                        <ul class="rapat">
                           <li><b>Core</b>
 <i class="_icon"><i class="isvg">
                                 <svg viewBox="0 0 24 24">
@@ -117,10 +114,10 @@ title: 'Home'
                         </ul>
                       </nav>
                     </div>
-                    <div class="f">
-                      <h3>Html</h3>
+                    <div class="f" style="min-width:350px">
+                      <h3 class="mt-0">Html</h3>
                       <nav>
-                        <ul class="projects">
+                        <ul class="rapat">
                           <li><b>Core</b>
 <i class="_icon"><i class="isvg">
                                 <svg viewBox="0 0 24 24">
@@ -183,11 +180,11 @@ title: 'Home'
                   </div>
                   <hr class="thin border-gray-light"/>{% capture pages %}{% include pages.md %}{% endcapture %}{% capture posts %}{% include posts.md %}{% endcapture %}
                   <div class="flex" style="gap:3rem;margin:1rem auto 1rem auto">
-                    <div class="f">
-                      <h3>Pages</h3>{{ pages | markdownify }}
+                    <div id="pages_" style="min-width:150px">
+                      <h3 class="mt-0">Pages</h3>{{ pages | markdownify }}
                     </div>
-                    <div class="f">
-                      <h3>Posts</h3>{{ posts | markdownify }}
+                    <div id="posts_" style="min-width:150px">
+                      <h3 class="mt-0">Posts</h3>{{ posts | markdownify }}
                     </div>
                   </div>
                   <h3>Configurations</h3>{% capture config %}{% include_relative config.md %}{% endcapture %}{{ config | markdownify }}
@@ -245,7 +242,7 @@ title: 'Home'
       <div class="_copyright"><span class="_copyright_text">@ by Techie Joe 2025</span></div>
       <div class="_credit"><a class="_credit_link" href="https://techie-joe.github.io/dove">✨ Made with Dove</a></div>
       <script>window.ghost='bG9jYWxob3N0LGxvY2FsaG9zdDo0MDAwLHRlY2hpZS1qb2UuZ2l0aHViLmlv';</script>
-      <script type="text/javascript" src="/dove/assets/themejs/themejs_v2.0.js?r=2511.03.5726"></script>
+      <script type="text/javascript" src="/dove/assets/themejs/themejs_v2.0.js?r=2511.03.1459"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
       <script>anchors?.add();</script>
     </div>

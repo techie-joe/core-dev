@@ -12,34 +12,37 @@ block footer
   p.text-right.text-grey: small: +edit_link(path)
 block append style
   style.
-    ._header,
-    ._nav { display:none !important }
     ._footer { margin-top:1rem !important }
     h1.hero { font-family: 'Arial',system-ui,sans-serif }
-    article .projects { margin:1rem 0;padding-left: 0;list-style: inside }
-    article .projects li { margin-left:0 }
-block content
+    article #pages_ ul,
+    article #posts_ ul,
+    article .rapat { margin:1rem 0;padding-left: 0;list-style: inside }
+    article #pages_ ul li,
+    article #posts_ ul li,
+    article .rapat li { margin-left:0 }
+block header
   h1 🕊️ !{description}
-  nav: p(style="margin:1rem 0")
-      b| Home
-      //- +_bull_
-      //- +_a([base_url,'md'].join('/'))| Markdown
-      +_bull_
-      +_a([base_url,'pages'].join('/'))| Pages
-      +_bull_
-      +_a([base_url,'posts'].join('/'))| Posts
-  +thin_hr
+block nav
+  p(style="margin:1rem 0")
+    b| Home
+    //- +_bull_
+    //- +_a([base_url,'md'].join('/'))| Markdown
+    +_bull_
+    +_a([base_url,'pages'].join('/'))| Pages
+    +_bull_
+    +_a([base_url,'posts'].join('/'))| Posts
+block content
   .flex(style="gap:3rem;margin:1rem auto 1rem auto")
-    .f
-      h3 Markdown
-      nav: ul.projects
+    .f(style="min-width:350px")
+      h3.mt-0 Markdown
+      nav: ul.rapat
         li: +site_nav('core')
         li: +site_nav('mallet')
         li: +site_nav('nova')
         li: +site_nav('prime')
-    .f
-      h3 Html
-      nav: ul.projects
+    .f(style="min-width:350px")
+      h3.mt-0 Html
+      nav: ul.rapat
         li: +site_nav('core')
         li: +site_nav('mallet')
         li: +site_nav('nova')
@@ -48,11 +51,11 @@ block content
   +capture('pages')| {% include pages.md %}
   +capture('posts')| {% include posts.md %}
   .flex(style="gap:3rem;margin:1rem auto 1rem auto")
-    .f
-      h3 Pages
+    #pages_(style="min-width:150px")
+      h3.mt-0 Pages
       !='{{ pages | markdownify }}'
-    .f
-      h3 Posts
+    #posts_(style="min-width:150px")
+      h3.mt-0 Posts
       !='{{ posts | markdownify }}'
   h3 Configurations
   +capture('config')| {% include_relative config.md %}
