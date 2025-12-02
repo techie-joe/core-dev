@@ -37,7 +37,9 @@
             </main>
             <footer class="_footer footer mt-5">
               <div class="_layout">
-                {% if page.use_footer == false -%}{%- else -%}
+                {% if page.use_footer == false -%}
+                <style>._footer{display:none !important}</style>
+                {%- else -%}
                   {% if page.use_footer contains 'edit_link_only' -%}{%- else -%}
                   {% capture footer -%}{% include footer.md %}{%- endcapture %}{{ footer | markdownify }}
                   {%- endif %}
