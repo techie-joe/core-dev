@@ -2,3 +2,7 @@
 layout: default
 ---
 {{ content }}
+
+<hr/>
+<h2>Other pages</h2>
+{% capture pages -%}{% include pages.md %}{%- endcapture %}{{ pages | markdownify }}

@@ -2,9 +2,8 @@ extends /_source/_layouts/prime
 block append vars
   - path   = 'index.html'
   - title  = `Index`
-block prepend html
-  +---.
-    title: 'Home'
+block front_matter
+  | title: 'Home'
 block footer
   +thin_hr
   +site_footer

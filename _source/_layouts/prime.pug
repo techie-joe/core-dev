@@ -6,6 +6,8 @@ block vars
     bodyClass = []
     mainClass = []
 block update_vars
++---
+  block front_matter
 block html
   doctype html
   html(lang=lang||'en-US' class=htmlClass.join(' '))
@@ -19,7 +21,7 @@ block html
       meta#_color_scheme(name="color-scheme" content=color_scheme||'')/
       meta#_theme_color(name="theme-color" content=theme_color||'')/
       block style
-        link#_style(rel="stylesheet" href!=`${base_url}/assets/prime/css/style.css?r=${revision}`)/
+        link#_style(rel="stylesheet" href!=`{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
       !='{% include layout_head.html %}'
       |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
@@ -29,7 +31,7 @@ block html
             header._header: ._layout
               block header
                 //- p: code // header
-                h1._logo: a(href=home_url+'/') #{site_title}
+                h1!='{% include logo.html %}'
             nav._nav: ._layout
               block nav
                 //- p: code // nav

@@ -7,6 +7,8 @@
     {% seo %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,shrink-to-fit=no" />
+    <meta id="_theme-color"  name="theme-color"  content="{{ page.theme_color | default: site.theme_color | default: '' }}" />
+    <meta id="_color-scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}" />
     <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}" />
     {% include layout_head.html %}
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
@@ -16,9 +18,15 @@
       <div class="_view">
         <div class="_layout _1200">
           <div class="container-lg px-3 my-5 markdown-body">
-            {% if page.use_header == false -%}{%- else -%}
-            <h1 class="_header"><a class="_logo" href="{{ site.home_url }}/">{{ site.title | default: '(untitled)' }}</a></h1>
-            {%- endif %}
+            <header class="_header">
+              <div class="_layout">
+                {% if page.use_header == false -%}
+                <style>._header{display:none !important}</style>
+                {%- else -%}
+                {% capture logo -%}{% include logo.html %}{%- endcapture %}<h1>{{ logo }}</h1>
+                {%- endif %}
+              </div>
+            </header>
             <nav class="_nav">
               <div class="_layout">
                 {% if page.use_nav == false -%}

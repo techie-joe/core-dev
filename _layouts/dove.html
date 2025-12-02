@@ -7,13 +7,10 @@
     {% seo %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,shrink-to-fit=no" />
+    <meta id="_theme-color"  name="theme-color"  content="{{ page.theme_color | default: site.theme_color | default: '' }}" />
+    <meta id="_color-scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}" />
     <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}" />
     {% include layout_head.html %}
-    <style>
-      ._header ._logo { font-size:1.5rem }
-      ._header ._logo a { color:inherit;text-decoration:none }
-      ._header ._logo a:hover { color:#0366d6 }
-    </style>
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
   </head>
   <body>
@@ -26,7 +23,7 @@
                 {% if page.use_header == false -%}
                 <style>._header{display:none !important}</style>
                 {%- else -%}
-                <h1 class="_logo"><a href="{{ site.home_url }}/">🕊️ {{ site.title | default: '(untitled)' }}</a></h1>
+                {% capture logo -%}{% include dove_logo.html %}{%- endcapture %}<h1>{{ logo }}</h1>
                 {%- endif %}
               </div>
             </header>
@@ -48,7 +45,9 @@
             </main>
             <footer class="_footer footer mt-5">
               <div class="_layout">
-                {% if page.use_footer == false -%}{%- else -%}
+                {% if page.use_footer == false -%}
+                <style>._footer{display:none !important}</style>
+                {%- else -%}
                   {% if page.use_footer contains 'edit_link_only' -%}{%- else -%}
                   {% capture footer -%}{% include dove_footer.md %}{%- endcapture %}{{ footer | markdownify }}
                   {%- endif %}
