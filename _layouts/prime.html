@@ -48,13 +48,7 @@
                 {% if page.use_footer == false -%}
                 <style>._footer{display:none !important}</style>
                 {%- else -%}
-                  {% if page.use_footer contains 'edit_link_only' -%}{%- else -%}
-                  {% capture footer -%}{% include footer.md %}{%- endcapture %}{{ footer | markdownify }}
-                  {%- endif %}
-                  {% if site.github.private != true and site.github.license -%}
-                  <hr class="thin border-gray-light" />
-                  <p class="text-right text-gray"><small>This site is open source. {% github_edit_link "Improve this page" %}.</small></p>
-                  {%- endif %}
+                {% capture footer -%}{% include footer.md %}{%- endcapture %}{{ footer | markdownify }}
                 {%- endif %}
               </div>
             </footer>

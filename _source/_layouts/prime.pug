@@ -42,8 +42,7 @@ block html
                 p: code // content for : !{title}
             footer._footer.footer.mt-5: ._layout
               block footer
-                +thin_hr
-                p.text-right.text-grey: small: +edit_link(path)
+                !='{% include footer.md %}'
                 //- p: code // footer
           //- .container
         ._view: ._layout._1200!='{% include theme_switch.html %}'
