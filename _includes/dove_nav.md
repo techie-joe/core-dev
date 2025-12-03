@@ -1,7 +1,9 @@
 {% capture thin_hr -%}<hr class="thin border-gray-light" />{%- endcapture %}
 {% capture bull -%} <i class="_icon"><i class="itext">&bull;</i></i> {%- endcapture %}
 
-[Home]({{ site.base_url }}/)
+{% if page.path == 'index.html' -%}
+**Home**{%- else -%}[Home]({{ site.base_url }}/)
+{%- endif %}
 {{ bull }}
 {% if page.path == 'pages.md' -%}
 **Pages**{%- else -%}[Pages]({{ site.base_url }}/pages)

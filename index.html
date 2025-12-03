@@ -1,10 +1,12 @@
 ---
 layout: html
-title: 'Home'
+use_pug: true
+title: Dove
+description: A theme development project.
 ---
 <!DOCTYPE html>
-<html class="_prime_layout" lang="en-US"><!-- path   : index.html -->
-  <!-- layout : dove/_source/_layouts/prime -->
+<html class="_dove_layout _prime_layout" lang="en-US"><!-- path   : index.html -->
+  <!-- layout : dove/_source/_layouts/dove -->
   <head>
     <meta charset="utf-8"/>{% seo %}
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -17,7 +19,7 @@ title: 'Home'
       h1.hero { font-family: 'Arial',system-ui,sans-serif }
       article #pages_ ul,
       article #posts_ ul,
-      article .rapat { margin:1rem 0;padding-left: 0;list-style: inside }
+      article .rapat { margin:1rem 0;padding-left:1.3em }
       article #pages_ ul li,
       article #posts_ ul li,
       article .rapat li { margin-left:0 }
@@ -34,19 +36,7 @@ title: 'Home'
               </div>
             </header>
             <nav class="_nav">
-              <div class="_layout">
-                <p style="margin:1rem 0"><b>Home</b>
-<i class="_icon"><i class="itext">&bull;</i></i>
-
-<a href="/dove/pages">Pages</a>
-<i class="_icon"><i class="itext">&bull;</i></i>
-
-<a href="/dove/posts">Posts</a>
-<i class="_icon"><i class="itext">&bull;</i></i>
-
-<a href="/dove/vars">Variables</a>
-                </p>
-                <hr class="thin border-gray-light"/>
+              <div class="_layout">{% capture nav %}{% include dove_nav.md %}{% endcapture %}{{ nav | markdownify }}
               </div>
             </nav>
             <main class="_main">
@@ -172,7 +162,7 @@ title: 'Home'
                       </nav>
                     </div>
                   </div>
-                  <hr class="thin border-gray-light"/>{% capture pages %}{% include pages.md %}{% endcapture %}{% capture posts %}{% include posts.md %}{% endcapture %}
+                  <hr class="thin border-gray-light"/>{% capture pages %}{% include_relative dove_pages.md %}{% endcapture %}{% capture posts %}{% include posts.md %}{% endcapture %}
                   <div class="flex" style="gap:3rem;margin:1rem auto 1rem auto">
                     <div id="pages_" style="min-width:250px">
                       <h3 class="mt-0">Pages</h3>{{ pages | markdownify }}
@@ -187,38 +177,9 @@ title: 'Home'
               </article>
             </main>
             <footer class="_footer footer mt-5">
-              <div class="_layout">
+              <div class="_layout">{% capture footer %}{% include dove_footer.md %}{% endcapture %}{{ footer | markdownify }}
                 <hr class="thin border-gray-light"/>
-                <nav>
-                  <p><b>Dove</b>
-<i class="_icon"><i class="isvg">
-                        <svg viewBox="0 0 24 24">
-                          <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                        </svg></i></i>
-
-<a href="https://github.com/techie-joe/dove" target="_edit">Repository</a>
-<i class="_icon"><i class="itext">&bull;</i></i>
-
-<a href="https://techie-joe.github.io/proto" target="_test">Proto</a>
-                  </p>
-                  <hr class="thin border-gray-light"/>
-                  <p><b>Techie Joe's</b>
-<i class="_icon"><i class="isvg">
-                        <svg viewBox="0 0 24 24">
-                          <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                        </svg></i></i>
-
-<a href="https://techie-joe.github.io" target="_techiejoes">Website</a>
-<i class="_icon"><i class="itext">&bull;</i></i>
-
-<a href="https://github.com/techie-joe" target="_github">Profile</a>
-<i class="_icon"><i class="itext">&bull;</i></i>
-
-<a href="/nova/site/themejs" target="_themejs">ThemeJs</a>
-                  </p>
-                </nav>
-                <hr class="thin border-gray-light"/>
-                <p class="text-right text-grey"><small>
+                <p class="text-right text-gray"><small>
                     This site is open source.
                     <a href="https://github.com/techie-joe/dove/edit/main/_source/index.html.pug">Improve this page</a>.</small></p>
               </div>

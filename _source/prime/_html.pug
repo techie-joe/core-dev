@@ -1,8 +1,9 @@
 extends /_source/_layouts/prime
 block append update_vars
   - path  = ['prime',path].join('/')
-block header
-  h1!='{% include dove_logo.html %}'
+block prepend front_matter
+  | index: false
+  +l
 block nav
   p: +site_nav('prime')
   +thin_hr

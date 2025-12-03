@@ -1,27 +1,19 @@
-extends /_source/_layouts/prime
+extends /_source/_layouts/dove
 block append vars
   - path   = 'index.html'
-  - title  = `Index`
-block front_matter
-  | title: 'Home'
-block footer
-  +thin_hr
-  +site_footer
-  +thin_hr
-  p.text-right.text-grey: small: +edit_link(path)
 block append style
   style.
     ._footer { margin-top:1rem !important }
     h1.hero { font-family: 'Arial',system-ui,sans-serif }
     article #pages_ ul,
     article #posts_ ul,
-    article .rapat { margin:1rem 0;padding-left: 0;list-style: inside }
+    article .rapat { margin:1rem 0;padding-left:1.3em }
     article #pages_ ul li,
     article #posts_ ul li,
     article .rapat li { margin-left:0 }
 block header
-  h1 🕊️ !{description}
-block nav
+  h1 🕊️ !{site_title} is !{description.toLowerCase()}
+//- block nav
   p(style="margin:1rem 0")
     b| Home
     +_bull_
@@ -31,6 +23,9 @@ block nav
     +_bull_
     +_a([base_url,'vars'].join('/'))| Variables
   +thin_hr
+//- block prepend footer
+  +thin_hr
+  +site_footer
 block content
   .flex(style="gap:3rem;margin:1rem auto 1rem auto")
     .f(style="min-width:350px")
@@ -48,16 +43,16 @@ block content
         li: +site_nav('nova')
         li: +site_nav('prime')
   +thin_hr
-  +capture('pages')| {% include pages.md %}
-  +capture('posts')| {% include posts.md %}
+  +capture('pages')|{% include_relative dove_pages.md %}
+  +capture('posts')|{% include posts.md %}
   .flex(style="gap:3rem;margin:1rem auto 1rem auto")
     #pages_(style="min-width:250px")
       h3.mt-0 Pages
-      !='{{ pages | markdownify }}'
+      |{{ pages | markdownify }}
     #posts_(style="min-width:150px")
       h3.mt-0 Posts
-      !='{{ posts | markdownify }}'
+      |{{ posts | markdownify }}
   +thin_hr
   h3 Configurations
-  +capture('config')| {% include_relative config.md %}
-  !='{{ config | markdownify }}'
+  +capture('config')|{% include_relative config.md %}
+  |{{ config | markdownify }}
