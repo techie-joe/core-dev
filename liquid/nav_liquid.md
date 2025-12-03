@@ -1,3 +1,10 @@
-[Liquid basics](basic)
-&bull;
-[Handling Liquid List](list)
+{% capture thin_hr -%}<hr class="thin border-gray-light" />{%- endcapture %}
+{% capture bull -%} <i class="_icon"><i class="itext">&bull;</i></i> {%- endcapture %}
+
+{% if page.path == 'liquid/index.md' -%}
+**Liquid basics**{%- else -%}[Liquid basics]({{ site.base_url }}/liquid)
+{%- endif %}
+{{ bull }}
+{% if page.path == 'liquid/list.md' -%}
+**Handling Liquid List**{%- else -%}[Handling Liquid List]({{ site.base_url }}/liquid/list)
+{%- endif %}
