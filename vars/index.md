@@ -18,6 +18,11 @@ description: Variables on this site.
 ###### site.related_posts
 {% include vars-site.related_posts.md %}
 
+{% comment %}
+###### config
+{% include vars-site.config.md %}
+{% endcomment %}
+
 ###### site
 {% include vars-site.md %}
 

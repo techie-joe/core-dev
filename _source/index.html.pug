@@ -51,7 +51,7 @@ block content
   +capture('pages')| {% include pages.md %}
   +capture('posts')| {% include posts.md %}
   .flex(style="gap:3rem;margin:1rem auto 1rem auto")
-    #pages_(style="min-width:150px")
+    #pages_(style="min-width:250px")
       h3.mt-0 Pages
       !='{{ pages | markdownify }}'
     #posts_(style="min-width:150px")

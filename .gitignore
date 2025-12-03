@@ -17,6 +17,9 @@ package-lock.json
 # ignore CNAME record used by DNS server
 CNAME
 
+# ignore localhost files
+.htaccess
+
 # ignore files and folders used by Developers
 .vscode/
 *.x

@@ -10,7 +10,9 @@ description  : {{ site.description | default: '(undefined)' }}
 
 author       : {{ site.author | default: '(undefined)' }}
 year         : {{ site.year | default: '(undefined)' }}
+time         : {{ site.time }}
 
+baseurl      : {{ site.baseurl }}
 base_url     : {{ site.base_url | default: '(undefined)' }}
 home_url     : {{ site.home_url | default: '(undefined)' }}
 
@@ -22,20 +24,9 @@ ghost        : {{ site.ghost | default: '(undefined)' }}
 google_analytics     : {{ site.google_analytics | default: '(undefined)' }}
 cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
 
-time          : {{ site.time }}
-
 url           : {{ site.url }}
-baseurl       : {{ site.baseurl }}
 permalink     : {{ site.permalink }}
 paginate_path : {{ site.paginate_path }}
-
-source          : {{ site.source }}
-destination     : {{ site.destination }}
-collections_dir : {{ site.collections_dir }}
-data_dir        : {{ site.data_dir }}
-includes_dir    : {{ site.includes_dir }}
-layouts_dir     : {{ site.layouts_dir }}
-plugins_dir     : {{ site.plugins_dir }}
 
 safe          : {{ site.safe }}
 show_drafts   : {{ site.show_drafts }}
@@ -78,40 +69,33 @@ liquid:
   error_mode       : {{ site.liquid.error_mode }}
   strict_filters   : {{ site.liquid.strict_filters }}
   strict_variables : {{ site.liquid.strict_variables }}
-```
 
-###### site.sass
+sass:
+  {%- for v in site.sass %}
+  {{ v[0] }}: {{ v[1] }}
+  {%- else %}
+  # its empty
+  {%- endfor %}
 
-```yml
-{%- for v in site.sass %}
-{{ v[0] }}: {{ v[1] }}
-{%- endfor %}
-```
-
-###### site.defaults
-
-```yml
-size: {{ site.defaults.size | default:0 }}
-{%- for v in site.defaults %}
--
-  {{ v[0] }}: {{ v[1] | jsonify }}
-{%- endfor %}
+defaults: {{ site.defaults | jsonify }}
 ```
 
 ###### site.data
 
 ```yml
-size: {{ site.data.size | default:0 }}
+data: {{ site.data.size | default:0 }}
 {%- for data in site.data %}
 -
   {{ data[0] }}: {{ data[1] | jsonify }}
+{%- else %}
+# its empty
 {%- endfor %}
 ```
 
 ###### site.tags
 
 ```yml
-size: {{ site.tags.size | default:0 }}
+tags: {{ site.tags.size | default:0 }}
 {%- for tag in site.tags %}
 - {{ tag[0] }}: [{{ tag[1] | size }} posts]
   {%- for post in tag[1] %}
@@ -136,14 +120,18 @@ size: {{ site.tags.size | default:0 }}
     collection : {{ post.collection }}
     categories : {{ post.categories | jsonify }}
     tags       : {{ page.tags | jsonify }}
+  {%- else %}
+  # its empty
   {%- endfor %}
+{%- else %}
+# its empty
 {%- endfor %}
 ```
 
 ###### site.categories
 
 ```yml
-size: {{ site.categories.size | default:0 }}
+categories: {{ site.categories.size | default:0 }}
 {%- for category in site.categories %}
 - {{ category[0] }}: [{{ category[1] | size }} posts]
   {%- for post in category[1] %}
@@ -168,14 +156,18 @@ size: {{ site.categories.size | default:0 }}
     collection : {{ post.collection }}
     categories : {{ post.categories | jsonify }}
     tags       : {{ page.tags | jsonify }}
+  {%- else %}
+  # its empty
   {%- endfor %}
+{%- else %}
+# its empty
 {%- endfor %}
 ```
 
 ###### site.collections
 
 ```yml
-size: {{ site.collections.size }}
+collections: {{ site.collections.size }}
 {%- for collection in site.collections %}
 -
   label:  {{ collection.label }}
@@ -185,16 +177,20 @@ size: {{ site.collections.size }}
   output     : {{ collection.output }}
   files.size : {{ collection.files.size | default:0 }}
   docs.size  : {{ collection.docs.size | default:0 }}
+{%- else %}
+# its empty
 {%- endfor %}
 ```
 
 ###### site.documents
 
 ```yml
-size: {{ site.documents.size | default:0 }}
+documents: {{ site.documents.size | default:0 }}
 {%- for file in site.documents %}
 -
   collection : {{ file.collection }}
   url        : {{ file.url }}
+{%- else %}
+# its empty
 {%- endfor %}
 ```

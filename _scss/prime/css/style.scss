@@ -44,6 +44,7 @@ article {
   img { display:block }
 }
 .markdown-body {
+  p { margin-top: 16px }
   ._header h1 { margin-top: .67em !important }
   .highlight { &,& pre { border-radius:5px }}
   table {
