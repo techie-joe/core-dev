@@ -26,16 +26,22 @@ mixin nav_common
   a(href=home_url+'/pages' title="Go to Pages").button.text-secondary._bt.-flat.-l Pages
   a(href=home_url+'/posts' title="Go to Posts").button.text-secondary._bt.-flat.-l Posts
 
+mixin sna(ref)
+  if ref == path || ref+'index.html' == path
+    +_
+    b: block
+  else
+    +_a([base_url,ref].join('/')): block
+
 mixin site_nav(sub)
-  - sub_url = [base_url,sub].join('/')+'/'
   b !{capitalize(sub)}
   +_i_
   //- +_a(sub_url+"legacy.html")| Legacy
-  +_a(sub_url+"preview.html")| Preview
+  +sna(sub+"/preview.html")| Preview
   +_bull_
-  +_a(sub_url)| Home
-  +_a(sub_url+"page.html")| Page
-  +_a(sub_url+"404.html")| 404
+  +sna(sub+"/")| Home
+  +sna(sub+"/page.html")| Page
+  +sna(sub+"/404.html")| 404
 
 mixin site_footer
   nav

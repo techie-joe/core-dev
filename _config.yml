@@ -8,7 +8,10 @@ plugins:
   - jekyll-github-metadata
   # - jekyll-remote-theme
   # - jekyll-paginate
+  # - jekyll-redirect-from
   # - jekyll-sitemap
+  # - jekyll-feed
+  # - jemoji
 
 version       : '0.0.3'
 revision      : '2511.03'

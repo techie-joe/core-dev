@@ -21,6 +21,7 @@ CNAME
 .htaccess
 
 # ignore files and folders used by Developers
+test.*
 .vscode/
 *.x
 *.ignore

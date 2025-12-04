@@ -13,6 +13,9 @@ releases        : {{ site.github.releases.size | default:0 }}
 private         : {{ site.github.private }}
 show_downloads  : {{ site.github.show_downloads }}
 
+is_project_page : {{ site.github.is_project_page }}
+is_user_page    : {{ site.github.is_user_page }}
+
 environment     : {{ site.github.environment }}
 hostname        : {{ site.github.hostname }}
 

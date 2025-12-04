@@ -4,6 +4,8 @@ block append update_vars
 block prepend front_matter
   | index: false
   +l
+block header
+  h1|{% include dove_logo.html %}
 block nav
   p: +site_nav('prime')
   +thin_hr

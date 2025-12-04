@@ -1,9 +1,9 @@
 ```yml
 {%- for v in page %}
-{%- if v[0]=='content' %}
-{{ v[0] | ljust: 10, ' ' }}: [{{ v[1].size }} characters]
+{%- if v[0]=='content' or v[0]=='excerpt' %}
+{{ v[0] }}: [{{ v[1].size }} characters]
 {%- else %}
-{{ v[0] | ljust: 10, ' ' }}: {{ v[1] }}
+{{ v[0] }}: {{ v[1] }}
 {%- endif %}
 {%- else -%}
 # its empty

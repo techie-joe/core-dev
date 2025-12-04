@@ -1,32 +1,36 @@
 ```yml
-theme        : {{ site.theme | default: '(undefined)' }}
-remote_theme : {{ site.remote_theme | default: '(undefined)' }}
+theme         : {{ site.theme | default: '(undefined)' }}
+remote_theme  : {{ site.remote_theme | default: '(undefined)' }}
 
-version      : {{ site.version | default: '(undefined)' }}
-revision     : {{ site.revision | default: '(undefined)' }}{{'.'}}{{ site.github.build_revision | default: '(undefined)' }}
+version       : {{ site.version | default: '(undefined)' }}
+revision      : {{ site.revision | default: '(undefined)' }}{{'.'}}{{ site.github.build_revision | default: '(undefined)' }}
 
-title        : {{ site.title | default: '(undefined)' }}
-description  : {{ site.description | default: '(undefined)' }}
+title         : {{ site.title | default: '(undefined)' }}
+description   : {{ site.description | default: '(undefined)' }}
 
-author       : {{ site.author | default: '(undefined)' }}
-year         : {{ site.year | default: '(undefined)' }}
-time         : {{ site.time }}
+author        : {{ site.author | default: '(undefined)' }}
+year          : {{ site.year | default: '(undefined)' }}
+time          : {{ site.time }}
 
-baseurl      : {{ site.baseurl }}
-base_url     : {{ site.base_url | default: '(undefined)' }}
-home_url     : {{ site.home_url | default: '(undefined)' }}
+url           : {{ site.url }}
+baseurl       : {{ site.baseurl }}
+base_url      : {{ site.base_url | default: '(undefined)' }}
+home_url      : {{ site.home_url | default: '(undefined)' }}
+permalink     : {{ site.permalink }}
+paginate_path : {{ site.paginate_path }}
 
-lang         : {{ site.lang | default: '(undefined)' }}
-theme_color  : {{ site.theme_color | default: '(undefined)' }}
-color_scheme : {{ site.color_scheme | default: '(undefined)' }}
-ghost        : {{ site.ghost | default: '(undefined)' }}
+lang          : {{ site.lang | default: '(undefined)' }}
+theme_color   : {{ site.theme_color | default: '(undefined)' }}
+color_scheme  : {{ site.color_scheme | default: '(undefined)' }}
+ghost         : {{ site.ghost | default: '(undefined)' }}
 
 google_analytics     : {{ site.google_analytics | default: '(undefined)' }}
 cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
 
-url           : {{ site.url }}
-permalink     : {{ site.permalink }}
-paginate_path : {{ site.paginate_path }}
+strict_front_matter : {{ site.strict_front_matter }}
+excerpt_separator   : {{ site.excerpt_separator | jsonify }}
+disable_disk_cache  : {{ site.disable_disk_cache }}
+ignore_theme_config : {{ site.ignore_theme_config }}
 
 safe          : {{ site.safe }}
 show_drafts   : {{ site.show_drafts }}
@@ -39,11 +43,6 @@ quiet         : {{ site.quiet }}
 profile       : {{ site.profile }}
 incremental   : {{ site.incremental }}
 lsi           : {{ site.lsi }}
-
-strict_front_matter : {{ site.strict_front_matter }}
-excerpt_separator   : {{ site.excerpt_separator | jsonify }}
-disable_disk_cache  : {{ site.disable_disk_cache }}
-ignore_theme_config : {{ site.ignore_theme_config }}
 
 keep_files    : {{ site.keep_files | jsonify }}
 include       : {{ site.include | jsonify }}
@@ -76,17 +75,17 @@ sass:
   {%- else %}
   # its empty
   {%- endfor %}
-
-defaults: {{ site.defaults | jsonify }}
 ```
 
-###### site.data
+###### site.defaults
 
 ```yml
-data: {{ site.data.size | default:0 }}
-{%- for data in site.data %}
--
-  {{ data[0] }}: {{ data[1] | jsonify }}
+defaults: {{ site.defaults.size | default:0 }}
+{%- for v in site.defaults %}
+{{ forloop.index }} :
+  {%- for x in v %}
+    {{ x | jsonify }}
+  {%- endfor %}
 {%- else %}
 # its empty
 {%- endfor %}
@@ -187,6 +186,19 @@ collections: {{ site.collections.size }}
 ```yml
 documents: {{ site.documents.size | default:0 }}
 {%- for file in site.documents %}
+-
+  collection : {{ file.collection }}
+  url        : {{ file.url }}
+{%- else %}
+# its empty
+{%- endfor %}
+```
+
+###### site.docs
+
+```yml
+docs: {{ site.docs.size | default:0 }}
+{%- for file in site.docs %}
 -
   collection : {{ file.collection }}
   url        : {{ file.url }}
