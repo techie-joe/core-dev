@@ -9,5 +9,7 @@ size: {{ site.pages.size | default:0 }}
   {{ v[0] }}: {{ v[1] }}
   {%- endif %}
   {%- endfor %}
+{%- else %}
+# its empty
 {%- endfor %}
 ```

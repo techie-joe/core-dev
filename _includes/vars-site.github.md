@@ -44,6 +44,8 @@ organization_members : {{ site.github.organization_members }}
 ```yml
 {%- for v in site.github.license %}
 {{ v[0] }}: {{ v[1] }}
+{%- else %}
+# unlicense
 {%- endfor %}
 ```
 
@@ -52,6 +54,8 @@ organization_members : {{ site.github.organization_members }}
 ```yml
 {%- for v in site.github.owner %}
 {{ v[0] }}: {{ v[1] }}
+{%- else %}
+# unknown
 {%- endfor %}
 ```
 
@@ -78,5 +82,7 @@ author:
 ```yml
 {%- for v in site.github.versions %}
 {{ v[0] }}: {{ v[1] }}
+{%- else %}
+# unversioned
 {%- endfor %}
 ```

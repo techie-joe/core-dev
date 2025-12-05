@@ -1,3 +1,7 @@
+{% comment %}
+baseurl, cache_dir, cache_gitignore_path, collections, collections_path, config, converters, data, dest, docs_to_write, documents, exclude, file_read_opts, filter_cache, find_converter_instance, frontmatter_defaults, future, gems, generators, highlighter, include, includes_load_paths, inclusions, keep_files, layouts, limit_posts, liquid_renderer, lsi, pages, permalink_style, plugin_manager, plugins, post_attr_hash, profiler, publisher, reader, regenerator, safe, show_drafts, site_cleaner, site_data, source, static_files, theme, time, unpublished
+{% endcomment %}
+
 ```yml
 theme         : {{ site.theme | default: '(undefined)' }}
 remote_theme  : {{ site.remote_theme | default: '(undefined)' }}
@@ -82,7 +86,7 @@ sass:
 ```yml
 defaults: {{ site.defaults.size | default:0 }}
 {%- for v in site.defaults %}
-{{ forloop.index }} :
+{{ forloop.index }} -
   {%- for x in v %}
     {{ x | jsonify }}
   {%- endfor %}
@@ -98,7 +102,7 @@ tags: {{ site.tags.size | default:0 }}
 {%- for tag in site.tags %}
 - {{ tag[0] }}: [{{ tag[1] | size }} posts]
   {%- for post in tag[1] %}
-  -
+  {{ forloop.index }} -
     title    : {{ post.title }}
     date     : {{ post.date }}
     layout   : {{ post.layout }}
@@ -134,7 +138,7 @@ categories: {{ site.categories.size | default:0 }}
 {%- for category in site.categories %}
 - {{ category[0] }}: [{{ category[1] | size }} posts]
   {%- for post in category[1] %}
-  -
+  {{ forloop.index }} -
     title    : {{ post.title }}
     date     : {{ post.date }}
     layout   : {{ post.layout }}
@@ -186,19 +190,6 @@ collections: {{ site.collections.size }}
 ```yml
 documents: {{ site.documents.size | default:0 }}
 {%- for file in site.documents %}
--
-  collection : {{ file.collection }}
-  url        : {{ file.url }}
-{%- else %}
-# its empty
-{%- endfor %}
-```
-
-###### site.docs
-
-```yml
-docs: {{ site.docs.size | default:0 }}
-{%- for file in site.docs %}
 -
   collection : {{ file.collection }}
   url        : {{ file.url }}

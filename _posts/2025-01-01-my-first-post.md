@@ -1,5 +1,5 @@
 ---
-layout: dove
+layout: post
 author: John Doe
 comments: false
 ---
