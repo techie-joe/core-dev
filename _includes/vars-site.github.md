@@ -69,8 +69,12 @@ organization_members : {{ site.github.organization_members }}
 author:
   {%- for v in site.github.latest_release.author %}
   {{ v[0] }}: {{ v[1] }}
+  {%- else %}
+  # its empty
   {%- endfor %}
 {%- endif %}
+{%- else %}
+# its empty
 {%- endfor %}
 {%- if site.github.latest_release %}
 # no release

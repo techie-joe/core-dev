@@ -1,8 +1,11 @@
 ```yml
-data: {{ site.data.size | default:0 }}
-{%- for data in site.data %}
--
-  {{ data[0] }} : {{ data[1] | jsonify }}
+# [{{ site.data.size | default: 'no' }}] files
+{{''}}
+{%- for file in site.data %}
+# file.{{ forloop.index }} - {{ file[0] }}
+{%- assign d=file[1] %}
+{% include mod-inspect.md var=d blob=blob pad="" tab="  " %}
+{{''}}
 {%- else %}
 # its empty
 {%- endfor %}

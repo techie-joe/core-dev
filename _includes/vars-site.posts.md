@@ -1,7 +1,7 @@
 ```yml
 size: {{ site.posts.size | default:0 }}
 {%- for post in site.posts %}
--
+#{{ forloop.index }} -
   title    : {{ post.title }}
   date     : {{ post.date }}
   layout   : {{ post.layout }}
@@ -22,5 +22,7 @@ size: {{ site.posts.size | default:0 }}
   collection : {{ post.collection }}
   categories : {{ post.categories | jsonify }}
   tags       : {{ page.tags | jsonify }}
+{%- else %}
+# its empty
 {%- endfor %}
 ```

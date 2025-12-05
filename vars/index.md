@@ -5,13 +5,23 @@ use_footer: edit_link_only
 title: Variables
 description: Variables on this site.
 ---
+
 <style>article pre.highlight { max-height:50vh }</style>
 
+{% include_relative vars_nav.md %}
+
+{%- assign pad = "             " %}
+{%- assign blob = "content,excerpt" %}
+
 ###### layout
-{% include vars-layout.md %}
+```yml
+{% include mod-inspect.md var=layout pad=pad blob=blob %}
+```
 
 ###### page
-{% include vars-page.md %}
+```yml
+{% include mod-inspect.md var=page pad=pad blob=blob %}
+```
 
 {% comment %}
 ###### config
@@ -25,6 +35,9 @@ description: Variables on this site.
 
 ###### site.data
 {% include vars-site.data.md %}
+
+**next**
+{: .text-red }
 
 ###### site.pages
 {% include vars-site.pages.md %}
