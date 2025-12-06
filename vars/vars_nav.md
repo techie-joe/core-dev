@@ -7,8 +7,14 @@
 **Common**{%- else -%}[Common]({{ site.base_url }}/vars/)
 {%- endif %}
 {{ bull }}
+{% if page.path == 'vars/github.md' -%}
+**Github**{%- else -%}[Github]({{ site.base_url }}/vars/github)
+{%- endif %}
+{% if site.github.environment -%}
+{{ bull }}
 {% if page.path == 'vars/test.md' -%}
 **Test**{%- else -%}[Test]({{ site.base_url }}/vars/test)
+{%- endif %}
 {%- endif %}
 {: style="margin:1rem 0" }
 
