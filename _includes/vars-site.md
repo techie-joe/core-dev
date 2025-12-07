@@ -1,18 +1,14 @@
-{%- assign pad = "             " %}
-{%- assign blob = "content,excerpt" %}
 {%- assign word_key = "[0] key,[1] key,[#n;] keys" %}
 {%- comment -%}
-
+------------------------------------------------------------------
 baseurl,
-----------------------------------------------------------
+------------------------------------------------------------------
 cache_dir, cache_gitignore_path, collections, collections_path, config, converters, data, dest, docs_to_write, documents, exclude, file_read_opts, filter_cache, find_converter_instance, frontmatter_defaults, future, gems, generators, highlighter, include, includes_load_paths, inclusions, keep_files, layouts, limit_posts, liquid_renderer, lsi, pages, permalink_style, plugin_manager, plugins, post_attr_hash, profiler, publisher, reader, regenerator, safe, show_drafts, site_cleaner, site_data, source, static_files, theme, time, unpublished
-
-###### site.config
-{% include vars-site.config.md %}
-
+------------------------------------------------------------------
 {%- endcomment -%}
 
 ###### site
+
 ```yml
 # {% include mod-plural.md word=word_key val=site %}
 theme         : {{ site.theme }}
@@ -63,17 +59,17 @@ markdown      : {{ site.markdown }}
 
 ###### site.kramdown
 ```yml
-{{'#'}} {% include mod-inspect.md var=site.kramdown pad=pad blob=blob %}
+{{'#'}} {% include mod-inspect.md var=site.kramdown %}
 ```
 
 ###### site.liquid
 ```yml
-{{'#'}} {% include mod-inspect.md var=site.liquid blob=blob pad=pad %}
+{{'#'}} {% include mod-inspect.md var=site.liquid %}
 ```
 
 ###### site.sass
 ```yml
-{{'#'}} {% include mod-inspect.md var=site.sass blob=blob pad="" %}
+{{'#'}} {% include mod-inspect.md var=site.sass pad="" %}
 ```
 
 ###### site.defaults
@@ -81,34 +77,23 @@ markdown      : {{ site.markdown }}
 ```yml
 # {% include mod-plural.md word="[0] default,[1] default,[#n;] defaults" val=site.defaults %}
 {%- for d in site.defaults %}
-# default.{{ forloop.index | append: ' - has ' -}}
-{%- include mod-inspect.md var=d blob=blob pad="       " tab="  " %}
+# default.{{ forloop.index | append: ' - ' }}
+{%- include mod-inspect.md var=d pad="       " tab="  " %}
 {%- else %}
 # its empty
 {%- endfor %}
 ```
 
 ###### site.data
+
 ```yml
 # {% include mod-plural.md word="[0] file,[1] file,[#n;] files" val=site.data %}
 {%- for file in site.data %}
-{%- assign d=file[1] %}
-# file.{{ forloop.index | append: ' - ' -}} {{ file[0] | append: ' - has ' -}}
-{%- include mod-inspect.md var=d blob=blob pad="" tab="  " %}
-{%- else %}
-# its empty
-{%- endfor %}
-```
-
-###### site.documents
-
-```yml
-# {% include mod-plural.md word="[0] document,[1] document,[#n;] documents" val=site.documents %}
-{%- for doc in site.documents %}
-# document.{{ forloop.index | append: ' - ' -}}
-  {% include mod-plural.md word=word_key val=doc %}
-  collection : {{ doc.collection }}
-  url        : {{ doc.url }}
+{%- assign key = file[0] %}
+{%- assign _data = file[1] %}
+# file.{{ forloop.index | append: ' - ' }}
+{{- key | append: ' - ' }}
+{%- include mod-inspect.md var=_data pad="       " tab="  " %}
 {%- else %}
 # its empty
 {%- endfor %}
@@ -119,15 +104,29 @@ markdown      : {{ site.markdown }}
 ```yml
 # {% include mod-plural.md word="[0] collection,[1] collection,[#n;] collections" val=site.collections %}
 {%- for collection in site.collections %}
-# collection.{{ forloop.index | append: ' - ' -}}
-  {% include mod-plural.md word=word_key val=collection %}
-  label      : {{ collection.label }}
-  relative_directory : {{ collection.relative_directory }}
-  directory  : {{ collection.directory }}
+# collection.{{ forloop.index | append: ' - ' }}
+{%- include mod-plural.md word=word_key val=collection %}
+  directory  : # full path of the directory
   permalink  : {{ collection.permalink }}
+  relative_directory : {{ collection.relative_directory }}
+  label      : {{ collection.label }}
   output     : {{ collection.output }}
-  files.size : {{ collection.files.size | default:0 }}
-  docs.size  : {{ collection.docs.size | default:0 }}
+  metadata   : {{ collection.metadata | jsonify }}
+  docs.size  : {% include mod-plural.md val=collection.docs %}
+  files.size : {% include mod-plural.md val=collection.files %}
+{%- else %}
+# its empty
+{%- endfor %}
+```
+
+###### site.documents
+
+```yml
+# {% include mod-plural.md word="[0] document,[1] document,[#n;] documents" val=site.documents %}
+{%- for doc in site.documents %}
+# document.{{ forloop.index | append: ' - ' }}
+{%- include mod-plural.md word=word_key val=doc %}
+{%- include mod-post.md post=doc tab="  " %}
 {%- else %}
 # its empty
 {%- endfor %}
@@ -136,9 +135,10 @@ markdown      : {{ site.markdown }}
 ###### site.posts
 
 ```yml
-# [{{ site.posts.size | default: 'no' }}] posts
+# {% include mod-plural.md word="[0] post,[1] post,[#n;] posts" val=site.posts %}
 {%- for post in site.posts %}
-# post.{{ forloop.index | append: ' - ' -}} [{{ post.size | default: 'no' }}] keys
+# post.{{ forloop.index | append: ' - ' }}
+{%- include mod-plural.md word=word_key val=post %}
 {%- include mod-post.md post=post tab="  " %}
 {%- else %}
 # its empty
@@ -150,13 +150,15 @@ markdown      : {{ site.markdown }}
 ```yml
 # {% include mod-plural.md word="[0] category,[1] category,[#n;] categories" val=site.categories %}
 {%- for category in site.categories %}
-# category.{{ forloop.index | append: ' - ' -}} {{ category[0] | append: ' - has ' -}}
-  {%- assign _posts = category[1] %}
+{%- assign key = category[0] %}
+{%- assign _posts = category[1] %}
+# category.{{ forloop.index | append: ' - ' -}}
+  {{ key | append: ' - ' }}
   {%- include mod-plural.md word="[0] post,[1] post,[#n;] posts" val=_posts %}
   {%- for post in _posts %}
-  # post.{{ forloop.index | append: ' - has ' -}}
+  # post.{{ forloop.index | append: ' - ' -}}
   {% include mod-plural.md word=word_key val=post %}
-  {%- include mod-post.md post=post tab="  " %}
+  {%- include mod-post.md post=post tab="    " %}
   {%- else %}
   # its empty
   {%- endfor %}
@@ -170,11 +172,13 @@ markdown      : {{ site.markdown }}
 ```yml
 # {% include mod-plural.md word="[0] tag,[1] tag,[#n;] tags" val=site.tags %}
 {%- for tag in site.tags %}
-# tag.{{ forloop.index | append: ' - ' -}} {{ tag[0] | append: ' - has ' -}}
-  {%- assign _posts = tag[1] %}
+{%- assign key = tag[0] %}
+{%- assign val = tag[1] %}
+# tag.{{ forloop.index | append: ' - ' -}}
+  {{ key | append: ' - ' }}
   {%- include mod-plural.md word=word_key val=_posts %}
   {%- for post in _posts %}
-  # post.{{ forloop.index | append: ' - has ' -}}
+  # post.{{ forloop.index | append: ' - ' -}}
   {% include mod-plural.md word=word_key val=post %}
   {%- include mod-post.md post=post tab="  " %}
   {%- else %}
@@ -185,13 +189,16 @@ markdown      : {{ site.markdown }}
 {%- endfor %}
 ```
 
+**to do: site.pages keys in certain order**
+{: .text-red }
+
 ###### site.pages
 
 ```yml
 # {% include mod-plural.md word="[0] page,[1] page,[#n;] pages" val=site.pages %}
 {%- for page in site.pages %}
 # page.{{ forloop.index | append: ' - ' -}}
-{% include mod-inspect.md var=page pad=pad blob=blob tab="  " %}
+{% include mod-inspect.md var=page tab="  " %}
 {%- else %}
 # its empty
 {%- endfor %}
@@ -202,7 +209,7 @@ markdown      : {{ site.markdown }}
 ```yml
 # {% include mod-plural.md word="[0] file,[1] file,[#n;] files" val=site.static_files %}
 {%- for file in site.static_files %}
-# file.{{ forloop.index | append: ' - has ' -}}
+# file.{{ forloop.index | append: ' - ' -}}
 {% include mod-plural.md word=word_key val=file %}
   basename      : {{ file.basename }}
   name          : {{ file.name }}

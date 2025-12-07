@@ -2,10 +2,9 @@
 layout: dove
 use_footer: edit_link_only
 
-title: Variables
+title: Site Variables
 description: Variables on this site.
 ---
-
 <style>article pre.highlight { max-height:50vh }</style>
 
 {% include_relative vars_nav.md %}
@@ -13,8 +12,5 @@ description: Variables on this site.
 {% include vars-page.md %}
 
 {% include vars-site.md %}
-
-{% comment %}
-{% endcomment %}
 
 {% comment %}--- end of page ---{% endcomment %}

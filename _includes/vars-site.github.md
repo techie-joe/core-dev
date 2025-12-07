@@ -1,10 +1,11 @@
 {%- assign pad = "             " %}
+{%- assign blob = "content,excerpt" %}
 {%- assign word_key = "[0] key,[1] key,[#n;] keys" %}
 {%- comment -%}
-
-----------------------------------------------------------
-
+------------------------------------------------------------------
 {%- endcomment -%}
+
+###### site.github
 
 ```yml
 # {% include mod-plural.md word=word_key val=site.github %}
@@ -45,13 +46,13 @@ organization_members : {{ site.github.organization_members }}
 ###### site.github.license
 
 ```yml
-{{'#'}} {% include mod-inspect.md var=site.github.license pad=pad blob=blob %}
+{{'#'}} {% include mod-inspect.md var=site.github.license %}
 ```
 
 ###### site.github.owner
 
 ```yml
-{{'#'}} {% include mod-inspect.md var=site.github.owner pad=pad blob=blob %}
+{{'#'}} {% include mod-inspect.md var=site.github.owner %}
 ```
 
 ###### site.github.latest_release

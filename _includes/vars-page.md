@@ -1,25 +1,27 @@
-{%- assign pad = "             " %}
-{%- assign blob = "content,excerpt" %}
+{%- assign word_key = "[0] key,[1] key,[#n;] keys" %}
+{%- comment -%}
+------------------------------------------------------------------
+{%- endcomment -%}
 
 ###### layout
+
 ```yml
-{{'#'}} {% include mod-inspect.md var=layout pad=pad blob=blob %}
+{{'#'}} {% include mod-inspect.md var=layout %}
 ```
 
 ###### page
+
 ```yml
-{{'#'}} {% include mod-inspect.md var=page pad=pad blob=blob %}
+{{'#'}} {% include mod-inspect.md var=page %}
 ```
 
 ###### site.related_posts
 
 ```yml
 # {% include mod-plural.md word=word_key val=site.related_posts %}
-{%- for post in site.related_posts %}
-# post.{{ forloop.index | append: ' - has ' -}}
-{% include mod-plural.md word=word_key val=post %}
-{%- include vars-post.md post=post tab="  " %}
+{%- if site.related_posts %}
+{{ site.related_posts | jsonify }}
 {%- else %}
 # its empty
-{%- endfor %}
+{%- endif %}
 ```

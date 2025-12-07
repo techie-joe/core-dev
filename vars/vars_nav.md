@@ -4,7 +4,7 @@
 
 **Variables** {{ angle }}
 {% if page.path == 'vars/index.md' -%}
-**Common**{%- else -%}[Common]({{ site.base_url }}/vars/)
+**Site**{%- else -%}[Site]({{ site.base_url }}/vars/)
 {%- endif %}
 {{ bull }}
 {% if page.path == 'vars/github.md' -%}
