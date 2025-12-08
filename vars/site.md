@@ -3,16 +3,12 @@ layout: dove
 use_footer: edit_link_only
 
 title: Site Variables
-description: Variables on this site.
+description: Site Variables on this site.
 ---
 <style>article pre.highlight { max-height:50vh }</style>
 
 {% include_relative vars_nav.md %}
 
-{%- assign word_key = "[0] key,[1] key,[#n;] keys" %}
-
-```yml
-# {% include mod-plural.md word=word_key val=keys %} - {{ keys | join: ", " }}
-```
+{% include vars-site.md %}
 
 {% comment %}--- end of page ---{% endcomment %}

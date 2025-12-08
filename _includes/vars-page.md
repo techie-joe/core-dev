@@ -3,16 +3,21 @@
 ------------------------------------------------------------------
 {%- endcomment -%}
 
-###### layout
-
 ```yml
-{{'#'}} {% include mod-inspect.md var=layout %}
+{{'# '}} {%- include mod-plural.md word=word_key val=page %}
+{{-' - '}} {{- page.keys | join: "," }}
 ```
 
 ###### page
 
 ```yml
 {{'#'}} {% include mod-inspect.md var=page %}
+```
+
+###### layout
+
+```yml
+{{'#'}} {% include mod-inspect.md var=layout %}
 ```
 
 ###### site.related_posts

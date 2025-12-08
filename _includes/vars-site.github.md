@@ -5,6 +5,11 @@
 ------------------------------------------------------------------
 {%- endcomment -%}
 
+```yml
+{{'# '}} {%- include mod-plural.md word=word_key val=site.github.keys %}
+{{-' - '}} {{- site.github.keys | join: "," }}
+```
+
 ###### site.github
 
 ```yml

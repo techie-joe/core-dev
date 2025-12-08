@@ -1,31 +1,34 @@
 {%- assign word_key = "[0] key,[1] key,[#n;] keys" %}
 {%- comment -%}
 ------------------------------------------------------------------
-baseurl,
-------------------------------------------------------------------
-cache_dir, cache_gitignore_path, collections, collections_path, config, converters, data, dest, docs_to_write, documents, exclude, file_read_opts, filter_cache, find_converter_instance, frontmatter_defaults, future, gems, generators, highlighter, include, includes_load_paths, inclusions, keep_files, layouts, limit_posts, liquid_renderer, lsi, pages, permalink_style, plugin_manager, plugins, post_attr_hash, profiler, publisher, reader, regenerator, safe, show_drafts, site_cleaner, site_data, source, static_files, theme, time, unpublished
+data,time,config,collections,posts,tags,categories,html_pages,documents,related_posts,static_files,pages,source,destination,collections_dir,cache_dir,plugins_dir,layouts_dir,data_dir,includes_dir,safe,include,exclude,keep_files,encoding,markdown_ext,strict_front_matter,show_drafts,limit_posts,future,unpublished,whitelist,plugins,markdown,highlighter,lsi,excerpt_separator,incremental,detach,port,host,baseurl,show_dir_listing,permalink,paginate_path,timezone,quiet,verbose,defaults,liquid,kramdown,version,revision,title,description,author,year,base_url,home_url,lang,theme_color,color_scheme,ghost,sass,serving,watch,url,github
 ------------------------------------------------------------------
 {%- endcomment -%}
+
+```yml
+{{'# '}} {%- include mod-plural.md word=word_key val=site.keys %}
+{{-' - '}} {{- site.keys | join: "," }}
+```
 
 ###### site
 
 ```yml
 # {% include mod-plural.md word=word_key val=site %}
-theme         : {{ site.theme }}
-remote_theme  : {{ site.remote_theme }}
-version       : {{ site.version }}
-revision      : {{ site.revision | default: 0 }}{{'.'}}{{ site.github.build_revision | default: 0 }}
 title         : {{ site.title }}
 description   : {{ site.description }}
 author        : {{ site.author }}
 year          : {{ site.year }}
 time          : {{ site.time }}
+version       : {{ site.version }}
+revision      : {{ site.revision | default: 0 }}{{'.'}}{{ site.github.build_revision | default: 0 }}
+theme         : {{ site.theme }}
+remote_theme  : {{ site.remote_theme }}
 url           : {{ site.url }}
 baseurl       : {{ site.baseurl }}
 base_url      : {{ site.base_url }}
 home_url      : {{ site.home_url }}
-permalink     : {{ site.permalink }}
 paginate_path : {{ site.paginate_path }}
+permalink     : {{ site.permalink }}
 lang          : {{ site.lang }}
 theme_color   : {{ site.theme_color }}
 color_scheme  : {{ site.color_scheme }}
@@ -198,7 +201,7 @@ markdown      : {{ site.markdown }}
 # {% include mod-plural.md word="[0] page,[1] page,[#n;] pages" val=site.pages %}
 {%- for page in site.pages %}
 # page.{{ forloop.index | append: ' - ' -}}
-{% include mod-inspect.md var=page tab="  " %}
+{% include mod-inspect.md var=page tab="  " sort="title,description,...,content,excerpt" %}
 {%- else %}
 # its empty
 {%- endfor %}
