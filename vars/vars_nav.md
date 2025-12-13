@@ -17,7 +17,7 @@
 {% if page.path == 'vars/github.md' -%}
 **Github**{%- else %}[Github]({{ site.base_url }}/vars/github)
 {%- endif %}
-{% if site.github.environment -%}
+{% if site.github.environment == 'development' -%}
 {{ bull }}
 {% if page.path == 'vars/test.md' -%}
 **Test**{%- else %}[Test]({{ site.base_url }}/vars/test)

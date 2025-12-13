@@ -3,15 +3,18 @@
 ------------------------------------------------------------------
 {%- endcomment -%}
 
-```yml
-{{'# '}} {%- include mod-plural.md word=word_key val=page %}
-{{-' - '}} {{- page.keys | join: "," }}
-```
-
 ###### page
 
+{{-''}}
+{{ '**keys**: ' }} {{ page.keys | join: ", " }}
+{: .box.highlight.pa.smaller.mono }
+
 ```yml
-{{'#'}} {% include mod-inspect.md var=page %}
+{%- assign val = page %}
+# page : [json]
+keys : {% include mod-plural_2.md val=val.keys word=word_key %}
+size : {% include mod-plural_2.md val=val %}
+{{'#'}} {% include mod-inspect.md var=val %}
 ```
 
 ###### layout

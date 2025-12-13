@@ -1,19 +1,26 @@
 {%- assign pad = "             " %}
 {%- assign blob = "content,excerpt" %}
-{%- assign word_key = "[0] key,[1] key,[#n;] keys" %}
+{%- assign word_key = "[0] key,[1] key,[n] keys" %}
 {%- comment -%}
+------------------------------------------------------------------
+40 keys : api_url, archived, baseurl, build_revision, clone_url, contributors, disabled, environment, help_url, hostname, is_project_page, is_user_page, issues_url, language, latest_release, license, organization_members, owner, owner_display_name, owner_gravatar_url, owner_name, owner_url, pages_env, pages_hostname, private, project_tagline, project_title, public_repositories, releases, releases_url, repository_name, repository_nwo, repository_url, show_downloads, source, tar_url, url, versions, wiki_url, zip_url
 ------------------------------------------------------------------
 {%- endcomment -%}
 
-```yml
-{{'# '}} {%- include mod-plural.md word=word_key val=site.github.keys %}
-{{-' - '}} {{- site.github.keys | join: "," }}
-```
-
 ###### site.github
 
+{%- assign val = site.github %}
+**{% include mod-plural_2.md val=val.keys word=word_key %} :**{{' '}}
+{{- val.keys | sort | join: ", " }}
+{: .box.highlight.pa.smaller.mono }
+
 ```yml
-# {% include mod-plural.md word=word_key val=site.github %}
+# site.github
+keys : {% include mod-plural_2.md val=val.keys word=word_key %}
+size : {% include mod-plural_2.md val=val %}
+```
+
+```yml
 project_title   : {{ site.github.project_title }}
 project_tagline : {{ site.github.project_tagline }}
 repository_name : {{ site.github.repository_name }}
@@ -63,11 +70,11 @@ organization_members : {{ site.github.organization_members }}
 ###### site.github.latest_release
 
 ```yml
-# {% include mod-plural.md word=word_key val=site.github.latest_release %}
+# {% include mod-plural_2.md word=word_key val=site.github.latest_release %}
 {%- for v in site.github.latest_release %}
 {%- if v[0] == 'author' %}
 author:
-  # {% include mod-plural.md word=word_key val=site.github.latest_release.author %}
+  # {% include mod-plural_2.md word=word_key val=site.github.latest_release.author %}
   {%- for v in site.github.latest_release.author %}
   {{ v[0] }}: {{ v[1] }}
   {%- else %}
@@ -84,7 +91,7 @@ author:
 ###### site.github.versions
 
 ```yml
-# {% include mod-plural.md word=word_key val=site.github.versions %}
+# {% include mod-plural_2.md word=word_key val=site.github.versions %}
 {%- for v in site.github.versions %}
 {{ v[0] }}: {{ v[1] }}
 {%- else %}

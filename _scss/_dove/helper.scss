@@ -133,6 +133,7 @@ article {
     font-size:.9em;
     li::marker {font-size:.8em}
   }
+  .no_max_height pre.highlight { max-height:none !important }
 }
 
 .no_u { text-decoration:none !important }

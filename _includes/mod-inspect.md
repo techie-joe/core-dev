@@ -4,7 +4,6 @@
 {%- assign _pad = include.pad | default: "             " %}
 {%- if include.tab != nil %}{% assign _tab = include.tab %}{% endif %}
 {%- if include.pad != nil %}{% assign _pad = include.pad %}{% endif %}
-{%- assign _json = include.json | default: "categories,tags" | split: "," %}
 {%- assign _blob = include.blob | default: "content,excerpt,output" | split: "," %}
 {%- assign _exclude = include.exclude | default: "" | split: "," %}
 {%- assign _var = include.var %}
