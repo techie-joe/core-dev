@@ -1,8 +1,7 @@
 {%- assign sorted_pages = site.pages | sort: "path" %}
 
 {%- for p in sorted_pages %}
-{%- if p.index == false or p.title == "" or p.title == empty or p.title == nil or p.title == blank %}
-{%- else %}
+{%- if p.index != false and p.title and p.title.size %}
 {%- assign title = p.title | default:'(Untitled page)' %}
 {%- if title == site.title %}
 {%- assign title = 'Home' %}
