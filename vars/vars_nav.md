@@ -17,6 +17,10 @@
 {% if page.path == 'vars/github.md' -%}
 **Github**{%- else %}[Github]({{ site.base_url }}/vars/github)
 {%- endif %}
+{{ bull }}
+{% if page.path == 'vars/repo.md' -%}
+**Repo**{%- else %}[Repo]({{ site.base_url }}/vars/repo)
+{%- endif %}
 {% if site.github.environment == 'development' -%}
 {{ bull }}
 {% if page.path == 'vars/test.md' -%}

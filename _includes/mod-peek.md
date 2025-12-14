@@ -7,6 +7,6 @@
 {%- elsif include.val == empty %} {{- '[empty]' }}
 {%- elsif include.val == blank %} {{- '[blank]' }}
 {%- else %}
-{{ _tab -}} keys : {% include mod-plural_2.md val=include.val.keys word=word_key %}
-{{ _tab -}} size : {% include mod-plural_2.md val=include.val word=include.word %}
+{{ _tab -}} keys : {% include mod-plural.md val=include.val.keys word=word_key %}
+{{ _tab -}} size : {% include mod-plural.md val=include.val word=include.word %}
 {%- endif %}

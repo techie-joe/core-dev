@@ -1,4 +1,4 @@
-{%- assign _pad = include.pad | default: "             " %}
+{%- assign _pad = include.pad | default: "" %}
 {%- if include.pad != nil %}{% assign _pad = include.pad %}{% endif %}
 
 {%- assign _key = include.text %}

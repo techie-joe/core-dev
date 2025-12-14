@@ -2,7 +2,7 @@
 layout: dove
 use_footer: edit_link_only
 
-title: Site Variables
+title: Vars
 description: Variables on this site.
 ---
 <style>article pre.highlight { max-height:50vh }</style>
@@ -15,7 +15,7 @@ content, highlighter_prefix, highlighter_suffix, jekyll, layout, page, paginator
 
 {%- assign word_key = "[0] key,[1] key,[n] keys" %}
 
-**{% include mod-plural_2.md val=keys word=word_key %} :**{{' '}}
+**{% include mod-plural.md val=keys word=word_key %} :**{{' '}}
 {{- keys | sort | join: ", " }}
 {: .box.highlight.pa.smaller.mono }
 

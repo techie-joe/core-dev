@@ -1,25 +1,70 @@
-{%- assign word_key = "[0] key,[1] key,[#n;] keys" %}
-{%- assign word_character = "[0] character,[1] character,[#n;] characters" %}
+{%- assign word_key = "[0] key,[1] key,[n] keys" %}
+{%- assign word_character = "[0] character,[1] character,[n] characters" %}
 {%- assign _tab = include.tab | default: "" %}
-{%- assign _pad = include.pad | default: "             " %}
-{%- if include.tab != nil %}{% assign _tab = include.tab %}{% endif %}
-{%- if include.pad != nil %}{% assign _pad = include.pad %}{% endif %}
-{%- assign _blob = include.blob | default: "content,excerpt,output" | split: "," %}
+{%- assign _pad = include.pad | default: "" %}
+{%- if include.tab != nil %}{% assign _tab = include.tab %}{%- endif %}
+{%- if include.pad != nil %}{% assign _pad = include.pad %}{%- endif %}
+
+{%- assign _include = include.include | default: "" | split: "," %}
 {%- assign _exclude = include.exclude | default: "" | split: "," %}
-{%- assign _var = include.var %}
+{%- assign _blok = include.blok | default: "keys" | split: "," %}
+{%- assign _bloc = include.bloc | default: "github" | split: "," %}
+{%- assign _blob = include.blob | default: "content,excerpt,output" | split: "," %}
+{%- assign _bloi = include.bloi | default: "size,paginator" | split: "," %}
+{%- assign _refs = include.refs | default: "previous,next" | split: "," %}
+{%- assign _json = include.json | default: "excerpt_separator" | split: "," %}
+
+{%- if include.val.keys %}
+  {%- assign _keys = include.val.keys | sort %}
+  {%- for key in _keys %}
+    {%- unless _exclude contains key or _include contains key %}
+    {%- assign _include = _include | push: key %}
+    {%- endunless %}
+  {%- endfor %}
+{%- elsif include.val.size %}
+  {%- for v in include.val %}
+    {%- assign key = v[0] %}
+    {%- unless _exclude contains key or _include contains key %}
+    {%- assign _include = _include | push: key %}
+    {%- endunless %}
+  {%- endfor %}
+{%- endif %}
+
+{%- assign n = 0 %}
+
 {{-''}}
-{%- include mod-plural.md word=word_key val=_var %}
-{%- for v in _var %}
+{%- for key in _include %}
 {%- unless _exclude contains key %}
-{{ _tab -}}
-  {%- assign key = v[0] %}
-  {%- assign val = v[1] %}
-  {%- include mod-label.md text=key pad=_pad -%}{{-' : '-}}
-  {%- if _blob contains key %}
-  {%- include mod-plural.md word=word_character val=val %}
-  {%- else %} {{- "" | append: val }}
-  {%- endif %}
+{%- assign _val = include.val[key] %}
+{%- if n > 0 %}
+{{ _tab }} {%- else -%} {{- '' }}
+{%- endif %}
+{%- include mod-label.md text=key pad=_pad %}{{-' : '-}}
+{%- if _blok contains key -%} [{%- include mod-plural.md val=_val word=word_key %}]
+{%- elsif _bloc contains key -%} [{%- include mod-plural.md val=_val.keys word=word_key %}]
+{%- elsif _blob contains key -%} [{%- include mod-plural.md val=_val word=word_character %}]
+{%- elsif _bloi contains key -%} [{%- include mod-plural.md val=_val %}]
+{%- elsif _refs contains key -%} [{{- "" | append: _val.id }}]
+{%- elsif _json contains key -%} {{- _val | jsonify }}
+{%- elsif _val == false %} {{- 'false' }}
+{%- elsif _val == nil %} {{- '[nil]' }}
+{%- elsif _val == 0 %} {{- '0' }}
+{%- elsif _val == empty %} {{- '[empty]' | append: _val }}
+{%- elsif _val == blank %} {{- '[blank]' }}
+{%- else %} {{- "" | append: _val }}
+{%- endif %}
+{%- assign n = n | plus: 1 %}
 {%- endunless %}
-{%- else %}
+{%- else -%}
 # its empty
+{%- endfor %}
+
+{%- assign _peek = include.peek | default: "" | split: "," %}
+{%- for key in _peek %}
+{%- assign _val = include.val[key] %}
+# {{ key | append: ' : ' }}
+  {%- include mod-peek.md val=_val %}
+  {%- if _val %}
+  peek : # {{ _val | prepend: "" | truncate: 100 }}
+  {%- endif %}
 {%- endfor %}

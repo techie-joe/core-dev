@@ -2,7 +2,7 @@
 layout: dove
 use_footer: edit_link_only
 
-title: Github Variables
+title: Github
 description: Github Variables on this site.
 ---
 <style>article pre.highlight { max-height:50vh }</style>

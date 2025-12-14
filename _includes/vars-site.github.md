@@ -1,98 +1,94 @@
 {%- assign pad = "             " %}
-{%- assign blob = "content,excerpt" %}
 {%- assign word_key = "[0] key,[1] key,[n] keys" %}
+{%- assign owner_keys = "type,name,bio,description,id,login,email,location,company,is_verified,hireable,followers,following,public_gists,public_repos,avatar_url,html_url,blog,created_at,updated_at" %}
 {%- comment -%}
-------------------------------------------------------------------
-40 keys : api_url, archived, baseurl, build_revision, clone_url, contributors, disabled, environment, help_url, hostname, is_project_page, is_user_page, issues_url, language, latest_release, license, organization_members, owner, owner_display_name, owner_gravatar_url, owner_name, owner_url, pages_env, pages_hostname, private, project_tagline, project_title, public_repositories, releases, releases_url, repository_name, repository_nwo, repository_url, show_downloads, source, tar_url, url, versions, wiki_url, zip_url
 ------------------------------------------------------------------
 {%- endcomment -%}
 
 ###### site.github
 
-{%- assign val = site.github %}
-**{% include mod-plural_2.md val=val.keys word=word_key %} :**{{' '}}
-{{- val.keys | sort | join: ", " }}
-{: .box.highlight.pa.smaller.mono }
-
 ```yml
-# site.github
-keys : {% include mod-plural_2.md val=val.keys word=word_key %}
-size : {% include mod-plural_2.md val=val %}
+{%
+  include mod-inspect.md
+  val=site.github
+  include="project_title,project_tagline,repository_name,repository_nwo,repository_url,url,baseurl,language,archived,disabled,private,show_downloads,is_project_page,is_user_page,hostname,environment,pages_env,pages_hostname,build_revision,api_url,help_url,clone_url,issues_url,releases_url,tar_url,zip_url,wiki_url,owner_display_name,owner_name,owner_url,owner_gravatar_url,source,license,owner,latest_release,releases,contributors"
+  blok="license,owner,versions"
+  bloi="public_repositories,contributors"
+  peek=""
+  pad="                    "
+%}
 ```
-
-```yml
-project_title   : {{ site.github.project_title }}
-project_tagline : {{ site.github.project_tagline }}
-repository_name : {{ site.github.repository_name }}
-repository_nwo  : {{ site.github.repository_nwo }}
-repository_url  : {{ site.github.repository_url }}
-url             : {{ site.github.url }}
-api_url         : {{ site.github.api_url }}
-baseurl         : {{ site.github.baseurl }}
-language        : {{ site.github.language }}
-contributors    : {{ site.github.contributors.size | default: 0 }}
-releases        : {{ site.github.releases.size | default: 0 }}
-private         : {{ site.github.private }}
-show_downloads  : {{ site.github.show_downloads }}
-is_project_page : {{ site.github.is_project_page }}
-is_user_page    : {{ site.github.is_user_page }}
-environment     : {{ site.github.environment }}
-hostname        : {{ site.github.hostname }}
-pages_env       : {{ site.github.pages_env }}
-pages_hostname  : {{ site.github.pages_hostname }}
-build_revision  : {{ site.github.build_revision }}
-source          : {{ site.github.source }}
-clone_url       : {{ site.github.clone_url }}
-wiki_url        : {{ site.github.wiki_url }}
-issues_url      : {{ site.github.issues_url }}
-releases_url    : {{ site.github.releases_url }}
-tar_url         : {{ site.github.tar_url }}
-zip_url         : {{ site.github.zip_url }}
-owner_name           : {{ site.github.owner_name }}
-owner_url            : {{ site.github.owner_url }}
-owner_gravatar_url   : {{ site.github.owner_gravatar_url }}
-public_repositories  : {{ site.github.public_repositories.size | default: 0 }}
-organization_members : {{ site.github.organization_members }}
-```
+{: .no_max_height }
 
 ###### site.github.license
 
 ```yml
-{{'#'}} {% include mod-inspect.md var=site.github.license %}
+{%
+  include mod-inspect.md
+  val=site.github.license
+  pad=pad
+%}
 ```
+{: .no_max_height }
 
 ###### site.github.owner
 
 ```yml
-{{'#'}} {% include mod-inspect.md var=site.github.owner %}
+{%
+  include mod-inspect.md
+  val=site.github.owner
+  include=owner_keys
+  pad=pad
+%}
 ```
+{: .no_max_height }
 
-###### site.github.latest_release
+###### site.github.releases
 
 ```yml
-# {% include mod-plural_2.md word=word_key val=site.github.latest_release %}
-{%- for v in site.github.latest_release %}
-{%- if v[0] == 'author' %}
-author:
-  # {% include mod-plural_2.md word=word_key val=site.github.latest_release.author %}
-  {%- for v in site.github.latest_release.author %}
-  {{ v[0] }}: {{ v[1] }}
-  {%- else %}
-  # its empty
-  {%- endfor %}
+# {% include mod-plural.md val=site.github.releases word="[0] release,[1] release,[n] releases" %}
+{%- assign sorted_releases = site.github.releases | sort %}
+{%- if sorted_releases.size > 0 %}
+{%- assign release = sorted_releases[0] %}
+# release.{{ forloop.index | append: ' - ' -}}
+  {%- include mod-plural.md val=release word=word_key %}
+  {%
+    include mod-inspect.md
+    val=release
+    pad=pad
+  %}
 {%- else %}
-{{ v[0] }}: {{ v[1] }}
+# no release found
 {%- endif %}
+```
+{: .no_max_height }
+
+###### site.github.contributors
+
+```yml
+# {% include mod-plural.md val=site.github.contributors word="[0] contributor,[1] contributor,[n] contributors" %}
+{%- assign sorted_contributors = site.github.contributors | sort %}
+{%- for user in sorted_contributors %}
+# contributor.{{ forloop.index | append: ' - ' -}}
+  {%- include mod-plural.md val=user word=word_key %}
+  {%
+    include mod-inspect.md
+    val=user
+    include="type,login,id,node_id,html_url"
+    pad=pad
+    tab="  "
+  %}
 {%- else %}
-# no release
+# no contributor found
 {%- endfor %}
 ```
 
 ###### site.github.versions
 
 ```yml
-# {% include mod-plural_2.md word=word_key val=site.github.versions %}
-{%- for v in site.github.versions %}
+# {% include mod-plural.md word=word_key val=site.github.versions %}
+{%- assign sorted_versions = site.github.versions | sort %}
+{%- for v in sorted_versions %}
 {{ v[0] }}: {{ v[1] }}
 {%- else %}
 # unversioned

@@ -4,7 +4,7 @@ title: "This post demonstrates post content styles"
 categories: junk
 author:
 - Bart Simpson
-- Nelson Mandela Muntz
+- Nelson Muntz
 meta: "Springfield"
 modified_date: 2025-09-27
 ---
