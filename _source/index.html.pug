@@ -43,7 +43,7 @@ block content
         li: +site_nav('nova')
         li: +site_nav('prime')
   +thin_hr
-  +capture('pages')|{% include_relative dove_pages.md %}
+  +capture('pages')|{% include_relative _dove_pages.md %}
   +capture('posts')|{% include posts.md %}
   .flex(style="gap:3rem;margin:1rem auto 1rem auto")
     #pages_(style="min-width:250px")
@@ -54,5 +54,5 @@ block content
       |{{ posts | markdownify }}
   +thin_hr
   h3 Configurations
-  +capture('config')|{% include_relative config.md %}
+  +capture('config')|{% include_relative _config.md %}
   |{{ config | markdownify }}

@@ -7,7 +7,7 @@ title: Handling Liquid List
 description: Handling Liquid List.
 ---
 {%- capture thin_hr -%}<hr class="thin border-gray-light"/>{%- endcapture -%}
-{%- capture nav_liquid %}{% include_relative nav_liquid.md %}{% endcapture -%}
+{%- capture nav_liquid %}{% include_relative _nav_liquid.md %}{% endcapture -%}
 <nav>{{ nav_liquid | markdownify }}{{ thin_hr | markdownify }}</nav>
 
 # {{ page.title }}
@@ -53,4 +53,4 @@ list_a   : {{ list_a | jsonify }} [{{ list_a | size | append: ' items' }}]
 
 {{ thin_hr }}
 
-{% include_relative nav_liquid.md %}
+{% include_relative _nav_liquid.md %}

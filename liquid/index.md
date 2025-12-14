@@ -7,7 +7,7 @@ title: Liquid basics
 description: Basic Liquid syntaxes.
 ---
 {%- capture thin_hr -%}<hr class="thin border-gray-light"/>{%- endcapture -%}
-{%- capture nav_liquid %}{% include_relative nav_liquid.md %}{% endcapture -%}
+{%- capture nav_liquid %}{% include_relative _nav_liquid.md %}{% endcapture -%}
 <nav>{{ nav_liquid | markdownify }}{{ thin_hr | markdownify }}</nav>
 
 # {{ page.title }}
@@ -175,4 +175,4 @@ Github Pages does not support `echo` and `render` at the moment.
 
 {{ thin_hr }}
 
-{% include_relative nav_liquid.md %}
+{% include_relative _nav_liquid.md %}

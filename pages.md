@@ -11,7 +11,7 @@ permalink: pages
 
 {{ page.description }}
 
-{% include_relative dove_pages.md %}
+{% include_relative _dove_pages.md %}
 
 ---
 {: style="margin-top:3rem" }

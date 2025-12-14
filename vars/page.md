@@ -7,7 +7,7 @@ description: Page Variables on this site.
 ---
 <style>article pre.highlight { max-height:50vh }</style>
 
-{% include_relative vars_nav.md %}
+{% include_relative _vars_nav.md %}
 
 {% include vars-page.md %}
 

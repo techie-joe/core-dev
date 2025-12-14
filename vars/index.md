@@ -7,7 +7,7 @@ description: Variables on this site.
 ---
 <style>article pre.highlight { max-height:50vh }</style>
 
-{% include_relative vars_nav.md %}
+{% include_relative _vars_nav.md %}
 
 {%-comment %}
 content, highlighter_prefix, highlighter_suffix, jekyll, layout, page, paginator, site, theme
