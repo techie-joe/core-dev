@@ -17,6 +17,12 @@
 {% if page.path == 'vars/index.md' -%}
 **Variables**{%- else -%}[Variables]({{ site.base_url }}/vars)
 {%- endif %}
+{% if site.github.environment == 'development' -%}
+{{ bull }}
+{% if page.path == 'vars/test.md' -%}
+**Test**{%- else %}[Test]({{ site.base_url }}/test)
+{%- endif %}
+{%- endif %}
 {: style="margin:1rem 0" }
 
 {{ thin_hr }}

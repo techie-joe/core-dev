@@ -13,30 +13,17 @@ block append style
     article .rapat li { margin-left:0 }
 block header
   h1 🕊️ !{site_title} is !{description.toLowerCase()}
-//- block nav
-  p(style="margin:1rem 0")
-    b| Home
-    +_bull_
-    +_a([base_url,'pages'].join('/'))| Pages
-    +_bull_
-    +_a([base_url,'posts'].join('/'))| Posts
-    +_bull_
-    +_a([base_url,'vars'].join('/'))| Variables
-  +thin_hr
-//- block prepend footer
-  +thin_hr
-  +site_footer
 block content
   .flex(style="gap:3rem;margin:1rem auto 1rem auto")
     .f(style="min-width:350px")
-      h3.mt-0 Markdown
+      h3.mt-0 Html
       nav: ul.rapat
         li: +site_nav('core')
         li: +site_nav('mallet')
         li: +site_nav('nova')
         li: +site_nav('prime')
     .f(style="min-width:350px")
-      h3.mt-0 Html
+      h3.mt-0 Markdown
       nav: ul.rapat
         li: +site_nav('core')
         li: +site_nav('mallet')

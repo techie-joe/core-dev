@@ -3,7 +3,7 @@
 {%- for p in sorted_pages %}
 {%- if p.index != false and p.title and p.title.size %}
 {%- assign title = p.title | default:'(Untitled page)' %}
-{%- if title == site.title %}
+{%- if p.url == '/' %}
 {%- assign title = 'Home' %}
 {%- endif %}
 {%- if p.path != page.path %}

@@ -2,7 +2,7 @@
 layout: dove
 use_footer: edit_link_only
 
-title: Repo
+title: Repository
 description: Repository Variables on this site.
 ---
 <style>article pre.highlight { max-height:50vh }</style>

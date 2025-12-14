@@ -19,7 +19,7 @@
 {%- endif %}
 {{ bull }}
 {% if page.path == 'vars/repo.md' -%}
-**Repo**{%- else %}[Repo]({{ site.base_url }}/vars/repo)
+**Repository**{%- else %}[Repository]({{ site.base_url }}/vars/repo)
 {%- endif %}
 {% if site.github.environment == 'development' -%}
 {{ bull }}
