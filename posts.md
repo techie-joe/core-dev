@@ -11,7 +11,7 @@ permalink: posts
 
 {{ page.description }}
 
-{% include posts.md %}
+{% include dove_posts.md %}
 
 ---
 {: style="margin-top:3rem" }

@@ -3,20 +3,15 @@ block append vars
   - path   = 'home.html'
   - title  = `Home`
 block content
-  p: code // content for : !{title}
-
-//- .hero-box-1
-block prepend content
-  block hero-box
-    style.
-      .hero-box-1 { padding:0 }
-      .hero-box-1 .site-description {
-        margin-left: 3.3rem;
-        font-weight: 300;
-        font-size: 1.1em;
-      }
-      .hero-box-1 .hero-hr { margin-top:45px }
-    .hero-box-1.box
-      h1#_hero-title ⚒️ Heroic Title
-      p.site-description Your site's description or mission statement.
-      hr.hero-hr/
+  //- .hero-box-1
+  style.
+    .hero-box-1 { padding:0 }
+    .hero-box-1 .site-description {
+      margin-left: 3.3rem;
+      font-weight: 300;
+      font-size: 1.1em;
+    }
+    .hero-box-1 .hero-hr { margin-top:45px }
+  .hero-box-1.box
+    h1#_hero-title ⚒️ Heroic Title
+    p.site-description Your site's description or mission statement.

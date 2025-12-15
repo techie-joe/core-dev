@@ -12,11 +12,12 @@ block append style
     article #posts_ ul li,
     article .rapat li { margin-left:0 }
 block header
-  h1 🕊️ !{site_title} is !{description.toLowerCase()}
+  h1 🕊️ !{site_title} is !{description.toLowerCase().replace(/\.$/, '')}
 block content
   .flex(style="gap:3rem")
     .fill
       h3.mt-0 Themes
+      p.text-grey We are currently working on the following themes.
       nav: ul.rapat
         li: +site_nav('core')
         li: +site_nav('mallet')
@@ -38,14 +39,15 @@ block content
         li: +site_nav('nova')
         li: +site_nav('prime')
   +thin_hr
-  +capture('pages')|{% include_relative _dove_pages.md %}
-  +capture('posts')|{% include posts.md %}
+  p.text-grey These are supporting posts and pages for development puposes.
+  +capture('pages')|{% include dove_pages.md exclude="!{exclude_pages}" %}
+  +capture('posts')|{% include dove_posts.md exclude="!{exclude_posts}" %}
   .flex(style="gap:3rem")
     #pages_(style="min-width:250px")
-      h3 Pages
+      h3.mt-0 Pages
       |{{ pages | markdownify }}
     #posts_(style="min-width:150px")
-      h3 Posts
+      h3.mt-0 Posts
       |{{ posts | markdownify }}
   +thin_hr
   h3 Configurations

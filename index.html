@@ -32,7 +32,7 @@ description: A theme development project.
           <div class="container-lg px-3 my-5 markdown-body">
             <header class="_header">
               <div class="_layout">
-                <h1>🕊️ Dove is a theme development project.</h1>
+                <h1>🕊️ Dove is a theme development project</h1>
               </div>
             </header>
             <nav class="_nav">
@@ -45,6 +45,7 @@ description: A theme development project.
                   <div class="flex" style="gap:3rem">
                     <div class="fill">
                       <h3 class="mt-0">Themes</h3>
+                      <p class="text-grey">We are currently working on the following themes.</p>
                       <nav>
                         <ul class="rapat">
                           <li>
@@ -107,13 +108,14 @@ description: A theme development project.
                       </nav>
                     </div>
                   </div>
-                  <hr class="thin"/>{% capture pages %}{% include_relative _dove_pages.md %}{% endcapture %}{% capture posts %}{% include posts.md %}{% endcapture %}
+                  <hr class="thin"/>
+                  <p class="text-grey">These are supporting posts and pages for development puposes.</p>{% capture pages %}{% include dove_pages.md exclude="" %}{% endcapture %}{% capture posts %}{% include dove_posts.md exclude="" %}{% endcapture %}
                   <div class="flex" style="gap:3rem">
                     <div id="pages_" style="min-width:250px">
-                      <h3>Pages</h3>{{ pages | markdownify }}
+                      <h3 class="mt-0">Pages</h3>{{ pages | markdownify }}
                     </div>
                     <div id="posts_" style="min-width:150px">
-                      <h3>Posts</h3>{{ posts | markdownify }}
+                      <h3 class="mt-0">Posts</h3>{{ posts | markdownify }}
                     </div>
                   </div>
                   <hr class="thin"/>
