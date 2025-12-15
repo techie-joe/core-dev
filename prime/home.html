@@ -2,11 +2,11 @@
 layout: html
 use_pug: true
 index: false
-title: Index
+title: Home
 description: A theme development project.
 ---
 <!DOCTYPE html>
-<html class="_prime_layout" lang="en-US"><!-- path   : prime/index.html -->
+<html class="_prime_layout" lang="en-US"><!-- path   : prime/home.html -->
   <!-- layout : dove/_source/_layouts/prime -->
   <head>
     <meta charset="utf-8"/>{% seo %}
@@ -36,7 +36,8 @@ description: A theme development project.
 
 <a href="/dove/prime/preview.html">Preview</a>
 <i class="_icon"><i class="itext">&bull;</i></i>
- <b>Home</b>
+
+<a href="/dove/prime/">Home</a>
 <a href="/dove/prime/page.html">Page</a>
 <a href="/dove/prime/404.html">404</a>
                 </p>
@@ -46,7 +47,21 @@ description: A theme development project.
             <main class="_main">
               <article class="_article">
                 <div class="_layout">
-                  <p><code>// content for : Index</code></p>
+                  <style>
+                    .hero-box-1 { padding:0 }
+                    .hero-box-1 .site-description {
+                      margin-left: 3.3rem;
+                      font-weight: 300;
+                      font-size: 1.1em;
+                    }
+                    .hero-box-1 .hero-hr { margin-top:45px }
+                  </style>
+                  <div class="hero-box-1 box">
+                    <h1 id="_hero-title">⚒️ Heroic Title</h1>
+                    <p class="site-description">Your site's description or mission statement.</p>
+                    <hr class="hero-hr"/>
+                  </div>
+                  <p><code>// content for : Home</code></p>
                 </div>
               </article>
             </main>
@@ -55,7 +70,7 @@ description: A theme development project.
                 <hr class="thin border-gray-light"/>
                 <p class="text-right text-gray"><small>
                     This site is open source.
-                    <a href="https://github.com/techie-joe/dove/edit/main/_source/prime/index.html.pug">Improve this page</a>.</small></p>
+                    <a href="https://github.com/techie-joe/dove/edit/main/_source/prime/home.html.pug">Improve this page</a>.</small></p>
               </div>
             </footer>
           </div>

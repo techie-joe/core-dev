@@ -21,8 +21,8 @@ mixin yml
   color_scheme : !{color_scheme}
   ghost        : !{ghost}
 
-  google_analytics     : !{google_analytics||'(undefined)'}
-  cloudflare_analytics : !{cloudflare_analytics||'(undefined)'}
+  google_analytics     : !{google_analytics||"[nil]"}
+  cloudflare_analytics : !{cloudflare_analytics||"[nil]"}
 
   source_url   : !{source_url}
 .
@@ -31,25 +31,25 @@ mixin yml
 +l
 +yml.
   # _config.yml
-  version      : {{ site.version | default: '(undefined)' }}
-  revision     : {{ site.revision | default: '(undefined)' }}{{'.'}}{{ site.github.build_revision | default: '(undefined)' }}
-  title        : {{ site.title | default: '(undefined)' }}
-  description  : {{ site.description | default: '(undefined)' }}
-  author       : {{ site.author | default: '(undefined)' }}
-  year         : {{ site.year | default: '(undefined)' }}
-  base_url     : {{ site.base_url | default: '(undefined)' }}
-  home_url     : {{ site.home_url | default: '(undefined)' }}
+  version      : {{ site.version | default: "[nil]" }}
+  revision     : {{ site.revision | default: "[nil]" }}{{'.'}}{{ site.github.build_revision | default: "[nil]" }}
+  title        : {{ site.title | default: "[nil]" }}
+  description  : {{ site.description | default: "[nil]" }}
+  author       : {{ site.author | default: "[nil]" }}
+  year         : {{ site.year | default: "[nil]" }}
+  base_url     : {{ site.base_url | default: "[nil]" }}
+  home_url     : {{ site.home_url | default: "[nil]" }}
 
-  theme        : {{ site.theme | default: '(undefined)' }}
-  remote_theme : {{ site.remote_theme | default: '(undefined)' }}
+  theme        : {{ site.theme | default: "[nil]" }}
+  remote_theme : {{ site.remote_theme | default: "[nil]" }}
 
-  lang         : {{ site.lang | default: '(undefined)' }}
-  theme_color  : {{ site.theme_color | jsonify | default: '(undefined)' }}
-  color_scheme : {{ site.color_scheme | default: '(undefined)' }}
-  ghost        : {{ site.ghost | default: '(undefined)' }}
+  lang         : {{ site.lang | default: "[nil]" }}
+  theme_color  : {{ site.theme_color | jsonify | default: "[nil]" }}
+  color_scheme : {{ site.color_scheme | default: "[nil]" }}
+  ghost        : {{ site.ghost | default: "[nil]" }}
 
-  google_analytics     : {{ site.google_analytics | default: '(undefined)' }}
-  cloudflare_analytics : {{ site.cloudflare_analytics | default: '(undefined)' }}
+  google_analytics     : {{ site.google_analytics | default: "[nil]" }}
+  cloudflare_analytics : {{ site.cloudflare_analytics | default: "[nil]" }}
 
   source_url   : {{ site.github.repository_url }}
 .

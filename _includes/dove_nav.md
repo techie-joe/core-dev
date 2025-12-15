@@ -19,7 +19,7 @@
 {%- endif %}
 {% if site.github.environment == 'development' -%}
 {{ bull }}
-{% if page.path == 'vars/test.md' -%}
+{% if page.path == 'test.md' -%}
 **Test**{%- else %}[Test]({{ site.base_url }}/test)
 {%- endif %}
 {%- endif %}

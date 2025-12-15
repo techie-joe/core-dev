@@ -21,12 +21,6 @@
 {% if page.path == 'vars/repo.md' -%}
 **Repository**{%- else %}[Repository]({{ site.base_url }}/vars/repo)
 {%- endif %}
-{% if site.github.environment == 'development' -%}
-{{ bull }}
-{% if page.path == 'vars/test.md' -%}
-**Test**{%- else %}[Test]({{ site.base_url }}/vars/test)
-{%- endif %}
-{%- endif %}
 {: style="margin:1rem 0" }
 
 {{ thin_hr }}
