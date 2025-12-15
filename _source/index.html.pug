@@ -14,15 +14,23 @@ block append style
 block header
   h1 🕊️ !{site_title} is !{description.toLowerCase()}
 block content
-  .flex(style="gap:3rem;margin:1rem auto 1rem auto")
-    .f(style="min-width:350px")
+  .flex(style="gap:3rem")
+    .fill
+      h3.mt-0 Themes
+      nav: ul.rapat
+        li: +site_nav('core')
+        li: +site_nav('mallet')
+        li: +site_nav('nova')
+        li: +site_nav('prime')
+  //- .flex(style="gap:3rem;margin:1rem auto 1rem auto")
+    //- .f(style="min-width:350px")
       h3.mt-0 Html
       nav: ul.rapat
         li: +site_nav('core')
         li: +site_nav('mallet')
         li: +site_nav('nova')
         li: +site_nav('prime')
-    .f(style="min-width:350px")
+    //- .f(style="min-width:350px")
       h3.mt-0 Markdown
       nav: ul.rapat
         li: +site_nav('core')
@@ -32,12 +40,12 @@ block content
   +thin_hr
   +capture('pages')|{% include_relative _dove_pages.md %}
   +capture('posts')|{% include posts.md %}
-  .flex(style="gap:3rem;margin:1rem auto 1rem auto")
+  .flex(style="gap:3rem")
     #pages_(style="min-width:250px")
-      h3.mt-0 Pages
+      h3 Pages
       |{{ pages | markdownify }}
     #posts_(style="min-width:150px")
-      h3.mt-0 Posts
+      h3 Posts
       |{{ posts | markdownify }}
   +thin_hr
   h3 Configurations

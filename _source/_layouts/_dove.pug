@@ -15,7 +15,7 @@ mixin _i_
   +l
 
 mixin thin_hr
-  hr.thin.border-gray-light/
+  hr.thin/
 
 mixin logo
   ._logo: a(href=home_url+'/') #{site_title}
@@ -34,12 +34,12 @@ mixin sna(ref)
     +_a([base_url,ref].join('/')): block
 
 mixin site_nav(sub)
-  b !{capitalize(sub)}
+  +sna(sub+"/"): b !{capitalize(sub)}
   +_i_
   //- +_a(sub_url+"legacy.html")| Legacy
   +sna(sub+"/preview.html")| Preview
   +_bull_
-  +sna(sub+"/")| Home
+  +sna(sub+"/home.html")| Home
   +sna(sub+"/page.html")| Page
   +sna(sub+"/404.html")| 404
 
