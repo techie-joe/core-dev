@@ -13,8 +13,8 @@ plugins:
   # - jekyll-feed
   # - jemoji
 
-version       : '0.0.3'
-revision      : '2511.03'
+version       : '0.0.4'
+revision      : '2512.04'
 
 title         : Dove
 description   : A theme development project.
