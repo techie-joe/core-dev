@@ -1,4 +1,4 @@
-{%- assign sorted_posts = site.posts | sort: "path" %}
+{%- assign sorted_posts = site.posts | sort: "date" | reverse %}
 {%- assign _exclude = include.exclude | default: "" | split: "," %}
 {%- assign n = 0 %}
 {%- for p in sorted_posts %}

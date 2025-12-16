@@ -1,61 +1,40 @@
-Hero statement with <span class="text-red">a red text</span> is dramatic
+{% include ui.html %}
+
+Hero message with <span class="text-red">red text</span> grabs attention
 {: .hero }
 
-## Better control over contents
+# Heading 1
 
-![Featured image](https://techie-joe.github.io/core/images/299-400x300.jpg){: .float-right.ml-4.mb-4 }
+![Featured image](https://techie-joe.github.io/core/images/299-400x300.jpg){: .float-right.ml-4.mb-4 width=400 height=400 }
 
-Writing an article can be exciting when you can add few things here and there. The `big-first` class will enlarge the first letter of a paragraph. While `text-justify` neatly aligns your text to its container. You can also include images and [hyperlinks](#) to make things more engaging.
+Writing an article can be exciting when you can add few things here and there. The `big-first` class will enlarge the first letter of a paragraph. While `text-justify` neatly aligns your text to its container. To nudge the first line of a paragraph, use the `indent` class. Indentation gives a sense of order and clarity, making an article easier to read. Include images and [hyperlinks](#){: onclick="event.preventDefault();" } to make things more engaging.
 {: .text-justify.big-first }
 
-**Please leave some whitespace between paragraphs.**
+**Leave whitespace between paragraphs for clarity.**
 
-Use the `indent` class to nudge the first line of a paragraph.
-Indentation gives a sense of order and clarity, making an article easier to read.
-{: .text-justify }
-
-**You’ll notice some gibberish text in this demo.** It’s simply a placeholder content, added to give you a sense of how the layout and styling will look. The text itself doesn’t carry any meaning &mdash; it’s just there to fill space and make the design feel more complete. Each time and the channel a different story all with different story, to a pleasure the color of television. A story to honor the color of television the more or less was burnt, in such cases it varies person to another. This happened to the color of television as it differs to another different story.
+**You’ll notice some gibberish text in this demo.** It's simply placeholder content, added to help you visualize how the layout, spacing, and typography will appear once real content is in place. The text itself doesn't carry any meaning, it's just there to fill the empty areas and make the overall design feel balanced and complete. Each line and section tells a “different story”, though none of it is meant to be understood literally. It's more of a creative illusion, a way to showcase how color, contrast, and structure come together to create a theme. It honors the “look and feel”, a metaphor for how design can shift and vary in perspective. That's the beauty of visual design. Every layout tells its own silent story, even when the words themselves mean nothing at all.
 {: .indent.text-justify.text-grey }
 
-> Take a look at [the legacy](https://techie-joe.github.io/core/legacy) for the classic demo page.
-
-### Theme switch
-
-Click the following button to switch between ***light*** and ***dark***.
-
-<a href="#" onclick="event.preventDefault();window.base?.theme.change()" class="_bt -l -flat" title="Change theme (Ctrl+Alt+T)">Change theme (Ctrl+Alt+T)</a>
-
-### Horizontal rule
-
-There’s a horizontal rule below this line.
+> Have a look at [the legacy](legacy) for the classic demo page.
 
 ---
 
-### Invisible comments
+---
+{: thin }
 
-There’s a comment block below this line.
-
-<!-- This HTML comment will not appear in the rendered Markdown -->
-
-{% comment %}This Liquid comment will not appear in the rendered Markdown{% endcomment %}
-
-Comment block will not appear in the rendered Markdown.
-
-### Styles for text
+**Horizontal rule** can be thick and thin. There are two of them above this sentence.
 
 - Text can be
 **bold**,
 _italic_,
-or ***both***.
+and ***both***.
+You can also add `code`
+and ~~strike-through~~ texts.
 
-- You can
-~~strikethrough~~,
-or add some `code`.
-
-- Use HTML to include
-<abbr title="Abbreviation">abbr</abbr>,
-<samp>samp</samp>, and
-<mark>mark</mark>.
+- Use HTML to <u>underline</u>, add
+<abbr title="Abbreviation">abbreviation</abbr>,
+<samp>sample</samp>, and
+<mark>mark</mark> texts.
 
 - Color them 
 <b class="text-primary">primary</b>
@@ -70,146 +49,38 @@ or add some `code`.
 <b class="text-orange">orange</b>
 <b class="text-orange-light">orange-light</b>.
 
-### Small image
+## Heading 1
+{: .h1 }
 
----
-{: .mb-3 }
+The H1 holds everything together. Usually there is only one per page dedicated for the main title. For styling puposes however, you can mock other heading to look like an H1 using the `h1` class.
+{: .text-justify }
 
-![Left Octocat](https://techie-joe.github.io/core/images/octocat-64x64.png){: .float-left.p-3.bg-white.mb-3.mr-3 }
-![Right Octocat](https://techie-joe.github.io/core/images/octocat-64x64.png){: .float-right.p-3.bg-white.mb-3.ml-3 }
-![Small image](https://techie-joe.github.io/core/images/core-64x64.png){: .centered.p-3.bg-secondary.mb-3 }
+## Heading 2
 
----
-{: .mt-3 }
+Not too loud, not too small. It's like the middle child of headings: always trying, never crying. H2 organizes sections, but secretly dreams of being an H1 someday. Don't tell it the truth. Let it dream.
+{: .text-justify.text-grey }
 
-Align small images with `float-left`, `float-right` or `centered`.
+### Heading 3
 
-### Large image
+The Mysterious H3 is like that friend who wears sunglasses indoors. Mysterious. Cool. A bit unnecessary sometimes, but when used right — chef's kiss! H3 loves details and subtopics. But if you go too deep, suddenly you're in H6 territory, and nobody reads that far.
+{: .text-justify.text-grey }
 
-![Large image](https://techie-joe.github.io/core/images/299-1024x368.jpg){: .width-full.centered }
+#### Heading 4
 
-> Images for this demo came from [picsum.photos](https://picsum.photos/){: target="_blank"}.
-{: .text-small.mt-0 }
+H4 is forgotten like socks at Christmas. Technically useful, but no one really cheers for it. You'll use it if you have to, like adding extra layers to a report nobody asked for. Poor H4. Always invited, never remembered.
+{: .text-justify.text-grey }
 
-For a full scale image use the `width-full.centered` class.
+###### Heading 5
 
-# The Legendary H1
+H5 is that tiny notebook you bought to look organized but never actually use. It's small, it's cute, it's there — but honestly, body text is almost the same size, so why bother? H5 knows its fate but accepts it gracefully.
+{: .text-justify.text-grey }
 
-Behold, the almighty H1, the king of headings! If a webpage was a burger, H1 would be the top bun &mdash; soft, golden, and holding everything together. But don’t overuse it. One king per kingdom. Two kings? Chaos. Three kings? That’s a Shakespeare play.
-
-## The Shy H2
-
-Ah, the H2. Not too loud, not too small. It’s like the middle child of headings: always trying, never crying. H2 organizes sections, but secretly dreams of being an H1 someday. Don’t tell it the truth. Let it dream.
-
-### Mysterious H3
-
-The H3 is like that friend who wears sunglasses indoors. Mysterious. Cool. A bit unnecessary sometimes, but when used right &mdash; chef’s kiss! H3 loves details and subtopics. But if you go too deep, suddenly you’re in H6 territory, and nobody reads that far.
-
-#### Forgotten H4
-
-H4 is like socks at Christmas. Technically useful, but no one really cheers for it. You’ll use it if you have to, like adding extra layers to a report nobody asked for. Poor H4. Always invited, never remembered.
-
-###### Tiny H5
-
-H5 is that tiny notebook you bought to look organized but never actually use. It’s small, it’s cute, it’s there &mdash; but honestly, body text is almost the same size, so why bother? H5 knows its fate but accepts it gracefully.
-
-###### Ghostly H6
+###### Heading 6
 
 And then comes H6, the heading so small it whispers. Nobody notices it. Even search engines squint and go, “Wait, is that… a heading?” H6 is like writing a title with invisible ink: only the bravest readers will ever see it.
+{: .text-justify.text-grey }
 
-## Listing items
-
-### Ordered list
-
-1. First level item.
-    1. Second level item.
-        1. Third level item.
-        2. The last item.
-        {: style="list-style:lower-roman" }
-    2. The last item.
-    {: style="list-style:lower-alpha" }
-2. The last item.
-
-
-### Unordered list
-
-- First level item.
-    - Second level item.
-        - Third level item.
-        - The last item.
-    - The last item.
-- The last item.
-
-### Task list
-
-- [x] Completed task.
-- [ ] Pending task.
-    - [x] Second level.
-    - [ ] Second level.
-        - [x] Third level.
-        - [ ] Third level.
-        - [ ] Third level.
-    - [ ] Second level.
-- [ ] Last task.
-
-## Definition list
-
-Use HTML syntax to render the definition list.
-
-<dl>
-<dt>Term</dt>
-<dd>Definition or description.</dd>
-<dt>CSS</dt>
-<dd>A stylesheet language for styling web pages.</dd>
-<dt>JavaScript</dt>
-<dd>A programming language that adds interactivity to websites.</dd>
-</dl>
-
-## Hyperlinks
-
-### Text link
-
-You can link to [posts]({{ site.baseurl }}/posts "View posts") and [pages]({{ site.baseurl }}/pages "View pages").
-
-If you link to a missing page, you'll see <a href="{{ site.baseurl }}/404" title="The error page">an error page</a>.
-
-### Button link
-
-<a href="#" class="_bt -l -blue">Primary Button Link</a>
-<a href="#" class="_bt -l -flat">Secondary Button Link</a>
-
-### Footnote link
-
-A footnote[^1] creates a list of references at the bottom of a page.
-
-Normally you would use number[^2] as reference.
-
-You can also use word[^note] as reference.
-
-## Blockquote
-
-> This is a blockquote.
-
-> You can add styles to a blockquote.
-> > "You can stack them too." &mdash; _Says the Author_
-> {: .border-yellow }
-{: .border-green }
-
-> Try other mix as well.
-{: .border-red.text-pending }
-
-## Box
-
-Wrap texts in a `bg-primary.text-white.box`
-{: .bg-primary.text-white.box.text-center }
-
-... or use `bg-secondary.box`
-{: .bg-secondary.box.text-center }
-
-Try other mix as well
-{: .bg-red.text-white.box.text-center }
-
-## Code block
+## Code blocks
 
 ```
 Markdown render `code blocks` as is.
@@ -233,25 +104,145 @@ GitHubPages::Dependencies.gems.each do |gem, version|
 end
 ```
 
+## Including images
+
+![Large image](https://techie-joe.github.io/core/images/299-1024x368.jpg){: alt="Large image" .full-width }
+
+> Images for this demo came from [picsum.photos](https://picsum.photos/){: target="_blank"}.
+{: .text-small.mt-0 }
+
+You can use the `width-full` or `width-fit` class for images.
+
+For smaller images, align them using floats and margins: `float-left.mr.mb`, `float-right.ml.mb` or `centered.mb`.
+
+---
+{: .mb-3 }
+
+![Left Octocat](https://techie-joe.github.io/core/images/octocat-64x64.png){: .float-left.mr.mb.pa.bg-white width=64 height=64 }
+![Right Octocat](https://techie-joe.github.io/core/images/octocat-64x64.png){: .float-right.ml.mb.pa.bg-white width=64 height=64 }
+![Small image](https://techie-joe.github.io/core/images/core-64x64.png){: .centered.mb.pa.bg-white width=64 height=64 }
+
+---
+{: .mt-3 }
+
+## Box wrappers
+
+Wrap texts in `box.ba`
+{: .box.ba.ph.text-left }
+
+Wrap in `box.bg-primary.text-white`
+{: .box.ph.bg-primary.text-white.text-center }
+
+Try other mix as well
+{: .box.ph.bg-red.text-white.text-right }
+
+## Styling blockquotes
+
+> This is a blockquote.
+
+> You can add styles to a blockquote.
+> > "You can stack them too." — _Says the Author_
+> {: .border-yellow }
+{: .border-green }
+
+> Try other mix as well.
+{: .border-red.text-pending }
+
 ## Details and summary
 
 Use HTML syntax to render the details and summary block.
 
 <details>
-<summary>Create a collapsible section of content. <i>(click for more)</i></summary>
-<div class="py mb-4">
-<p class="text-grey text-justify">Ah, the mighty details and summary block, a collapsible accordion of destiny where content hides like a shy turtle until poked by the click of curiosity. It is the digital equivalent of whispering, “psst, wanna see something cool?” and then rolling out a red carpet of hidden paragraphs, secret snippets, or the occasional diagram that nobody asked for. The summary is the bouncer at the door, deciding whether the reader gets a glimpse inside or stays staring at the title forever, while details hoards all the juicy stuff like a dragon sitting on its markdown gold.</p>
+<summary>Collapsible content. <i>(click for more)</i></summary>
+<div class="details">
+<p class="text-grey text-justify">The details and summary block, is a collapsible accordion of destiny where content hides until poked by the click of curiosity. It is the digital equivalent of whispering, “psst, wanna see something cool?” and then rolling out a red carpet of hidden paragraphs, secret snippets, or the occasional diagram that nobody asked for. The summary is the bouncer at the door, deciding whether the reader gets a glimpse inside or stays staring at the title forever, while details hoards all the juicy stuff like a dragon sitting on its markdown gold.</p>
 </div>
 </details>
 
-<details class="bg-secondary box">
-<summary>Style them with box. <i>(click for more)</i></summary>
-<div class="px-2 py">
-<p class="text-justify">But beware, this block has a mischievous streak: it expands with a dramatic flourish like curtains on opening night, then folds back up as if nothing ever happened, gaslighting your memory of what you just saw. Authors toss long-winded explanations, secret Easter eggs, or poorly formatted cat ASCII art inside it, knowing only the brave will click. In its most chaotic form, the details block nests within itself, collapsing collapsibles within collapsibles until the reader spirals into an abyss of disclosure toggles, wondering whether the summary is summary enough to summarize the summaries.</p>
+<details class="box ba ph">
+<summary>Style with <code>box.ba</code>. <i>(click for more)</i></summary>
+<div class="details">
+<p class="text-grey text-justify">This block expands like curtains on opening night, then folds back up as if nothing ever happened, gaslighting your memory of what you just saw. Authors toss long-winded explanations, secret Easter eggs, or poorly formatted cat ASCII art inside it, knowing only the brave will click. In its most chaotic form, the details block nests within itself, collapsing collapsibles within collapsibles until the reader spirals into an abyss of disclosure toggles, wondering whether the summary is summary enough to summarize the summaries.</p>
 </div>
 </details>
 
-## Tables
+## Ordered list
+
+1. First level item.
+    1. Second level item.
+        1. Third level item.
+        2. Other item.
+        3. The last item.
+        {: style="list-style:lower-roman" }
+    2. Other item.
+    3. The last item.
+    {: style="list-style:lower-alpha" }
+2. Other item.
+3. The last item.
+
+
+## Unordered list
+
+- First level item.
+    - Second level item.
+        - Third level item.
+        - Other item.
+        - The last item.
+    - Other item.
+    - The last item.
+- Other item.
+- The last item.
+
+## Task list
+
+- [x] Completed task.
+- [ ] Pending task.
+    - [x] Second level.
+    - [ ] Second level.
+        - [x] Third level.
+        - [ ] Third level.
+        - [ ] Last task.
+    - [ ] Last task.
+- [ ] Last task.
+
+## Definition list
+
+<dl>
+<dt>Term</dt>
+<dd>Definition or description.</dd>
+<dt>CSS</dt>
+<dd>A stylesheet language for styling web pages.</dd>
+<dt>JavaScript</dt>
+<dd>A programming language that adds interactivity to websites.</dd>
+</dl>
+
+## Hyperlinks
+
+### Text link
+
+You can link to [posts]({{ site.baseurl }}/posts "View posts") and [pages]({{ site.baseurl }}/pages "View pages").
+
+If you link to a missing page, you'll see <a href="{{ site.baseurl }}/404" title="The error page">an error page</a>.
+
+### Button links
+
+[Primary](#){: .button.bg-primary.border-primary.text-white onclick="event.preventDefault();" }
+[Secondary](#){: .button.bg-secondary.border-secondary.text-black onclick="event.preventDefault();" }
+[Button Link](#){: .button onclick="event.preventDefault();" }
+{{ bull }}{: .text-grey }
+[Change Theme](#){: .button onclick="event.preventDefault();theme.change()" title="Change Theme (Alt+T)" }
+
+### Footnote links
+
+Footnote links are references to the note[^1] listed at the bottom of a page.
+
+Click the link to see an example[^2].
+
+Footnote can be written in multiple lines[^3].
+
+Normally you would use number as reference, but you can use word[^note] as well.
+
+## Table styles
 
 ### Normal table
 
@@ -269,7 +260,7 @@ Use HTML syntax to render the details and summary block.
 | Plenty box        | Out of stock |       yeah |
 | Biscoite          | Ok           |        hmm |
 | Zoute drop        | Ok           |       tumm |
-{: .full }
+{: .full-width }
 
 ### Simple table
 
@@ -278,7 +269,7 @@ Use HTML syntax to render the details and summary block.
 | Ahmad             |     $1,124 |
 | Greg              |     $5,678 |
 | Susan             |     $9,012 |
-{: .full.simple style="max-width:300px" }
+{: .simple }
 
 ### Borderless table
 
@@ -288,46 +279,50 @@ Use HTML syntax to render the details and summary block.
 | Plenty ticks      | Ready        |
 | Zapper            | Pending      |
 | Coute sauce       | Ok           |
-{: .full.borderless style="max-width:300px" }
+{: .borderless }
 
-### Complex table
+### HTML table
 
-You have to use HTML syntax for complex table.
-
-<table class="full" style="max-width:500px">
-<tr>
-    <th class="text-left">Label</th>
-    <th class="text-center">Status</th>
-    <th class="text-right">Value</th>
-</tr>
-<tr>
-    <td class="text-left">
-        <dl>
-        <dt>Item name</dt>
-        <dd>And its description.</dd>
-        </dl>
-    </td>
-    <td class="text-center">Good</td>
-    <td class="text-right">$78,910.12</td>
-</tr>
-<tr>
-    <td class="text-left">
-        <dl>
-        <dt>Another item</dt>
-        <dd>And its description.</dd>
-        </dl>
-    </td>
-    <td class="text-center"><span class="text-pending">Pending</span></td>
-    <td class="text-right"><span class="text-pending">- ($1,234.56)</span></td>
-</tr>
+<table class="full-width" style="max-width:500px">
+<thead>
+  <tr>
+      <th class="text-left">Label</th>
+      <th class="text-center">Status</th>
+      <th class="text-right">Value</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+      <td class="text-left">
+          <dl>
+          <dt>Item name</dt>
+          <dd>And its description.</dd>
+          </dl>
+      </td>
+      <td class="text-center text-green">Good</td>
+      <td class="text-right text-green">$78,910.12</td>
+  </tr>
+  <tr>
+      <td class="text-left">
+          <dl>
+          <dt>Another item</dt>
+          <dd>And its description.</dd>
+          </dl>
+      </td>
+      <td class="text-center text-pending">Pending</td>
+      <td class="text-right text-red">- ($1,234.56)</td>
+  </tr>
+</tbody>
 </table>
 
 ## Footnotes
 
-[^1]: A footnote reference.
+[^1]: A typical footnote contains: **The author's name**, the article title _and publication details_.
 
-[^2]:
-    Footnote can also have multiple lines.
+[^2]: For example: **John Smith**, Modern Web Design _(New York: TechPress, 2023), page 45_.
+
+[^3]:
+    Footnote can also have multiple lines. 
     Every new line in footnote should be prefixed with 2 space or 4 space indentation.
 
 [^note]:

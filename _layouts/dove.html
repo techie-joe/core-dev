@@ -23,7 +23,7 @@
                 {% if page.use_header == false -%}
                 <style>._header{display:none !important}</style>
                 {%- else -%}
-                {% capture logo -%}{% include dove_logo.html %}{%- endcapture %}<h1>{{ logo }}</h1>
+                {% capture logo -%}{% include dove/logo.html %}{%- endcapture %}<h1>{{ logo }}</h1>
                 {%- endif %}
               </div>
             </header>
@@ -32,7 +32,7 @@
                 {% if page.use_nav == false -%}
                 <style>._nav{display:none !important}</style>
                 {%- else -%}
-                {% capture nav -%}{% include dove_nav.md %}{%- endcapture %}{{ nav | markdownify }}
+                {% capture nav -%}{% include dove/nav.md %}{%- endcapture %}{{ nav | markdownify }}
                 {%- endif %}
               </div>
             </nav>
@@ -48,7 +48,7 @@
                 {% if page.use_footer == false -%}
                 <style>._footer{display:none !important}</style>
                 {%- else -%}
-                {% capture footer -%}{% include dove_footer.md %}{%- endcapture %}{{ footer | markdownify }}
+                {% capture footer -%}{% include dove/footer.md %}{%- endcapture %}{{ footer | markdownify }}
                 {%- endif %}
               </div>
             </footer>

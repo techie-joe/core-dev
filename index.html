@@ -36,7 +36,7 @@ description: A theme development project.
               </div>
             </header>
             <nav class="_nav">
-              <div class="_layout">{% capture nav %}{% include dove_nav.md %}{% endcapture %}{{ nav | markdownify }}
+              <div class="_layout">{% capture nav %}{% include dove/nav.md %}{% endcapture %}{{ nav | markdownify }}
               </div>
             </nav>
             <main class="_main">
@@ -109,7 +109,7 @@ description: A theme development project.
                     </div>
                   </div>
                   <hr class="thin"/>
-                  <p class="text-grey">These are supporting posts and pages for development puposes.</p>{% capture pages %}{% include dove_pages.md exclude="" %}{% endcapture %}{% capture posts %}{% include dove_posts.md exclude="" %}{% endcapture %}
+                  <p class="text-grey">These are supporting posts and pages for development puposes.</p>{% capture pages %}{% include dove/pages.md exclude="" %}{% endcapture %}{% capture posts %}{% include dove/posts.md exclude="" %}{% endcapture %}
                   <div class="flex" style="gap:3rem">
                     <div id="pages_" style="min-width:250px">
                       <h3 class="mt-0">Pages</h3>{{ pages | markdownify }}
@@ -124,7 +124,7 @@ description: A theme development project.
               </article>
             </main>
             <footer class="_footer footer mt-5">
-              <div class="_layout">{% capture footer %}{% include dove_footer.md %}{% endcapture %}{{ footer | markdownify }}
+              <div class="_layout">{% capture footer %}{% include dove/footer.md %}{% endcapture %}{{ footer | markdownify }}
                 <hr class="thin"/>
                 <p class="text-right text-gray"><small>
                     This site is open source.

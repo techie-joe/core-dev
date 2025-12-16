@@ -1,9 +1,6 @@
 {%- assign pad = "             " %}
 {%- assign word_key = "[0] key,[1] key,[n] keys" %}
 {%- assign owner_keys = "type,name,bio,description,id,login,email,location,company,is_verified,hireable,followers,following,public_gists,public_repos,avatar_url,html_url,blog,created_at,updated_at" %}
-{%- comment -%}
-------------------------------------------------------------------
-{%- endcomment -%}
 
 ###### site.github
 

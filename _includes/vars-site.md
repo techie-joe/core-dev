@@ -1,18 +1,9 @@
 {%- assign pad = "             " %}
 {%- assign word_key = "[0] key,[1] key,[n] keys" %}
 {%- assign post_keys = "id,url,slug,title,description,author,draft,comments,date,layout,ext,name,path,relative_path,collection,categories,tags,content,excerpt,output,previous,next" %}
-{%- comment -%}
-------------------------------------------------------------------
-{%- endcomment -%}
 
 ###### site
 
-{% comment %}
-{%- assign val = site %}
-**{% include mod-plural.md val=val.keys word=word_key %} :**{{' '}}
-{{- val.keys | sort | join: ", " }}
-{: .box.highlight.pa.smaller.mono }
-{% endcomment %}
 
 ```yml
 {%

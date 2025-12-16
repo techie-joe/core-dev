@@ -6,9 +6,8 @@ use_footer: edit_link_only
 title: Handling Liquid List
 description: Handling Liquid List.
 ---
-{%- capture thin_hr -%}<hr class="thin border-gray-light"/>{%- endcapture -%}
-{%- capture nav_liquid %}{% include_relative _nav_liquid.md %}{% endcapture -%}
-<nav>{{ nav_liquid | markdownify }}{{ thin_hr | markdownify }}</nav>
+{% include ui.html %}
+{% include_relative _nav_liquid.md %}
 
 # {{ page.title }}
 

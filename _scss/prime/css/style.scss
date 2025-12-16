@@ -48,6 +48,7 @@ hr.thin {
 .bg-primary {
   code,tt { background-color: rgba(#1b1f23,.15); }
 }
+.border-primary{ @extend .border-blue; }
 .ba { border-color: #99a }
 .box { border-radius:5px }
 .itext, .isvg { line-height:.7 }

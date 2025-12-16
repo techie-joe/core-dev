@@ -35,11 +35,11 @@ block html
           .container-lg.px-3.my-5.markdown-body
             header._header: ._layout
               block header
-                h1|{% include dove_logo.html %}
+                h1|{% include dove/logo.html %}
                 //- p: code // header
             nav._nav: ._layout
               block nav
-                +capture('nav')|{% include dove_nav.md %}
+                +capture('nav')|{% include dove/nav.md %}
                 |{{ nav | markdownify }}
                 //- p: code // nav
             main._main: article._article: ._layout
@@ -48,7 +48,7 @@ block html
                 p: code // content for : !{title}
             footer._footer.footer.mt-5: ._layout
               block footer
-                +capture('footer')|{% include dove_footer.md %}
+                +capture('footer')|{% include dove/footer.md %}
                 |{{ footer | markdownify }}
                 +thin_hr
                 p.text-right.text-gray: small: +edit_link(path)

@@ -1,6 +1,6 @@
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./pages).
+[Link to another page](preview).
 
 There should be whitespace between paragraphs.
 
