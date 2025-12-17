@@ -1,3 +1,5 @@
+{%- assign nl = "
+" %}
 {%- assign _exclude = include.exclude | default: "" | split: "," %}
 {%- assign n = 0 %}
 {%- if site.pages %}
@@ -5,7 +7,7 @@
   {%- for p in sorted_pages %}
   {%- unless _exclude contains p.path %}
   {%- if p.index != false and p.title.size %}
-{{''}}
+    {{-nl-}}
     {%- assign title = p.title | default:'(Untitled page)' %}
     {%- if p.url == '/' %}{%- assign title = 'Home' %}{%- endif %}
     {%- if p.path != page.path -%}

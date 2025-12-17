@@ -1,3 +1,5 @@
+{%- assign nl = "
+" %}
 {%- assign _exclude = include.exclude | default: "" | split: "," %}
 {%- assign n = 0 %}
 {%- if site.posts %}
@@ -5,7 +7,7 @@
   {%- for p in sorted_posts %}
   {%- unless _exclude contains p.path %}
   {%- if p.index != false and p.title.size %}
-{{''}}
+    {{-nl-}}
     {%- assign title = p.title | default:'(Untitled post)' %}
     {%- if p.path != page.path -%}
       - [{{ title }}]({{ site.base_url }}{{ p.url }})
@@ -17,5 +19,4 @@
   {%- endunless %}
   {%- endfor %}
 {%- endif %}
-{%- unless n > 0 -%} There is none right now.
-{%- endunless %}
+{%- unless n > 0 -%} There is none right now. {%- endunless %}

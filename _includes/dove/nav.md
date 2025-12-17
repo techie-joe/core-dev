@@ -30,6 +30,4 @@
 {% if page.path == 'index.md' -%}
 **Markdown**{%- else -%}[Markdown]({{ site.base_url }}/md)
 {%- endif %}
-{{ bull }}
-[Test]({{ site.base_url }}/test)
 {%- endcomment %}
