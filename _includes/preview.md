@@ -226,7 +226,7 @@ If you link to a missing page, you'll see <a href="{{ site.baseurl }}/404" title
 
 ### Button links
 
-[Primary](#){: .button.bg-primary.text-white onclick="event.preventDefault();" }
+[Primary](#){: .button.bg-primary.text-white.border-primary onclick="event.preventDefault();" }
 [Secondary](#){: .button.bg-secondary.text-secondary onclick="event.preventDefault();" }
 [Button Link](#){: .button onclick="event.preventDefault();" }
 {{ bull }}{: .text-grey }
