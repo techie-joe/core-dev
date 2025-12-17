@@ -17,6 +17,9 @@ package-lock.json
 # ignore record used by DNS server
 CNAME
 
+# ignore security environment variables
+.env
+
 # ignore localhost files
 .htaccess
 
