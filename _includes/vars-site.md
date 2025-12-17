@@ -1,3 +1,5 @@
+{%- assign nl="
+" %}
 {%- assign pad = "             " %}
 {%- assign word_key = "[0] key,[1] key,[n] keys" %}
 {%- assign post_keys = "id,url,slug,title,description,author,draft,comments,date,layout,ext,name,path,relative_path,collection,categories,tags,content,excerpt,output,previous,next" %}
@@ -58,16 +60,16 @@
 ```yml
 # {% include mod-plural.md word="[0] default,[1] default,[n] defaults" val=site.defaults %}
 {%- for _d in site.defaults %}
-# default.{{ forloop.index | append: ' - ' }}
-{%- include mod-plural.md val=_d word=word_key %}
-  {%
+  {{-nl-}} # default.{{ forloop.index | append: ' - ' }}
+  {%- include mod-plural.md val=_d word=word_key %}
+  {{-nl-}}
+  {%-
     include mod-inspect.md
     val=_d
     pad=pad
     tab="  "
   %}
-{%- else %}
-# its empty
+  {%- else -%} {{-nl-}} # its empty
 {%- endfor %}
 ```
 {: .no_max_height }
@@ -77,19 +79,19 @@
 ```yml
 # {% include mod-plural.md word="[0] file,[1] file,[n] files" val=site.data %}
 {%- for file in site.data %}
-{%- assign _key = file[0] %}
-{%- assign _d = file[1] %}
-# file.{{ forloop.index | append: ' - ' }}
-{{- _key | append: ' - ' }}
-{%- include mod-plural.md val=_d word=word_key %}
-  {%
+  {%- assign _key = file[0] %}
+  {%- assign _d = file[1] %}
+  {{-nl-}} # file.{{ forloop.index | append: ' - ' }}
+  {{- _key | append: ' - ' }}
+  {%- include mod-plural.md val=_d word=word_key %}
+  {{-nl-}}
+  {%-
     include mod-inspect.md
     val=_d
     pad=pad
     tab="  "
   %}
-{%- else %}
-# its empty
+  {%- else -%} {{-nl-}} # its empty
 {%- endfor %}
 ```
 {: .no_max_height }
@@ -99,9 +101,10 @@
 ```yml
 # {% include mod-plural.md word="[0] collection,[1] collection,[n] collections" val=site.collections %}
 {%- for collection in site.collections %}
-# collection.{{ forloop.index | append: ' - ' }}
-{%- include mod-plural.md val=collection.keys word=word_key %}
-  {%
+  {{-nl-}} # collection.{{ forloop.index | append: ' - ' }}
+  {%- include mod-plural.md val=collection.keys word=word_key %}
+  {{-nl-}}
+  {%-
     include mod-inspect.md
     val=collection
     include="label,docs,files,output,relative_directory,permalink"
@@ -110,8 +113,7 @@
     pad=pad
     tab="  "
   %}
-{%- else %}
-# its empty
+  {%- else -%} {{-nl-}} # its empty
 {%- endfor %}
 ```
 
@@ -119,135 +121,147 @@
 
 ```yml
 # {% include mod-plural.md word="[0] document,[1] document,[n] documents" val=site.documents %}
-{%- assign sorted_docs = site.documents | sort: "id" %}
-{%- for doc in sorted_docs %}
-# document.{{ forloop.index | append: ' - ' }}
-{%- include mod-plural.md val=doc.keys word=word_key %}
-  {%
-    include mod-inspect.md
-    val=doc
-    include=post_keys
-    pad=pad
-    tab="  "
-  %}
-{%- else %}
-# its empty
-{%- endfor %}
+{%- if site.documents %}
+  {%- assign sorted_docs = site.documents | sort: "id" %}
+  {%- for doc in sorted_docs %}
+    {{-nl-}} # document.{{ forloop.index | append: ' - ' }}
+    {%- include mod-plural.md val=doc.keys word=word_key %}
+    {{-nl-}}
+    {%-
+      include mod-inspect.md
+      val=doc
+      include=post_keys
+      pad=pad
+      tab="  "
+    %}
+  {%- endfor %}
+  {%- else -%} {{-nl-}} # its empty
+{%- endif %}
 ```
 
 ###### site.posts
 
 ```yml
 # {% include mod-plural.md word="[0] post,[1] post,[n] posts" val=site.posts %}
-{%- assign sorted_posts = site.posts | sort: "id" %}
-{%- for post in sorted_posts %}
-# post.{{ forloop.index | append: ' - ' }}
-{%- include mod-plural.md val=post.keys word=word_key %}
-  {%
-    include mod-inspect.md
-    val=post
-    include=post_keys
-    pad=pad
-    tab="  "
-  %}
-{%- else %}
-# its empty
-{%- endfor %}
+{%- if site.posts %}
+  {%- assign sorted_posts = site.posts | sort: "id" %}
+  {%- for post in sorted_posts %}
+    {{-nl-}} # post.{{ forloop.index | append: ' - ' }}
+    {%- include mod-plural.md val=post.keys word=word_key %}
+    {{-nl-}}
+    {%-
+      include mod-inspect.md
+      val=post
+      include=post_keys
+      pad=pad
+      tab="  "
+    %}
+  {%- endfor %}
+  {%- else -%} {{-nl-}} # its empty
+{%- endif %}
 ```
 
 ###### site.categories
 
 ```yml
 # {% include mod-plural.md word="[0] category,[1] category,[n] categories" val=site.categories %}
-{%- for category in site.categories %}
-{%- assign key = category[0] %}
-{%- assign _posts = category[1] %}
-# category.{{ forloop.index | append: ' - ' }}
-  {{- key | append: ' - ' }}
-  {%- include mod-plural.md val=_posts word="[0] post,[1] post,[n] posts" %}
-  {%- assign sorted_posts = _posts | sort: "id" %}
-  {%- for post in sorted_posts %}
-  # post.{{ forloop.index | append: ' - ' }}
-    {%- include mod-plural.md val=post.keys word=word_key %}
-    {%
-      include mod-inspect.md
-      val=post
-      include=post_keys
-      pad=pad
-      tab="    "
-    %}
-  {%- else %}
-  # its empty
+{%- if site.categories %}
+  {%- assign sorted_categories = site.categories | sort %}
+  {%- for category in sorted_categories %}
+    {%- assign key = category[0] %}
+    {%- assign _posts = category[1] %}
+    {{-nl-}} # category.{{ forloop.index | append: ' - ' }}
+    {{- key | append: ' - ' }}
+    {%- include mod-plural.md val=_posts word="[0] post,[1] post,[n] posts" %}
+    {%- assign sorted_posts = _posts | sort: "id" %}
+    {%- for post in sorted_posts %}
+      {{-nl-}} {{-"  "-}} # post.{{ forloop.index | append: ' - ' }}
+      {%- include mod-plural.md val=post.keys word=word_key %}
+      {{-nl-}}
+      {%-
+        include mod-inspect.md
+        val=post
+        include=post_keys
+        pad=pad
+        tab="    "
+      %}
+      {%- else -%} {{-nl-}} # its empty
+    {%- endfor %}
   {%- endfor %}
-{%- else %}
-# its empty
-{%- endfor %}
+  {%- else -%} {{-nl-}} # its empty
+{%- endif %}
 ```
 
 ###### site.tags
 
 ```yml
 # {% include mod-plural.md word="[0] tag,[1] tag,[n] tags" val=site.tags %}
-{%- for tag in site.tags %}
-{%- assign key = tag[0] %}
-{%- assign _posts = tag[1] %}
-# tag.{{ forloop.index | append: ' - ' }}
-  {{- key | append: ' - ' }}
-  {%- include mod-plural.md word=word_key val=_posts %}
-  {%- assign sorted_posts = _posts | sort: "id" %}
-  {%- for post in sorted_posts %}
-  # post.{{ forloop.index | append: ' - ' }}
-    {%- include mod-plural.md val=post.keys word=word_key %}
-    {%
-      include mod-inspect.md
-      val=post
-      include=post_keys
-      pad=pad
-      tab="    "
-    %}
-  {%- else %}
-  # its empty
+{%- if site.tags %}
+  {%- assign sorted_tags = site.tags | sort %}
+  {%- for tag in sorted_tags %}
+    {%- assign key = tag[0] %}
+    {%- assign _posts = tag[1] %}
+    {{-nl-}} # tag.{{ forloop.index | append: ' - ' }}
+    {{- key | append: ' - ' }}
+    {%- include mod-plural.md word=word_key val=_posts %}
+    {%- assign sorted_posts = _posts | sort: "id" %}
+    {%- for post in sorted_posts %}
+      {{-nl-}} # post.{{ forloop.index | append: ' - ' }}
+      {%- include mod-plural.md val=post.keys word=word_key %}
+      {{-nl-}}
+      {%-
+        include mod-inspect.md
+        val=post
+        include=post_keys
+        pad=pad
+        tab="    "
+      %}
+      {%- else -%} {{-nl-}} # its empty
+    {%- endfor %}
   {%- endfor %}
-{%- else %}
-# its empty
-{%- endfor %}
+  {%- else -%} {{-nl-}} # its empty
+{%- endif %}
 ```
 
 ###### site.pages
 
 ```yml
 # {% include mod-plural.md word="[0] page,[1] page,[n] pages" val=site.pages %}
-{%- assign sorted_pages = site.pages | sort: "path" %}
-{%- for page in sorted_pages %}
-# page.{{ forloop.index | append: ' - ' }}
-  {%- include mod-plural.md val=page word=word_key %}
-  {%
-    include mod-inspect.md
-    val=page
-    include="title,description,layout,name,dir,url,path,content,excerpt"
-    pad=pad
-    tab="  "
-  %}
-{%- else %}
-# its empty
-{%- endfor %}
+{%- if site.pages %}
+  {%- assign sorted_pages = site.pages | sort: "path" %}
+  {%- for page in sorted_pages %}
+    {{-nl-}} # page.{{ forloop.index | append: ' - ' }}
+    {%- include mod-plural.md val=page word=word_key %}
+    {{-nl-}}
+    {%-
+      include mod-inspect.md
+      val=page
+      include="title,description,layout,name,dir,url,path,content,excerpt"
+      pad=pad
+      tab="  "
+    %}
+  {%- endfor %}
+  {%- else -%} {{-nl-}} # its empty
+{%- endif %}
 ```
 
 ###### site.static_files
 
 ```yml
 # {% include mod-plural.md word="[0] file,[1] file,[n] files" val=site.static_files %}
-{%- assign sorted_files = site.static_files | sort: "path" %}
-{%- for file in sorted_files %}
-# file.{{ forloop.index | append: ' - ' }}
-  {%- include mod-plural.md val=file.keys word=word_key %}
-  {%
-    include mod-inspect.md
-    val=file
-    pad=pad
-    tab="  "
-  %}
-{%- else %}
-# its empty
-{%- endfor %}
+{%- if site.static_files %}
+  {%- assign sorted_files = site.static_files | sort: "path" %}
+  {%- for file in sorted_files %}
+    {{-nl-}} # file.{{ forloop.index | append: ' - ' }}
+    {%- include mod-plural.md val=file.keys word=word_key %}
+    {{-nl-}}
+    {%-
+      include mod-inspect.md
+      val=file
+      pad=pad
+      tab="  "
+    %}
+  {%- endfor %}
+  {%- else -%} {{-nl-}} # its empty
+{%- endif %}
 ```

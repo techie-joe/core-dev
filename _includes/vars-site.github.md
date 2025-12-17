@@ -1,3 +1,5 @@
+{%- assign nl="
+" %}
 {%- assign pad = "             " %}
 {%- assign word_key = "[0] key,[1] key,[n] keys" %}
 {%- assign owner_keys = "type,name,bio,description,id,login,email,location,company,is_verified,hireable,followers,following,public_gists,public_repos,avatar_url,html_url,blog,created_at,updated_at" %}
@@ -44,18 +46,20 @@
 
 ```yml
 # {% include mod-plural.md val=site.github.releases word="[0] release,[1] release,[n] releases" %}
-{%- assign sorted_releases = site.github.releases | sort %}
-{%- if sorted_releases.size > 0 %}
-{%- assign release = sorted_releases[0] %}
-# release.{{ forloop.index | append: ' - ' -}}
-  {%- include mod-plural.md val=release word=word_key %}
-  {%
-    include mod-inspect.md
-    val=release
-    pad=pad
-  %}
-{%- else %}
-# no release found
+{%- if site.github.releases %}
+  {%- assign sorted_releases = site.github.releases | sort %}
+  {%- if sorted_releases.size > 0 %}
+    {%- assign release = sorted_releases[0] -%}
+    {{-nl-}} # release.{{ forloop.index | append: ' - ' -}}
+    {%- include mod-plural.md val=release word=word_key %}
+    {{-nl-}}
+    {%-
+      include mod-inspect.md
+      val=release
+      pad=pad
+    %}
+  {%- endif %}
+  {%- else -%} {{-nl-}} # no release found
 {%- endif %}
 ```
 {: .no_max_height }
@@ -64,30 +68,33 @@
 
 ```yml
 # {% include mod-plural.md val=site.github.contributors word="[0] contributor,[1] contributor,[n] contributors" %}
-{%- assign sorted_contributors = site.github.contributors | sort %}
-{%- for user in sorted_contributors %}
-# contributor.{{ forloop.index | append: ' - ' -}}
-  {%- include mod-plural.md val=user word=word_key %}
-  {%
-    include mod-inspect.md
-    val=user
-    include="type,login,id,node_id,html_url"
-    pad=pad
-    tab="  "
-  %}
-{%- else %}
-# no contributor found
-{%- endfor %}
+{%- if site.github.contributors %}
+  {%- assign sorted_contributors = site.github.contributors | sort: "login" %}
+  {%- for user in sorted_contributors %}
+    {{-nl-}} # contributor.{{ forloop.index | append: ' - ' }}
+    {%- include mod-plural.md val=user word=word_key %}
+    {{-nl-}}
+    {%-
+      include mod-inspect.md
+      val=user
+      include="type,login,id,node_id,html_url"
+      pad="                   "
+      tab="  "
+    %}
+  {%- endfor %}
+  {%- else -%} {{-nl-}} # no contributor found
+{%- endif %}
 ```
 
 ###### site.github.versions
 
 ```yml
 # {% include mod-plural.md word=word_key val=site.github.versions %}
-{%- assign sorted_versions = site.github.versions | sort %}
-{%- for v in sorted_versions %}
-{{ v[0] }}: {{ v[1] }}
-{%- else %}
-# unversioned
-{%- endfor %}
+{%- if site.github.versions %}
+  {%- assign sorted_versions = site.github.versions | sort %}
+  {%- for v in sorted_versions %}
+  {{-nl-}} {{ v[0] }} : {{ v[1] }}
+  {%- endfor %}
+  {%- else -%} {{-nl-}} # unversioned
+{%- endif %}
 ```
