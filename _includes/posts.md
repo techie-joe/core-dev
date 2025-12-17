@@ -15,6 +15,7 @@
       - {{ title }}
     {%- endif %}
     {%- assign n = n | plus: 1 %}
+    {%- if n >= include.limit %}{% break %}{%- endif %}
   {%- endif %}
   {%- endunless %}
   {%- endfor %}

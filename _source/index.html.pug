@@ -27,8 +27,8 @@ block content
   p.text-grey These are supporting posts and pages for development puposes.
   //- - exclude_pages = [ ].join(",");
   //- - exclude_posts = [ ].join(",");
-  +capture('pages')|{% include dove/pages.md exclude="!{exclude_pages}" %}
-  +capture('posts')|{% include dove/posts.md exclude="!{exclude_posts}" %}
+  +capture('pages')|{% include pages.md exclude="!{exclude_pages}" %}
+  +capture('posts')|{% include posts.md exclude="!{exclude_posts}" %}
   .flex(style="gap:3rem")
     #pages_(style="min-width:250px")
       h3.mt-0 Pages
