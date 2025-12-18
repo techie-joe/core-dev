@@ -1,13 +1,13 @@
 ---
+index: false
 layout: dove
 use_nav: false
 use_footer: edit_link_only
-
 title: Handling Liquid List
 description: Handling Liquid List.
 ---
-{% include ui.html %}
-{% include_relative _nav_liquid.md %}
+{%- include ui.html %}
+{%- include_relative _nav_liquid.md %}
 
 # {{ page.title }}
 

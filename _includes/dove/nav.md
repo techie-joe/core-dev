@@ -15,10 +15,6 @@
 {%- if page.path == 'posts.md' -%}
 **Posts**{%- else -%}[Posts]({{ site.base_url }}/posts)
 {%- endif %}
-{{- bull -}}
-{%- if page.path == 'vars/index.md' -%}
-**Variables**{%- else -%}[Variables]({{ site.base_url }}/vars)
-{%- endif %}
 {%- if site.github.environment == 'development' -%}
 {{- bull -}}
 {% if page.path == 'test.md' -%}

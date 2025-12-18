@@ -5,7 +5,7 @@
 
 _Core is a Jekyll theme for GitHub Pages. **<a href="https://techie-joe.github.io/core">Preview what it looks like</a> or [use it today](#usage).**_
 
-The Core provides a foundation that allows you to **easily apply your own design** or integrate a framework of choice on top. You can style any page just by linking them to a custom layout. Your site can be written in **Markdown** and **HTML**, and **GitHub Pages** will build your site directly from the content of your repository.
+The Core provides a foundation that allows you to **easily apply your own design** or integrate a framework of choice on top. You can style any page just by linking them to a custom layout. Your site can be written in **Markdown**, **Pug** and **HTML**. **GitHub Pages** will build your site directly from the content of your repository.
 
 The primary goal of this project is to provide users with a **quick and easy way to build a website**. We aim to meet the needs of the vast majority of users out of the box, by prioritizing **simplicity** rather than flexibility. For those with specific needs or wish to customize further, they may add custom CSS or modify the default layout.
 

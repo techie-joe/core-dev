@@ -18,7 +18,7 @@ revision      : '2512.04'
 
 title         : Dove
 description   : A theme development project.
-# title       : The title of your site # (best without the punctuation dot).
+# title       : The title of your site
 # description : Short description of your site's purpose.
 
 author        : Techie Joe
@@ -31,16 +31,19 @@ home_url      : '/dove'
 lang          : 'en-US'
 theme_color   : '#222'
 color_scheme  : light dark
-ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLGxvY2FsaG9zdDo0MDAw
 
-# google_analytics: # your Google Analytics tracking ID.
+ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLGxvY2FsaG9zdDo0MDAw
+# ghost: 'your-tracking-id'
+# to track your ThemeJs.
+
+# google_analytics: 'your-tracking-id'
 # to track your website using Google Analytics.
 
-# cloudflare_analytics: # your Cloudflare Analytics tracking ID.
+# cloudflare_analytics: 'your-tracking-id'
 # to track your website using Cloudflare Analytics.
 
-# show_downloads: # true or false (unquoted).
-# indicate whether to provide a download URL.
+# show_downloads: true/false
+# to indicate whether to provide a download URL.
 
 # github:
 #   zip_url: http://example.com/download.zip

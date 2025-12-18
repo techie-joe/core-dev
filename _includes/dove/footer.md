@@ -8,19 +8,19 @@
 
 **Dove**
 {{ angle }}
-<a href="https://github.com/techie-joe/dove" target="_edit">Repository</a>
+[Repository](https://github.com/techie-joe/dove){: target="_dove_repository" }
 {{- bull -}}
-<a href="https://techie-joe.github.io/proto" target="_test">Proto</a>
+[Proto](/proto){: target="_proto" }
 
 {{ thin_hr }}
 
 **Techie Joe's**
 {{ angle }}
-<a href="https://techie-joe.github.io" target="_techiejoes">Website</a>
+[Website](https://techie-joe.github.io){: target="_techiejoe_website" }
 {{- bull -}}
-<a href="https://github.com/techie-joe" target="_github">Profile</a>
+[Profile](https://github.com/techie-joe){: target="_techiejoe_profile" }
 {{- bull -}}
-<a href="/nova/site/themejs" target="_themejs">ThemeJs</a>
+[ThemeJs](/nova/site/themejs){: target="_themejs" }
 
 {%- endcapture %}
 
