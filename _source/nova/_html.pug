@@ -1,5 +1,7 @@
 extends /_source/_layouts/nova
 block append update_vars
   - path  = ['nova',path].join('/')
+block append front_matter
+  +l| index: false
 block nav
   p: +site_nav('nova')

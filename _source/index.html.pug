@@ -12,7 +12,7 @@ block append style
     article #posts_ ul li,
     article .rapat li { margin-left:0 }
 block header
-  h1 🕊️ !{site_title} is !{description.toLowerCase().replace(/\.$/, '')}
+  h1 🕊️ The !{site_title} Project
 block content
   .flex(style="gap:3rem")
     .fill
@@ -24,7 +24,7 @@ block content
         li: +site_nav('nova')
         li: +site_nav('prime')
   +thin_hr
-  p.text-grey These are supporting posts and pages for development puposes.
+  p.text-grey These are supporting posts and pages for development purposes.
   //- - exclude_pages = [ ].join(",");
   //- - exclude_posts = [ ].join(",");
   +capture('pages')|{% include pages.md exclude="!{exclude_pages}" %}
@@ -33,7 +33,7 @@ block content
     #pages_(style="min-width:250px")
       h3.mt-0 Pages
       |{{ pages | markdownify }}
-    #posts_(style="min-width:150px")
+    #posts_(style="min-width:250px")
       h3.mt-0 Posts
       |{{ posts | markdownify }}
   +thin_hr

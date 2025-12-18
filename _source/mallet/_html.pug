@@ -1,5 +1,7 @@
 extends /_source/_layouts/mallet
 block append update_vars
   - path  = ['mallet',path].join('/')
+block append front_matter
+  +l| index: false
 block nav
   div: +site_nav('mallet')

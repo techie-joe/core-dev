@@ -25,7 +25,7 @@ CNAME
 
 # ignore files and folders used by Developers
 .vscode/
-test.*
+test-*
 *.x
 *.ignore
 *.backup

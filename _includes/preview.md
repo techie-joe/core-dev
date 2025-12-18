@@ -118,8 +118,8 @@ For smaller images, align them using floats and margins: `float-left.mr.mb`, `fl
 ---
 {: .mb-3 }
 
-![Left Octocat](https://techie-joe.github.io/core/images/octocat-64x64.png){: .float-left.mr.mb.pa.bg-white width=64 height=64 }
-![Right Octocat](https://techie-joe.github.io/core/images/octocat-64x64.png){: .float-right.ml.mb.pa.bg-white width=64 height=64 }
+![Left Octocat](https://techie-joe.github.io/core/images/octocat-64x64.png){: .float-left.mr.mb.pa width=64 height=64 }
+![Right Octocat](https://techie-joe.github.io/core/images/octocat-64x64.png){: .float-right.ml.mb.pa width=64 height=64 }
 ![Small image](https://techie-joe.github.io/core/images/core-64x64.png){: .centered.mb.pa.bg-white width=64 height=64 }
 
 ---

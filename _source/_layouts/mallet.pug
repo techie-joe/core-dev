@@ -1,7 +1,4 @@
 include _dove
-mixin mallet_theme_switch(title='Change Theme (Alt+T)')
-  ._theme_switch._needjs: a(href='#' onclick!=onclick(js.themeChange) title=title)._bt.-h
-    +isvg(svgi.compare)
 block vars
   -
     layout = 'mallet'
@@ -9,25 +6,29 @@ block vars
     bodyClass = []
     mainClass = []
 block update_vars
++front_matter
+  block front_matter
+    .
+      layout: html
+      use_pug: true
+      title: !{title}
+      description: !{description}
 block html
   doctype html
   html(lang=lang||'en-US' class=htmlClass.join(' '))
-    |<!-- path   : !{path} -->
-    |<!-- layout : dove/_source/_layouts/!{layout} -->
+    +l|<!-- path   : !{path} -->
+    +l|<!-- layout : dove/_source/_layouts/!{layout} -->
     head
       meta(charset=charset||'utf-8')/
-      |<!-- Begin Jekyll SEO tag v2.8.0 -->
-      title !{title||'(untitled)'}!{site_title?' | '+site_title:''}
-      |<!-- End Jekyll SEO tag -->
+      +l|{% seo %}
       meta(name="viewport" content="width=device-width,initial-scale=1")/
       meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")/
       meta#_color_scheme(name="color-scheme" content=color_scheme||'')/
       meta#_theme_color(name="theme-color" content=theme_color||'')/
       block style
-        link#_style(rel="stylesheet" href!=`${base_url}/assets/mallet/css/style.css?r=${revision}`)/
-      block layout_head
-        +layout_head
-      |<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+        link#_style(rel="stylesheet" href!=`{{ site.base_url }}/assets/${layout}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
+      +l|{% include layout_head.html %}
+      +l|<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
     body
       ._views
         ._view._app.__fadein
@@ -49,9 +50,7 @@ block html
                 p: code // footer
                 hr/
                 p.text-right.text-grey: small: +edit_link(path)
-            +mallet_theme_switch
-          //- ._view_layout
-        //- ._view
-        block layout_body
-          +layout_body
-      //- _views
+          //- .container
+        ._view: +l|{% include theme_switch.html %}
+        +l|{% include layout_body.html %}
+      //- ._views

@@ -9,7 +9,7 @@
 **Dove**
 {{ angle }}
 <a href="https://github.com/techie-joe/dove" target="_edit">Repository</a>
-{{ bull }}
+{{- bull -}}
 <a href="https://techie-joe.github.io/proto" target="_test">Proto</a>
 
 {{ thin_hr }}
@@ -17,9 +17,9 @@
 **Techie Joe's**
 {{ angle }}
 <a href="https://techie-joe.github.io" target="_techiejoes">Website</a>
-{{ bull }}
+{{- bull -}}
 <a href="https://github.com/techie-joe" target="_github">Profile</a>
-{{ bull }}
+{{- bull -}}
 <a href="/nova/site/themejs" target="_themejs">ThemeJs</a>
 
 {%- endcapture %}

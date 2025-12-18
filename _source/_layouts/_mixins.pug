@@ -15,22 +15,29 @@ mixin repeat(a,b)
 
 mixin _
   =` `
+  block
 
 mixin l
-  !=`\n`
+  !='\n'
+  block
 
 mixin -
   li: block
 
-mixin ---
+mixin front_matter
   !='---'
   block
   !='\n---\n'
 
-mixin capture(id='')
-  !=`{% capture ${id} %}`
+mixin comment
+  !='<!-- '
   block
-  !='{% endcapture %}'
+  !='\n -->'
+
+mixin capture(id='')
+  !=`{%- capture ${id} %}`
+  block
+  !=`{%- endcapture %}`
 
 mixin css(href,media)
   link(rel="stylesheet" media=media||'all' href=href)&attributes(attributes)/
@@ -47,11 +54,10 @@ mixin a(href,title)
   a(href=href||'#' title=title)&attributes(attributes): block
 
 mixin _a(href,title)
-  +l
-  a(href=href||'#' title=title)&attributes(attributes): block
+  +l: +a(href,title)&attributes(attributes): block
 
 mixin lia(href,title)
-  li: a(href=href||'#' title=title)&attributes(attributes): block
+  li: a(href,title)&attributes(attributes): block
 
 //- ==============================================================
 //- images

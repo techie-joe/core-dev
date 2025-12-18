@@ -1,7 +1,7 @@
 ---
+index: false
 layout: dove
 use_footer: edit_link_only
-
 title: Site
 description: Site Variables on this site.
 ---

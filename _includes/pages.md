@@ -21,5 +21,4 @@
   {%- endunless %}
   {%- endfor %}
 {%- endif %}
-{%- unless n > 0 -%} There is none right now.
-{%- endunless %}
+{%- unless n > 0 -%} There is none right now. {%- endunless %}

@@ -4,15 +4,23 @@ include _main
 
 //- ==============================================================
 
-mixin _bull_
-  +l
-  +itext|&bull;
-  +l
+mixin _itext
+  +l: +itext: block
 
-mixin _i_
-  +l
+mixin _isvg(icon=svgi.angle)
+  +l: +isvg(icon)
+
+mixin bull
+  +itext|&bull;
+
+mixin _bull
+  +_itext|&bull;
+
+mixin angle
   +isvg(svgi.angle)
-  +l
+
+mixin _angle
+  +_isvg(svgi.angle)
 
 mixin thin_hr
   hr.thin/
@@ -21,42 +29,22 @@ mixin logo
   ._logo: a(href=home_url+'/') #{site_title}
 
 mixin nav_common
-  a(href="?back" onclick=onclick(js.goBack) title="Back to previous page").button.text-secondary._bt.-flat.-l 👈 Back
-  a(href=home_url+'/' title="Go to Home Page").button.text-secondary._bt.-flat.-l Home
-  a(href=home_url+'/pages' title="Go to Pages").button.text-secondary._bt.-flat.-l Pages
-  a(href=home_url+'/posts' title="Go to Posts").button.text-secondary._bt.-flat.-l Posts
+  a(href="?back" onclick=onclick(js.goBack) title="Back to previous page").button 👈 Back
+  a(href=home_url+'/' title="Go to Home Page").button Home
+  a(href=home_url+'/pages' title="Go to Pages").button Pages
+  a(href=home_url+'/posts' title="Go to Posts").button Posts
 
 mixin sna(ref)
   if ref == path || ref+'index.html' == path
-    +_
-    b: block
+    +_: b: block
   else
     +_a([base_url,ref].join('/')): block
 
 mixin site_nav(sub)
   +sna(sub+"/"): b !{capitalize(sub)}
-  +_i_
-  //- +_a(sub_url+"legacy.html")| Legacy
+  +_angle
   +sna(sub+"/preview.html")| Preview
-  +_bull_
+  +_bull
   +sna(sub+"/home.html")| Home
   +sna(sub+"/page.html")| Page
   +sna(sub+"/404.html")| 404
-
-mixin site_footer
-  nav
-    p
-      b| !{site_title}
-      +_i_
-      +_a(source_url)(target="_edit")| Repository
-      +_bull_
-      +_a('https://techie-joe.github.io/proto')(target="_test")| Proto
-    +thin_hr
-    p
-      b !{author}'s
-      +_i_
-      +_a('https://techie-joe.github.io')(target="_techiejoes")| Website
-      +_bull_
-      +_a('https://github.com/techie-joe')(target="_github")| Profile
-      +_bull_
-      +_a(['/nova/site/themejs'].join('/'))(target="_themejs")| ThemeJs

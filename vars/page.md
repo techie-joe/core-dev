@@ -1,7 +1,7 @@
 ---
+index: false
 layout: dove
 use_footer: edit_link_only
-
 title: Page
 description: Page Variables on this site.
 ---

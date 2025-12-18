@@ -14,6 +14,6 @@ permalink: posts
 {% include posts.md %}
 
 ---
-{: style="margin-top:3rem" }
+{: .thin style="margin-top:3rem" }
 
 {% include nav_common.md %}
