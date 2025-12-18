@@ -33,6 +33,7 @@ block content
     #pages_(style="min-width:250px")
       h3.mt-0 Pages
       |{{ pages | markdownify }}
+      ul: li: +a('404') 404
     #posts_(style="min-width:250px")
       h3.mt-0 Posts
       |{{ posts | markdownify }}

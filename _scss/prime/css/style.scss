@@ -15,6 +15,7 @@ article {
 }
 .markdown-body {
   p { margin-top: 16px }
+  blockquote { color:inherit }
   table {
     & { display:table;border-collapse:collapse;border:1px solid;width:auto }
     thead tr { background-color: #f6f8fa }

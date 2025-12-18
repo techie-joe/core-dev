@@ -2,5 +2,25 @@ extends _html
 block append vars
   - path   = 'index.html'
   - title  = `Prime`
+block nav
+  //- none
 block content
-  p: code // content for : !{title}
+  h1 !{title}
+  - sub = layout
+  nav.mv
+    b Html
+    +_angle
+    +sna(sub+"/preview.html")| Preview
+    +_bull
+    +sna(sub+"/home.html")| Home
+    +sna(sub+"/page.html")| Page
+    +sna(sub+"/404.html")| 404
+  - sub = layout+'/md'
+  nav.mv
+    b Markdown
+    +_angle
+    +sna(sub+"/preview.html")| Preview
+    +_bull
+    +sna(sub+"/home.html")| Home
+    +sna(sub+"/page.html")| Page
+    +sna(sub+"/404.html")| 404
