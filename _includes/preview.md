@@ -106,7 +106,7 @@ end
 
 ## Hyper links
 
-You can link to [link to another page](#). But if you link to a missing page, you'll get <a href="{{ site.baseurl }}/404" title="The error page">an error</a>.
+You can link to [link to another page](#){: onclick="event.preventDefault();" }. But if you link to a missing page, you'll get [an error]({{ site.baseurl }}/404){: title="The error page"}.
 
 ## Button links
 
