@@ -1,6 +1,6 @@
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](preview).
+Link [to another page](#) and [the new demo page](preview).
 
 There should be whitespace between paragraphs.
 

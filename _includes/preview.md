@@ -7,15 +7,15 @@ Hero message with <span class="text-red">red text</span> grabs attention
 
 ![Featured image](https://techie-joe.github.io/core/images/299-400x300.jpg){: .float-right.ml-4.mb-4 width=400 height=400 }
 
-Writing an article can be exciting when you can add few things here and there. The `big-first` class will enlarge the first letter of a paragraph. While `text-justify` neatly aligns your text to its container. To nudge the first line of a paragraph, use the `indent` class. Indentation gives a sense of order and clarity, making an article easier to read. Include images and [hyperlinks](#){: onclick="event.preventDefault();" } to make things more engaging.
+Welcome to the tour! This demo provide a glimpse of the theme's appearance. The `big-first` class will enlarge the first letter of a paragraph. While the `text-justify` class will neatly align your texts to its container. To nudge the first line of a paragraph, use the `indent` class. Indentation gives a sense of order and clarity, making an article easier to read. Include images and [hyperlinks](#){: onclick="event.preventDefault();" } to make things more engaging.
 {: .text-justify.big-first }
 
 **Leave whitespace between paragraphs for clarity.**
 
-**You’ll notice some gibberish text in this demo.** It's simply placeholder content, added to help you visualize how the layout, spacing, and typography will appear once real content is in place. The text itself doesn't carry any meaning, it's just there to fill the empty areas and make the overall design feel balanced and complete. Each line and section tells a “different story”, though none of it is meant to be understood literally. It's more of a creative illusion, a way to showcase how color, contrast, and structure come together to create a theme. It honors the “look and feel”, a metaphor for how design can shift and vary in perspective. That's the beauty of visual design. Every layout tells its own silent story, even when the words themselves mean nothing at all.
+**You may notice some gibberish text in this demo.** It's just a placeholder content added to help you visualize how the layout, spacing and typography will appear once real content is in place. The text itself doesn't carry any meaning, it's simply there to fill the empty areas and make the overall design feel balanced and complete. Each line and section tells something, though none of it is meant to be understood literally. It's more of a creative illusion, a way to showcase how color, contrast, and structure come together to create a theme. It honors the “look and feel”, a metaphor for how design can shift and vary in perspective. That's the beauty of visual design. Every layout tells its own silent story, even when the words themselves mean nothing at all.
 {: .indent.text-justify.text-grey }
 
-> Have a look at [the legacy](legacy) for the classic demo page.
+> Open [the legacy](legacy) for the classic demo page.
 
 ---
 
@@ -103,6 +103,28 @@ GitHubPages::Dependencies.gems.each do |gem, version|
   s.add_dependency(gem, "= #{version}")
 end
 ```
+
+## Hyper links
+
+You can link to [link to another page](#). But if you link to a missing page, you'll get <a href="{{ site.baseurl }}/404" title="The error page">an error</a>.
+
+## Button links
+
+[Primary](#){: .button.bg-primary.text-white.border-primary onclick="event.preventDefault();" }
+[Secondary](#){: .button.bg-secondary.text-secondary onclick="event.preventDefault();" }
+[Button Link](#){: .button onclick="event.preventDefault();" }
+{{ bull }}{: .text-grey }
+[Change Theme](#){: .button onclick="event.preventDefault();theme.change()" title="Change Theme (Alt+T)" }
+
+## Footnote links
+
+Footnote links are references to the note[^1] listed at the bottom of a page.
+
+Click the link to see an example[^2].
+
+Footnote can be written in multiple lines[^3].
+
+Normally you would use number as reference, but you can use word[^note] as well.
 
 ## Including images
 
@@ -215,32 +237,6 @@ Use HTML syntax to render the details and summary block.
 <dt>JavaScript</dt>
 <dd>A programming language that adds interactivity to websites.</dd>
 </dl>
-
-## Hyperlinks
-
-### Text link
-
-You can link to [posts]({{ site.baseurl }}/posts "View posts") and [pages]({{ site.baseurl }}/pages "View pages").
-
-If you link to a missing page, you'll see <a href="{{ site.baseurl }}/404" title="The error page">an error page</a>.
-
-### Button links
-
-[Primary](#){: .button.bg-primary.text-white.border-primary onclick="event.preventDefault();" }
-[Secondary](#){: .button.bg-secondary.text-secondary onclick="event.preventDefault();" }
-[Button Link](#){: .button onclick="event.preventDefault();" }
-{{ bull }}{: .text-grey }
-[Change Theme](#){: .button onclick="event.preventDefault();theme.change()" title="Change Theme (Alt+T)" }
-
-### Footnote links
-
-Footnote links are references to the note[^1] listed at the bottom of a page.
-
-Click the link to see an example[^2].
-
-Footnote can be written in multiple lines[^3].
-
-Normally you would use number as reference, but you can use word[^note] as well.
 
 ## Table styles
 

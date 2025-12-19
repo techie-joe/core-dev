@@ -14,6 +14,7 @@ article {
   img { display:block }
 }
 .markdown-body {
+  h1,h2 { border-color:#ccc }
   p { margin-top: 16px }
   blockquote { color:inherit }
   table {
@@ -32,7 +33,7 @@ article {
 hr.thin {
   height:0;
   background:none;
-  background-color: #e1e4e8;
+  background-color: #ccc;
   border-bottom:1px solid transparent;
   margin:16px 0;
 }
@@ -80,7 +81,7 @@ hr.thin {
       .k,.kd,.kc,.kp { color:#dbd6d1 }
     }
     table {
-      &, th, td { border-color:#444 }
+      &, th, td { border-color:#333 }
       tr { background-color: color.invert(#fff); }
       tr:nth-child(2n),
       thead tr { background-color: #111 }
@@ -88,10 +89,10 @@ hr.thin {
     }
   }
   .markdown-body {
-    h1,h2 { border-color:#282f35 }
+    h1,h2 { border-color:#333 }
   }
-  hr { background-color: #282f35 }
-  .border-gray-light { border-color:#282f35 !important }
+  hr { background-color: #333 }
+  .border-gray-light { border-color:#333 !important }
   .bg-primary {
     code,tt { background-color: rgba(color.invert(#1b1f23),.23); }
   }

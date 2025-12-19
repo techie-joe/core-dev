@@ -56,14 +56,14 @@ index: false
 
 <p><img src="https://techie-joe.github.io/core/images/299-400x300.jpg" alt="Featured image" class="float-right ml mb" width="400" height="300" /></p>
 
-<p class="text-justify big-first">Writing an article can be exciting when you can add few things here and there. The <code class="language-plaintext highlighter-rouge">big-first</code> class will enlarge the first letter of a paragraph. While <code class="language-plaintext highlighter-rouge">text-justify</code> neatly aligns your text to its container. To nudge the first line of a paragraph, use the <code class="language-plaintext highlighter-rouge">indent</code> class. Indentation gives a sense of order and clarity, making an article easier to read. Include images and <a href="#" onclick="event.preventDefault();">hyperlinks</a> to make things more engaging.</p>
+<p class="text-justify big-first">Welcome to the tour! This demo provide a glimpse of the theme's appearance. The <code class="language-plaintext highlighter-rouge">big-first</code> class will enlarge the first letter of a paragraph. While the <code class="language-plaintext highlighter-rouge">text-justify</code> class will neatly aligns your text to its container. To nudge the first line of a paragraph, use the <code class="language-plaintext highlighter-rouge">indent</code> class. Indentation gives a sense of order and clarity, making an article easier to read. Include images and <a href="#" onclick="event.preventDefault();">hyperlinks</a> to make things more engaging.</p>
 
 <p><strong>Leave whitespace between paragraphs for clarity.</strong></p>
   
-<p class="indent text-justify text-grey"><strong>You'll notice some gibberish text in this demo.</strong> It's simply placeholder content, added to help you visualize how the layout, spacing, and typography will appear once real content is in place. The text itself doesn't carry any meaning, it's just there to fill the empty areas and make the overall design feel balanced and complete. Each line and section tells a “different story”, though none of it is meant to be understood literally. It's more of a creative illusion, a way to showcase how color, contrast, and structure come together to create a theme. It honors the “look and feel”, a metaphor for how design can shift and vary in perspective. That's the beauty of visual design. Every layout tells its own silent story, even when the words themselves mean nothing at all.</p>
+<p class="indent text-justify text-grey"><strong>You may notice some gibberish text in this demo.</strong> It's just a placeholder content added to help you visualize how the layout, spacing and typography will appear once real content is in place. The text itself doesn't carry any meaning, it's simply there to fill the empty areas and make the overall design feel balanced and complete. Each line and section tells something, though none of it is meant to be understood literally. It's more of a creative illusion, a way to showcase how color, contrast, and structure come together to create a theme. It honors the “look and feel”, a metaphor for how design can shift and vary in perspective. That's the beauty of visual design. Every layout tells its own silent story, even when the words themselves mean nothing at all.</p>
 
 <blockquote>
-  <p>Have a look at <a href="legacy">the legacy</a> for the classic demo page.</p>
+  <p>Open <a href="legacy">the legacy</a> for the classic demo page.</p>
 </blockquote>
 
 <hr />
@@ -169,6 +169,29 @@ Long, single-line `code blocks` should not wrap. They should remain on a single 
   <span class="n">s</span><span class="p">.</span><span class="nf">add_dependency</span><span class="p">(</span><span class="n">gem</span><span class="p">,</span> <span class="s2">"= </span><span class="si">#{</span><span class="n">version</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div></div>
+
+<h2>Hyper links</h2>
+
+You can <a href="#">link to another page</a>. But if you link to a missing page, you'll get <a href="{{ site.baseurl }}/404" title="The error page">an error</a>.
+
+<h2>Button links</h2>
+
+<p>
+<a href="#" onclick="event.preventDefault();" class="button bg-primary text-white border-primary">Primary</a>
+<a href="#" onclick="event.preventDefault();" class="button bg-secondary text-secondary">Secondary</a>
+<a href="#" onclick="event.preventDefault();" class="button">Button Link</a>
+<span class="text-gray">&bull;</b>
+<a href="#" onclick="event.preventDefault();theme.change()" class="button" title="Change Theme (Alt+T)">Change Theme</a></p>
+
+<h2>Footnote links</h2>
+
+<p>Footnote links are references to the note<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> listed at the bottom of a page.</p>
+
+<p>Click the link to see an example<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.</p>
+
+<p>Footnote can be written in multiple lines<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.</p>
+
+<p>Normally you would use number as reference, but you can use word<sup id="fnref:note" role="doc-noteref"><a href="#fn:note" class="footnote" rel="footnote">2</a></sup> as well.</p>
 
 <h2>Including images</h2>
 
@@ -286,25 +309,6 @@ Long, single-line `code blocks` should not wrap. They should remain on a single 
 <dt>JavaScript</dt>
 <dd>A programming language that adds interactivity to websites.</dd>
 </dl>
-
-<h2>Button links</h2>
-
-<p>
-<a href="#" onclick="event.preventDefault();" class="button bg-primary text-white border-primary">Primary</a>
-<a href="#" onclick="event.preventDefault();" class="button bg-secondary text-secondary">Secondary</a>
-<a href="#" onclick="event.preventDefault();" class="button">Button Link</a>
-<span class="text-gray">&bull;</b>
-<a href="#" onclick="event.preventDefault();theme.change()" class="button" title="Change Theme (Alt+T)">Change Theme</a></p>
-
-<h2>Footnote links</h2>
-
-<p>Footnote links are references to the note<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> listed at the bottom of a page.</p>
-
-<p>Click the link to see an example<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.</p>
-
-<p>Footnote can be written in multiple lines<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.</p>
-
-<p>Normally you would use number as reference, but you can use word<sup id="fnref:note" role="doc-noteref"><a href="#fn:note" class="footnote" rel="footnote">2</a></sup> as well.</p>
 
 <h2>Table styles</h2>
 
