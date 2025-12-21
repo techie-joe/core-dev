@@ -1,13 +1,13 @@
 {% include ui.html %}
 
-Hero message with <span class="text-red">red text</span> grabs attention
+Hero message and <span class="text-red">colored text</span> grabs attention
 {: .hero }
 
 # Heading 1
 
 ![Featured image](https://techie-joe.github.io/core/images/299-400x300.jpg){: .float-right.ml-4.mb-4 width=400 height=400 }
 
-Welcome to the tour! This demo provide a glimpse of the theme's appearance. The `big-first` class will enlarge the first letter of a paragraph. While the `text-justify` class will neatly align your texts to its container. To nudge the first line of a paragraph, use the `indent` class. Indentation gives a sense of order and clarity, making an article easier to read. Include images and [hyperlinks](#){: onclick="event.preventDefault();" } to make things more engaging.
+Welcome to the tour! This demo provide a glimpse of the theme's appearance. The `big-first` class will enlarge the first letter of a paragraph. While the `text-justify` class will neatly align your texts to its container. To nudge the first line of a paragraph, use the `indent` class. Indentation gives a sense of order and clarity, making an article easier to read. Include [images](#including-images) and [hyperlinks](#hyperlinks) to make things more engaging.
 {: .text-justify.big-first }
 
 **Leave whitespace between paragraphs for clarity.**
@@ -17,12 +17,7 @@ Welcome to the tour! This demo provide a glimpse of the theme's appearance. The 
 
 > [Open the legacy demo page](legacy).
 
----
-
----
-{: thin }
-
-**Horizontal rule** can be thick and thin. There are two of them above this sentence.
+{{ thin_hr }}
 
 - Text can be
 **bold**,
@@ -36,7 +31,7 @@ and ~~strike-through~~ texts.
 <samp>sample</samp>, and
 <mark>mark</mark> texts.
 
-- Color them 
+- Color text 
 <b class="text-primary">primary</b>
 <b class="text-secondary">secondary</b>
 <b class="text-gray">gray</b>
@@ -48,6 +43,13 @@ and ~~strike-through~~ texts.
 <b class="text-pending">pending</b>
 <b class="text-orange">orange</b>
 <b class="text-orange-light">orange-light</b>.
+
+**Horizontal rule** can be thick and thin. There are two of them following this sentence.
+
+---
+
+---
+{: .thin }
 
 ## Heading 1
 {: .h1 }
@@ -104,17 +106,17 @@ GitHubPages::Dependencies.gems.each do |gem, version|
 end
 ```
 
-## Hyper links
+## Hyperlinks
 
-You can link to [link to another page](#){: onclick="event.preventDefault();" }. But if you link to a missing page, you'll get [an error]({{ site.baseurl }}/404){: title="The error page"}.
+You can link to [link to another page](#){: onclick=preventDefault }. But if you link to a missing page, you'll get [an error](404){: title="The error page"}.
 
 ## Button links
 
-[Primary](#){: .button.bg-primary.text-white.border-primary onclick="event.preventDefault();" }
-[Secondary](#){: .button.bg-secondary.text-secondary onclick="event.preventDefault();" }
-[Button Link](#){: .button onclick="event.preventDefault();" }
+[Primary](#){: .button.bg-primary.text-white.border-primary onclick=preventDefault }
+[Secondary](#){: .button.bg-secondary.text-secondary onclick=preventDefault }
+[Button Link](#){: .button onclick=preventDefault }
 {{ bull }}{: .text-grey }
-[Change Theme](#){: .button onclick="event.preventDefault();theme.change()" title="Change Theme (Alt+T)" }
+[Change Theme](#){: .button onclick="{{ preventDefault }}theme.change();" title="Change Theme (Alt+T)" }
 
 ## Footnote links
 
