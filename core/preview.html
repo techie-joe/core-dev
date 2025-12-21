@@ -47,13 +47,13 @@ index: false
           <main class="_main">
             <article class="_article _layout _960">{% include ui.html %}
 
-<p class="hero">Hero message with <span class="text-red">red text</span> grabs attention</p>
+<p class="hero">Hero message and <span class="text-red">colored text</span> grabs attention</p>
 
 <h1>Heading 1</h1>
 
 <p><img src="https://techie-joe.github.io/core/images/299-400x300.jpg" alt="Featured image" class="float-right ml mb" width="400" height="300" /></p>
 
-<p class="text-justify big-first">Welcome to the tour! This demo provide a glimpse of the theme's appearance. The <code class="language-plaintext highlighter-rouge">big-first</code> class will enlarge the first letter of a paragraph. While the <code class="language-plaintext highlighter-rouge">text-justify</code> class will neatly aligns your text to its container. To nudge the first line of a paragraph, use the <code class="language-plaintext highlighter-rouge">indent</code> class. Indentation gives a sense of order and clarity, making an article easier to read. Include images and <a href="#" onclick="event.preventDefault();">hyperlinks</a> to make things more engaging.</p>
+<p class="text-justify big-first">Welcome to the tour! This demo provide a glimpse of the theme's appearance. The <code class="language-plaintext highlighter-rouge">big-first</code> class will enlarge the first letter of a paragraph. While the <code class="language-plaintext highlighter-rouge">text-justify</code> class will neatly aligns your text to its container. To nudge the first line of a paragraph, use the <code class="language-plaintext highlighter-rouge">indent</code> class. Indentation gives a sense of order and clarity, making an article easier to read. Include <a href="#including-images">images</a> and <a href="#hyperlinks">hyperlinks</a> to make things more engaging.</p>
 
 <p><strong>Leave whitespace between paragraphs for clarity.</strong></p>
   
@@ -63,11 +63,7 @@ index: false
   <p><a href="legacy">Open the legacy demo page</a>.</p>
 </blockquote>
 
-<hr />
-
-<hr class="thin" />
-
-<p class="text-justify"><strong>Horizontal rule</strong> can be thick and thin. There are two of them above this sentence.</p>
+{{ thin_hr }}
 
 <ul>
   <li>
@@ -89,7 +85,7 @@ Use HTML to <u>underline</u>, add
     </p>
   </li>
   <li>
-    <p>Color them 
+    <p>Color text 
 <b class="text-primary">primary</b>
 <b class="text-secondary">secondary</b>
 <b class="text-pending">pending</b>
@@ -104,6 +100,12 @@ Use HTML to <u>underline</u>, add
 <b class="text-yellow">yellow</b>.</p>
   </li>
 </ul>
+
+<p class="text-justify"><strong>Horizontal rule</strong> can be thick and thin. There are two of them following this sentence.</p>
+
+<hr />
+
+<hr class="thin" />
 
 <h2 class="h1">Heading 1</h2>
 
@@ -167,18 +169,18 @@ Long, single-line `code blocks` should not wrap. They should remain on a single 
 <span class="k">end</span>
 </code></pre></div></div>
 
-<h2>Hyper links</h2>
+<h2>Hyperlinks</h2>
 
-You can <a href="#" onclick="event.preventDefault();">link to another page</a>. But if you link to a missing page, you'll get <a href="{{ site.baseurl }}/404" title="The error page">an error</a>.
+You can <a href="#" onclick="{{ preventDefault }}" >link to another page</a>. But if you link to a missing page, you'll get <a href="404" title="The error page">an error</a>.
 
 <h2>Button links</h2>
 
 <p>
-<a href="#" onclick="event.preventDefault();" class="button bg-primary text-white border-primary">Primary</a>
-<a href="#" onclick="event.preventDefault();" class="button bg-secondary text-secondary">Secondary</a>
-<a href="#" onclick="event.preventDefault();" class="button">Button Link</a>
+<a href="#" onclick="{{ preventDefault }}" class="button bg-primary text-white border-primary">Primary</a>
+<a href="#" onclick="{{ preventDefault }}" class="button bg-secondary text-secondary">Secondary</a>
+<a href="#" onclick="{{ preventDefault }}" class="button">Button Link</a>
 <span class="text-gray">&bull;</b>
-<a href="#" onclick="event.preventDefault();theme.change()" class="button" title="Change Theme (Alt+T)">Change Theme</a></p>
+<a href="#" onclick="{{ preventDefault }}theme.change();" class="button" title="Change Theme (Alt+T)">Change Theme</a></p>
 
 <h2>Footnote links</h2>
 
