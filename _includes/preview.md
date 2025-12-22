@@ -5,7 +5,7 @@ Hero text and _colors_{: .n.text-red } grabs attention
 
 # Heading 1
 
-![Featured image](https://techie-joe.github.io/core/images/299-400x300.jpg){: .float-right.ml-4.mb-4 width=400 height=400 }
+![Featured image](https://techie-joe.github.io/core/images/299-400x300.jpg){: .float-right.ml.mb width=400 height=400 }
 
 Welcome to the demo! This page provide a glimpse of the theme's style and appearance. Use the `text-justify` class to neatly align any paragraph. Use the `big-first` class to enlarge the first letter. Use the `indent` class to nudge the first line. Indentation gives a sense of order and clarity, making an article easier to read. Include [images](#including-images) and [hyperlinks](#hyperlinks) to make things more engaging.
 {: .text-justify.big-first }

@@ -1,5 +1,5 @@
-@use "color" as *;
 @use "sass:color";
+@use "color" as *;
 @use "helper";
 @use "dove";
 @use "_primer";
@@ -20,6 +20,7 @@
 // ---------------------------------------------------------------
 // fixes
 body { overflow-y:scroll }
+a { color:$text-blue }
 details { 
   margin-bottom:16px;
   summary {
