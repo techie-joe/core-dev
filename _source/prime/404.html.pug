@@ -4,11 +4,4 @@ block append vars
   - title  = `Not found`
   - description = `The content you are looking for is not here.`
 block content
-  .flex(style="margin:1rem auto 3rem auto")
-    .fit(style="font-size:4rem;padding:.8rem;") 🤷
-    .f(style="padding:0 1rem")
-      h2 Oops! Nothing found
-      p #{ description }
-  <div style="margin-top:3rem"></div>
-  hr.thin/
-  !='{% include nav_common.md %}'
+  +l|{%- include 404.md %}

@@ -1,18 +1,18 @@
 {% include ui.html %}
 
-Hero message and <span class="text-red">colored text</span> grabs attention
+Hero text and _colors_{: .n.text-red } grabs attention
 {: .hero }
 
 # Heading 1
 
 ![Featured image](https://techie-joe.github.io/core/images/299-400x300.jpg){: .float-right.ml-4.mb-4 width=400 height=400 }
 
-Welcome to the tour! This demo provide a glimpse of the theme's appearance. The `big-first` class will enlarge the first letter of a paragraph. While the `text-justify` class will neatly align your texts to its container. To nudge the first line of a paragraph, use the `indent` class. Indentation gives a sense of order and clarity, making an article easier to read. Include [images](#including-images) and [hyperlinks](#hyperlinks) to make things more engaging.
+Welcome to the demo! This page provide a glimpse of the theme's style and appearance. Use the `text-justify` class to neatly align any paragraph. Use the `big-first` class to enlarge the first letter. Use the `indent` class to nudge the first line. Indentation gives a sense of order and clarity, making an article easier to read. Include [images](#including-images) and [hyperlinks](#hyperlinks) to make things more engaging.
 {: .text-justify.big-first }
 
 **Leave whitespace between paragraphs for clarity.**
 
-**You may notice some gibberish text in this demo.** It's just a placeholder content added to help you visualize how the layout, spacing and typography will appear once real content is in place. The text itself doesn't carry any meaning, it's simply there to fill the empty areas and make the overall design feel balanced and complete. Each line and section tells something, though none of it is meant to be understood literally. It's more of a creative illusion, a way to showcase how color, contrast, and structure come together to create a theme. It honors the “look and feel”, a metaphor for how design can shift and vary in perspective. That's the beauty of visual design. Every layout tells its own silent story, even when the words themselves mean nothing at all.
+**You may notice some gibberish text in this demo.** It's just a placeholder content added to help you visualize how the layout, spacing and typography will appear once real content is in place. The gibberish text itself doesn't carry any meaning, it's simply there to fill the empty areas and make the overall design feel balanced and complete. Each line and section shows something different, though none of it is meant to be understood literally. It's more of a creative illusion, a way to showcase how color, contrast, and structure come together to create a theme. It honors the "look-and-feel" metaphor for how design can shift and vary in perspective. That's the beauty of visual design. Every layout tells its own silent story, even when the words themselves means nothing at all.
 {: .indent.text-justify.text-grey }
 
 > [Open the legacy demo page](legacy).
@@ -32,19 +32,20 @@ and ~~strike-through~~ texts.
 <mark>mark</mark> texts.
 
 - Color text 
-<b class="text-primary">primary</b>
-<b class="text-secondary">secondary</b>
-<b class="text-gray">gray</b>
-<b class="text-slategray">slategray</b>
-<b class="text-red">red</b>
-<b class="text-blue">blue</b>
-<b class="text-green">green</b>
-<b class="text-purple">purple</b>
-<b class="text-pending">pending</b>
-<b class="text-orange">orange</b>
-<b class="text-orange-light">orange-light</b>.
+**primary**{: .text-primary }
+**secondary**{: .text-secondary }
+**pending**{: .text-pending }
+**gray**{: .text-gray }
+**slategray**{: .text-slategray }
+**red**{: .text-red }
+**blue**{: .text-blue }
+**green**{: .text-green }
+**purple**{: .text-purple }
+**yellow**{: .text-yellow }
+**orange**{: .text-orange }
+{{-'.'}}
 
-**Horizontal rule** can be thick and thin. There are two of them following this sentence.
+**Horizontal rule** can be thick or thin. There are two of them following this sentence.
 
 ---
 
@@ -82,13 +83,25 @@ H5 is that tiny notebook you bought to look organized but never actually use. It
 And then comes H6, the heading so small it whispers. Nobody notices it. Even search engines squint and go, “Wait, is that… a heading?” H6 is like writing a title with invisible ink: only the bravest readers will ever see it.
 {: .text-justify.text-grey }
 
-## Code blocks
+## Blockquote
+
+> This is a blockquote.
+
+> You can add style to a blockquote.
+> > "You can stack them too." — _Says the Author_
+> {: .border-yellow }
+{: .border-green }
+
+> Apply any style you like.
+{: .border-red.text-pending }
+
+## Code block
 
 ```
-Markdown render `code blocks` as is.
+Markdown render `code block` as is.
     white-spaces, new lines, tabs and all. 
 
-Long, single-line `code blocks` should not wrap. They should remain on a single line instead of breaking into multiple lines. If the line is too long to fit within the visible width of the page, the reader should be able to scroll horizontally to see the rest of it. This line should be long enough to demonstrate this.
+Long, single-line `code block` should not wrap. They should remain on a single line instead of breaking into multiple lines. If the line is too long to fit within the visible width of the page, the reader should be able to scroll horizontally to see the rest of it. This line should be long enough to demonstrate this.
 ```
 
 ```js
@@ -106,19 +119,17 @@ GitHubPages::Dependencies.gems.each do |gem, version|
 end
 ```
 
-## Hyperlinks
+## Hyperlink
 
-You can link to [link to another page](#){: onclick=preventDefault }. But if you link to a missing page, you'll get [an error](404){: title="The error page"}.
+Build [link to another page](#){: onclick="event.preventDefault();" }. But if you link to a missing page, you'll get [an error](404){: title="The error page"}.
 
-## Button links
+## Button link
 
-[Primary](#){: .button.bg-primary.text-white.border-primary onclick=preventDefault }
-[Secondary](#){: .button.bg-secondary.text-secondary onclick=preventDefault }
-[Button Link](#){: .button onclick=preventDefault }
-{{ bull }}{: .text-grey }
-[Change Theme](#){: .button onclick="{{ preventDefault }}theme.change();" title="Change Theme (Alt+T)" }
+[Button Link](#){: .button onclick="event.preventDefault();" }
+[Primary](#){: .button.primary onclick="event.preventDefault();" }
+[Secondary](#){: .button.secondary onclick="event.preventDefault();" }
 
-## Footnote links
+## Footnote link
 
 Footnote links are references to the note[^1] listed at the bottom of a page.
 
@@ -130,65 +141,53 @@ Normally you would use number as reference, but you can use word[^note] as well.
 
 ## Including images
 
-![Large image](https://techie-joe.github.io/core/images/299-1024x368.jpg){: alt="Large image" .full-width }
+![Large image](https://techie-joe.github.io/core/images/299-1024x368.jpg){: alt="Large image" .width-full }
 
-> Images for this demo came from [picsum.photos](https://picsum.photos/){: target="_blank"}.
-{: .text-small.mt-0 }
+> Some images on this demo came from [picsum.photos](https://picsum.photos/){: target="_blank"}.
+{: .smaller.mt-0 }
 
-You can use the `width-full` or `width-fit` class for images.
-
-For smaller images, align them using floats and margins: `float-left.mr.mb`, `float-right.ml.mb` or `centered.mb`.
+Use the `width-full` or `width-fit` class for large images. Use `float-left`, `float-right` or `centered` to align them.
 
 ---
 {: .mb-3 }
 
-![Left Octocat](https://techie-joe.github.io/core/images/octocat-64x64.png){: .float-left.mr.mb.pa width=64 height=64 }
-![Right Octocat](https://techie-joe.github.io/core/images/octocat-64x64.png){: .float-right.ml.mb.pa width=64 height=64 }
-![Small image](https://techie-joe.github.io/core/images/core-64x64.png){: .centered.mb.pa.bg-white width=64 height=64 }
+![Left Octocat](https://techie-joe.github.io/dove/images/octocat-64x64.png){: .float-left.pa width=64 height=64 }
+![Right Octocat](https://techie-joe.github.io/dove/images/octocat-64x64.png){: .float-right.pa width=64 height=64 }
+![Small image](https://techie-joe.github.io/dove/images/octocat-64x64.png){: .centered.pa width=64 height=64 }
 
 ---
 {: .mt-3 }
 
-## Box wrappers
+## Box wrapper
 
-Wrap texts in `box.ba`
-{: .box.ba.ph.text-left }
+Use `box` to create a wrapper.
+{: .box.text-left }
 
-Wrap in `box.bg-primary.text-white`
-{: .box.ph.bg-primary.text-white.text-center }
+Wrap with `box.bg-blue.border-blue.text-white`
+{: .box.bg-blue.border-blue.text-white.text-center }
 
-Try other mix as well
-{: .box.ph.bg-red.text-white.text-right }
-
-## Styling blockquotes
-
-> This is a blockquote.
-
-> You can add styles to a blockquote.
-> > "You can stack them too." — _Says the Author_
-> {: .border-yellow }
-{: .border-green }
-
-> Try other mix as well.
-{: .border-red.text-pending }
+Apply any style you like
+{: .box.bg-red.border-red.text-white.text-right }
 
 ## Details and summary
 
-Use HTML syntax to render the details and summary block.
+{%- capture _summary %}
+Collapsible content. _(click for more)_
+{%- endcapture %}
+{%- capture _details %}
+The details and summary block, is a collapsible accordion of destiny where content hides until poked by the click of curiosity. It is the digital equivalent of whispering, “psst, wanna see something cool?” and then rolling out a red carpet of hidden paragraphs, secret snippets, or the occasional diagram that nobody asked for. The summary is the bouncer at the door, deciding whether the reader gets a glimpse inside or stays staring at the title forever, while details hoards all the juicy stuff like a dragon sitting on its markdown gold.
+{: .text-grey.text-justify }
+{%- endcapture %}
+{%- include mod-details.md %}
 
-<details>
-<summary>Collapsible content. <i>(click for more)</i></summary>
-<div class="details">
-<p class="text-grey text-justify">The details and summary block, is a collapsible accordion of destiny where content hides until poked by the click of curiosity. It is the digital equivalent of whispering, “psst, wanna see something cool?” and then rolling out a red carpet of hidden paragraphs, secret snippets, or the occasional diagram that nobody asked for. The summary is the bouncer at the door, deciding whether the reader gets a glimpse inside or stays staring at the title forever, while details hoards all the juicy stuff like a dragon sitting on its markdown gold.</p>
-</div>
-</details>
-
-<details class="box ba ph">
-<summary>Style with <code>box.ba</code>. <i>(click for more)</i></summary>
-<div class="details">
-<p class="text-grey text-justify">This block expands like curtains on opening night, then folds back up as if nothing ever happened, gaslighting your memory of what you just saw. Authors toss long-winded explanations, secret Easter eggs, or poorly formatted cat ASCII art inside it, knowing only the brave will click. In its most chaotic form, the details block nests within itself, collapsing collapsibles within collapsibles until the reader spirals into an abyss of disclosure toggles, wondering whether the summary is summary enough to summarize the summaries.</p>
-</div>
-</details>
+{%- capture _summary %}
+Style with `box`. _(click for more)_
+{%- endcapture %}
+{%- capture _details %}
+This block expands like curtains on opening night, then folds back up as if nothing ever happened, gaslighting your memory of what you just saw. Authors toss long-winded explanations, secret Easter eggs, or poorly formatted cat ASCII art inside it, knowing only the brave will click. In its most chaotic form, the details block nests within itself, collapsing collapsibles within collapsibles until the reader spirals into an abyss of disclosure toggles, wondering whether the summary is summary enough to summarize the summaries.
+{: .text-grey.text-justify }
+{%- endcapture %}
+{%- include mod-details.md %}{: .box }
 
 ## Ordered list
 
@@ -197,10 +196,10 @@ Use HTML syntax to render the details and summary block.
         1. Third level item.
         2. Other item.
         3. The last item.
-        {: style="list-style:lower-roman" }
+        {: .list-lower-roman }
     2. Other item.
     3. The last item.
-    {: style="list-style:lower-alpha" }
+    {: .list-lower-alpha }
 2. Other item.
 3. The last item.
 
@@ -250,16 +249,6 @@ Use HTML syntax to render the details and summary block.
 | Howard            | Premium      |     $5,678 |
 | Sally             | Gold         |     $9,012 |
 
-### Full table
-
-| Left              | Center       | Right      |
-| :---------------- | :----------: | ---------: |
-| Good fish         | Ok           |       nice |
-| Plenty box        | Out of stock |       yeah |
-| Biscoite          | Ok           |        hmm |
-| Zoute drop        | Ok           |       tumm |
-{: .full-width }
-
 ### Simple table
 
 | Name              |      Value |
@@ -278,6 +267,16 @@ Use HTML syntax to render the details and summary block.
 | Zapper            | Pending      |
 | Coute sauce       | Ok           |
 {: .borderless }
+
+### Full-width table
+
+| Left              | Center       | Right      |
+| :---------------- | :----------: | ---------: |
+| Good fish         | Ok           |       nice |
+| Plenty box        | Out of stock |       yeah |
+| Biscoite          | Ok           |        hmm |
+| Zoute drop        | Ok           |       tumm |
+{: .width-full }
 
 ### HTML table
 

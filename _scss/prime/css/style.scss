@@ -1,4 +1,4 @@
-@use "_color" as *;
+@use "color" as *;
 @use "sass:color";
 @use "helper";
 @use "dove";
@@ -7,23 +7,37 @@
 ._1200 { max-width:1200px; @extend .mc; position:relative }
 ._960 { max-width:960px; @extend .mc; }
 // ---------------------------------------------------------------
+.button.primary {
+  background-color:$text-blue;
+  border-color:$text-blue;
+  color:#fff;
+}
+.button.secondary {
+  background-color:$text-slategrey;
+  border-color:$text-slategrey;
+  color:#fff;
+}
+// ---------------------------------------------------------------
 // fixes
-body {overflow-y:scroll}
-details { margin-bottom:16px }
+body { overflow-y:scroll }
+details { 
+  margin-bottom:16px;
+  summary {
+    @extend .pointer;
+    p { @extend .inline; }
+  }
+}
 article {
-  img { display:block }
+  img { @extend .block; }
 }
 .markdown-body {
   h1,h2 { border-color:#ccc }
-  p { margin-top: 16px }
+  p { margin-top:16px }
   blockquote { color:inherit }
   table {
-    & { display:table;border-collapse:collapse;border:1px solid;width:auto }
+    & { display:table; border-collapse:collapse; border:1px solid; width:auto }
     thead tr { background-color: #f6f8fa }
     &, th, td { border-color:#dfe2e5 }
-    &.full-width { width:100% }
-    &.simple { td, th { border-width:1px 0 } }
-    &.borderless { &, tr, td, th { border:0;background:none } }
   }
   img { background-color:transparent;color:#888 }
   ._header h1 { margin-top: .67em !important }
@@ -42,21 +56,17 @@ hr.thin {
 ._header ._logo a:hover { color:$text-blue }
 .hero { line-height:1.15 }
 .text-yellow { color:$text-yellow !important }
+.text-orange { color:$text-orange !important }
 .text-gray,.text-grey { color:$text-grey !important }
 .text-slategray,.text-slategrey { color:$text-slategrey !important }
 .text-primary { color:$text-blue }
 .text-secondary { color:$text-slategrey }
-.text-justify{text-align:justify}
+.text-justify { text-align:justify }
 .bg-primary { background-color:$text-blue }
-.bg-primary {
-  code,tt { background-color: rgba(#1b1f23,.15); }
-}
+.bg-primary { code,tt { background-color: rgba(#1b1f23,.15); } }
 .border-primary{ @extend .border-blue; }
-.ba { border-color: #99a }
-.box { border-radius:5px }
+.box { border-radius:5px; border-color: #999; @extend .ph; }
 .itext, .isvg { line-height:.7 }
-.footnote,
-.reversefootnote { text-decoration:none !important }
 
 // ---------------------------------------------------------------
 ._dark {
@@ -64,7 +74,7 @@ hr.thin {
     color: color.invert(#24292e);
     background-color: color.invert(#fff);
   }
-  blockquote,.ba { border-color:#3f4a54 }
+  blockquote,.box { border-color:#333 }
   code,tt { background-color: rgba(color.invert(#1b1f23),.15); }
   article {
     pre,
@@ -85,7 +95,6 @@ hr.thin {
       tr { background-color: color.invert(#fff); }
       tr:nth-child(2n),
       thead tr { background-color: #111 }
-      &.borderless tr { background:none }
     }
   }
   .markdown-body {

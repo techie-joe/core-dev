@@ -1,3 +1,8 @@
+// ---------------------------------------------------------------
+$grey: #888;
+// ---------------------------------------------------------------
+.n { font-weight:inherit; font-style:inherit }
+
 .sans { font-family: 'Arial', system-ui, sans-serif }
 .serif { font-family: 'Times New Roman', 'Times', serif }
 .mono { font-family: 'Courier New', 'Courier', monospace, monospace }
@@ -5,19 +10,33 @@
 .small { font-size:.9em }
 .smaller { font-size:.8em }
 
-.scrollable{overflow:auto}
+.scrollable { overflow:auto }
 
-details summary,
 .pointer { cursor:pointer }
+
+.inline  { display:inline }
+.block   { display:block }
+.inblock { display:inline-block }
 
 .flex { display:flex }
 .fill { flex:1 }
 .fit  { flex:0 }
 
-.full-width{width:100%}
+.width-full { width: 100% }
+.width-fit  { max-width: 100% }
+
+.float-left  { float:left }
+.float-right { float:right }
+
+.text-left    { text-align:left }
+.text-right   { text-align:right }
+.text-center  { text-align:center }
+.text-justify { text-align:justify }
+
+.centered { display:block;margin-left:auto;margin-right:auto; }
 
 .hero {
-  display:block;
+  @extend .block;
   font-size:2.5em;
   margin-block-start:.67em;
   margin-block-end:.67em;
@@ -38,19 +57,16 @@ details summary,
 }
 
 .button {
-  display:inline-block;
+  @extend .inblock;
+  @extend .no_u;
   border:1px solid;
   padding:.5em;
   margin:.25rem .25rem;
   border-radius:.25em;
   line-height:1;
-  @extend .no_u;
 }
 
-.box {
-  box-sizing:border-box;
-  padding:.5em;
-}
+.box { box-sizing:border-box; @extend .ba; @extend .pa_5; }
 
 .ba0 { border:0 }
 .bl0,.bh0 { border-left:0 }
@@ -58,11 +74,11 @@ details summary,
 .bt0,.bv0 { border-top:0 }
 .bb0,.bv0 { border-bottom:0 }
 
-.ba { border:1px solid #888 }
-.bl,.bh { border-left:1px solid #888 }
-.br,.bh { border-right:1px solid #888 }
-.bt,.bv { border-top:1px solid #888 }
-.bb,.bv { border-bottom:1px solid #888 }
+.ba { border:1px solid $grey }
+.bl,.bh { border-left:1px solid $grey }
+.br,.bh { border-right:1px solid $grey }
+.bt,.bv { border-top:1px solid $grey }
+.bb,.bv { border-bottom:1px solid $grey }
 
 .pa0 { padding:0 }
 .pl0,.ph0 { padding-left:0 }
@@ -102,37 +118,45 @@ details summary,
 .mt,.mv { margin-top:1em }
 .mb,.mv { margin-bottom:1em }
 
-._icon { font-style:normal !important }
-.itext,.isvg {
+.icon { font-style:normal }
+.itext,
+.isvg {
+  @extend .inblock;
   width:1em;
   height:1em;
-  display:inline-block;
   vertical-align:text-bottom;
   text-align: center;
   line-height:1;
 }
 .isvg svg {
+  @extend .inblock;
   width:1em;
   height:1em;
-  display:inline-block;
+}
+
+.list-lower-roman { list-style:lower-roman }
+.list-lower-alpha { list-style:lower-alpha }
+
+table.simple { td, th { border-width:1px 0 !important } }
+table.borderless { &, tr, td, th { border:0 !important } }
+
+.task-list { list-style:none }
+.task-list-item-checkbox {
+  margin:0 .5em;
+  height:1em;
+  width:1em;
+  vertical-align:text-bottom;
+}
+
+.footnote { padding:0 .25em }
+.footnote,
+.reversefootnote { text-decoration:none !important }
+.footnotes {
+  font-size:.9em;
+  li::marker {font-size:.8em}
 }
 
 article {
-  table {
-    &.simple { td, th { border-width:1px 0 } }
-    &.borderless { &, td, th { border:0 } }
-  }
-  .task-list { list-style:none }
-  input[type=checkbox].task-list-item-checkbox {
-    margin:0 .5em;
-    height:1em;
-    width:1em;
-    vertical-align:text-bottom;
-  }
-  .footnotes {
-    font-size:.9em;
-    li::marker {font-size:.8em}
-  }
   .no_max_height pre.highlight { max-height:none !important }
 }
 

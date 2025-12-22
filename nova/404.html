@@ -46,17 +46,7 @@ index: false
           </nav>
           <main class="_main">
             <article class="_article _layoutx _960">
-              <div class="flex" style="margin:1rem auto 3rem auto">
-                <div class="fit" style="font-size:4rem;padding:.8rem;">🤷</div>
-                <div class="f" style="padding:0 1rem">
-                  <h2>Oops! Nothing found</h2>
-                  <p>The content you are looking for is not here.</p>
-                </div>
-              </div>
-              <div style="margin-top:3rem"></div>
-              <hr/>
-              <p><a class="button" href="?back" onclick="event.preventDefault();(function(w){var h=w.history;w.opener?w.close():h.length&gt;1?h.back():w.location.href='/';})(window)" title="Back to previous page">👈 Back</a><a class="button" href="/dove/" title="Go to Home Page">Home</a><a class="button" href="/dove/pages" title="Go to Pages">Pages</a><a class="button" href="/dove/posts" title="Go to Posts">Posts</a>
-              </p>
+{%- include 404.md %}
             </article>
           </main>
           <footer class="_footer">

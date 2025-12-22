@@ -3,4 +3,5 @@ block append vars
   - path   = 'preview.html'
   - title  = `Preview`
 block content
-  include /_includes/preview.html
+  +capture('preview')|{% include preview.md %}
+  +l|{{ preview | markdownify }}

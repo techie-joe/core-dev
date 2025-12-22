@@ -3,7 +3,8 @@ block append vars
   - path   = 'legacy.html'
   - title  = `Legacy`
 block content
-  include /_includes/legacy.html
+  +capture('legacy')|{% include legacy.md %}
+  +l|{{ legacy | markdownify }}
 block footer
   hr/
   p.text-right.text-grey: small: +edit_link(path)
