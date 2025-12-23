@@ -11,4 +11,4 @@ description: Repository Variables on this site.
 
 {% include vars-site.github.public_repositories.md %}
 
-{% comment %}--- end of page ---{% endcomment %}
+{% comment %} --- end of page --- {% endcomment %}

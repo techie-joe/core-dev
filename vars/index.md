@@ -37,4 +37,4 @@ highlighter_suffix : {{ highlighter_suffix | jsonify }}
 ```
 {: .no_max_height }
 
-{% comment %}--- end of page ---{% endcomment %}
+{% comment %} --- end of page --- {% endcomment %}

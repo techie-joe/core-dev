@@ -11,4 +11,4 @@ description: Site Variables on this site.
 
 {% include vars-site.md %}
 
-{% comment %}--- end of page ---{% endcomment %}
+{% comment %} --- end of page --- {% endcomment %}

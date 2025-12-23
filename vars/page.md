@@ -11,4 +11,4 @@ description: Page Variables on this site.
 
 {% include vars-page.md %}
 
-{% comment %}--- end of page ---{% endcomment %}
+{% comment %} --- end of page --- {% endcomment %}

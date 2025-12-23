@@ -11,4 +11,4 @@ description: Github Variables on this site.
 
 {% include vars-site.github.md %}
 
-{% comment %}--- end of page ---{% endcomment %}
+{% comment %} --- end of page --- {% endcomment %}

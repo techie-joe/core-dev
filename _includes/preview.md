@@ -1,13 +1,13 @@
 {% include ui.html %}
 
-Hero text and _colors_{: .n.text-red } grabs attention
+Hero message and _colored text_{: .n.text-red } grabs attention
 {: .hero }
 
 # Heading 1
 
 ![Featured image](https://techie-joe.github.io/core/images/299-400x300.jpg){: .float-right.ml.mb width=400 height=400 }
 
-Welcome to the demo! This page provide a glimpse of the theme's style and appearance. Use the `text-justify` class to neatly align any paragraph. Use the `big-first` class to enlarge the first letter. Use the `indent` class to nudge the first line. Indentation gives a sense of order and clarity, making an article easier to read. Include [images](#including-images) and [hyperlinks](#hyperlinks) to make things more engaging.
+Welcome to the demo! This page provide a glimpse of the theme's appearance. The `text-justify` class will neatly align a paragraph. While the `big-first` class will enlarge the first letter. If you want to nudge the first line, use the `indent` class. Indentation gives a sense of order and clarity, making an article easier to read. You may also include [images](#include-images) and [hyperlinks](#hyperlink) to make things more engaging.
 {: .text-justify.big-first }
 
 **Leave whitespace between paragraphs for clarity.**
@@ -26,10 +26,10 @@ and ***both***.
 You can also add `code`
 and ~~strike-through~~ texts.
 
-- Use HTML to <u>underline</u>, add
-<abbr title="Abbreviation">abbreviation</abbr>,
-<samp>sample</samp>, and
-<mark>mark</mark> texts.
+- Use HTML to <u>underline</u> texts,
+add <abbr title="Abbreviation">abbreviation</abbr>,
+include <samp>sample</samp>,
+and <mark>mark</mark> texts.
 
 - Color text 
 **primary**{: .text-primary }
@@ -55,40 +55,40 @@ and ~~strike-through~~ texts.
 ## Heading 1
 {: .h1 }
 
-The H1 holds everything together. Usually there is only one per page dedicated for the main title. For styling puposes however, you can mock other heading to look like an H1 using the `h1` class.
+H1 holds everything together. It is the gravitational anchor of the document. Without it, paragraphs would simply drift into void. Usually there is only one per page dedicated for the main title. But you can also mock an H1 using the `h1` class.
 {: .text-justify }
 
 ## Heading 2
 
-Not too loud, not too small. It's like the middle child of headings: always trying, never crying. H2 organizes sections, but secretly dreams of being an H1 someday. Don't tell it the truth. Let it dream.
+H2 is the reliable lieutenant of headings. It organizes sections, leads the battalions of texts, and secretly dreams of being an H1 someday. Don't tell it the truth. Let it dream.
 {: .text-justify.text-grey }
 
 ### Heading 3
 
-The Mysterious H3 is like that friend who wears sunglasses indoors. Mysterious. Cool. A bit unnecessary sometimes, but when used right — chef's kiss! H3 loves details and subtopics. But if you go too deep, suddenly you're in H6 territory, and nobody reads that far.
+It is larger than the rest, yet forever humble in the shadow. A bit redundant sometimes. H3 loves details and subtopics. But if you go too deep, suddenly you're in H6 territory, and nobody reads that far.
 {: .text-justify.text-grey }
 
 #### Heading 4
 
-H4 is forgotten like socks at Christmas. Technically useful, but no one really cheers for it. You'll use it if you have to, like adding extra layers to a report nobody asked for. Poor H4. Always invited, never remembered.
+H4 is almost forgotten though technically useful, but no one really cheers for it. You'll use it only when you have to, like adding extra layers to a report nobody asked for. He is always invited, never remembered.
 {: .text-justify.text-grey }
 
 ###### Heading 5
 
-H5 is that tiny notebook you bought to look organized but never actually use. It's small, it's cute, it's there — but honestly, body text is almost the same size, so why bother? H5 knows its fate but accepts it gracefully.
+Remember that tiny notebook you bought to look organized but never actually use?  It's small, it's cute, it's there, but honestly, body text is almost the same size, so why bother? H5 knows its fate but accepts it gracefully.
 {: .text-justify.text-grey }
 
 ###### Heading 6
 
-And then comes H6, the heading so small it whispers. Nobody notices it. Even search engines squint and go, “Wait, is that… a heading?” H6 is like writing a title with invisible ink: only the bravest readers will ever see it.
+Then comes H6, so small it whispers. Nobody notices it. Even search engines squint and go, “Wait, is that… a heading?” H6 is like writing a title with a pale ink, only the bravest readers will ever see it.
 {: .text-justify.text-grey }
 
 ## Blockquote
 
 > This is a blockquote.
 
-> You can add style to a blockquote.
-> > "You can stack them too." — _Says the Author_
+> You can style blockquotes.
+> > You can stack them too.
 > {: .border-yellow }
 {: .border-green }
 
@@ -139,7 +139,7 @@ Footnote can be written in multiple lines[^3].
 
 Normally you would use number as reference, but you can use word[^note] as well.
 
-## Including images
+## Include images
 
 ![Large image](https://techie-joe.github.io/core/images/299-1024x368.jpg){: alt="Large image" .width-full }
 
@@ -163,7 +163,7 @@ Use the `width-full` or `width-fit` class for large images. Use `float-left`, `f
 Use `box` to create a wrapper.
 {: .box.text-left }
 
-Wrap with `box.bg-blue.border-blue.text-white`
+Customize `box.bg-blue.border-blue.text-white`
 {: .box.bg-blue.border-blue.text-white.text-center }
 
 Apply any style you like
@@ -172,7 +172,7 @@ Apply any style you like
 ## Details and summary
 
 {%- capture _summary %}
-Collapsible content. _(click for more)_
+Collapsible content. _(click for more)_{: .small }
 {%- endcapture %}
 {%- capture _details %}
 The details and summary block, is a collapsible accordion of destiny where content hides until poked by the click of curiosity. It is the digital equivalent of whispering, “psst, wanna see something cool?” and then rolling out a red carpet of hidden paragraphs, secret snippets, or the occasional diagram that nobody asked for. The summary is the bouncer at the door, deciding whether the reader gets a glimpse inside or stays staring at the title forever, while details hoards all the juicy stuff like a dragon sitting on its markdown gold.
@@ -181,7 +181,7 @@ The details and summary block, is a collapsible accordion of destiny where conte
 {%- include mod-details.md %}
 
 {%- capture _summary %}
-Style with `box`. _(click for more)_
+Style with `box`. _(click for more)_{: .small }
 {%- endcapture %}
 {%- capture _details %}
 This block expands like curtains on opening night, then folds back up as if nothing ever happened, gaslighting your memory of what you just saw. Authors toss long-winded explanations, secret Easter eggs, or poorly formatted cat ASCII art inside it, knowing only the brave will click. In its most chaotic form, the details block nests within itself, collapsing collapsibles within collapsibles until the reader spirals into an abyss of disclosure toggles, wondering whether the summary is summary enough to summarize the summaries.
