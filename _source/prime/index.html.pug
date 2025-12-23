@@ -9,18 +9,24 @@ block content
   - sub = layout
   nav.mv
     b Html
-    +_angle
+    +angle
     +sna(sub+"/preview.html")| Preview
-    +_bull
+    +bull
+    +sna(sub+"/test.html")| Test
+    +bull
     +sna(sub+"/home.html")| Home
+    +bull
     +sna(sub+"/page.html")| Page
+    +bull
     +sna(sub+"/404.html")| 404
   - sub = layout+'/md'
   nav.mv
     b Markdown
-    +_angle
+    +angle
     +sna(sub+"/preview.html")| Preview
-    +_bull
+    +bull
     +sna(sub+"/home.html")| Home
+    +bull
     +sna(sub+"/page.html")| Page
+    +bull
     +sna(sub+"/404.html")| 404

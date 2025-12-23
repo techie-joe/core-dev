@@ -1,5 +1,5 @@
-// ---------------------------------------------------------------
-$grey: #888;
+@use "sass:color";
+@use "color" as *;
 // ---------------------------------------------------------------
 .n { font-weight:inherit; font-style:inherit }
 
@@ -74,11 +74,11 @@ $grey: #888;
 .bt0,.bv0 { border-top:0 }
 .bb0,.bv0 { border-bottom:0 }
 
-.ba { border:1px solid $grey }
-.bl,.bh { border-left:1px solid $grey }
-.br,.bh { border-right:1px solid $grey }
-.bt,.bv { border-top:1px solid $grey }
-.bb,.bv { border-bottom:1px solid $grey }
+.ba { border:1px solid $text-grey }
+.bl,.bh { border-left:1px solid $text-grey }
+.br,.bh { border-right:1px solid $text-grey }
+.bt,.bv { border-top:1px solid $text-grey }
+.bb,.bv { border-bottom:1px solid $text-grey }
 
 .pa0 { padding:0 }
 .pl0,.ph0 { padding-left:0 }
@@ -163,3 +163,54 @@ article {
 .no_u { text-decoration:none !important }
 .no_wrap { white-space:nowrap !important }
 .hide { display:none !important }
+
+// ---------------------------------------------------------------
+
+.bg-primary{ @extend .bg-blue; }
+.bg-secondary{ @extend .bg-slategrey; }
+.bg-slategray{ @extend .bg-slategrey; }
+.bg-gray{ @extend .bg-grey; }
+.bg-pending{ @extend .bg-yellow; }
+.bg-white{background-color:$text-white !important}
+.bg-black{background-color:$text-black !important}
+.bg-grey{background-color:$text-grey !important}
+.bg-slategrey{background-color:$text-slategrey !important}
+.bg-red{background-color:$text-red !important}
+.bg-blue{background-color:$text-blue !important}
+.bg-green{background-color:$text-green !important}
+.bg-purple{background-color:$text-purple !important}
+.bg-yellow{background-color:$text-yellow !important}
+.bg-orange{background-color:$text-orange !important}
+
+.text-black { color:$text-black !important }
+.text-primary{ @extend .text-blue; }
+.text-secondary{ @extend .text-slategrey; }
+.text-slategray{ @extend .text-slategrey; }
+.text-gray{ @extend .text-grey; }
+.text-pending{ @extend .text-yellow; }
+.text-white{color:$text-white !important}
+.text-black{color:$text-black !important}
+.text-grey{color:$text-grey !important}
+.text-slategrey{color:$text-slategrey !important}
+.text-red{color:$text-red !important}
+.text-blue{color:$text-blue !important}
+.text-green{color:$text-green !important}
+.text-purple{color:$text-purple !important}
+.text-yellow{color:$text-yellow !important}
+.text-orange{color:$text-orange !important}
+
+.border-primary{ @extend .border-blue; }
+.border-secondary{ @extend .border-slategrey; }
+.border-slategray{ @extend .border-slategrey; }
+.border-gray{ @extend .border-grey; }
+.border-pending{ @extend .border-yellow; }
+.border-white{border-color:$text-white !important}
+.border-black{border-color:$text-black !important}
+.border-grey{border-color:$text-grey !important}
+.border-slategrey{border-color:$text-slategrey !important}
+.border-red{border-color:$text-red !important}
+.border-blue{border-color:$text-blue !important}
+.border-green{border-color:$text-green !important}
+.border-purple{border-color:$text-purple !important}
+.border-yellow{border-color:$text-yellow !important}
+.border-orange{border-color:$text-orange !important}

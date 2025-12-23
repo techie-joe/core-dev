@@ -1,0 +1,7 @@
+extends _html
+block append vars
+  - path   = 'test.html'
+  - title  = `Test`
+block content
+  +capture('test')|{% include test.md %}
+  +l|{{ test | markdownify }}

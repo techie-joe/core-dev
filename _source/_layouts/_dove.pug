@@ -36,15 +36,19 @@ mixin nav_common
 
 mixin sna(ref)
   if ref == path || ref+'index.html' == path
-    +_: b: block
+    b: block
   else
-    +_a([base_url,ref].join('/')): block
+    +a([base_url,ref].join('/')): block
 
 mixin site_nav(sub)
   +sna(sub+"/"): b !{capitalize(sub)}
-  +_angle
+  +angle
   +sna(sub+"/preview.html")| Preview
-  +_bull
+  +bull
+  +sna(sub+"/test.html")| Test
+  +bull
   +sna(sub+"/home.html")| Home
+  +bull
   +sna(sub+"/page.html")| Page
+  +bull
   +sna(sub+"/404.html")| 404

@@ -1,21 +1,21 @@
 @use "sass:color";
 @use "color" as *;
-@use "helper";
-@use "dove";
 @use "_primer";
+@use "dove";
+@use "helper";
 // ---------------------------------------------------------------
 ._1200 { max-width:1200px; @extend .mc; position:relative }
 ._960 { max-width:960px; @extend .mc; }
 // ---------------------------------------------------------------
 .button.primary {
-  background-color:$text-blue;
-  border-color:$text-blue;
-  color:#fff;
+  @extend .bg-blue;
+  @extend .border-blue;
+  @extend .text-white;
 }
 .button.secondary {
-  background-color:$text-slategrey;
-  border-color:$text-slategrey;
-  color:#fff;
+  @extend .bg-slategrey;
+  @extend .border-slategrey;
+  @extend .text-white;
 }
 // ---------------------------------------------------------------
 // fixes
@@ -32,6 +32,7 @@ article {
   img { @extend .block; }
 }
 .markdown-body {
+  hr { background-color: #ddd }
   h1,h2 { border-color:#ccc }
   p { margin-top:16px }
   blockquote { color:inherit }
@@ -41,14 +42,13 @@ article {
     &, th, td { border-color:#dfe2e5 }
   }
   img { background-color:transparent;color:#888 }
+  .task-list { padding-left:.25em; ul,ol { padding-left:2em } }
   ._header h1 { margin-top: .67em !important }
   .highlight { &,& pre { border-radius:5px }}
   ._footer {margin-bottom:4rem !important}
 }
 hr.thin {
   height:0;
-  background:none;
-  background-color: #ccc;
   border-bottom:1px solid transparent;
   margin:16px 0;
 }
@@ -56,18 +56,10 @@ hr.thin {
 ._header ._logo a { color:inherit;text-decoration:none }
 ._header ._logo a:hover { color:$text-blue }
 .hero { line-height:1.15 }
-.text-yellow { color:$text-yellow !important }
-.text-orange { color:$text-orange !important }
-.text-gray,.text-grey { color:$text-grey !important }
-.text-slategray,.text-slategrey { color:$text-slategrey !important }
-.text-primary { color:$text-blue }
-.text-secondary { color:$text-slategrey }
-.text-justify { text-align:justify }
-.bg-primary { background-color:$text-blue }
+
 .bg-primary { code,tt { background-color: rgba(#1b1f23,.15); } }
-.border-primary{ @extend .border-blue; }
 .box { border-radius:5px; border-color: #999; @extend .ph; }
-.itext, .isvg { line-height:.7 }
+.itext, .isvg { line-height:.8 }
 
 // ---------------------------------------------------------------
 ._dark {
@@ -77,6 +69,7 @@ hr.thin {
   }
   blockquote,.box { border-color:#333 }
   code,tt { background-color: rgba(color.invert(#1b1f23),.15); }
+  hr { background-color: #222 }
   article {
     pre,
     .highlight pre,
@@ -101,8 +94,6 @@ hr.thin {
   .markdown-body {
     h1,h2 { border-color:#333 }
   }
-  hr { background-color: #333 }
-  .border-gray-light { border-color:#333 !important }
   .bg-primary {
     code,tt { background-color: rgba(color.invert(#1b1f23),.23); }
   }

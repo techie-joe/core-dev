@@ -53,7 +53,8 @@ google_analytics: 'your-tracking-id'
 cloudflare_analytics: 'your-tracking-id'
 # to track your website using Cloudflare Analytics.
 
-show_downloads: # true or false (unquoted).
+show_downloads: true
+# true or false (unquoted).
 # to indicate whether to provide a download URL.
 ```
 

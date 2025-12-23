@@ -92,8 +92,8 @@ Then comes H6, so small it whispers. Nobody notices it. Even search engines squi
 > {: .border-yellow }
 {: .border-green }
 
-> Apply any style you like.
-{: .border-red.text-pending }
+> **Apply any style you like.**{: .text-pending }
+{: .border-red }
 
 ## Code block
 

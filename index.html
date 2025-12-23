@@ -5,9 +5,9 @@ title: Dove
 description: A theme development project.
 ---
 <!DOCTYPE html>
-<html class="_dove_layout" lang="en-US">
+<html class="_prime_layout" lang="en-US">
 <!-- path   : index.html -->
-<!-- layout : dove/_source/_layouts/dove -->
+<!-- layout : dove/_source/_layouts/prime -->
   <head>
     <meta charset="utf-8"/>
 {% seo %}
@@ -15,6 +15,7 @@ description: A theme development project.
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta id="_color_scheme" name="color-scheme" content="light dark"/>
     <meta id="_theme_color" name="theme-color" content="#222"/>
+    <style>.isvg svg { width:1em;height:1em }</style>
     <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
     <style>
       ._footer { margin-top:1rem !important }
@@ -40,7 +41,7 @@ description: A theme development project.
               </div>
             </header>
             <nav class="_nav">
-              <div class="_layout">{%- capture nav %}{% include dove/nav.md %}{%- endcapture %}
+              <div class="_layout">{%- capture nav %}{% include nav.md %}{%- endcapture %}
 {{ nav | markdownify }}
               </div>
             </nav>
@@ -53,53 +54,25 @@ description: A theme development project.
                       <p class="text-grey">We are currently working on the following themes.</p>
                       <nav>
                         <ul class="rapat">
-                          <li>
-<a href="/dove/core/"><b>Core</b></a>
-<i class="_icon"><i class="isvg">
+                          <li><a href="/dove/core/"><b>Core</b></a><i class="_icon"><i class="isvg">
                                 <svg viewBox="0 0 24 24">
                                   <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                                </svg></i></i>
-<a href="/dove/core/preview.html">Preview</a>
-<i class="_icon"><i class="itext">&bull;</i></i>
-<a href="/dove/core/home.html">Home</a>
-<a href="/dove/core/page.html">Page</a>
-<a href="/dove/core/404.html">404</a>
+                                </svg></i></i><a href="/dove/core/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/test.html">Test</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/404.html">404</a>
                           </li>
-                          <li>
-<a href="/dove/mallet/"><b>Mallet</b></a>
-<i class="_icon"><i class="isvg">
+                          <li><a href="/dove/mallet/"><b>Mallet</b></a><i class="_icon"><i class="isvg">
                                 <svg viewBox="0 0 24 24">
                                   <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                                </svg></i></i>
-<a href="/dove/mallet/preview.html">Preview</a>
-<i class="_icon"><i class="itext">&bull;</i></i>
-<a href="/dove/mallet/home.html">Home</a>
-<a href="/dove/mallet/page.html">Page</a>
-<a href="/dove/mallet/404.html">404</a>
+                                </svg></i></i><a href="/dove/mallet/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/test.html">Test</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/404.html">404</a>
                           </li>
-                          <li>
-<a href="/dove/nova/"><b>Nova</b></a>
-<i class="_icon"><i class="isvg">
+                          <li><a href="/dove/nova/"><b>Nova</b></a><i class="_icon"><i class="isvg">
                                 <svg viewBox="0 0 24 24">
                                   <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                                </svg></i></i>
-<a href="/dove/nova/preview.html">Preview</a>
-<i class="_icon"><i class="itext">&bull;</i></i>
-<a href="/dove/nova/home.html">Home</a>
-<a href="/dove/nova/page.html">Page</a>
-<a href="/dove/nova/404.html">404</a>
+                                </svg></i></i><a href="/dove/nova/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/nova/test.html">Test</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/nova/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/nova/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/nova/404.html">404</a>
                           </li>
-                          <li>
-<a href="/dove/prime/"><b>Prime</b></a>
-<i class="_icon"><i class="isvg">
+                          <li><a href="/dove/prime/"><b>Prime</b></a><i class="_icon"><i class="isvg">
                                 <svg viewBox="0 0 24 24">
                                   <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                                </svg></i></i>
-<a href="/dove/prime/preview.html">Preview</a>
-<i class="_icon"><i class="itext">&bull;</i></i>
-<a href="/dove/prime/home.html">Home</a>
-<a href="/dove/prime/page.html">Page</a>
-<a href="/dove/prime/404.html">404</a>
+                                </svg></i></i><a href="/dove/prime/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/test.html">Test</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/404.html">404</a>
                           </li>
                         </ul>
                       </nav>
@@ -125,7 +98,7 @@ description: A theme development project.
               </article>
             </main>
             <footer class="_footer footer mt-5">
-              <div class="_layout">{%- capture footer %}{% include dove/footer.md %}{%- endcapture %}
+              <div class="_layout">{%- capture footer %}{% include footer.md %}{%- endcapture %}
 {{ footer | markdownify }}
                 <hr class="thin"/>
                 <p class="text-right text-gray"><small>
