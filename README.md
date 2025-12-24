@@ -44,7 +44,7 @@ title       : 'The title of your site'
 description : 'Short description of your site's purpose.'
 ```
 
-Additionally, you may also set the following variables:
+Additionally, you may also set:
 
 ```yml
 google_analytics: 'your-tracking-id'
