@@ -1,6 +1,6 @@
 {% include ui.html %}
 
-##### Text & Borders
+##### Borders
 
 > **primary**{: .text-primary }
 > > **secondary**{: .text-secondary }
