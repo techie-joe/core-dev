@@ -12,7 +12,7 @@
 > [!WARNING]  
 > **Dove is constantly under active development. Use with caution. Future update may break your site. Visit theme's homepage for stable release.**
 
-Dove provides a foundation that allows you to **easily apply your own design** or integrate a framework of choice on top. You can style any page just by linking them to a custom layout. Your site can be written in **Markdown**, **Pug** and **HTML**. Build your site directly on your repository.
+Dove provides a foundation that allows you to **easily apply your own design** or integrate a framework of choice on top. You can style any page just by linking them to a custom layout. Your site can be written in **Markdown**, **Pug** and **HTML**. With Dove, you'll be able to build your site directly on your repository.
 
 ## Project philosophy
 
