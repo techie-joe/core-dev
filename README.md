@@ -78,14 +78,14 @@ To add your own custom styles:
 
 To change the template's layout:
 
-1. Copy [the default layout](https://github.com/techie-joe/dove/blob/master/_layouts/default.html) to your site's repository.<br />( _Pro-tip: click "raw" to make copying easier_ )
+1. Copy [the default layout](https://github.com/techie-joe/dove/blob/master/_layouts/default.html) from the template's repository into your site's repository using the exact same path and file-name : '/_layouts/default.html'.
 2. Customize the layout as you'd like.
 
-All [template layouts](https://github.com/techie-joe/dove/tree/master/_layouts) in the `_layouts` folder and [template components](https://github.com/techie-joe/dove/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. Create a mirror copy of the files you want to override in your site's repository.
+All [template layouts](https://github.com/techie-joe/dove/tree/master/_layouts) in the `_layouts` folder and [template components](https://github.com/techie-joe/dove/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. To override a file, create a mirror copy in your site's repository using the  exact same path and file-name.
 
 ### Google Analytics
 
-Google has released several iterations to their Google Analytics code over the years since this template was first created. If you would like to take advantage of the latest code, paste it into `_includes/google_analytics.html` in your Jekyll site.
+Paste the analytics code provided into `_includes/google_analytics.html` in your Jekyll site.
 
 ### Overriding GitHub-generated URLs
 
@@ -125,7 +125,7 @@ The template contains a minimal test suite, to ensure a site with the template w
 
 ## Contributing
 
-Interested in contributing to Dove template project? We'd love your help. Dove is an open source project, built one contribution at a time by users like you. Go ahead and [start discussion](https://github.com/techie-joe/dove/discussions) before embarking.
+Interested in contributing to Dove template project? We'd love your help. Dove is an open source project, built one contribution at a time by users like you. Go ahead and [start a discussion](https://github.com/techie-joe/dove/discussions) about it.
 
 <!--
 See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
