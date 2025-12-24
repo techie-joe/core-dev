@@ -1,6 +1,6 @@
 # About the Dove project
 
-🕊️ **Dove** is a development project for the following themes.
+🕊️ **Dove** is a theme development project. We are working on the following themes.
 
 - **[techie-joe/core](https://github.com/techie-joe/core)**
 - **[techie-joe/mallet](https://github.com/techie-joe/mallet)**
@@ -10,19 +10,19 @@
 ---
 
 > [!WARNING]  
-> **This project is under active development. Use with caution. Future update may break your site.**
+> **Dove is constantly under active development. Use with caution. Future update may break your site. Visit theme's homepage for stable release.**
 
-Dove provides a foundation that allows you to **easily apply your own design** or integrate a framework of choice on top. You can style any page just by linking them to a custom layout. Your site can be written in **Markdown**, **Pug** and **HTML**. **GitHub Pages** will build your site directly from the content of your repository.
+Dove provides a foundation that allows you to **easily apply your own design** or integrate a framework of choice on top. You can style any page just by linking them to a custom layout. Your site can be written in **Markdown**, **Pug** and **HTML**. Build your site directly on your repository.
 
 ## Project philosophy
 
-The primary goal of this project is to provide users with a **quick and easy way to build a website**. We aim to meet the needs of the vast majority of users out of the box, by prioritizing **simplicity** rather than flexibility. For those with specific needs or wish to customize further, they may add custom CSS or modify the default layout.
+The primary goal of this project is to provide users with an **easy way to build a website**. We aim to meet the needs of the vast majority of users out of the box, including those with specific needs to customize further. You may add custom styles, modify defaults, customize layouts and it's components.
 
 ---
 
 ## Usage
 
-To use the theme, add the following to your site's `_config.yml`:
+To use the theme on your site, add the following to your site's `_config.yml`:
 
 ```yml
 remote_theme: techie-joe/dove
@@ -37,14 +37,14 @@ plugins:
 
 ### Configuration variables
 
-Dove will respect the following variables, if set in your site's `_config.yml` and `_config.pug`:
+Dove respects the following variables in your site's `_config.yml` and `_config.pug`:
 
 ```yml
 title       : 'The title of your site'
 description : 'Short description of your site's purpose.'
 ```
 
-Additionally, you may choose to set the following optional variables:
+Additionally, you may also set the following variables:
 
 ```yml
 google_analytics: 'your-tracking-id'
@@ -60,9 +60,9 @@ show_downloads: true
 
 ### Stylesheet
 
-If you'd like to add your own custom styles:
+To add your own custom styles:
 
-1. Create a file called `/assets/css/style.scss` in your site.
+1. Create a file called `/assets/css/style.scss` in your site's repository.
 2. Add the following content to the top of the file, exactly as shown:
 
     ```scss
@@ -71,30 +71,29 @@ If you'd like to add your own custom styles:
     @import "dove";
     ```
 
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line.
+3. Add any custom CSS (or SASS, including imports) you'd like immediately after the `@import` line.
 
-*Note: If you'd like to change the template's Sass variables, you must set new values before the `@import` line in your stylesheet.*
+*Note: To change the template's SASS variables, you must set new values before the `@import` line in your stylesheet.*
 
 ### Layouts
 
-If you'd like to change the template's HTML layout:
+To change the template's layout:
 
-1. Create a file called `/_layouts/default.html` in your site
-2. Copy [the default layout](https://github.com/techie-joe/dove/blob/master/_layouts/default.html) from the template's repository.<br />( _Pro-tip: click "raw" to make copying easier_ )
-2. Paste the default layout copied in the first step into your site.
-3. Customize the layout as you'd like.
-4. [The template layouts](https://github.com/techie-joe/dove/tree/master/_layouts) in the `_layouts` folder and [the template includes](https://github.com/techie-joe/dove/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. Create a mirror copy with the same path and filename in your own site to overide it.
+1. Copy [the default layout](https://github.com/techie-joe/dove/blob/master/_layouts/default.html) to your site's repository.<br />( _Pro-tip: click "raw" to make copying easier_ )
+2. Customize the layout as you'd like.
 
-### Customizing Google Analytics code
+All [template layouts](https://github.com/techie-joe/dove/tree/master/_layouts) in the `_layouts` folder and [template components](https://github.com/techie-joe/dove/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. Create a mirror copy of the files you want to override in your site's repository.
+
+### Google Analytics
 
 Google has released several iterations to their Google Analytics code over the years since this template was first created. If you would like to take advantage of the latest code, paste it into `_includes/google_analytics.html` in your Jekyll site.
 
 ### Overriding GitHub-generated URLs
 
-Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
+Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. To override one or more default URLs:
 
 1. Look at [the template source](https://github.com/techie-joe/dove/blob/master/_layouts/prime.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
-2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
+2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, add the following:
 
     ```yml
     github:
@@ -111,7 +110,7 @@ For more information, see [the Jekyll variables documentation](https://jekyllrb.
 
 ## Previewing the template locally
 
-If you'd like to preview the template locally:
+To run the template locally:
 
 1. Clone down the template's repository (`git clone https://github.com/techie-joe/dove`).
 2. `cd` into the template's directory.
