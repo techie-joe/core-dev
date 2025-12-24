@@ -62,8 +62,7 @@ show_downloads: true
 
 To add your own custom styles:
 
-1. Create a file called `/assets/css/style.scss` in your site's repository.
-2. Add the following content to the top of the file, exactly as shown:
+1. Create a file called `/assets/css/style.scss` in your site's repository with the following content, exactly as shown:
 
     ```scss
     ---
@@ -71,7 +70,7 @@ To add your own custom styles:
     @import "dove";
     ```
 
-3. Add any custom CSS (or SASS, including imports) you'd like immediately after the `@import` line.
+2. Add any custom CSS (or SASS, including imports) you'd like immediately after the `@import` line.
 
 *Note: To change the template's SASS variables, you must set new values before the `@import` line in your stylesheet.*
 
