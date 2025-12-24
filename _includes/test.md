@@ -30,17 +30,17 @@
 
 ##### Horizontal lines
 
-<hr/>{: .bg-primary }
-<hr/>{: .bg-secondary }
-<hr/>{: .bg-pending }
-<hr/>{: .bg-gray }
-<hr/>{: .bg-slategray }
-<hr/>{: .bg-red }
-<hr/>{: .bg-blue }
-<hr/>{: .bg-green }
-<hr/>{: .bg-purple }
-<hr/>{: .bg-yellow }
-<hr/>{: .bg-orange }
+<hr/>{: .border-primary }
+<hr/>{: .border-secondary }
+<hr/>{: .border-pending }
+<hr/>{: .border-gray }
+<hr/>{: .border-slategray }
+<hr/>{: .border-red }
+<hr/>{: .border-blue }
+<hr/>{: .border-green }
+<hr/>{: .border-purple }
+<hr/>{: .border-yellow }
+<hr/>{: .border-orange }
 
 ##### Box wrapper
 

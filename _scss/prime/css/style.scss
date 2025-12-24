@@ -31,7 +31,13 @@ article {
   img { border-radius:5px }
 }
 .markdown-body {
-  hr { @extend %std_margin;background-color:$grey_border }
+  hr {
+    @extend %std_margin;
+    height:0;
+    background:0;
+    border-width:0;
+    border-bottom:.25em solid $grey_border;
+  }
   h1,h2 { @extend %std_border; }
   h5,h6 { color:inherit }
   kbd { padding:.5em;font-size:85% }
@@ -51,6 +57,10 @@ article {
   ._header h1 { margin-top:.67em !important } // the logo holder
   ._footer { margin-bottom:4rem !important }
 }
+hr.thin {
+  height:0;
+  border-bottom:1px solid $grey_border;
+}
 ._header ._logo {
   a { font-size:1.5rem;@extend .inherit_color;@extend .no_u; }
   a:hover { @extend .text-blue; }
@@ -60,10 +70,6 @@ article {
 ._theme_switch {
   a,a:focus { font-size:1.5em;@extend .inherit_color; }
   a:hover { @extend .text-blue; }
-}
-hr.thin {
-  height:0;
-  border-bottom:1px solid transparent;
 }
 .itext,.isvg { line-height:.8 }
 .button.primary {
@@ -113,7 +119,7 @@ $dark_pre_bg  : #171717;
     }
   }
   .markdown-body {
-    hr { background-color:color.invert($grey_border) }
+    hr { border-color:color.invert($grey_border) }
     h1,h2 { @extend %dark_std_border; }
     blockquote { @extend %dark_std_border; }
   }
