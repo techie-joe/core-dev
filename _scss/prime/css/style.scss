@@ -69,7 +69,7 @@ hr.thin {
 .box { border-radius:5px;@extend %std_border;@extend .ph; }
 ._theme_switch {
   a,a:focus { font-size:1.5em;@extend .inherit_color; }
-  a:hover { @extend .text-blue; }
+  a:hover,a:active { @extend .text-blue; }
 }
 .itext,.isvg { line-height:.8 }
 .button.primary {
