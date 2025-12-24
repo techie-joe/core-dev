@@ -78,7 +78,7 @@ To add your own custom styles:
 
 To change the template's layout:
 
-1. Copy [the default layout](https://github.com/techie-joe/dove/blob/master/_layouts/default.html) from the template's repository into your site's repository using the exact same path and file-name : '/_layouts/default.html'.
+1. Copy [the default layout](https://github.com/techie-joe/dove/blob/master/_layouts/default.html) from the template's repository into your site's repository using the exact same path and file-name : `/_layouts/default.html`.
 2. Customize the layout as you'd like.
 
 All [template layouts](https://github.com/techie-joe/dove/tree/master/_layouts) in the `_layouts` folder and [template components](https://github.com/techie-joe/dove/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. To override a file, create a mirror copy in your site's repository using the  exact same path and file-name.
