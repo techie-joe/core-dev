@@ -165,11 +165,11 @@ Use the `width-full` or `width-fit` class for large images. Use `float-left`, `f
 Use `box` to create a wrapper.
 {: .box.text-left }
 
-Custom `box.bg-blue.border-blue.text-white`
-{: .box.bg-blue.border-blue.text-white.text-center }
+Custom `box.bg-blue`
+{: .box.bg-blue.ba0.text-white.text-center }
 
 Apply any style you like
-{: .box.bg-red.border-red.text-white.text-right }
+{: .box.bg-red.ba0.text-white.text-right }
 
 ## Details and summary
 
