@@ -26,10 +26,10 @@ and ***both***.
 You can also add `code`
 and ~~strike-through~~ texts.
 
-- Use HTML to <u>underline</u> texts,
-add <abbr title="Abbreviation">abbreviation</abbr>,
-include <samp>sample</samp>,
-and <mark>mark</mark> texts.
+- Use HTML to <u>underline</u> texts, add
+<abbr title="abbreviation">abbreviation</abbr>,
+<samp>sample</samp>, <kbd>keyboard</kbd>,
+or <mark>mark</mark> texts.
 
 - Color text 
 **primary**{: .text-primary }
@@ -125,9 +125,11 @@ Build [link to another page](#){: onclick="event.preventDefault();" }. But if yo
 
 ## Button link
 
-[Button Link](#){: .button onclick="event.preventDefault();" }
 [Primary](#){: .button.primary onclick="event.preventDefault();" }
 [Secondary](#){: .button.secondary onclick="event.preventDefault();" }
+[Primary](#){: .button onclick="event.preventDefault();" }
+[Secondary](#){: .button.text-secondary onclick="event.preventDefault();" }
+[Grey](#){: .button.text-grey onclick="event.preventDefault();" }
 
 ## Footnote link
 
@@ -163,7 +165,7 @@ Use the `width-full` or `width-fit` class for large images. Use `float-left`, `f
 Use `box` to create a wrapper.
 {: .box.text-left }
 
-Customize `box.bg-blue.border-blue.text-white`
+Custom `box.bg-blue.border-blue.text-white`
 {: .box.bg-blue.border-blue.text-white.text-center }
 
 Apply any style you like

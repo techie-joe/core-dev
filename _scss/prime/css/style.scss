@@ -5,8 +5,67 @@
 @use "helper";
 // ---------------------------------------------------------------
 ._1200 { max-width:1200px; @extend .mc; position:relative }
-._960 { max-width:960px; @extend .mc; }
+._960  { max-width:960px;  @extend .mc; position:relative }
 // ---------------------------------------------------------------
+$bg : #fff;
+$text_color  : #222;
+$grey_border : #ccc;
+$code_bg : rgba(#ddd,.7);
+$code_tc : #444;
+$pre_bg  : #f4f4f4;
+// ---------------------------------------------------------------
+%std_bg { background-color:$bg }
+%std_border { border-color:$grey_border }
+%std_margin { margin:16px 0 }
+body { @extend .scroll_y; }
+u,abbr { text-underline-offset:.2em }
+details { 
+  & { @extend %std_margin; }
+  summary {
+    @extend .pointer;
+    p { @extend .inline; }
+  }
+}
+img { @extend .block; }
+article {
+  img { border-radius:5px }
+}
+.markdown-body {
+  hr { @extend %std_margin;background-color:$grey_border }
+  h1,h2 { @extend %std_border; }
+  h5,h6 { color:inherit }
+  kbd { padding:.5em;font-size:85% }
+  pre,code,tt,samp,kbd { @extend .mono; }
+  code,tt,kbd { background-color:$code_bg;color:$code_tc }
+  blockquote { @extend %std_border;@extend .inherit_color; }
+  p { @extend %std_margin; }
+  img { @extend .no_bg;@extend .text-grey; }
+  table {
+    &, th, td { @extend %std_border; }
+    thead tr { background-color:#e7e7e7 }
+    tr:nth-child(2n) { background-color:#f7f7f7 }
+  }
+  div.highlight { overflow:hidden }
+  pre,.highlight,.highlight pre { border-radius:5px;background-color:$pre_bg }
+  .task-list { padding-left:.25em; ul,ol { padding-left:2em } }
+  ._header h1 { margin-top:.67em !important } // the logo holder
+  ._footer { margin-bottom:4rem !important }
+}
+._header ._logo {
+  a { font-size:1.5rem;@extend .inherit_color;@extend .no_u; }
+  a:hover { @extend .text-blue; }
+}
+.hero { line-height:1.15 }
+.box { border-radius:5px;@extend %std_border;@extend .ph; }
+._theme_switch {
+  a,a:focus { font-size:1.5em;@extend .inherit_color; }
+  a:hover { @extend .text-blue; }
+}
+hr.thin {
+  height:0;
+  border-bottom:1px solid transparent;
+}
+.itext,.isvg { line-height:.8 }
 .button.primary {
   @extend .bg-blue;
   @extend .border-blue;
@@ -18,89 +77,45 @@
   @extend .text-white;
 }
 // ---------------------------------------------------------------
-// fixes
-body { overflow-y:scroll }
-a { color:$text-blue }
-details { 
-  margin-bottom:16px;
-  summary {
-    @extend .pointer;
-    p { @extend .inline; }
-  }
-}
-article {
-  img { @extend .block; }
-}
-.markdown-body {
-  hr { background-color: #ddd }
-  h1,h2 { border-color:#ccc }
-  p { margin-top:16px }
-  blockquote { color:inherit }
-  table {
-    & { display:table; border-collapse:collapse; border:1px solid; width:auto }
-    thead tr { background-color: #f6f8fa }
-    &, th, td { border-color:#dfe2e5 }
-  }
-  img { background-color:transparent;color:#888 }
-  .task-list { padding-left:.25em; ul,ol { padding-left:2em } }
-  ._header h1 { margin-top: .67em !important }
-  .highlight { &,& pre { border-radius:5px }}
-  ._footer {margin-bottom:4rem !important}
-}
-hr.thin {
-  height:0;
-  border-bottom:1px solid transparent;
-  margin:16px 0;
-}
-._header ._logo { font-size:1.5rem }
-._header ._logo a { color:inherit;text-decoration:none }
-._header ._logo a:hover { color:$text-blue }
-.hero { line-height:1.15 }
-
-.bg-primary { code,tt { background-color: rgba(#1b1f23,.15); } }
-.box { border-radius:5px; border-color: #999; @extend .ph; }
-.itext, .isvg { line-height:.8 }
-
+$dark_bg : color.invert($bg);
+$dark_text_color : color.invert($text_color);
+$dark_code_bg : rgba(#333,.7);
+$dark_code_tc : #bbb;
+$dark_pre_bg  : #171717;
 // ---------------------------------------------------------------
+%dark_std_bg { background-color:color.invert($bg) }
+%dark_std_border { border-color:color.invert($grey_border) }
 ._dark {
-  body {
-    color: color.invert(#24292e);
-    background-color: color.invert(#fff);
-  }
-  blockquote,.box { border-color:#333 }
-  code,tt { background-color: rgba(color.invert(#1b1f23),.15); }
-  hr { background-color: #222 }
+  body { color:color.invert($text_color);@extend %dark_std_bg; }
+  code,tt,kbd { background-color:$dark_code_bg;color:$dark_code_tc }
+  kbd { border-color:$dark_code_bg;box-shadow:inset 0 -1px 0 $dark_code_bg; }
   article {
     pre,
     .highlight pre,
-    .highlight { background-color: color.invert(#e6e8ea); }
+    .highlight { background-color:$dark_pre_bg }
     .highlight {
-      code { background:none }
+      code { @extend .no_bg; }
       .err { color:#d22 }
-      .gr, .gt { color: #e36; }
-      .ne, .nf, .nl { color:#c33 }
+      .si,.s1,.s2,
+      .gr,.gt { color: #c35; }
+      .ne,.nf,.nl { color:#b33 }
       .ni { color: #a3a; }
+      .no { color: #0aa }
       .o { color:#fff }
       .nt,.nc,.nn { color: #8080ab; }
       .k,.kd,.kc,.kp { color:#dbd6d1 }
     }
     table {
-      &, th, td { border-color:#333 }
-      tr { background-color: color.invert(#fff); }
-      tr:nth-child(2n),
-      thead tr { background-color: #111 }
+      &, th, td { @extend %dark_std_border; }
+      tr { @extend %dark_std_bg; }
+      thead tr { background-color:#242424 }
+      tr:nth-child(2n) { background-color:#141414 }
     }
   }
   .markdown-body {
-    h1,h2 { border-color:#333 }
+    hr { background-color:color.invert($grey_border) }
+    h1,h2 { @extend %dark_std_border; }
+    blockquote { @extend %dark_std_border; }
   }
-  .bg-primary {
-    code,tt { background-color: rgba(color.invert(#1b1f23),.23); }
-  }
-}
-// ---------------------------------------------------------------
-._logo { display:block }
-._theme_switch {
-  a { font-size:1.5em;color:inherit }
-  a:hover { color:$text-blue }
+  .box { @extend %dark_std_border; }
 }

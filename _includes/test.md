@@ -41,3 +41,14 @@
 <hr/>{: .bg-purple }
 <hr/>{: .bg-yellow }
 <hr/>{: .bg-orange }
+
+##### Box wrapper
+
+`box`{: .no_bg }
+{: .box.text-center }
+
+`box.border-purple`{: .no_bg.text-purple }
+{: .box.border-purple.text-center }
+
+`box.ba0.bg-green`{: .no_bg.text-white }
+{: .box.ba0.bg-green.text-white.text-center }
