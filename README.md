@@ -85,7 +85,7 @@ All [template layouts](https://github.com/techie-joe/dove/tree/master/_layouts) 
 
 ### Google Analytics
 
-Paste the analytics code provided into `_includes/google_analytics.html` in your Jekyll site.
+Paste the analytics code into your site's `_includes/google_analytics.html` file.
 
 ### Overriding GitHub-generated URLs
 
