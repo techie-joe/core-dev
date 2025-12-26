@@ -8,7 +8,5 @@
 **Handling Liquid List**{%- else -%}[Handling Liquid List]({{ site.base_url }}/liquid/list)
 {%- endif %}
 
-{{ thin_hr }}
-
 {% comment %}
 {% endcomment %}

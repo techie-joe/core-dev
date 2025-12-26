@@ -10,7 +10,7 @@
 ---
 
 > [!WARNING]  
-> **Dove is constantly under active development. Use with caution. Future update may break your site. Visit theme's homepage for stable release.**
+> **Dove is constantly under active development. Use with caution. Future update may break your site. Visit theme's homepage for a stable release.**
 
 Dove provides a foundation that allows you to **easily apply your own design** or integrate a framework of choice on top. You can style any page just by linking them to a custom layout. Your site can be written in **Markdown**, **Pug** and **HTML**. With Dove, you'll be able to build your site directly on your repository.
 
@@ -125,7 +125,7 @@ The template contains a minimal test suite, to ensure a site with the template w
 
 ## Contributing
 
-Interested in contributing to Dove template project? We'd love your help. Dove is an open source project, built one contribution at a time by users like you. Go ahead and [start a discussion](https://github.com/techie-joe/dove/discussions) about it.
+Interested in contributing to Dove template project? We'd love your help. Dove is an open source project, built one contribution at a time by users like you. Go ahead and [start a discussion](https://github.com/techie-joe/dove/discussions).
 
 <!--
 See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.

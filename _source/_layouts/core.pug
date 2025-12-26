@@ -25,6 +25,8 @@ block html
       meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")/
       meta#_color_scheme(name="color-scheme" content=color_scheme||'')/
       meta#_theme_color(name="theme-color" content=theme_color||'')/
+      style.
+        .isvg svg { width:1em;height:1em }
       block style
         link#_style(rel="stylesheet" href!=`{{ site.base_url }}/assets/${layout}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
       +l|{% include layout_head.html %}

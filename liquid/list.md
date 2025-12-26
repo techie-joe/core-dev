@@ -7,6 +7,7 @@ description: Handling Liquid List.
 ---
 {%- include ui.html %}
 {%- include_relative _nav_liquid.md %}
+{{ thin_hr }}
 
 # {{ page.title }}
 

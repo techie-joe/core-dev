@@ -125,11 +125,11 @@ Build [link to another page](#){: onclick="event.preventDefault();" }. But if yo
 
 ## Button link
 
-[Primary](#){: .button.primary onclick="event.preventDefault();" }
-[Secondary](#){: .button.secondary onclick="event.preventDefault();" }
-[Primary](#){: .button onclick="event.preventDefault();" }
-[Secondary](#){: .button.text-secondary onclick="event.preventDefault();" }
-[Grey](#){: .button.text-grey onclick="event.preventDefault();" }
+[Primary](#){: .button.primary onclick="event.preventDefault();" }{{-}}
+[Secondary](#){: .button.secondary onclick="event.preventDefault();" }{{-}}
+[Primary](#){: .button onclick="event.preventDefault();" }{{-}}
+[Secondary](#){: .button.text-secondary onclick="event.preventDefault();" }{{-}}
+[Grey](#){: .button.text-grey onclick="event.preventDefault();" }{{}}
 
 ## Footnote link
 

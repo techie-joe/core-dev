@@ -10,8 +10,6 @@
     <meta id="_theme-color"  name="theme-color"  content="{{ page.theme_color | default: site.theme_color | default: '' }}" />
     <meta id="_color-scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}" />
     <style>
-      html, body { background-color:#fff }
-      html._dark, html._dark body { background-color:#000 }
       .isvg svg { width:1em;height:1em }
     </style>
     <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}" />
@@ -48,7 +46,7 @@
                 </div>
               </article>
             </main>
-            <footer class="_footer footer mt-5">
+            <footer class="_footer footer">
               <div class="_layout">
                 {% if page.use_footer == false -%}
                 <style>._footer{display:none !important}</style>

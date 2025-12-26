@@ -6,6 +6,7 @@ description: Basic Liquid syntaxes.
 ---
 {%- include ui.html %}
 {%- include_relative _nav_liquid.md %}
+{{ thin_hr }}
 
 # {{ page.title }}
 

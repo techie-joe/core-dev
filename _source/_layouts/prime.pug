@@ -48,7 +48,7 @@ block html
               block content
                 h1 !{title}
                 p: code // content for : !{title}
-            footer._footer.footer.mt-5: ._layout
+            footer._footer.footer: ._layout
               block footer
                 +capture('footer')|{% include footer.md %}
                 +l|{{ footer | markdownify }}

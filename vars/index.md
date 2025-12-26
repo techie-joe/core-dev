@@ -9,10 +9,6 @@ description: Variables on this site.
 
 {% include_relative _vars_nav.md %}
 
-{%-comment %}
-content, highlighter_prefix, highlighter_suffix, jekyll, layout, page, paginator, site, theme
-{% endcomment %}
-
 {%- assign word_key = "[0] key,[1] key,[n] keys" %}
 
 **{% include mod-plural.md val=keys word=word_key %} :**{{' '}}

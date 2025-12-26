@@ -16,17 +16,15 @@ description: A theme development project.
     <meta id="_color_scheme" name="color-scheme" content="light dark"/>
     <meta id="_theme_color" name="theme-color" content="#222"/>
     <style>.isvg svg { width:1em;height:1em }</style>
-    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
     <style>
-      ._footer { margin-top:1rem !important }
-      h1.hero { font-family: 'Arial',system-ui,sans-serif }
-      article #pages_ ul,
-      article #posts_ ul,
+      #pages_ ul,
+      #posts_ ul,
       article .rapat { margin:1rem 0;padding-left:1.3em }
-      article #pages_ ul li,
-      article #posts_ ul li,
+      #pages_ ul li,
+      #posts_ ul li,
       article .rapat li { margin-left:0 }
     </style>
+    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
 {% include layout_head.html %}
 <!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
@@ -41,7 +39,7 @@ description: A theme development project.
               </div>
             </header>
             <nav class="_nav">
-              <div class="_layout">{%- capture nav %}{% include nav.md %}{%- endcapture %}
+              <div class="_layout">{%- capture nav %}{% include dove/nav.md %}{%- endcapture %}
 {{ nav | markdownify }}
               </div>
             </nav>
@@ -51,7 +49,7 @@ description: A theme development project.
                   <div class="flex" style="gap:3rem">
                     <div class="fill">
                       <h3 class="mt-0">Themes</h3>
-                      <p class="text-grey">We are currently working on the following themes.</p>
+                      <p class="text-grey">We are working on the following themes.</p>
                       <nav>
                         <ul class="rapat">
                           <li><a href="/dove/core/"><b>Core</b></a><i class="_icon"><i class="isvg">
@@ -97,8 +95,8 @@ description: A theme development project.
                 </div>
               </article>
             </main>
-            <footer class="_footer footer mt-5">
-              <div class="_layout">{%- capture footer %}{% include footer.md %}{%- endcapture %}
+            <footer class="_footer footer">
+              <div class="_layout">{%- capture footer %}{% include dove/footer.md %}{%- endcapture %}
 {{ footer | markdownify }}
                 <hr class="thin"/>
                 <p class="text-right text-gray"><small>

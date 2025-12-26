@@ -1,15 +1,17 @@
 extends /_source/_layouts/dove
 block append vars
   - path   = 'index.html'
-block append style
+block prepend style
+  //- style.
+    @media (prefers-color-scheme: dark) {
+      html,body { background-color:#000 }
+    }
   style.
-    ._footer { margin-top:1rem !important }
-    h1.hero { font-family: 'Arial',system-ui,sans-serif }
-    article #pages_ ul,
-    article #posts_ ul,
+    #pages_ ul,
+    #posts_ ul,
     article .rapat { margin:1rem 0;padding-left:1.3em }
-    article #pages_ ul li,
-    article #posts_ ul li,
+    #pages_ ul li,
+    #posts_ ul li,
     article .rapat li { margin-left:0 }
 block header
   h1 🕊️ The !{site_title} Project
@@ -17,7 +19,7 @@ block content
   .flex(style="gap:3rem")
     .fill
       h3.mt-0 Themes
-      p.text-grey We are currently working on the following themes.
+      p.text-grey We are working on the following themes.
       nav: ul.rapat
         li: +site_nav('core')
         li: +site_nav('mallet')
