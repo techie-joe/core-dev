@@ -42,8 +42,11 @@ description: Testing something here.
                 <div class="_layout">{%- capture nav_test %}{%- include dove/nav_test.md %}{%- endcapture %}
 {{ nav_test | markdownify }}
                   <hr class="thin"/>
-                  <pre class="highlight"><code>x : [x-value]
-</code></pre>
+                  {%-
+                    include 404.md
+                    title = "Sorry"
+                    description = "There is nothing to show here."
+                  %}
                 </div>
               </article>
             </main>

@@ -39,16 +39,3 @@ mixin sna(ref)
     b: block
   else
     +a([base_url,ref].join('/')): block
-
-mixin site_nav(sub)
-  +sna(sub+"/"): b !{capitalize(sub)}
-  +angle
-  +sna(sub+"/preview.html")| Preview
-  +bull
-  +sna(sub+"/test.html")| Test
-  +bull
-  +sna(sub+"/home.html")| Home
-  +bull
-  +sna(sub+"/page.html")| Page
-  +bull
-  +sna(sub+"/404.html")| 404

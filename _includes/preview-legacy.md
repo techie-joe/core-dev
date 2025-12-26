@@ -1,6 +1,6 @@
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](#){: onclick="event.preventDefault();" } and [the new demo page](preview).
+[Link to another page](#){: onclick="event.preventDefault();" }.
 
 There should be whitespace between paragraphs.
 

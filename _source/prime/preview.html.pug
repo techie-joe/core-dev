@@ -3,5 +3,7 @@ block append vars
   - path   = 'preview.html'
   - title  = `Preview`
 block content
-  +capture('preview')|{% include preview.md %}
-  +l|{{ preview | markdownify }}
+  +include('preview','preview.md')
+block footer
+  +thin_hr
+  p.text-right.text-grey: small: +edit_link(path)

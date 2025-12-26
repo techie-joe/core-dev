@@ -1,7 +1,20 @@
 extends /_source/_layouts/nova
+mixin site_nav(sub)
+  +sna(sub+"/"): b !{capitalize(sub)}
+  +angle
+  +sna(sub+"/preview.html")| Preview
+  +bull
+  +sna(sub+"/home.html")| Home
+  +bull
+  +sna(sub+"/page.html")| Page
+  +bull
+  +sna(sub+"/404.html")| 404
 block append update_vars
   - path  = ['nova',path].join('/')
 block append front_matter
   +l| index: false
 block nav
   p: +site_nav('nova')
+block footer
+  +thin_hr
+  p.text-right.text-grey: small: +edit_link(path)

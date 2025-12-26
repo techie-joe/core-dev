@@ -27,6 +27,7 @@ details {
   }
 }
 img { @extend .block; }
+figure { margin:1em 2em }
 article {
   img { border-radius:5px }
 }
@@ -51,8 +52,10 @@ article {
     thead tr { background-color:#e7e7e7 }
     tr:nth-child(2n) { background-color:#f7f7f7 }
   }
+  pre.highlight { @extend .scrollable; }
   div.highlight { overflow:hidden }
-  pre,.highlight,.highlight pre { border-radius:5px;background-color:$pre_bg }
+  .highlight,pre,
+  .highlight pre { border-radius:5px;background-color:$pre_bg }
   .task-list { padding-left:.25em; ul,ol { padding-left:2em } }
   ._header h1 { margin-top:.67em !important } // the logo holder
   ._footer { margin-bottom:4rem !important }
@@ -82,6 +85,11 @@ hr.thin {
   @extend .border-slategrey;
   @extend .text-white;
 }
+.highlight {
+  .hll { background-color:rgba($text-yellow,.15); }
+}
+.rouge-table td.code,
+.rouge-table td.gutter { vertical-align:top }
 // ---------------------------------------------------------------
 $dark_bg : color.invert($bg);
 $dark_text_color : color.invert($text_color);
@@ -95,22 +103,13 @@ $dark_pre_bg  : #171717;
   body { color:color.invert($text_color);@extend %dark_std_bg; }
   code,tt,kbd { background-color:$dark_code_bg;color:$dark_code_tc }
   kbd { border-color:$dark_code_bg;box-shadow:inset 0 -1px 0 $dark_code_bg; }
-  article {
-    pre,
-    .highlight pre,
-    .highlight { background-color:$dark_pre_bg }
-    .highlight {
-      code { @extend .no_bg; }
-      .err { color:#d22 }
-      .si,.s1,.s2,
-      .gr,.gt { color: #c35; }
-      .ne,.nf,.nl { color:#b33 }
-      .ni { color: #a3a; }
-      .no { color: #0aa }
-      .o { color:#fff }
-      .nt,.nc,.nn { color: #8080ab; }
-      .k,.kd,.kc,.kp { color:#dbd6d1 }
-    }
+  .markdown-body {
+    hr { border-color:color.invert($grey_border) }
+    h1,h2 { @extend %dark_std_border; }
+    blockquote { @extend %dark_std_border; }
+    .highlight,pre,
+    .highlight pre { background-color:$dark_pre_bg }
+    .highlight code { @extend .no_bg; }
     table {
       &, th, td { @extend %dark_std_border; }
       tr { @extend %dark_std_bg; }
@@ -118,10 +117,21 @@ $dark_pre_bg  : #171717;
       tr:nth-child(2n) { background-color:#141414 }
     }
   }
-  .markdown-body {
-    hr { border-color:color.invert($grey_border) }
-    h1,h2 { @extend %dark_std_border; }
-    blockquote { @extend %dark_std_border; }
+  .highlight {
+    .err { background-color:#fdd;color:#d22 }
+    .gd { background-color:rgba($text-red,.25);color:$text-white }
+    .gi { background-color:rgba($text-green,.25);color:$text-white }
+    .ss { color:#939 }
+    .si,.s1,.s2,
+    .gr,.gt { color: #f36; }
+    .ne,.nf,.nl { color:#b33 }
+    .nd { color:#475; }
+    .ni { color: #a3a; }
+    .no { color: #0aa }
+    .o { color:#fff }
+    .nt,.nc,.nn { color: #37a; }
+    .k,.kd,.kc,.kp { color:#dbd6d1 }
+    .mh { margin:0 }
   }
   .box { @extend %dark_std_border; }
 }

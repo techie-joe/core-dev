@@ -1,0 +1,7 @@
+extends _html
+block append vars
+  - path   = 'code-block.html'
+  - title  = `Code blocks`
+block content
+  h1 !{title}
+  +include('code-blocks','preview-code-blocks.md')

@@ -1,4 +1,14 @@
 extends /_source/_layouts/default
+mixin site_nav(sub)
+  +sna(sub+"/"): b !{capitalize(sub)}
+  +angle
+  +sna(sub+"/preview.html")| Preview
+  +bull
+  +sna(sub+"/home.html")| Home
+  +bull
+  +sna(sub+"/page.html")| Page
+  +bull
+  +sna(sub+"/404.html")| 404
 block append vars
   - path   = 'index.html'
 block prepend style
@@ -30,7 +40,7 @@ block content
   +include('nav_test','dove/nav_test.md')
   +thin_hr
   |{%- endif %}
-  p.text-grey These are supporting posts and pages for development purposes.
+  p.text-grey These are supporting posts and pages for the project.
   //- - exclude_pages = [ ].join(",");
   //- - exclude_posts = [ ].join(",");
   +capture('pages')|{% include pages.md exclude="!{exclude_pages}" %}
@@ -45,5 +55,4 @@ block content
       |{{ posts | markdownify }}
   +thin_hr
   h3 Configurations
-  +capture('config')|{% include_relative _config.md %}
-  |{{ config | markdownify }}
+  +include_relative('config','_config.md')

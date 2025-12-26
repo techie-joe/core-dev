@@ -12,11 +12,11 @@ description: Basic Liquid syntaxes.
 ###### assign values
 
 ```liquid
-{% raw %}{%- assign var = value_or_expression | filter: 'filter_expression' %}{% endraw %}
+{% raw %}{%- assign variable = value_or_expression | filter: 'filter_expression' %}{% endraw %}
 ```
 
 ```yml
-var      : {{ var | default: '(value_or_expression)' }}
+variable : {{ variable | default: '(value_or_expression)' }}
 default  : {{ undefined | default: '(undefined)' }}
 nil      : {{ nil | default: '(nil is false and renders nothing)' }}
 ```
@@ -77,7 +77,7 @@ date : {{ date | date: "%A, %B %d, %Y @ %I:%M:%S %p" }}
 
 ###### controls
 
-```
+```yml
 if true : {% if true -%} when true {%- endif %}
 elsif true : {% if false -%}  {%- elsif true -%} when true {%- endif %}
 else : {% if false -%} when false {%- else -%} otherwise {%- endif %}
@@ -104,12 +104,19 @@ else :
 
 ###### loops
 
-{% comment %}
-{% for i in (1..9) limit:5 -%} [{{ i }} is {% cycle 'odd', 'even' %}]{% unless forloop.last %}, {% endunless %} {% endfor %}
-{% endcomment %}
-
 ```yml
-{% for i in (1..9) limit:5 -%} [{{ i }}, {% cycle 'odd', 'even' %}] {% endfor %}
+(1..9){{' : '}}
+{%- for i in (1..9) -%}
+{{ i }}
+{%- unless forloop.last -%}{{','}}{%- endunless %}
+{%- endfor %}
+
+numbers{{' : '}}
+{%- assign numbers = "one,two,three,four,five,six,seven,eight,nine,ten" | split:"," %}
+{%- for n in numbers limit:5 -%}
+[{{ forloop.index | append: ',' }}{{ n | append: ','}}{%- cycle 'odd', 'even' %}]
+{%- unless forloop.last -%}{{' '}}{%- endunless %}
+{%- endfor %}
 ```
 
 {% raw %}Use `{% break %}` and `{% continue %}` to get out of a loop. 
@@ -133,26 +140,19 @@ Use `markdownify` before using it inside an HTML block.
 `raw` skips liquid. 
 Using **white-space modifier** `-` with it will cause build error.  
 
-{% raw %}
+
+
 ```liquid
-{{ 'liquid does not process this' }}
-{% comment %} or this {% endcomment %}
+{% raw %}{{ 'everything inside raw will be rendered as-is' }}{% endraw %}
 ```
-{% endraw %}
 
 ###### comment
 
-There’s a comment block below this line.
-
-<!-- This HTML comment will not appear in the rendered Markdown -->
-
-{% comment %}This Liquid comment will not appear in the rendered Markdown{%- endcomment %}
-{% comment %}
-in multiple
-lines too
-{%- endcomment %}
-
-Comment block will not appear in the rendered page.
+{% raw %}
+```liquid
+{% comment %} Comment block will not appear in the rendered page. {% endcomment %}
+```
+{% endraw %}
 
 ## Unsupported Liquid Syntaxes
 

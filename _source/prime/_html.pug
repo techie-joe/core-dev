@@ -1,10 +1,23 @@
 extends /_source/_layouts/prime
+mixin site_nav(sub)
+  +sna(sub+"/"): b !{capitalize(sub)}
+  +angle
+  +sna(sub+"/preview.html")| Preview
+  +bull
+  +sna(sub+"/home.html")| Home
+  +bull
+  +sna(sub+"/page.html")| Page
+  +bull
+  +sna(sub+"/404.html")| 404
 block append update_vars
   - path  = ['prime',path].join('/')
-block append front_matter
+block prepend front_matter
   +l| index: false
 block header
   h1|{% include dove/logo.html %}
 block nav
   p: +site_nav('prime')
   +thin_hr
+block footer
+  +thin_hr
+  p.text-right.text-grey: small: +edit_link(path)

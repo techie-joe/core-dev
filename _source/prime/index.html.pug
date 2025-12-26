@@ -6,27 +6,31 @@ block nav
   //- none
 block content
   h1 !{title}
-  - sub = layout
+
   nav.mv
+    - sub = layout
     b Html
     +angle
-    +sna(sub+"/preview.html")| Preview
-    +bull
-    +sna(sub+"/test.html")| Test
-    +bull
     +sna(sub+"/home.html")| Home
     +bull
     +sna(sub+"/page.html")| Page
     +bull
     +sna(sub+"/404.html")| 404
-  - sub = layout+'/md'
+
   nav.mv
+    - sub = layout+'/md'
     b Markdown
     +angle
-    +sna(sub+"/preview.html")| Preview
-    +bull
     +sna(sub+"/home.html")| Home
     +bull
     +sna(sub+"/page.html")| Page
     +bull
     +sna(sub+"/404.html")| 404
+
+  nav.mv
+    - sub = layout
+    +sna(sub+"/preview.html")| Preview
+    +angle
+    +sna(sub+"/test.html")| Test
+    +bull
+    +sna(sub+"/code-blocks.html")| Code blocks

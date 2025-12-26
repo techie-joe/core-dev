@@ -18,18 +18,27 @@ description: Variables on this site.
 ```yml
 # content : [blob - content of the current page]
 {%- include mod-peek.md val=content word="[0] byte,[1] byte,[n] bytes" %}
+
+# highlighter_prefix : {{ highlighter_prefix | jsonify }}
+# highlighter_suffix : {{ highlighter_suffix | jsonify }}
+
 # jekyll : [{{ jekyll }}]
 {%- include mod-peek.md val=jekyll %}
-# site : [{{ site }}]
-{%- include mod-peek.md val=site %}
-# theme{{ ' : ' }}
-{%- include mod-peek.md val=theme %}
+
+# layout{{ ' : ' }}
+{%- include mod-peek.md val=layout %}
+
 # page : [json]
 {%- include mod-peek.md val=page word="[0] page,[1] page,[n] pages" %}
+
 # paginator{{ ' : ' }}
 {%- include mod-peek.md val=paginator %}
-highlighter_prefix : {{ highlighter_prefix | jsonify }}
-highlighter_suffix : {{ highlighter_suffix | jsonify }}
+
+# site : [{{ site }}]
+{%- include mod-peek.md val=site %}
+
+# theme{{ ' : ' }}
+{%- include mod-peek.md val=theme %}
 ```
 {: .no_max_height }
 

@@ -2,6 +2,7 @@
 
 ##### Borders
 
+{%- capture bqs %}
 > **primary**{: .text-primary }
 > > **secondary**{: .text-secondary }
 > > > **pending**{: .text-pending }
@@ -24,6 +25,14 @@
 > > {: .border-pending }
 > {: .border-secondary }
 {: .border-primary }
+{%- endcapture %}
+<div id="bqs">{{ bqs | markdownify }}</div>
+<style>
+  @media only screen and (max-width: 426px) {
+    #bqs blockquote { padding-right:0 }
+  }
+</style>
+
 
 **black**{: .text-white.bg-black.pa_5.ph }
 **white**{: .text-black.bg-white.pa_5.ph }

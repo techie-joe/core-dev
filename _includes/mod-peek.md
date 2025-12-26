@@ -2,8 +2,8 @@
 {%- assign _tab = include.tab | default: "  " %}
 {%- if include.tab != nil %}{% assign _tab = include.tab %}{%- endif %}
 {%- if include.val == false %} {{- 'false' }}
-{%- elsif include.val == nil %} {{- 'nil' }}
 {%- elsif include.val == 0 %} {{- '0' }}
+{%- elsif include.val == nil %} {{- '[nil]' }}
 {%- elsif include.val == empty %} {{- '[empty]' }}
 {%- elsif include.val == blank %} {{- '[blank]' }}
 {%- else %}

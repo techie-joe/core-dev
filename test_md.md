@@ -3,27 +3,25 @@ index: false
 use_footer: edit_link_only
 title: Test Markdown
 description: Testing something here.
+testing: false
 ---
 {%- include ui.html %}
 
 {%- include dove/nav_test.md %}
 {{ thin_hr }}
 
-{%- assign testing = true %}
-{%- if testing %}
+{%- if page.testing %}
 
 {%- assign pad = "           " %}
-{%- assign x = "[x-value]" %}
 
 ```yml
-x : {{ x }}
-{% include mod-inspect.md val=page pad=pad %}
+# test goes here
 ```
 
 {%- else %}
 {%-
   include 404.md
-  title = "Are you lost?"
+  title = "Sorry"
   description = "There is nothing to show here."
 %}
 {%- endif %}
