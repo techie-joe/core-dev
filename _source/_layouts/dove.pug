@@ -1,11 +1,9 @@
 extends prime
 block header
-  h1|{% include dove/logo.html %}
+  h1: +include('nav','dove/logo.html','')
 block nav
-  +capture('nav')|{% include dove/nav.md %}
-  +l|{{ nav | markdownify }}
+  +include('nav','dove/nav.md')
 block footer
-  +capture('footer')|{% include dove/footer.md %}
-  +l|{{ footer | markdownify }}
+  +capture('footer','dove/footer.md')
   +thin_hr
   p.text-right.text-gray: small: +edit_link(path)

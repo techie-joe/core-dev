@@ -1,4 +1,4 @@
-extends /_source/_layouts/dove
+extends /_source/_layouts/default
 block append vars
   - path   = 'index.html'
 block prepend style
@@ -25,6 +25,8 @@ block content
         li: +site_nav('mallet')
         li: +site_nav('nova')
         li: +site_nav('prime')
+  +thin_hr
+  +include('nav_test','dove/nav_test.md')
   +thin_hr
   p.text-grey These are supporting posts and pages for development purposes.
   //- - exclude_pages = [ ].join(",");

@@ -1,12 +1,8 @@
 ---
-layout: dove
-use_footer: edit_link_only
-
+permalink: posts
 title: Posts
 description: List of all posts on this site.
-permalink: posts
 ---
-
 # {{ page.title }}
 
 {{ page.description }}

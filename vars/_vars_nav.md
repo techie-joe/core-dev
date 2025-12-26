@@ -17,7 +17,7 @@
 {%- endif %}
 {{ bull }}
 {% if page.path == 'vars/repo.md' -%}
-**Repository**{%- else %}[Repository]({{ site.base_url }}/vars/repo)
+**Repositories**{%- else %}[Repositories]({{ site.base_url }}/vars/repo)
 {%- endif %}
 {: style="margin:1rem 0" }
 

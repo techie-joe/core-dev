@@ -1,5 +1,4 @@
 ---
-layout: dove
 use_footer: edit_link_only
 title: Liquid basics
 description: Basic Liquid syntaxes.

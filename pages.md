@@ -1,12 +1,8 @@
 ---
-layout: dove
-use_footer: edit_link_only
-
+permalink: pages
 title: Pages
 description: List of all pages on this site.
-permalink: pages
 ---
-
 # {{ page.title }}
 
 {{ page.description }}

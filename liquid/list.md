@@ -1,6 +1,5 @@
 ---
 index: false
-layout: dove
 use_footer: edit_link_only
 title: Handling Liquid List
 description: Handling Liquid List.

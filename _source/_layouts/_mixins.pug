@@ -39,6 +39,10 @@ mixin capture(id='')
   block
   !=`{%- endcapture %}`
 
+mixin include(id='',path='',filter=" | markdownify")
+  +capture(id)!=`{%- include ${path} %}`
+  +l!=`{{ ${id}${filter} }}`
+
 mixin css(href,media)
   link(rel="stylesheet" media=media||'all' href=href)&attributes(attributes)/
 

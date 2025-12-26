@@ -15,19 +15,9 @@
 {%- if page.path == 'posts.md' -%}
 **Posts**{%- else -%}[Posts]({{ site.base_url }}/posts)
 {%- endif %}
-{%- if site.github.environment == 'development' -%}
-{{- bull -}}
-{% if page.path == 'test.md' -%}
-**Test**{%- else %}[Test]({{ site.base_url }}/test)
-{%- endif %}
-{%- endif %}
 {: style="margin:1rem 0" }
 
 {{ thin_hr }}
 
 {%- comment %}
-{{- bull -}}
-{%- if page.path == 'index.md' -%}
-**Markdown**{%- else -%}[Markdown]({{ site.base_url }}/md)
-{%- endif %}
 {%- endcomment %}

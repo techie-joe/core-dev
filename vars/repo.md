@@ -2,8 +2,8 @@
 index: false
 layout: dove
 use_footer: edit_link_only
-title: Repository
-description: Repository Variables on this site.
+title: Repositories
+description: Repositories on this site.
 ---
 <style>article pre.highlight { max-height:50vh }</style>
 

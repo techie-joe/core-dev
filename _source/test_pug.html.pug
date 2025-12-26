@@ -1,0 +1,27 @@
+extends /_source/_layouts/default
+block append vars
+  - path   = 'test_pug.html'
+  - title  = 'Test Pug'
+  - description = 'Testing something here.'
+block prepend front_matter
+  +l| index: false
+  +l| use_footer: edit_link_only
+block content
+  +include('nav_test','dove/nav_test.md')
+  +thin_hr
+  - testing = true
+  if testing
+
+    - x = "[x-value]"
+    pre.highlight: code.
+      x : !{x}
+  
+  else
+    .
+      {%-
+        include 404.md
+        title = "Are you lost?"
+        description = "There is nothing to show here."
+      %}
+//- block content
+  h6 test.pug
