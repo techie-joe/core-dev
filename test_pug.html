@@ -29,9 +29,7 @@ description: Testing something here.
           <div class="container-lg px-3 my-5 markdown-body">
             <header class="_header">
               <div class="_layout">
-                <h1>{%- capture nav %}{%- include dove/logo.html %}{%- endcapture %}
-{{ nav }}
-                </h1>
+                <h1>{%- include dove/logo.html %}</h1>
               </div>
             </header>
             <nav class="_nav">
@@ -50,7 +48,8 @@ description: Testing something here.
               </article>
             </main>
             <footer class="_footer footer">
-              <div class="_layout">{%- capture footer %}{%- endcapture %}
+              <div class="_layout">{%- capture footer %}{%- include dove/footer.md %}{%- endcapture %}
+{{ footer | markdownify }}
                 <hr class="thin"/>
                 <p class="text-right text-gray"><small>
                     This site is open source.

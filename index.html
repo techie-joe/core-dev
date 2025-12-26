@@ -98,7 +98,8 @@ description: A theme development project.
               </article>
             </main>
             <footer class="_footer footer">
-              <div class="_layout">{%- capture footer %}{%- endcapture %}
+              <div class="_layout">{%- capture footer %}{%- include dove/footer.md %}{%- endcapture %}
+{{ footer | markdownify }}
                 <hr class="thin"/>
                 <p class="text-right text-gray"><small>
                     This site is open source.
