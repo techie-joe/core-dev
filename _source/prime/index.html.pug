@@ -11,6 +11,8 @@ block content
     - sub = layout
     b Html
     +angle
+    +sna(sub+"/preview.html")| Preview
+    +bull
     +sna(sub+"/home.html")| Home
     +bull
     +sna(sub+"/page.html")| Page
@@ -21,6 +23,8 @@ block content
     - sub = layout+'/md'
     b Markdown
     +angle
+    +sna(sub+"/preview.html")| Preview
+    +bull
     +sna(sub+"/home.html")| Home
     +bull
     +sna(sub+"/page.html")| Page
@@ -29,8 +33,8 @@ block content
 
   nav.mv
     - sub = layout
-    +sna(sub+"/preview.html")| Preview
+    b| Test
     +angle
-    +sna(sub+"/test.html")| Test
+    +sna(sub+"/test_colors.html")| Colors
     +bull
-    +sna(sub+"/code-blocks.html")| Code blocks
+    +sna(sub+"/test_code-blocks.html")| Code blocks

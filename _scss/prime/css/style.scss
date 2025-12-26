@@ -86,6 +86,7 @@ hr.thin {
   @extend .text-white;
 }
 .highlight {
+  .mh { margin:0 }
   .hll { background-color:rgba($text-yellow,.15); }
 }
 .rouge-table td.code,
@@ -131,7 +132,6 @@ $dark_pre_bg  : #171717;
     .o { color:#fff }
     .nt,.nc,.nn { color: #37a; }
     .k,.kd,.kc,.kp { color:#dbd6d1 }
-    .mh { margin:0 }
   }
   .box { @extend %dark_std_border; }
 }

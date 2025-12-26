@@ -3,7 +3,7 @@
 Hero message and _colored text_{: .n.text-red } grabs attention
 {: .hero }
 
-# Heading 1
+# Theme preview
 
 ![Featured image](https://techie-joe.github.io/core/images/299-400x300.jpg){: .float-right.ml.mb width=400 height=400 }
 
@@ -55,7 +55,7 @@ or <mark>mark</mark> texts.
 ## Heading 1
 {: .h1 }
 
-H1 holds everything together. It is the gravitational anchor of the document. Without it, paragraphs would simply drift into void. Usually there is only one per page dedicated for the main title. But you can also mock an H1 using the `h1` class.
+H1 holds everything together. It is the anchor of a document. Without it, paragraphs would simply drift into void. Usually there is only one per page dedicated for the main title. But you can also mock an H1 using the `h1` class.
 {: .text-justify }
 
 ## Heading 2
