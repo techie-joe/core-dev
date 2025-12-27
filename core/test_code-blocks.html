@@ -2,12 +2,12 @@
 index: false
 layout: html
 use_pug: true
-title: Home
-description: Home template
+title: Test Code Blocks
+description: A theme development project.
 ---
 <!DOCTYPE html>
 <html class="_core_layout" lang="en-US">
-<!-- path   : core/home.html -->
+<!-- path   : core/test_code-blocks.html -->
 <!-- layout : dove/_source/_layouts/core -->
   <head>
     <meta charset="utf-8"/>
@@ -32,35 +32,28 @@ description: Home template
           </header>
           <nav class="_nav">
             <div class="_layout _960">
-              <p><a href="/dove/core/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><b>Home</b><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/404.html">404</a>
+              <p><a href="/dove/core/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/404.html">404</a>
               </p>
               <hr class="thin"/>
             </div>
           </nav>
           <main class="_main">
             <article class="_article _layout _960">
-              <style>
-                .hero_block { padding:1rem 2rem }
-                .hero_block .hero-title { margin-top:1rem }
-                .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
-                .hero_block .hero-hr { margin-top:45px }
-              </style>
-              <div class="hero_block box">
-                <h1 class="hero-title">🧿 Crude title</h1>
-                <p class="hero-description">Your site's description or sub-title.</p>
-              </div>
-              <hr class="thin"/>
-              <p><code>// home content</code></p>
+              <nav class="mv"><b>Test</b><i class="_icon"><i class="isvg">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                    </svg></i></i><a href="/dove/core/test_colors.html">Colors</a><i class="_icon"><i class="itext">&bull;</i></i><b>Code blocks</b>
+              </nav>
+              <hr class="thin"/>{%- capture code-blocks %}{%- include test_code-blocks.md %}{%- endcapture %}
+{{ code-blocks | markdownify }}
             </article>
           </main>
           <footer class="_footer">
             <div class="_layout _960">
               <hr class="thin"/>
-              <p><code>// site footer</code></p>
-              <hr class="thin"/>
               <p class="text-right text-grey"><small>
                   This site is open source.
-                  <a href="https://github.com/techie-joe/dove/edit/main/_source/core/home.html.pug">Improve this page</a>.</small></p>
+                  <a href="https://github.com/techie-joe/dove/edit/main/_source/core/test_code-blocks.html.pug">Improve this page</a>.</small></p>
             </div>
           </footer>
         </div>

@@ -2,8 +2,9 @@ extends _html
 block append vars
   - path   = 'preview.html'
   - title  = `Preview`
+  - description = `Theme preview.`
 block content
   +include('preview','preview.md')
 block footer
-  +thin_hr
-  p.text-right.text-grey: small: +edit_link(path)
+  //- no site footer
+  +_edit_link

@@ -1,9 +1,9 @@
 ---
+index: false
 layout: html
 use_pug: true
 title: Core
-description: A theme development project.
-index: false
+description: Minimal theme for your site.
 ---
 <!DOCTYPE html>
 <html class="_core_layout" lang="en-US">
@@ -27,21 +27,49 @@ index: false
         <div class="_layout">
           <header class="_header">
             <div class="_layout">
-              <div class="_logo"><a href="/dove/">Dove</a></div>
+              <h1>{% include dove/logo.html %}</h1>
             </div>
           </header>
           <nav class="_nav">
             <div class="_layout _960">
-              <div><b><b>Core</b></b><i class="_icon"><i class="isvg">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                    </svg></i></i><a href="/dove/core/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/404.html">404</a>
-              </div>
             </div>
           </nav>
           <main class="_main">
             <article class="_article _layout _960">
-              <p><code>// content for : Core</code></p>
+              <style>
+                .hero_block { padding:1rem 2rem }
+                .hero_block .hero-title { margin-top:1rem }
+                .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
+                .hero_block .hero-hr { margin-top:45px }
+              </style>
+              <div class="hero_block box">
+                <h1 class="hero-title">🧿 Core</h1>
+                <p class="hero-description">Minimal theme for your site.</p>
+              </div>
+              <hr class="thin"/>
+              <nav class="mv"><b><b>Core</b></b><i class="_icon"><i class="isvg">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                    </svg></i></i><a href="/dove/core/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/404.html">404</a>
+              </nav>
+              <hr class="thin"/>
+              <nav class="mv"><b>Core</b><i class="_icon"><i class="isvg">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                    </svg></i></i><b>md</b><i class="_icon"><i class="isvg">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                    </svg></i></i><a href="/dove/core/md/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/md/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/md/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/md/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/md/404.html">404</a>
+              </nav>
+              <hr class="thin"/>
+              <nav class="mv"><b><b>Core</b></b><i class="_icon"><i class="isvg">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                    </svg></i></i><b>Test</b><i class="_icon"><i class="isvg">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                    </svg></i></i><a href="/dove/core/test_colors.html">Colors</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/test_code-blocks.html">Code blocks</a>
+              </nav>
             </article>
           </main>
           <footer class="_footer">

@@ -2,5 +2,41 @@ extends _html
 block append vars
   - path   = 'index.html'
   - title  = `Core`
+  - description = `Minimal theme for your site.`
+block header
+  h1|{% include dove/logo.html %}
+block nav
+  //- no nav
+block footer
+  //- no site footer
+  +thin_hr
+  p.text-right.text-grey: small: +edit_link(path)
 block content
-  p: code // content for : !{title}
+  style.
+    .hero_block { padding:1rem 2rem }
+    .hero_block .hero-title { margin-top:1rem }
+    .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
+    .hero_block .hero-hr { margin-top:45px }
+  .hero_block.box
+    h1.hero-title 🧿 !{title}
+    p.hero-description !{description}
+
+  +thin_hr
+  nav.mv
+    +sna(sub+"/"): b !{capitalize(sub)}
+    +angle
+    +site_nav(sub)
+
+  +thin_hr
+  nav.mv
+    b !{capitalize(sub)}
+    +angle
+    b md
+    +angle
+    +site_nav(sub+'/md')
+
+  +thin_hr
+  nav.mv
+    +sna(sub+"/"): b !{capitalize(sub)}
+    +angle
+    +test_nav(sub)

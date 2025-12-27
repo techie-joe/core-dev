@@ -7,6 +7,7 @@
 ._960 { max-width:960px; @extend .mc; }
 // ---------------------------------------------------------------
 // fixes
+._header h1 { font-size:1em;margin:0 }
 ._nav,
 ._header,
 ._footer,

@@ -1,20 +1,34 @@
 extends /_source/_layouts/core
 mixin site_nav(sub)
-  +sna(sub+"/"): b !{capitalize(sub)}
-  +angle
   +sna(sub+"/preview.html")| Preview
   +bull
   +sna(sub+"/home.html")| Home
   +bull
   +sna(sub+"/page.html")| Page
   +bull
+  +sna(sub+"/post.html")| Post
+  +bull
   +sna(sub+"/404.html")| 404
-block append update_vars
-  - path  = ['core',path].join('/')
-block append front_matter
-  +l| index: false
-block nav
-  div: +site_nav('core')
-block footer
+mixin test_nav(sub)
+  b| Test
+  +angle
+  +sna(sub+"/test_colors.html")| Colors
+  +bull
+  +sna(sub+"/test_code-blocks.html")| Code blocks
+mixin _edit_link
   +thin_hr
   p.text-right.text-grey: small: +edit_link(path)
+block append update_vars
+  - sub  = 'core'
+  - path = [sub,path].join('/')
+block prepend front_matter
+  +l| index: false
+block header
+  h1|{% include dove/logo.html name="!{sub}" %}
+block nav
+  p: +site_nav(sub)
+  +thin_hr
+block footer
+  +thin_hr
+  p: code // site footer
+  +_edit_link

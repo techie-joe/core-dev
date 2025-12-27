@@ -1,0 +1,8 @@
+---
+layout: core
+---
+{{ content }}
+<div class="mt-6"></div>
+<hr/>
+<h2>Other posts</h2>
+{% capture posts -%}{% include posts.md %}{%- endcapture %}{{ posts | markdownify }}
