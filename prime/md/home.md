@@ -2,7 +2,7 @@
 layout: prime
 index: false
 use_nav: false
-use_footer: edit_link_only
+use_footer: demo_sample
 title: Home
 description: Home template.
 ---
@@ -23,7 +23,3 @@ description: Home template.
 {{ thin_hr }}
 
 `// home content`
-
-{{ thin_hr }}
-
-`// site footer`

@@ -2,6 +2,14 @@
 
 {%- unless page.use_footer contains 'edit_link_only' %}
 
+{%- if page.use_footer contains 'demo_sample' -%}
+
+{{ thin_hr }}
+
+`// site footer`
+
+{%- else %}
+
 {%- capture footer %}
 
 {{ thin_hr }}
@@ -25,6 +33,8 @@
 {%- endcapture %}
 
 <nav>{{ footer | markdownify }}</nav>
+
+{%- endif %}
 
 {%- endunless %}
 

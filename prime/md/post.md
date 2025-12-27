@@ -2,7 +2,7 @@
 layout: prime-post
 index: false
 use_nav: false
-use_footer: edit_link_only
+use_footer: demo_sample
 title: Post
 description: Post template.
 ---

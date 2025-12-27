@@ -2,7 +2,7 @@
 layout: prime-page
 index: false
 use_nav: false
-use_footer: edit_link_only
+use_footer: demo_sample
 title: Page
 description: Page template.
 ---
