@@ -27,7 +27,7 @@ block content
         li: +site_nav('prime')
   +thin_hr
   |{%- if site.github.environment == 'development' -%}
-  +include('nav_test','dove/nav_test.md')
+  nav: +include('nav_test','dove/nav_test.md')
   +thin_hr
   |{%- endif %}
   p.text-grey These are supporting posts and pages for the project.

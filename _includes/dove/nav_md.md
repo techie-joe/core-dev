@@ -6,10 +6,7 @@
 {%- assign _post = _sub | append: '/md/post' %}
 {%- assign _404  = _sub | append: '/md/404' %}
 
-{%- capture _menu %}
-**[{{ _sub | capitalize }}]({{ site.base_url }}/{{ _sub }})**
-{{- angle -}}
-**md**
+**Md**
 {{- angle -}}
 {%- assign _path = _prev | append: '.md' %}
 {%- if page.path == _path -%}
@@ -35,11 +32,12 @@
 {%- if page.path == _path -%}
 **404**{%- else %}[404]({{ site.base_url }}/{{ _404 }})
 {%- endif %}
-{%- endcapture %}
-
-<nav class="mv">{{ _menu | markdownify }}</nav>
 
 {{ thin_hr }}
 
 {% comment %}
+**[{{ _sub | capitalize }}]({{ site.base_url }}/{{ _sub }})**
+{{- angle -}}
+**md**
+{{- angle -}}
 {% endcomment %}

@@ -1,4 +1,6 @@
+<nav class="mv">
 <a href="?back" onclick="event.preventDefault();(function(w){var h=w.history;w.opener?w.close():h.length>1?h.back():w.location.href='/';})(window)" class="button text-secondary" title="Back to previous page">👈 Back</a>{{''-}}
 <a href="{{ site.home_url }}/" class="button text-secondary" title="Go to Home Page">Home</a>{{''-}}
 <a href="{{ site.base_url }}/pages" class="button text-secondary" title="Go to Pages">Pages</a>{{''-}}
 <a href="{{ site.base_url }}/posts" class="button text-secondary" title="Go to Posts">Posts</a>{{''-}}
+</nav>

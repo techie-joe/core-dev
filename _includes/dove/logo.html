@@ -1,1 +1,6 @@
+{%- case page.layout %}
+{%- when 'prime' or 'prime-page' or 'prime-post' %}
+{%- include prime/logo.html %}
+{%- else %}
 <span class="_logo"><a href="{{ site.home_url }}/">🕊️ Dove</a></span>
+{%- endcase %}

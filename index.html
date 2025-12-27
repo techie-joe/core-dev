@@ -76,8 +76,10 @@ description: A theme development project.
                       </nav>
                     </div>
                   </div>
-                  <hr class="thin"/>{%- if site.github.environment == 'development' -%}{%- capture nav_test %}{%- include dove/nav_test.md %}{%- endcapture %}
+                  <hr class="thin"/>{%- if site.github.environment == 'development' -%}
+                  <nav>{%- capture nav_test %}{%- include dove/nav_test.md %}{%- endcapture %}
 {{ nav_test | markdownify }}
+                  </nav>
                   <hr class="thin"/>{%- endif %}
                   <p class="text-grey">These are supporting posts and pages for the project.</p>{%- capture pages %}{% include pages.md exclude="" %}{%- endcapture %}{%- capture posts %}{% include posts.md exclude="" %}{%- endcapture %}
                   <div class="flex" style="gap:3rem">

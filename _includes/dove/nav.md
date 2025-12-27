@@ -1,3 +1,8 @@
+{%- case page.layout %}
+{%- when 'prime' or 'prime-page' or 'prime-post' %}
+{%- include dove/nav_md.md sub="prime" %}
+{%- else %}
+
 {%- include ui.html %}
 
 {%- if page.path == 'index.html' -%}
@@ -15,9 +20,9 @@
 {%- if page.path == 'posts.md' -%}
 **Posts**{%- else -%}[Posts]({{ site.base_url }}/posts)
 {%- endif %}
-{: style="margin:1rem 0" }
 
 {{ thin_hr }}
 
+{%- endcase %}
 {%- comment %}
 {%- endcomment %}

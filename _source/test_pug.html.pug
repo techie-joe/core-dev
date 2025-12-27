@@ -8,7 +8,7 @@ block prepend front_matter
   +l| index: false
   +l| use_footer: edit_link_only
 block content
-  +include('nav_test','dove/nav_test.md')
+  nav: +include('nav_test','dove/nav_test.md')
   +thin_hr
   if testing
     pre.highlight: code.

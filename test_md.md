@@ -7,7 +7,8 @@ testing: false
 ---
 {%- include ui.html %}
 
-{%- include dove/nav_test.md %}
+{%- capture _menu %}{%- include dove/nav_test.md %}{%- endcapture -%}
+<nav>{{ _menu | markdownify }}</nav>
 {{ thin_hr }}
 
 {%- if page.testing %}

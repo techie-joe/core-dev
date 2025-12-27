@@ -39,8 +39,10 @@ description: Testing something here.
             </nav>
             <main class="_main">
               <article class="_article">
-                <div class="_layout">{%- capture nav_test %}{%- include dove/nav_test.md %}{%- endcapture %}
+                <div class="_layout">
+                  <nav>{%- capture nav_test %}{%- include dove/nav_test.md %}{%- endcapture %}
 {{ nav_test | markdownify }}
+                  </nav>
                   <hr class="thin"/>
                   {%-
                     include 404.md

@@ -24,12 +24,9 @@ block append update_vars
 block prepend front_matter
   +l| index: false
 block header
-  h1|{% include dove/logo.html %}
+  h1|{% include prime/logo.html %}
 block nav
-  nav.mv
-    +sna(sub+"/"): b !{capitalize(sub)}
-    +angle
-    +site_nav(sub)
+  p: +site_nav(sub)
   +thin_hr
 block footer
   +thin_hr

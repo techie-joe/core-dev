@@ -2,6 +2,8 @@ extends _html
 block append vars
   - path   = 'index.html'
   - title  = `Prime`
+block header
+  h1|{% include dove/logo.html %}
 block nav
   //- no nav
 block footer
