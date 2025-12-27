@@ -25,6 +25,31 @@ mixin _angle
 mixin thin_hr
   hr.thin/
 
+mixin front_matter
+  !='---'
+  block
+  !='\n---\n'
+
+mixin yml
+  !='```yml\n'
+  block
+  !='\n```\n'
+
+mixin capture(id='')
+  !=`{%- capture ${id} %}`
+  block
+  !=`{%- endcapture %}`
+
+mixin include(id='',path='',args="",filter=" | markdownify")
+  +capture(id)!=`{%- include ${path}${args} %}`
+  +l!=`{{ ${id}${filter} }}`
+
+mixin include_relative(id='',path='',args="",filter=" | markdownify")
+  +capture(id)!=`{%- include_relative ${path}${args} %}`
+  +l!=`{{ ${id}${filter} }}`
+
+//- ==============================================================
+
 mixin logo
   ._logo: a(href=home_url+'/') #{site_title}
 

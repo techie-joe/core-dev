@@ -17,6 +17,7 @@ $pre_bg  : #f4f4f4;
 %std_bg { background-color:$bg }
 %std_border { border-color:$grey_border }
 %std_margin { margin:16px 0 }
+// ---------------------------------------------------------------
 body { @extend .scroll_y; }
 u,abbr { text-underline-offset:.2em }
 details { 
@@ -26,8 +27,6 @@ details {
     p { @extend .inline; }
   }
 }
-img { @extend .block; }
-figure { margin:1em 2em }
 article {
   img { border-radius:5px }
 }
@@ -41,56 +40,69 @@ article {
   }
   h1,h2 { @extend %std_border; }
   h5,h6 { color:inherit }
-  kbd { padding:.5em;font-size:85% }
   pre,code,tt,samp,kbd { @extend .mono; }
   code,tt,kbd { background-color:$code_bg;color:$code_tc }
-  blockquote { @extend %std_border;@extend .inherit_color; }
+  kbd { padding:.5em;font-size:85% }
   p { @extend %std_margin; }
+  blockquote { @extend %std_border;@extend .inherit_color; }
   img { @extend .no_bg;@extend .text-grey; }
+  figure { margin:1em 2em }
   table {
     &, th, td { @extend %std_border; }
     thead tr { background-color:#e7e7e7 }
     tr:nth-child(2n) { background-color:#f7f7f7 }
   }
-  pre.highlight { @extend .scrollable; }
-  div.highlight { overflow:hidden }
   .highlight,pre,
   .highlight pre { border-radius:5px;background-color:$pre_bg }
   .task-list { padding-left:.25em; ul,ol { padding-left:2em } }
   ._header h1 { margin-top:.67em !important } // the logo holder
   ._footer { margin-bottom:4rem !important }
 }
+div.highlight { overflow:hidden }
+pre.highlight { @extend .scrollable; }
+.highlight {
+  .mh  { margin:0 }
+  .hll { background-color:rgba($text-yellow,.15); }
+}
+.rouge-table {
+  td.code,
+  td.gutter { vertical-align:top }
+}
+.button {
+  &.primary {
+    @extend .bg-blue;
+    @extend .border-blue;
+    @extend .text-white;
+  }
+  &.secondary {
+    @extend .bg-slategrey;
+    @extend .border-slategrey;
+    @extend .text-white;
+  }
+}
+.footnotes {
+  ul,ol { list-style-position:inside;padding-left:0; }
+  li>p { @extend .inline; }
+}
 hr.thin {
   height:0;
   border-bottom:1px solid $grey_border;
 }
-._header ._logo {
-  a { font-size:1.5rem;@extend .inherit_color;@extend .no_u; }
-  a:hover { @extend .text-blue; }
+._header {
+  ._logo {
+    a { font-size:1.5rem;@extend .inherit_color;@extend .no_u; }
+    a:hover { @extend .text-blue; }
+  }
 }
 .hero { line-height:1.15 }
 .box { border-radius:5px;@extend %std_border;@extend .ph; }
 ._theme_switch {
-  a,a:focus { font-size:1.5em;@extend .inherit_color; }
+  a,
+  a:focus { font-size:1.5em;@extend .inherit_color; }
   a:hover { @extend .text-blue; }
 }
-.itext,.isvg { line-height:.8 }
-.button.primary {
-  @extend .bg-blue;
-  @extend .border-blue;
-  @extend .text-white;
-}
-.button.secondary {
-  @extend .bg-slategrey;
-  @extend .border-slategrey;
-  @extend .text-white;
-}
-.highlight {
-  .mh { margin:0 }
-  .hll { background-color:rgba($text-yellow,.15); }
-}
-.rouge-table td.code,
-.rouge-table td.gutter { vertical-align:top }
+.itext,
+.isvg { line-height:.8 }
 // ---------------------------------------------------------------
 $dark_bg : color.invert($bg);
 $dark_text_color : color.invert($text_color);
@@ -102,22 +114,26 @@ $dark_pre_bg  : #171717;
 %dark_std_border { border-color:color.invert($grey_border) }
 ._dark {
   body { color:color.invert($text_color);@extend %dark_std_bg; }
-  code,tt,kbd { background-color:$dark_code_bg;color:$dark_code_tc }
-  kbd { border-color:$dark_code_bg;box-shadow:inset 0 -1px 0 $dark_code_bg; }
   .markdown-body {
+    pre { code,tt { @extend .no_bg; } }
+    code,tt,kbd { background-color:$dark_code_bg;color:$dark_code_tc }
+    kbd { border-color:$dark_code_bg;box-shadow:inset 0 -1px 0 $dark_code_bg; }
     hr { border-color:color.invert($grey_border) }
     h1,h2 { @extend %dark_std_border; }
     blockquote { @extend %dark_std_border; }
-    .highlight,pre,
-    .highlight pre { background-color:$dark_pre_bg }
-    .highlight code { @extend .no_bg; }
     table {
       &, th, td { @extend %dark_std_border; }
       tr { @extend %dark_std_bg; }
       thead tr { background-color:#242424 }
       tr:nth-child(2n) { background-color:#141414 }
     }
+    .highlight,pre,
+    .highlight pre { background-color:$dark_pre_bg }
   }
+  .box { @extend %dark_std_border; }
+}
+// ---------------------------------------------------------------
+._dark {
   .highlight {
     .err { background-color:#fdd;color:#d22 }
     .gd { background-color:rgba($text-red,.25);color:$text-white }
@@ -133,5 +149,4 @@ $dark_pre_bg  : #171717;
     .nt,.nc,.nn { color: #37a; }
     .k,.kd,.kc,.kp { color:#dbd6d1 }
   }
-  .box { @extend %dark_std_border; }
 }

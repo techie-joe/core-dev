@@ -2,13 +2,16 @@ extends _html
 block append vars
   - path   = 'home.html'
   - title  = `Home`
+  - description = 'Home template'
 block content
   style.
-    .hero_block_1 .site-description {
-      margin-left: 3.3rem;
-      font-size: 1.1em;
-    }
-    .hero_block_1 .hero-hr { margin-top:45px }
-  .hero_block_1
-    h1#_hero-title ⚒️ Heroic Title
-    p.site-description Your site's description or mission statement.
+    .hero_block { padding:1rem 2rem }
+    .hero_block .hero-title { margin-top:1rem }
+    .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
+    .hero_block .hero-hr { margin-top:45px }
+  .hero_block.box
+    h1.hero-title 🦅 Heroic title
+    p.hero-description Your site's description or sub-title.
+
+  +thin_hr
+  p: code // home content

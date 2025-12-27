@@ -24,28 +24,10 @@ mixin l
 mixin -
   li: block
 
-mixin front_matter
-  !='---'
-  block
-  !='\n---\n'
-
 mixin comment
   !='<!-- '
   block
   !='\n -->'
-
-mixin capture(id='')
-  !=`{%- capture ${id} %}`
-  block
-  !=`{%- endcapture %}`
-
-mixin include(id='',path='',filter=" | markdownify")
-  +capture(id)!=`{%- include ${path} %}`
-  +l!=`{{ ${id}${filter} }}`
-
-mixin include_relative(id='',path='',filter=" | markdownify")
-  +capture(id)!=`{%- include_relative ${path} %}`
-  +l!=`{{ ${id}${filter} }}`
 
 mixin css(href,media)
   link(rel="stylesheet" media=media||'all' href=href)&attributes(attributes)/

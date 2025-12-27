@@ -2,6 +2,10 @@ extends _html
 block append vars
   - path   = '404.html'
   - title  = `Not found`
-  - description = `The content you are looking for is not here.`
+  - description = `We can't find what you are looking for.`
 block content
-  +l|{%- include 404.md %}
+  +l|{%- include 404.md title="Oops! Nothing found" %}
+block footer
+  //- no site footer
+  +thin_hr
+  p.text-right.text-grey: small: +edit_link(path)

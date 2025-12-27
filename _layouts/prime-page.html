@@ -1,0 +1,8 @@
+---
+layout: prime
+---
+{{ content }}
+<div class="mt-6"></div>
+<hr/>
+<h2>Other pages</h2>
+{% capture pages -%}{% include pages.md %}{%- endcapture %}{{ pages | markdownify }}

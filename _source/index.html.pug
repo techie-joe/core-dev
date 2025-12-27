@@ -1,16 +1,4 @@
-extends /_source/_layouts/default
-mixin site_nav(sub)
-  +sna(sub+"/"): b !{capitalize(sub)}
-  +angle
-  +sna(sub+"/preview.html")| Preview
-  +bull
-  +sna(sub+"/home.html")| Home
-  +bull
-  +sna(sub+"/page.html")| Page
-  +bull
-  +sna(sub+"/post.html")| Post
-  +bull
-  +sna(sub+"/404.html")| 404
+extends _html
 block append vars
   - path   = 'index.html'
 block prepend style
@@ -21,15 +9,15 @@ block prepend style
   style.
     #pages_ ul,
     #posts_ ul,
-    article .rapat { margin:1rem 0;padding-left:1.3em }
+    .markdown-body .rapat { margin:1rem 0;padding-left:1.3em }
     #pages_ ul li,
     #posts_ ul li,
-    article .rapat li { margin-left:0 }
+    .markdown-body .rapat li { margin-left:0 }
 block header
   h1 🕊️ The !{site_title} Project
 block content
   .flex(style="gap:3rem")
-    .fill
+    .fill#themes_
       h3.mt-0 Themes
       p.text-grey We are working on the following themes.
       nav: ul.rapat

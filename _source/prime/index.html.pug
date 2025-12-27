@@ -3,38 +3,34 @@ block append vars
   - path   = 'index.html'
   - title  = `Prime`
 block nav
-  //- none
+  //- no nav
+block footer
+  //- no site footer
+  +thin_hr
+  p.text-right.text-grey: small: +edit_link(path)
 block content
-  h1 !{title}
+  style.
+    .hero_block { padding:1rem 2rem }
+    .hero_block .hero-title { margin-top:1rem }
+    .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
+    .hero_block .hero-hr { margin-top:45px }
+  .hero_block.box
+    h1.hero-title 🦅 !{title}
+    p.hero-description Simple theme for your site.
 
+  +thin_hr
   nav.mv
-    - sub = layout
-    b Html
+    +sna(sub+"/"): b !{capitalize(sub)}
     +angle
-    +sna(sub+"/preview.html")| Preview
-    +bull
-    +sna(sub+"/home.html")| Home
-    +bull
-    +sna(sub+"/page.html")| Page
-    +bull
-    +sna(sub+"/404.html")| 404
+    +site_nav(sub)
 
+  +thin_hr
   nav.mv
-    - sub = layout+'/md'
-    b Markdown
+    b !{capitalize(sub)}
     +angle
-    +sna(sub+"/preview.html")| Preview
-    +bull
-    +sna(sub+"/home.html")| Home
-    +bull
-    +sna(sub+"/page.html")| Page
-    +bull
-    +sna(sub+"/404.html")| 404
+    b md
+    +angle
+    +site_nav(sub+'/md')
 
-  nav.mv
-    - sub = layout
-    b| Test
-    +angle
-    +sna(sub+"/test_colors.html")| Colors
-    +bull
-    +sna(sub+"/test_code-blocks.html")| Code blocks
+  +thin_hr
+  nav.mv: +test_nav(sub)

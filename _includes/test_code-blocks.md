@@ -76,14 +76,17 @@ end
 Foo::Bar.new.profile
 ```
 
+###### Diff
+
 ```diff
-# diff syntax highlighting
 - This line is redacted
 - This line has been deleted
 + This line is visible
 + This line has been inserted
 This line has not been changed
 ```
+
+###### SASS
 
 ```sass
 // SASS code with syntax highlighting
@@ -96,6 +99,8 @@ This line has not been changed
     color: #ab45ef;
 ```
 
+###### Liquid
+
 {% raw %}
 ```liquid
 {%- assign variable = value_or_expression | filter: 'filter_expression' %}
@@ -103,6 +108,8 @@ This line has not been changed
 {% comment %} Liquid code with syntax highlighting {% endcomment %}
 ```
 {% endraw %}
+
+###### Yaml
 
 ```yaml
 # Yaml code with syntax highlighting
@@ -112,6 +119,8 @@ author:
   email: johndoe@example.com
   id: 75636474
 ```
+
+###### HTML
 
 ```html
 <!-- HTML code with syntax highlighting -->

@@ -2,3 +2,11 @@ extends _html
 block append vars
   - path   = 'page.html'
   - title  = `Page`
+  - description = 'Page template'
+block content
+  h1 Page title
+  p: code // page content
+  .mt-6
+  hr
+  h2 Other pages
+  +include('pages','pages.md')

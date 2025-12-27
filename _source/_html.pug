@@ -1,0 +1,19 @@
+extends /_source/_layouts/default
+mixin site_nav(sub)
+  +sna(sub+"/"): b !{capitalize(sub)}
+  +angle
+  +sna(sub+"/preview.html")| Preview
+  +bull
+  +sna(sub+"/home.html")| Home
+  +bull
+  +sna(sub+"/page.html")| Page
+  +bull
+  +sna(sub+"/post.html")| Post
+  +bull
+  +sna(sub+"/404.html")| 404
+mixin test_nav(sub)
+  b| Test
+  +angle
+  +sna(sub+"/test_colors.html")| Colors
+  +bull
+  +sna(sub+"/test_code-blocks.html")| Code blocks

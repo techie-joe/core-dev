@@ -1,7 +1,7 @@
 ```yml
 # _config.pug
 version      : 0.0.4
-revision     : 2512.04.7318
+revision     : 2512.04.4444
 title        : Dove
 description  : A theme development project.
 author       : Techie Joe
@@ -21,7 +21,6 @@ source_url   : https://github.com/techie-joe/dove
 ```
 {: #config_pug }
 <style>article #config_pug pre.highlight { max-height:213px }</style>
-
 ```yml
 # _config.yml
 version      : {{ site.version | default: "[nil]" }}

@@ -3,7 +3,7 @@ index: false
 layout: html
 use_pug: true
 title: Not found
-description: The content you are looking for is not here.
+description: We can't find what you are looking for.
 ---
 <!DOCTYPE html>
 <html class="_prime_layout" lang="en-US">
@@ -33,18 +33,18 @@ description: The content you are looking for is not here.
             </header>
             <nav class="_nav">
               <div class="_layout">
-                <p><a href="/dove/prime/"><b>Prime</b></a><i class="_icon"><i class="isvg">
+                <nav class="mv"><a href="/dove/prime/"><b>Prime</b></a><i class="_icon"><i class="isvg">
                       <svg viewBox="0 0 24 24">
                         <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                      </svg></i></i><a href="/dove/prime/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/page.html">Page</a>
-                </p>
+                      </svg></i></i><a href="/dove/prime/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><b>404</b>
+                </nav>
                 <hr class="thin"/>
               </div>
             </nav>
             <main class="_main">
               <article class="_article">
                 <div class="_layout">
-{%- include 404.md %}
+{%- include 404.md title="Oops! Nothing found" %}
                 </div>
               </article>
             </main>

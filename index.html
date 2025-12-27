@@ -19,10 +19,10 @@ description: A theme development project.
     <style>
       #pages_ ul,
       #posts_ ul,
-      article .rapat { margin:1rem 0;padding-left:1.3em }
+      .markdown-body .rapat { margin:1rem 0;padding-left:1.3em }
       #pages_ ul li,
       #posts_ ul li,
-      article .rapat li { margin-left:0 }
+      .markdown-body .rapat li { margin-left:0 }
     </style>
     <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
 {% include layout_head.html %}
@@ -47,7 +47,7 @@ description: A theme development project.
               <article class="_article">
                 <div class="_layout">
                   <div class="flex" style="gap:3rem">
-                    <div class="fill">
+                    <div class="fill" id="themes_">
                       <h3 class="mt-0">Themes</h3>
                       <p class="text-grey">We are working on the following themes.</p>
                       <nav>

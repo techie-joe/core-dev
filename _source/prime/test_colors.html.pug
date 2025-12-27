@@ -3,5 +3,9 @@ block append vars
   - path   = 'test_colors.html'
   - title  = `Test Colors`
 block content
-  h1 !{title}
+  nav.mv: +test_nav('prime')
+  +thin_hr
   +include('test','test_colors.md')
+block footer
+  //- no site footer
+  +_edit_link

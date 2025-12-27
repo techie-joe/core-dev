@@ -9,17 +9,18 @@ description: Basic Liquid syntaxes.
 
 # {{ page.title }}
 
-###### assign values
+###### assigning values & rendering it
 
+{% raw %}
 ```liquid
-{% raw %}{%- assign variable = value_or_expression | filter: 'filter_expression' %}{% endraw %}
+{%- assign variable = value_or_expression | filter: 'filter_expression' %}
+{{ variable | default: "[default-value]" }}
+{{ json_variable | jsonify }}
 ```
+{% endraw %}
 
-```yml
-variable : {{ variable | default: '(value_or_expression)' }}
-default  : {{ undefined | default: '(undefined)' }}
-nil      : {{ nil | default: '(nil is false and renders nothing)' }}
-```
+> nil, "" and 0 are treated as **false**
+{: .mono.smaller }
 
 ###### numbers
 
@@ -34,18 +35,18 @@ numbers  : {{ numbers | jsonify }} [{{ numbers | size | append: ' items' }}]
 {%- assign string   = 'jAmEs  r  pEtErSoN .' %}
 
 ```yml
-string        : {{ string }} [{{ string | size | append: ' characters' }}]
+string        : {{ string | jsonify }} [{{ string | size | append: ' characters' }}]
 
 # replace: ' r ' | remove: '.'
 {%- assign string = string | replace: ' r ', ' ' | remove: '.' | split: ' ' | join: ' ' %}
-string        : {{ string }} [{{ string | size | append: ' characters' }}]
+string        : {{ string | jsonify }} [{{ string | size | append: ' characters' }}]
 upcase        : {{ string | upcase }}
 downcase      : {{ string | downcase }}
 capitalize    : {{ string | capitalize }}
 
-# replace: 'peterson' | capitalize | prepend: 'Mr. ' | append: ' (age 42)'
+# capitalize | replace: "peterson", "Rodney" | prepend: 'Mr. ' | append: ' (age 42)'
 {%- assign string = string | capitalize | replace: "peterson", "Rodney" | prepend: 'Mr. ' | append: ' (age 42)' %}
-string        : {{ string }} [{{ string | size | append: ' characters' }}]
+string        : {{ string | jsonify }} [{{ string | size | append: ' characters' }}]
 truncate      : {{ string | truncate: 15 }}
 ```
 

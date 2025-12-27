@@ -321,7 +321,7 @@ This block expands like curtains on opening night, then folds back up as if noth
 [^2]: For example: **John Smith**, Modern Web Design _(New York: TechPress, 2023), page 45_.
 
 [^3]:
-    Footnote can also have multiple lines. 
+    You can also define a footnote multiple lines.
     Every new line in footnote should be prefixed with 2 space or 4 space indentation.
 
 [^note]:

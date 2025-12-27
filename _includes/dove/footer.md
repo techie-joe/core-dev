@@ -2,9 +2,9 @@
 
 {%- unless page.use_footer contains 'edit_link_only' %}
 
-{{ thin_hr }}
-
 {%- capture footer %}
+
+{{ thin_hr }}
 
 **Dove**
 {{ angle }}

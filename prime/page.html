@@ -3,7 +3,7 @@ index: false
 layout: html
 use_pug: true
 title: Page
-description: A theme development project.
+description: Page template
 ---
 <!DOCTYPE html>
 <html class="_prime_layout" lang="en-US">
@@ -33,24 +33,30 @@ description: A theme development project.
             </header>
             <nav class="_nav">
               <div class="_layout">
-                <p><a href="/dove/prime/"><b>Prime</b></a><i class="_icon"><i class="isvg">
+                <nav class="mv"><a href="/dove/prime/"><b>Prime</b></a><i class="_icon"><i class="isvg">
                       <svg viewBox="0 0 24 24">
                         <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                      </svg></i></i><a href="/dove/prime/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><b>Page</b>
-                </p>
+                      </svg></i></i><a href="/dove/prime/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><b>Page</b><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/404.html">404</a>
+                </nav>
                 <hr class="thin"/>
               </div>
             </nav>
             <main class="_main">
               <article class="_article">
                 <div class="_layout">
-                  <h1>Page</h1>
-                  <p><code>// content for : Page</code></p>
+                  <h1>Page title</h1>
+                  <p><code>// page content</code></p>
+                  <div class="mt-6"></div>
+                  <hr>
+                  <h2>Other pages</h2>{%- capture pages %}{%- include pages.md %}{%- endcapture %}
+{{ pages | markdownify }}
                 </div>
               </article>
             </main>
             <footer class="_footer footer">
               <div class="_layout">
+                <hr class="thin"/>
+                <p><code>// site footer</code></p>
                 <hr class="thin"/>
                 <p class="text-right text-grey"><small>
                     This site is open source.
