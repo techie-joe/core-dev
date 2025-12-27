@@ -24,7 +24,7 @@ block append update_vars
 block prepend front_matter
   +l| index: false
 block header
-  h1|{% include prime/logo.html %}
+  h1|{% include !{sub}/logo.html %}
 block nav
   p: +site_nav(sub)
   +thin_hr

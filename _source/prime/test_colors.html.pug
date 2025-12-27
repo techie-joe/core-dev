@@ -3,7 +3,7 @@ block append vars
   - path   = 'test_colors.html'
   - title  = `Test Colors`
 block content
-  nav.mv: +test_nav('prime')
+  nav.mv: +test_nav(sub)
   +thin_hr
   +include('test','test_colors.md')
 block footer

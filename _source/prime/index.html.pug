@@ -2,6 +2,7 @@ extends _html
 block append vars
   - path   = 'index.html'
   - title  = `Prime`
+  - description = `Simple theme for your site.`
 block header
   h1|{% include dove/logo.html %}
 block nav
@@ -18,7 +19,7 @@ block content
     .hero_block .hero-hr { margin-top:45px }
   .hero_block.box
     h1.hero-title 🦅 !{title}
-    p.hero-description Simple theme for your site.
+    p.hero-description !{description}
 
   +thin_hr
   nav.mv
