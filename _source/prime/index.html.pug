@@ -33,4 +33,7 @@ block content
     +site_nav(sub+'/md')
 
   +thin_hr
-  nav.mv: +test_nav(sub)
+  nav.mv
+    +sna(sub+"/"): b !{capitalize(sub)}
+    +angle
+    +test_nav(sub)

@@ -7,6 +7,8 @@ title: Home
 description: Home template.
 ---
 {%- include dove/_nav_md.md sub="prime" %}
+{%- include ui.html %}
+
 <style>
   .hero_block { padding:1rem 2rem }
   .hero_block .hero-title { margin-top:1rem }

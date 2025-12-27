@@ -6,8 +6,8 @@ use_footer: edit_link_only
 title: Post
 description: Post template.
 ---
-{%- include ui.html %}
 {%- include dove/_nav_md.md sub="prime" %}
+{%- include ui.html %}
 
 # {{ page.title }} title
 
