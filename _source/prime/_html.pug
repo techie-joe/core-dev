@@ -24,7 +24,7 @@ block append update_vars
 block prepend front_matter
   +l| index: false
 block header
-  h1|{% include !{sub}/logo.html %}
+  h1|{% include dove/logo.html name="!{sub}" %}
 block nav
   p: +site_nav(sub)
   +thin_hr
