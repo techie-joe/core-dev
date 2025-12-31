@@ -64,3 +64,27 @@ mixin sna(ref)
     b: block
   else
     +a([base_url,ref].join('/')): block
+
+//- ==============================================================
+
+mixin _edit_link
+  +thin_hr
+  p.text-right.text-grey: small: +edit_link(path)
+
+mixin site_nav(sub)
+  +sna(sub+"/preview.html")| Preview
+  +bull
+  +sna(sub+"/home.html")| Home
+  +bull
+  +sna(sub+"/page.html")| Page
+  +bull
+  +sna(sub+"/post.html")| Post
+  +bull
+  +sna(sub+"/404.html")| 404
+
+mixin test_nav(sub)
+  b| Test
+  +angle
+  +sna(sub+"/test_colors.html")| Colors
+  +bull
+  +sna(sub+"/test_code-blocks.html")| Code blocks

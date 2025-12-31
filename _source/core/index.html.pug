@@ -9,8 +9,7 @@ block nav
   //- no nav
 block footer
   //- no site footer
-  +thin_hr
-  p.text-right.text-grey: small: +edit_link(path)
+  +_edit_link
 block content
   style.
     .hero_block { padding:1rem 2rem }
@@ -18,7 +17,7 @@ block content
     .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
     .hero_block .hero-hr { margin-top:45px }
   .hero_block.box
-    h1.hero-title 🧿 !{title}
+    h1.hero-title 💎 !{title}
     p.hero-description !{description}
 
   +thin_hr
@@ -29,14 +28,10 @@ block content
 
   +thin_hr
   nav.mv
-    b !{capitalize(sub)}
-    +angle
-    b md
+    b Markdown
     +angle
     +site_nav(sub+'/md')
 
   +thin_hr
   nav.mv
-    +sna(sub+"/"): b !{capitalize(sub)}
-    +angle
     +test_nav(sub)

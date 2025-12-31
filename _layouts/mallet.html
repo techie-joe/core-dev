@@ -1,5 +1,6 @@
+{%- assign layout_name = "mallet" -%}
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no_js {{ page.layout | default: 'html' }}_layout">
+<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no_js _{{ layout_name }}_layout">
   <!-- path   : {{ page.path }} -->
   <!-- layout : dove/_layouts/{{ page.layout }} -->
   <head>
@@ -7,12 +8,12 @@
     {% seo %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,shrink-to-fit=no" />
-    <meta id="_color-scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}" />
     <meta id="_theme-color"  name="theme-color"  content="{{ page.theme_color | default: site.theme_color | default: '' }}" />
+    <meta id="_color-scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}" />
     <style>
       .isvg svg { width:1em;height:1em }
     </style>
-    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/mallet/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}" />
+    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/{{ layout_name }}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}" />
     {% include layout_head.html %}
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
   </head>
@@ -20,37 +21,39 @@
     <div class="_views">
       <div class="_view _app __fadein">
         <div id="_layout" class="_view_layout container-lg px-3 markdown-body">
-          <header class="header">
-            {% if page.use_header == false -%}
-            <style>.header{display:none !important}</style>
-            {%- else -%}
-            {% capture header -%}{% include header.md %}{%- endcapture %}{{ header | markdownify }}
-            {%- endif %}
+          <header class="_header">
+            <div class="_layout">
+              {% capture header -%}{% include header.md %}{%- endcapture %}
+              {{ header | markdownify }}
+            </div>
           </header>
           <nav class="_nav">
-            {% if page.use_nav == false -%}
-            <style>._nav{display:none !important}</style>
-            {%- else -%}
-            {% capture nav -%}{% include nav.md %}{%- endcapture %}{{ nav | markdownify }}
-            {%- endif %}
+            <div class="_layout">
+              {% capture nav -%}{% include nav.md %}{%- endcapture %}
+              {{ nav | markdownify }}
+            </div>
           </nav>
-          <main class="_main"><article class="_article">{{ content }}</article></main>
+          <main class="_main">
+            <article class="_article">
+              <div class="_layout">
+                {{ content }}
+              </div>
+            </article>
+          </main>
           <footer class="_footer">
-            {%- if page.use_footer == false -%}{%- else -%}
-              {%- if page.use_footer contains 'edit_link_only' -%}{%- else -%}
-              {% capture footer -%}{% include footer.md %}{%- endcapture %}{{ footer | markdownify }}
-              {%- endif %}
-              {% if site.github.private != true and site.github.license -%}
-              <hr/><p class="text-right text-gray smaller">This site is open source. {% github_edit_link "Improve this page" %}.</p>
-              {%- endif -%}
-            {%- endif -%}
+            <div class="_layout">
+              {% capture footer -%}{% include footer.md %}{%- endcapture %}
+              {{ footer | markdownify }}
+            </div>
           </footer>
-          <div class="_theme_switch _needjs">
+        </div>{% comment %} end of _layout {% endcomment %}
+      </div>{% comment %} end of _view {% endcomment %}
+      <div class="_view">
+        <div class="_layout _1200">
             {% include theme_switch.html %}
           </div>
-        </div><!-- end of _layout -->
-      </div><!-- end of _view -->
+      </div>
       {% include layout_body.html %}
-    </div><!-- end of _views -->
+    </div>{% comment %} end of _views {% endcomment %}
   </body>
 </html>

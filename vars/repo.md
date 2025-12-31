@@ -1,6 +1,5 @@
 ---
 index: false
-layout: dove
 use_footer: edit_link_only
 title: Repositories
 description: Repositories on this site.

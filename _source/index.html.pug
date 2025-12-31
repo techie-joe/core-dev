@@ -15,16 +15,28 @@ block prepend style
     .markdown-body .rapat li { margin-left:0 }
 block header
   h1 🕊️ The !{site_title} Project
+mixin index_nav(sub)
+  +sna(sub+"/"): b !{capitalize(sub)}
+  +angle
+  +sna(sub+"/preview.html")| Preview
+  +bull
+  +sna(sub+"/home.html")| Home
+  +bull
+  +sna(sub+"/page.html")| Page
+  +bull
+  +sna(sub+"/post.html")| Post
+  +bull
+  +sna(sub+"/404.html")| 404
 block content
   .flex(style="gap:3rem")
     .fill#themes_
       h3.mt-0 Themes
       p.text-grey We are working on the following themes.
       nav: ul.rapat
-        li: +site_nav('core')
-        li: +site_nav('mallet')
-        li: +site_nav('nova')
-        li: +site_nav('prime')
+        li: +index_nav('core')
+        li: +index_nav('mallet')
+        li: +index_nav('nova')
+        li: +index_nav('prime')
   +thin_hr
   |{%- if site.github.environment == 'development' -%}
   nav: +include('nav_test','dove/nav_test.md')

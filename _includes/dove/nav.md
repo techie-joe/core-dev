@@ -1,9 +1,8 @@
+{%- include ui.html %}
 {%- case page.layout %}
 {%- when 'prime' or 'prime-page' or 'prime-post' %}
 {%- include dove/nav_md.md sub="prime" %}
 {%- else %}
-
-{%- include ui.html %}
 
 {%- if page.path == 'index.html' -%}
 **Home**{%- else -%}[Home]({{ site.base_url }}/)

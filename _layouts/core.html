@@ -1,5 +1,6 @@
+{%- assign layout_name = "core" -%}
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="_{{ page.layout | default: 'html' }}_layout">
+<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no_js _{{ layout_name }}_layout">
   <!-- path   : {{ page.path }} -->
   <!-- layout : dove/_layouts/{{ page.layout }} -->
   <head>
@@ -12,25 +13,47 @@
     <style>
       .isvg svg { width:1em;height:1em }
     </style>
-    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/core/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}" />
+    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/{{ layout_name }}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}" />
     {% include layout_head.html %}
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
   </head>
   <body>
-    <div class="_views"><div class="_view">
-      <header class="_header"><div class="_layout">
-      {% if page.url == '' or page.url == '/' %}{% else -%}
-        {% if page.show_title != 'hide' and site.show_title != 'hide' and site.title and site.title != page.title -%}
-          <a href="{{ site.home_url }}/">{{ site.title }}</a>
-        {%- endif %}
-      {%- endif %}
-      </div></header>
-      <nav class="_nav"><div class="_layout"></div></nav>
-      <main class="_main"><article class="_article _layout">
-      {{ content }}
-      </article></main>
-      <footer class="_footer"><div class="_layout"></div></footer>
-    </div></div>
-    {% include layout_body.html %}
+    <div class="_views">
+      <div class="_view">
+        <div class="_layout _1200">
+          <header class="_header">
+            <div class="_layout">
+              {% capture header -%}{% include header.md %}{%- endcapture %}
+              {{ header | markdownify }}
+            </div>
+          </header>
+          <nav class="_nav">
+            <div class="_layout">
+              {% capture nav -%}{% include nav.md %}{%- endcapture %}
+              {{ nav | markdownify }}
+            </div>
+          </nav>
+          <main class="_main">
+            <article class="_article">
+              <div class="_layout">
+                {{ content }}
+              </div>
+            </article>
+          </main>
+          <footer class="_footer">
+            <div class="_layout">
+              {% capture footer -%}{% include footer.md %}{%- endcapture %}
+              {{ footer | markdownify }}
+            </div>
+          </footer>
+        </div>{% comment %} end of _layout {% endcomment %}
+      </div>{% comment %} end of _view {% endcomment %}
+      <div class="_view">
+        <div class="_layout _1200">
+          {% include theme_switch.html %}
+        </div>
+      </div>
+      {% include layout_body.html %}
+    </div>{% comment %} end of _views {% endcomment %}
   </body>
 </html>

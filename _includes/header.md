@@ -1,7 +1,8 @@
-> `// header.md`
-
-{%- comment %}
-<nav id="_header-bar"><div class="_flex"><div class="_flex-main">
-  <div class="_logo"><a href="{{ site.home_url }}/">{{ site.title | default: '(untitled)' }}</a></div>
-</div></div></nav>
-{%- endcomment %}
+{%- include ui.html %}
+{%- if page.use_header == false %}
+<style>._header{display:none !important}</style>
+{%- elsif site.github.repository_nwo == 'techie-joe/dove' %}
+<h1>{%- include dove/logo.html %}</h1>
+{%- else -%}
+<h1>{%- include logo.html %}</h1>
+{%- endif %}
