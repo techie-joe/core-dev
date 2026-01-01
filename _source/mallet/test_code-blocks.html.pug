@@ -2,9 +2,10 @@ extends _html
 block append vars
   - path   = 'test_code-blocks.html'
   - title  = `Test Code Blocks`
-block content
-  nav.mv: +test_nav(sub)
+block append nav
+  nav.mv: +test_nav(layout_name)
   +thin_hr
+block content
   +include('code-blocks','test_code-blocks.md')
 block footer
   //- no site footer
