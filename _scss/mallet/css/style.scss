@@ -1,12 +1,38 @@
-@use "color" as *;
 @use "sass:color";
-@use "helper";
-@use "dove";
+@use "color" as *;
 @use "_mallet";
+@use "dove";
+@use "helper";
 // ---------------------------------------------------------------
-// fixes
+._1200 { max-width:1200px; @extend .mc; position:relative }
+._960  { max-width:960px;  @extend .mc; position:relative }
+// ---------------------------------------------------------------
+$bg : #fff;
+$text_color  : #222;
+$grey_border : #ccc;
+$code_bg : rgba(#ddd,.7);
+$code_tc : #444;
+$pre_bg  : #f4f4f4;
+// ---------------------------------------------------------------
+%std_bg { background-color:$bg }
+%std_border { border-color:$grey_border }
+%std_margin { margin:16px 0 }
+// ---------------------------------------------------------------
 body { overflow:auto }
-._app { overflow:initial;position:initial }
+._app { overflow:initial; position:initial }
+._layout { padding:0; margin:0 auto }
+._footer ._layout { padding:0; font-size:1em }
+/*
+body{color:#444}._dark body{color:#bbb}
+h1,h2,h3,h4,h5,h6{color:#000}
+._dark h1,._dark h2,._dark h3,._dark h4,._dark h5,._dark h6{color:#fff}
+#layout{margin-bottom:30px}
+#_header-bar h1 { display:inline-block; margin:0; border:0; padding:0; font-size:1.2rem; line-height:1.5rem; }
+#_title,#_header-bar #_title a{color:#888}
+#_header-bar #_title a:hover{color: #4660e1}
+._hero-title{font-size:3em;font-weight:bold;border:0;padding:0}
+#_credit { font-size: .83rem; position: absolute; position: fixed; bottom: 6px; right: 6px; left: auto; top: auto; padding: .2rem .4rem; box-shadow: 0 0 4px #0007; border-radius: 5px; color: #fff; text-decoration: none; background: #000; }
+
 code { vertical-align:text-bottom }
 details { margin:.5rem 0 }
 dt { margin-block-start:1rem }
@@ -71,3 +97,4 @@ article {
   ._copyright_text,
   ._credit_link { background-color:#222 !important }
 }
+*/
