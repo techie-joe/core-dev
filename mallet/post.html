@@ -6,9 +6,9 @@ title: Post
 description: Post template.
 ---
 <!DOCTYPE html>
-<html class="_core_layout no_js" lang="en-US">
-<!-- path   : core/post.html -->
-<!-- layout : _source/_layouts/core -->
+<html class="_mallet_layout no_js" lang="en-US">
+<!-- path   : mallet/post.html -->
+<!-- layout : _source/_layouts/mallet -->
   <head>
     <meta charset="utf-8"/>
 {% seo %}
@@ -17,17 +17,17 @@ description: Post template.
     <meta id="_color_scheme" name="color-scheme" content="light dark"/>
     <meta id="_theme_color" name="theme-color" content="#222"/>
     <style>.isvg svg { width:1em;height:1em }</style>
-    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/core/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
+    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/mallet/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
 {% include layout_head.html %}
 <!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="_views">
-      <div class="_view">
-        <div class="_layout">
+      <div class="_view _app __fadein">
+        <div class="_layout container-lg px-3 my-5 markdown-body">
           <header class="_header">
             <div class="_layout">
-              <h1>{% include dove/logo.html name="core" %}</h1>
+              <h1>{% include dove/logo.html name="mallet" %}</h1>
             </div>
           </header>
           <nav class="_nav">
@@ -35,7 +35,7 @@ description: Post template.
               <div class="mv"><b>Html</b><i class="_icon"><i class="isvg">
                     <svg viewBox="0 0 24 24">
                       <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                    </svg></i></i><a href="/dove/core/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><b>Post</b><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/core/404.html">404</a>
+                    </svg></i></i><a href="/dove/mallet/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><b>Post</b><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/404.html">404</a>
               </div>
               <hr class="thin"/>
             </div>
@@ -59,7 +59,7 @@ description: Post template.
               <hr class="thin"/>
               <p class="text-right text-grey"><small>
                   This site is open source.
-                  <a href="https://github.com/techie-joe/dove/edit/main/_source/core/post.html.pug">Improve this page</a>.</small></p>
+                  <a href="https://github.com/techie-joe/dove/edit/main/_source/mallet/post.html.pug">Improve this page</a>.</small></p>
             </div>
           </footer>
         </div>

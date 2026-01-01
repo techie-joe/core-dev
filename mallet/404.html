@@ -1,9 +1,9 @@
 ---
+index: false
 layout: html
 use_pug: true
 title: Not found
-description: The content you are looking for is not here.
-index: false
+description: We can't find what you are looking for.
 ---
 <!DOCTYPE html>
 <html class="_mallet_layout no_js" lang="en-US">
@@ -26,20 +26,24 @@ index: false
       <div class="_view _app __fadein">
         <div class="_layout container-lg px-3 my-5 markdown-body">
           <header class="_header">
-            <div class="_layout">{%- capture header %}{%- include header.md %}{%- endcapture %}
-{{ header | markdownify }}
+            <div class="_layout">
+              <h1>{% include dove/logo.html name="mallet" %}</h1>
             </div>
           </header>
           <nav class="_nav">
             <div class="_layout">
-              <div><a href="/dove/mallet/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><b>404</b>
+              <div class="mv"><b>Html</b><i class="_icon"><i class="isvg">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                    </svg></i></i><a href="/dove/mallet/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><b>404</b>
               </div>
+              <hr class="thin"/>
             </div>
           </nav>
           <main class="_main">
             <article class="_article">
               <div class="_layout">
-{%- include 404.md %}
+{%- include 404.md title="Oops! Nothing found" %}
               </div>
             </article>
           </main>

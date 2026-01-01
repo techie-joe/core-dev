@@ -1,0 +1,11 @@
+extends _html
+block append vars
+  - path   = 'test_colors.html'
+  - title  = `Test Colors`
+block content
+  nav.mv: +test_nav(sub)
+  +thin_hr
+  +include('test','test_colors.md')
+block footer
+  //- no site footer
+  +_edit_link

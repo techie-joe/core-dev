@@ -1,13 +1,15 @@
 extends /_source/_layouts/core
 block append update_vars
-  - sub  = 'core'
-  - path = [sub,path].join('/')
+  - path = [layout_name,path].join('/')
 block prepend front_matter
   +l| index: false
 block header
-  h1|{% include dove/logo.html name="!{sub}" %}
+  h1|{% include dove/logo.html name="!{layout_name}" %}
 block nav
-  p: +site_nav(sub)
+  div.mv
+    b Html
+    +angle
+    +site_nav(layout_name)
   +thin_hr
 block footer
   +thin_hr
