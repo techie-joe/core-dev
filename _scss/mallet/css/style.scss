@@ -27,6 +27,7 @@ u,a,abbr,abbr[title] {
   text-decoration-thickness: initial;
   text-decoration-skip-ink: initial;
 }
+sub,sup { margin:0;font-size:.8em }
 dt { margin-block-start:1rem }
 dd { margin-block-end:1rem }
 details { 
@@ -41,7 +42,10 @@ article {
 }
 .markdown-body {
   & { margin-top:0 !important } // to align with top bar
-  blockquote { border-left:.5rem solid;box-shadow:none }
+  blockquote {
+    border-left:.5rem solid $grey_border;
+    box-shadow:none;
+  }
   summary { margin:0 }
   ._layout { padding:0;margin:0 auto }
   table {
@@ -105,10 +109,19 @@ pre.highlight { @extend .scrollable; }
 ._copyright_text,
 ._credit_link { background-color:#ddd !important }
 // ---------------------------------------------------------------
+$dark_bg : color.invert($bg);
+$dark_text_color : color.invert($text_color);
+$dark_code_bg : rgba(#333,.7);
+$dark_code_tc : #bbb;
+$dark_pre_bg  : #171717;
+// ---------------------------------------------------------------
+%dark_std_bg { background-color:color.invert($bg) }
+%dark_std_border { border-color:color.invert($grey_border) }
 ._dark {
   body{color:#bbb}
   h1,h2,h3,h4,h5,h6,.hero { color:#fff }
   .markdown-body {
+    blockquote { @extend %dark_std_border; }
     table {
       thead tr,
       tr:nth-child(2n) { background-color: #1b1b1b }
