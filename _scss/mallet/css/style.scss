@@ -16,85 +16,104 @@ $pre_bg  : #f4f4f4;
 // ---------------------------------------------------------------
 %std_bg { background-color:$bg }
 %std_border { border-color:$grey_border }
-%std_margin { margin:16px 0 }
+%std_margin { margin:.5rem 0 }
 // ---------------------------------------------------------------
-body { overflow:auto }
-._app { overflow:initial; position:initial }
-._layout { padding:0; margin:0 auto }
-._footer ._layout { padding:0; font-size:1em }
-/*
-body{color:#444}._dark body{color:#bbb}
-h1,h2,h3,h4,h5,h6{color:#000}
-._dark h1,._dark h2,._dark h3,._dark h4,._dark h5,._dark h6{color:#fff}
-#layout{margin-bottom:30px}
-#_header-bar h1 { display:inline-block; margin:0; border:0; padding:0; font-size:1.2rem; line-height:1.5rem; }
-#_title,#_header-bar #_title a{color:#888}
-#_header-bar #_title a:hover{color: #4660e1}
-._hero-title{font-size:3em;font-weight:bold;border:0;padding:0}
-#_credit { font-size: .83rem; position: absolute; position: fixed; bottom: 6px; right: 6px; left: auto; top: auto; padding: .2rem .4rem; box-shadow: 0 0 4px #0007; border-radius: 5px; color: #fff; text-decoration: none; background: #000; }
-
-code { vertical-align:text-bottom }
-details { margin:.5rem 0 }
+body { @extend .scrollable;color:#444 }
+hr { border-width:2px; &.thin { border-width:1px } }
+h1,h2,h3,h4,h5,h6,.hero { color:#000 }
+u,a,abbr,abbr[title] {
+  text-underline-offset:.2em;
+  text-underline-position: initial;
+  text-decoration-thickness: initial;
+  text-decoration-skip-ink: initial;
+}
 dt { margin-block-start:1rem }
 dd { margin-block-end:1rem }
-.header { padding-top:1rem }
-._logo {
-  font-weight: 600;
-  display: inline-block;
-  margin: 0;
-  border: 0;
-  padding: 0;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-  a {
-    text-decoration:none !important;
-    display:inline-block;
-    padding:13px 1rem; // 13px to match theme_switch
-    margin:0 -1rem;
-    color:#888;
+details { 
+  & { @extend %std_margin; }
+  summary {
+    @extend .pointer;
+    p { @extend .inline; }
   }
-  a:hover { color:$text-blue }
 }
-.hero { color:#000;line-height:1.1 }
-._nav { padding:1rem 0;border-bottom: 2px solid rgba(128, 128, 128, .4); }
-.text-yellow { color:$text-yellow !important }
 article {
-  input[type=checkbox].task-list-item-checkbox {
-    height:1.4em;
-    width:1.4em;
-  }
+  img { border-radius:5px }
 }
 .markdown-body {
-  h1 { margin-top:1.1em }
-  h2 { margin-top:1.2em }
-  h3 { margin-top:1.3em }
-  h4 { margin-top:1.4em }
-  h5 { margin-top:1.5em }
-  h6 { margin-top:1.6em }
+  & { margin-top:0 !important } // to align with top bar
   blockquote { border-left:.5rem solid;box-shadow:none }
   summary { margin:0 }
+  ._layout { padding:0;margin:0 auto }
   table {
-    &.borderless {
-      tr { background:none !important }
+    thead tr,
+    tr:nth-child(2n) { background-color:#e5e5e5 }
+    &.borderless { tr { background:none !important } }
+  }
+}
+._app { overflow:initial;position:initial }
+._header {
+  h1 { margin-top:0;border:0 } // logo holder
+  ._logo {
+    & { font-size:1.5rem;line-height:1.5 }
+    a {
+      @extend .block;
+      padding:.25rem;
+      margin:-.25rem;
     }
   }
 }
-.footnotes {border:none}
-._footer {margin-top:3rem;margin-bottom:6rem}
-._theme_switch { font-size:1.5em }
+._theme_switch {
+  a { font-size:1.25em }
+  a,
+  a:focus { @extend .inherit_color; }
+  a:hover { @extend .text-blue; }
+}
+.itext,
+.isvg { line-height:.8 }
+.box { @extend .ph; }
+div.highlight { overflow:hidden }
+pre.highlight { @extend .scrollable; }
+.highlight {
+  .mh  { margin:0 }
+  .hll { background-color:rgba($text-yellow,.15); }
+}
+.rouge-table {
+  td.code,
+  td.gutter { vertical-align:top }
+}
+.button {
+  &.primary {
+    @extend .bg-blue;
+    @extend .border-blue;
+    @extend .text-white;
+  }
+  &.secondary {
+    @extend .bg-slategrey;
+    @extend .border-slategrey;
+    @extend .text-white;
+  }
+}
+.footnotes {
+  & { @extend .ba0; }
+  ul,ol { list-style-position:inside }
+  li>p { @extend .inline; }
+}
+._footer {
+  & { margin-bottom: 4rem !important }
+  ._layout { padding:0; font-size:1em }
+}
 ._copyright_text,
 ._credit_link { background-color:#ddd !important }
-.border-gray-light { border-color: rgba(128, 128, 128, 0) !important }
-//---------------------------------------------------------------
+// ---------------------------------------------------------------
 ._dark {
-  .hero { color:#fff }
+  body{color:#bbb}
+  h1,h2,h3,h4,h5,h6,.hero { color:#fff }
   .markdown-body {
     table {
       thead tr,
-      tr:nth-child(2n) { background-color: rgba(#000,.1) }
+      tr:nth-child(2n) { background-color: #1b1b1b }
     }
   }
   ._copyright_text,
   ._credit_link { background-color:#222 !important }
 }
-*/

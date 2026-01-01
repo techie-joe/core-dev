@@ -50,18 +50,21 @@ mixin include_relative(id='',path='',args="",filter=" | markdownify")
 
 //- ==============================================================
 
+mixin main_style
+  link#_style(rel="stylesheet" href!=`{{ site.base_url }}/assets/${layout_name}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
+
+mixin hide_header
+  style| ._header{display:none !important}
+
+mixin hide_nav
+  style| ._nav{display:none !important}
+
+mixin hide_footer
+  style| ._footerv{display:none !important}
+
 mixin _edit_link
   +thin_hr
   p.text-right.text-grey: small: +edit_link(path)
-
-mixin sna(ref)
-  if ref == path || ref+'index.html' == path
-    b: block
-  else
-    +a([base_url,ref].join('/')): block
-
-mixin main_style
-  link#_style(rel="stylesheet" href!=`{{ site.base_url }}/assets/${layout_name}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
 
 mixin main_view
   header._header: ._layout
@@ -77,6 +80,12 @@ mixin main_view
   footer._footer: ._layout
     block footer
       +include('footer','footer.md')
+
+mixin sna(ref)
+  if ref == path || ref+'index.html' == path
+    b: block
+  else
+    +a([base_url,ref].join('/')): block
 
 mixin site_nav(sub)
   +sna(sub+"/preview.html")| Preview

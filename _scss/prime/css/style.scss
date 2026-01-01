@@ -19,7 +19,7 @@ $pre_bg  : #f4f4f4;
 %std_margin { margin:16px 0 }
 // ---------------------------------------------------------------
 body { @extend .scroll_y; }
-u,abbr { text-underline-offset:.2em }
+u,a,abbr { text-underline-offset:.2em }
 details { 
   & { @extend %std_margin; }
   summary {
@@ -37,6 +37,7 @@ article {
     background:0;
     border-width:0;
     border-bottom:.25em solid $grey_border;
+    &.thin { border-bottom-width:1px }
   }
   h1,h2 { @extend %std_border; }
   h5,h6 { color:inherit }
@@ -55,9 +56,31 @@ article {
   .highlight,pre,
   .highlight pre { border-radius:5px;background-color:$pre_bg }
   .task-list { padding-left:.25em; ul,ol { padding-left:2em } }
-  ._header h1 { margin-top:.67em !important } // the logo holder
   ._footer { margin-bottom:4rem !important }
 }
+._header {
+  h1 { margin-top:0 } // logo holder
+  ._logo {
+    & { font-size:1.5rem;line-height:1.5 }
+    a {
+      @extend .block;
+      @extend .inherit_color;
+      @extend .no_u;
+      padding:.25rem;
+      margin:-.25rem;
+    }
+    a:hover { @extend .text-blue; }
+  }
+}
+._theme_switch {
+  a { font-size:1.5em }
+  a,
+  a:focus { @extend .inherit_color; }
+  a:hover { @extend .text-blue; }
+}
+.itext,
+.isvg { line-height:.8 }
+.box { border-radius:5px;@extend %std_border;@extend .ph; }
 div.highlight { overflow:hidden }
 pre.highlight { @extend .scrollable; }
 .highlight {
@@ -81,28 +104,9 @@ pre.highlight { @extend .scrollable; }
   }
 }
 .footnotes {
-  ul,ol { list-style-position:inside;padding-left:0; }
+  ul,ol { list-style-position:inside;padding-left:0 }
   li>p { @extend .inline; }
 }
-hr.thin {
-  height:0;
-  border-bottom:1px solid $grey_border;
-}
-._header {
-  ._logo {
-    a { font-size:1.5rem;@extend .inherit_color;@extend .no_u; }
-    a:hover { @extend .text-blue; }
-  }
-}
-.hero { line-height:1.15 }
-.box { border-radius:5px;@extend %std_border;@extend .ph; }
-._theme_switch {
-  a,
-  a:focus { font-size:1.5em;@extend .inherit_color; }
-  a:hover { @extend .text-blue; }
-}
-.itext,
-.isvg { line-height:.8 }
 // ---------------------------------------------------------------
 $dark_bg : color.invert($bg);
 $dark_text_color : color.invert($text_color);

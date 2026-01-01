@@ -40,8 +40,8 @@
 .hero {
   @extend .block;
   font-size:2.5em;
-  margin-block-start:.67em;
-  margin-block-end:.67em;
+  margin-block-start:.67em !important;
+  margin-block-end:.67em !important;
   font-weight:bold;
   line-height:1;
 }
