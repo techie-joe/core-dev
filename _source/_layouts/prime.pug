@@ -1,62 +1,14 @@
-include _dove
+extends html
 block vars
   -
-    layout = 'prime'
-    htmlClass = ['_prime_layout']
+    layout_name = 'prime'
+    htmlClass = [`_${layout_name}_layout`,'no_js']
     bodyClass = []
-    mainClass = []
-block update_vars
-+front_matter
-  block front_matter
-    +l
-    .
-      layout: html
-      use_pug: true
-      title: !{title}
-      description: !{description}
-block html
-  doctype html
-  html(lang=lang||'en-US' class=htmlClass.join(' '))
-    +l|<!-- path   : !{path} -->
-    +l|<!-- layout : dove/_source/_layouts/!{layout} -->
-    head
-      meta(charset=charset||'utf-8')/
-      +l|{% seo %}
-      meta(name="viewport" content="width=device-width,initial-scale=1")/
-      meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")/
-      meta#_color_scheme(name="color-scheme" content=color_scheme||'')/
-      meta#_theme_color(name="theme-color" content=theme_color||'')/
-      style.
-        .isvg svg { width:1em;height:1em }
-      block style
-        link#_style(rel="stylesheet" href!=`{{ site.base_url }}/assets/${layout}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
-      +l|{% include layout_head.html %}
-      +l|<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
-    body
-      ._views
-        ._view: ._layout._1200
-          .container-lg.px-3.my-5.markdown-body
-            header._header: ._layout
-              block header
-                h1|{% include logo.html %}
-                //- p: code // header
-            nav._nav: ._layout
-              block nav
-                +capture('nav')|{% include nav.md %}
-                +l|{{ nav | markdownify }}
-                //- p: code // nav
-            main._main: article._article: ._layout
-              block content
-                h1 !{title}
-                p: code // content for : !{title}
-            footer._footer.footer: ._layout
-              block footer
-                +capture('footer')|{% include footer.md %}
-                +l|{{ footer | markdownify }}
-                +thin_hr
-                p.text-right.text-gray: small: +edit_link(path)
-                //- p: code // footer
-          //- .container
-        ._view: ._layout._1200: +l|{% include theme_switch.html %}
-        +l|{% include layout_body.html %}
-      //- ._views
+block style
+  +main_style
+block body
+  ._views
+    ._view: ._layout.container-lg.px-3.my-5.markdown-body: +main_view
+    ._view: ._layout: +l|{% include theme_switch.html %}
+    +l|{% include layout_body.html %}
+  //- ._views

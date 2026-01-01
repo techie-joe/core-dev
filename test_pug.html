@@ -7,9 +7,9 @@ title: Test Pug
 description: Testing something here.
 ---
 <!DOCTYPE html>
-<html class="_prime_layout" lang="en-US">
+<html class="_prime_layout no_js" lang="en-US">
 <!-- path   : test_pug.html -->
-<!-- layout : dove/_source/_layouts/prime -->
+<!-- layout : _source/_layouts/prime -->
   <head>
     <meta charset="utf-8"/>
 {% seo %}
@@ -25,47 +25,41 @@ description: Testing something here.
   <body>
     <div class="_views">
       <div class="_view">
-        <div class="_layout _1200">
-          <div class="container-lg px-3 my-5 markdown-body">
-            <header class="_header">
-              <div class="_layout">
-                <h1>{%- include dove/logo.html %}</h1>
-              </div>
-            </header>
-            <nav class="_nav">
-              <div class="_layout">{%- capture nav %}{%- include dove/nav.md %}{%- endcapture %}
+        <div class="_layout container-lg px-3 my-5 markdown-body">
+          <header class="_header">
+            <div class="_layout">{%- capture header %}{%- include header.md %}{%- endcapture %}
+{{ header | markdownify }}
+            </div>
+          </header>
+          <nav class="_nav">
+            <div class="_layout">{%- capture nav %}{%- include nav.md %}{%- endcapture %}
 {{ nav | markdownify }}
-              </div>
-            </nav>
-            <main class="_main">
-              <article class="_article">
-                <div class="_layout">
-                  <nav>{%- capture nav_test %}{%- include dove/nav_test.md %}{%- endcapture %}
+            </div>
+          </nav>
+          <main class="_main">
+            <article class="_article">
+              <div class="_layout">
+                <nav>{%- capture nav_test %}{%- include dove/nav_test.md %}{%- endcapture %}
 {{ nav_test | markdownify }}
-                  </nav>
-                  <hr class="thin"/>
-                  {%-
-                    include 404.md
-                    title = "Sorry"
-                    description = "There is nothing to show here."
-                  %}
-                </div>
-              </article>
-            </main>
-            <footer class="_footer footer">
-              <div class="_layout">{%- capture footer %}{%- include dove/footer.md %}{%- endcapture %}
-{{ footer | markdownify }}
+                </nav>
                 <hr class="thin"/>
-                <p class="text-right text-gray"><small>
-                    This site is open source.
-                    <a href="https://github.com/techie-joe/dove/edit/main/_source/test_pug.html.pug">Improve this page</a>.</small></p>
+                {%-
+                  include 404.md
+                  title = "Sorry"
+                  description = "There is nothing to show here."
+                %}
               </div>
-            </footer>
-          </div>
+            </article>
+          </main>
+          <footer class="_footer">
+            <div class="_layout">{%- capture footer %}{%- include footer.md %}{%- endcapture %}
+{{ footer | markdownify }}
+            </div>
+          </footer>
         </div>
       </div>
       <div class="_view">
-        <div class="_layout _1200">
+        <div class="_layout">
 {% include theme_switch.html %}
         </div>
       </div>

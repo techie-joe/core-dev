@@ -1,7 +1,7 @@
 {%- include ui.html %}
 
 **Test**
-{{ angle }}
+{{- angle -}}
 {% if page.path == 'test_md.md' -%}
 **Markdown**{%- else %}[Markdown]({{ site.base_url }}/test_md)
 {%- endif %}

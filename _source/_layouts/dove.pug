@@ -1,9 +1,0 @@
-extends prime
-block header
-  h1|{%- include dove/logo.html %}
-block nav
-  +include('nav','dove/nav.md')
-block footer
-  +include('footer','dove/footer.md')
-  +thin_hr
-  p.text-right.text-gray: small: +edit_link(path)

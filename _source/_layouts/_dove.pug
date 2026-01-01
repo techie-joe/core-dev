@@ -50,26 +50,29 @@ mixin include_relative(id='',path='',args="",filter=" | markdownify")
 
 //- ==============================================================
 
-mixin logo
-  ._logo: a(href=home_url+'/') #{site_title}
+mixin main_style
+  link#_style(rel="stylesheet" href!=`{{ site.base_url }}/assets/${layout_name}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
 
-mixin nav_common
-  a(href="?back" onclick=onclick(js.goBack) title="Back to previous page").button 👈 Back
-  a(href=home_url+'/' title="Go to Home Page").button Home
-  a(href=home_url+'/pages' title="Go to Pages").button Pages
-  a(href=home_url+'/posts' title="Go to Posts").button Posts
+mixin main_view
+  header._header: ._layout
+    block header
+      +include('header','header.md')
+  nav._nav: ._layout
+    block nav
+      +include('nav','nav.md')
+  main._main: article._article: ._layout
+    block content
+      h1 !{title}
+      p: code // !{title} (content)
+  footer._footer: ._layout
+    block footer
+      +include('footer','footer.md')
 
 mixin sna(ref)
   if ref == path || ref+'index.html' == path
     b: block
   else
     +a([base_url,ref].join('/')): block
-
-//- ==============================================================
-
-mixin _edit_link
-  +thin_hr
-  p.text-right.text-grey: small: +edit_link(path)
 
 mixin site_nav(sub)
   +sna(sub+"/preview.html")| Preview
@@ -88,3 +91,7 @@ mixin test_nav(sub)
   +sna(sub+"/test_colors.html")| Colors
   +bull
   +sna(sub+"/test_code-blocks.html")| Code blocks
+
+mixin _edit_link
+  +thin_hr
+  p.text-right.text-grey: small: +edit_link(path)

@@ -111,17 +111,17 @@ For more information, see [the Jekyll variables documentation](https://jekyllrb.
 
 To run the template locally:
 
-1. Clone down the template's repository (`git clone https://github.com/techie-joe/dove`).
+1. Clone down the template's repository : `git clone https://github.com/techie-joe/dove`.
 2. `cd` into the template's directory.
-3. Run `script/bootstrap` to install the necessary dependencies.
-4. Run `script/serve` to start the preview server.
+3. Run `script/bootstrap` to install necessary dependencies.
+4. Run `script/serve` to start the server.
 5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the template.
 
 ## Running tests
 
 The template contains a minimal test suite, to ensure a site with the template would build successfully.
 1. You'll need to run `script/bootstrap` (at least once) before the test script will work, if you haven't done it already.
-2. To run the tests, simply run `script/cibuild`.
+2. Run `script/cibuild` to start the test.
 
 ## Contributing
 

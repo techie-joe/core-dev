@@ -6,9 +6,9 @@ title: Prime
 description: Simple theme for your site.
 ---
 <!DOCTYPE html>
-<html class="_prime_layout" lang="en-US">
+<html class="_prime_layout no_js" lang="en-US">
 <!-- path   : prime/index.html -->
-<!-- layout : dove/_source/_layouts/prime -->
+<!-- layout : _source/_layouts/prime -->
   <head>
     <meta charset="utf-8"/>
 {% seo %}
@@ -24,64 +24,62 @@ description: Simple theme for your site.
   <body>
     <div class="_views">
       <div class="_view">
-        <div class="_layout _1200">
-          <div class="container-lg px-3 my-5 markdown-body">
-            <header class="_header">
+        <div class="_layout container-lg px-3 my-5 markdown-body">
+          <header class="_header">
+            <div class="_layout">
+              <h1>{% include dove/logo.html %}</h1>
+            </div>
+          </header>
+          <nav class="_nav">
+            <div class="_layout">
+            </div>
+          </nav>
+          <main class="_main">
+            <article class="_article">
               <div class="_layout">
-                <h1>{% include dove/logo.html %}</h1>
-              </div>
-            </header>
-            <nav class="_nav">
-              <div class="_layout">
-              </div>
-            </nav>
-            <main class="_main">
-              <article class="_article">
-                <div class="_layout">
-                  <style>
-                    .hero_block { padding:1rem 2rem }
-                    .hero_block .hero-title { margin-top:1rem }
-                    .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
-                    .hero_block .hero-hr { margin-top:45px }
-                  </style>
-                  <div class="hero_block box">
-                    <h1 class="hero-title">🦅 Prime</h1>
-                    <p class="hero-description">Simple theme for your site.</p>
-                  </div>
-                  <hr class="thin"/>
-                  <nav class="mv"><b><b>Prime</b></b><i class="_icon"><i class="isvg">
-                        <svg viewBox="0 0 24 24">
-                          <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                        </svg></i></i><a href="/dove/prime/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/404.html">404</a>
-                  </nav>
-                  <hr class="thin"/>
-                  <nav class="mv"><b>Markdown</b><i class="_icon"><i class="isvg">
-                        <svg viewBox="0 0 24 24">
-                          <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                        </svg></i></i><a href="/dove/prime/md/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/md/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/md/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/md/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/md/404.html">404</a>
-                  </nav>
-                  <hr class="thin"/>
-                  <nav class="mv"><b>Test</b><i class="_icon"><i class="isvg">
-                        <svg viewBox="0 0 24 24">
-                          <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                        </svg></i></i><a href="/dove/prime/test_colors.html">Colors</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/test_code-blocks.html">Code blocks</a>
-                  </nav>
+                <style>
+                  .hero_block { padding:1rem 2rem }
+                  .hero_block .hero-title { margin-top:1rem }
+                  .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
+                  .hero_block .hero-hr { margin-top:45px }
+                </style>
+                <div class="hero_block box">
+                  <h1 class="hero-title">🦅 Prime</h1>
+                  <p class="hero-description">Simple theme for your site.</p>
                 </div>
-              </article>
-            </main>
-            <footer class="_footer footer">
-              <div class="_layout">
                 <hr class="thin"/>
-                <p class="text-right text-grey"><small>
-                    This site is open source.
-                    <a href="https://github.com/techie-joe/dove/edit/main/_source/prime/index.html.pug">Improve this page</a>.</small></p>
+                <nav class="mv"><b>Html</b><i class="_icon"><i class="isvg">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                      </svg></i></i><a href="/dove/undefined/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/undefined/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/undefined/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/undefined/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/undefined/404.html">404</a>
+                </nav>
+                <hr class="thin"/>
+                <nav class="mv"><b>Markdown</b><i class="_icon"><i class="isvg">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                      </svg></i></i><a href="/dove/undefined/md/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/undefined/md/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/undefined/md/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/undefined/md/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/undefined/md/404.html">404</a>
+                </nav>
+                <hr class="thin"/>
+                <nav class="mv"><b>Test</b><i class="_icon"><i class="isvg">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                      </svg></i></i><a href="/dove/undefined/test_colors.html">Colors</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/undefined/test_code-blocks.html">Code blocks</a>
+                </nav>
               </div>
-            </footer>
-          </div>
+            </article>
+          </main>
+          <footer class="_footer">
+            <div class="_layout">
+              <hr class="thin"/>
+              <p class="text-right text-grey"><small>
+                  This site is open source.
+                  <a href="https://github.com/techie-joe/dove/edit/main/_source/prime/index.html.pug">Improve this page</a>.</small></p>
+            </div>
+          </footer>
         </div>
       </div>
       <div class="_view">
-        <div class="_layout _1200">
+        <div class="_layout">
 {% include theme_switch.html %}
         </div>
       </div>

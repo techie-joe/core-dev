@@ -1,11 +1,11 @@
 ```yml
 # _config.pug
 version      : 0.0.4
-revision     : 2512.04.2050
+revision     : 2512.04.3208
 title        : Dove
 description  : A theme development project.
 author       : Techie Joe
-year         : 2025
+year         : 2026
 base_url     : /dove
 home_url     : /dove
 

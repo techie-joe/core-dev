@@ -1,4 +1,5 @@
 {%- include ui.html %}
+
 {%- assign _sub = include.sub | default: '' %}
 {%- assign _prev = _sub | append: '/md/preview' %}
 {%- assign _home = _sub | append: '/md/home' %}
@@ -37,7 +38,4 @@
 
 {% comment %}
 **[{{ _sub | capitalize }}]({{ site.base_url }}/{{ _sub }})**
-{{- angle -}}
-**md**
-{{- angle -}}
 {% endcomment %}

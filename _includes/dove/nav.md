@@ -23,5 +23,6 @@
 {{ thin_hr }}
 
 {%- endcase %}
+
 {%- comment %}
 {%- endcomment %}

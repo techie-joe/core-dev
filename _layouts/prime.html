@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no_js _{{ layout_name }}_layout">
   <!-- path   : {{ page.path }} -->
-  <!-- layout : dove/_layouts/{{ page.layout }} -->
+  <!-- layout : _layouts/{{ page.layout }} -->
   <head>
     <meta charset="{{ site.encoding | default: 'utf-8' }}" />
     {% seo %}
@@ -49,7 +49,7 @@
         </div>{% comment %} end of _layout {% endcomment %}
       </div>{% comment %} end of _view {% endcomment %}
       <div class="_view">
-        <div class="_layout _1200">
+        <div class="_layout">
           {% include theme_switch.html %}
         </div>
       </div>

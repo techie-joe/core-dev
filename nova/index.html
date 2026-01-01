@@ -6,9 +6,9 @@ description: A theme development project.
 index: false
 ---
 <!DOCTYPE html>
-<html class="_nova_layout" lang="en-US">
+<html class="_nova_layout no_js" lang="en-US">
 <!-- path   : nova/index.html -->
-<!-- layout : dove/_source/_layouts/nova -->
+<!-- layout : _source/_layouts/nova -->
   <head>
     <meta charset="utf-8"/>
 {% seo %}
@@ -24,60 +24,62 @@ index: false
   <body>
     <div class="_views">
       <div class="_view">
-        <div class="_layoutx">
+        <div class="_layout">
           <header class="_header">
-            <div class="_layoutx">
-              <div class="_logo"><a href="/dove/">Dove</a></div>
+            <div class="_layout">{%- capture header %}{%- include header.md %}{%- endcapture %}
+{{ header | markdownify }}
             </div>
           </header>
           <nav class="_nav">
-            <div class="_layoutx _960">
+            <div class="_layout">
               <p><a href="/dove/nova/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/nova/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/nova/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/nova/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/nova/404.html">404</a>
               </p>
             </div>
           </nav>
           <main class="_main">
-            <article class="_article _layoutx _960">
-              <style>
-                .hero-box-2 {
-                  margin:.5rem 0;
-                  padding: 1px 2rem 3rem;
-                  background: linear-gradient(45deg, #37b4aa, #b05eef, transparent);
-                  color: #fff;
-                }
-                .hero-box-2 hr { border-color: #cdb8e3 }
-                .hero-box-2 .site-description {
-                  margin-left:5.3rem;
-                  font-weight: 300;
-                  font-size: 1.1em;
-                  color: #000;
-                }
-                ._dark .hero-box-2 .site-description { color: #fff }
-              </style>
-              <div class="hero-box-2 box">
-                <h1 id="_hero-title">⚒️ Heroic Title</h1>
-                <p class="site-description">Your site's description or mission statement.</p>
+            <article class="_article">
+              <div class="_layout">
+                <style>
+                  .hero-box-2 {
+                    margin:.5rem 0;
+                    padding: 1px 2rem 3rem;
+                    background: linear-gradient(45deg, #37b4aa, #b05eef, transparent);
+                    color: #fff;
+                  }
+                  .hero-box-2 hr { border-color: #cdb8e3 }
+                  .hero-box-2 .site-description {
+                    margin-left:5.3rem;
+                    font-weight: 300;
+                    font-size: 1.1em;
+                    color: #000;
+                  }
+                  ._dark .hero-box-2 .site-description { color: #fff }
+                </style>
+                <div class="hero-box-2 box">
+                  <h1 id="_hero-title">⚒️ Heroic Title</h1>
+                  <p class="site-description">Your site's description or mission statement.</p>
+                </div>
+                <hr/>
+                <style>
+                  .hero-box-1 { padding:0 }
+                  .hero-box-1 .site-description {
+                    margin-left:5.3rem;
+                    font-weight: 300;
+                    font-size: 1.1em;
+                  }
+                  .hero-box-1 .hero-hr { margin-top:45px }
+                </style>
+                <div class="hero-box-1 box">
+                  <h1 id="_hero-title">⚒️ Heroic Title</h1>
+                  <p class="site-description">Your site's description or mission statement.</p>
+                  <hr class="hero-hr"/>
+                </div>
+                <p><code>// content for : Home</code></p>
               </div>
-              <hr/>
-              <style>
-                .hero-box-1 { padding:0 }
-                .hero-box-1 .site-description {
-                  margin-left:5.3rem;
-                  font-weight: 300;
-                  font-size: 1.1em;
-                }
-                .hero-box-1 .hero-hr { margin-top:45px }
-              </style>
-              <div class="hero-box-1 box">
-                <h1 id="_hero-title">⚒️ Heroic Title</h1>
-                <p class="site-description">Your site's description or mission statement.</p>
-                <hr class="hero-hr"/>
-              </div>
-              <p><code>// content for : Home</code></p>
             </article>
           </main>
           <footer class="_footer">
-            <div class="_layoutx _960">
+            <div class="_layout">
               <hr class="thin"/>
               <p class="text-right text-grey"><small>
                   This site is open source.
@@ -87,7 +89,7 @@ index: false
         </div>
       </div>
       <div class="_view">
-        <div class="_layout _1200">
+        <div class="_layout">
 {% include theme_switch.html %}
         </div>
       </div>
