@@ -16,7 +16,7 @@
 {{ angle }}
 [Repository](https://github.com/techie-joe/dove){: target="_dove_repository" }
 {{- bull -}}
-[Proto](/proto){: target="_proto" }
+[Proto](https://techie-joe.github.io/proto){: target="_proto" }
 
 {{ thin_hr }}
 
