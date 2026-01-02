@@ -4,8 +4,8 @@
 @use "dove";
 @use "helper";
 // ---------------------------------------------------------------
-._1200 { max-width:1200px; @extend .mc; position:relative }
-._960  { max-width:960px;  @extend .mc; position:relative }
+%_1200 { max-width:1200px; @extend .mc; position:relative }
+%_960  { max-width:960px;  @extend .mc; position:relative }
 // ---------------------------------------------------------------
 $bg : #fff;
 $text_color  : #222;
@@ -19,7 +19,7 @@ $pre_bg  : #f4f4f4;
 %std_margin { margin:16px 0 }
 // ---------------------------------------------------------------
 body { @extend .scroll_y; }
-u,a,abbr { text-underline-offset:.2em }
+u,a,abbr { text-underline-offset:.15em }
 details { 
   & { @extend %std_margin; }
   summary {
@@ -34,20 +34,20 @@ article {
   hr {
     @extend %std_margin;
     height:0;
-    background:0;
-    border-width:0;
+    background:none;
     border-bottom:.25em solid $grey_border;
     &.thin { border-bottom-width:1px }
   }
   h1,h2 { @extend %std_border; }
   h5,h6 { color:inherit }
-  pre,code,tt,samp,kbd { @extend .mono; }
-  code,tt,kbd { background-color:$code_bg;color:$code_tc }
-  kbd { padding:.5em;font-size:85% }
   p { @extend %std_margin; }
   blockquote { @extend %std_border;@extend .inherit_color; }
+  pre,code,tt,samp,kbd { @extend .mono; }
+  kbd { padding:.5em }
+  code,tt,kbd { background-color:$code_bg;color:$code_tc }
+  pre { code,tt { @extend .no_bg; } }
+  figure.highlight { @extend .ma0; }
   img { @extend .no_bg;@extend .text-grey; }
-  figure { margin:1em 2em }
   table {
     &, th, td { @extend %std_border; }
     thead tr { background-color:#e7e7e7 }
@@ -80,28 +80,28 @@ article {
 }
 .itext,
 .isvg { line-height:.8 }
-.box { border-radius:5px;@extend %std_border;@extend .ph; }
+.box { border-radius:5px;padding:.5em 1em;@extend %std_border; }
+.button {
+  &.primary {
+    @extend .bg-blue;
+    @extend .text-white;
+    @extend .border-blue;
+  }
+  &.secondary {
+    @extend .bg-slategrey;
+    @extend .text-white;
+    @extend .border-slategrey;
+  }
+}
 div.highlight { overflow:hidden }
 pre.highlight { @extend .scrollable; }
 .highlight {
   .mh  { margin:0 }
-  .hll { background-color:rgba($text-yellow,.15); }
+  .hll { background-color:rgba(#fb0,.15); }
 }
 .rouge-table {
   td.code,
   td.gutter { vertical-align:top }
-}
-.button {
-  &.primary {
-    @extend .bg-blue;
-    @extend .border-blue;
-    @extend .text-white;
-  }
-  &.secondary {
-    @extend .bg-slategrey;
-    @extend .border-slategrey;
-    @extend .text-white;
-  }
 }
 .footnotes {
   ul,ol { list-style-position:inside;padding-left:0 }
@@ -119,12 +119,11 @@ $dark_pre_bg  : #171717;
 ._dark {
   body { color:color.invert($text_color);@extend %dark_std_bg; }
   .markdown-body {
-    pre { code,tt { @extend .no_bg; } }
-    code,tt,kbd { background-color:$dark_code_bg;color:$dark_code_tc }
-    kbd { border-color:$dark_code_bg;box-shadow:inset 0 -1px 0 $dark_code_bg; }
     hr { border-color:color.invert($grey_border) }
     h1,h2 { @extend %dark_std_border; }
     blockquote { @extend %dark_std_border; }
+    code,tt,kbd { background-color:$dark_code_bg;color:$dark_code_tc }
+    kbd { border-color:$dark_code_bg;box-shadow:inset 0 -1px 0 $dark_code_bg; }
     table {
       &, th, td { @extend %dark_std_border; }
       tr { @extend %dark_std_bg; }

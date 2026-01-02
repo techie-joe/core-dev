@@ -73,7 +73,7 @@ It is larger than the rest, yet forever humble in the shadow. A bit redundant so
 H4 is almost forgotten though technically useful, but no one really cheers for it. You'll use it only when you have to, like adding extra layers to a report nobody asked for. He is always invited, never remembered.
 {: .text-justify.text-grey }
 
-###### Heading 5
+##### Heading 5
 
 Remember that tiny notebook you bought to look organized but never actually use?  It's small, it's cute, it's there, but honestly, body text is almost the same size, so why bother? H5 knows its fate but accepts it gracefully.
 {: .text-justify.text-grey }
@@ -118,6 +118,19 @@ GitHubPages::Dependencies.gems.each do |gem, version|
   s.add_dependency(gem, "= #{version}")
 end
 ```
+
+{% highlight html mark_lines="5 8" %}
+<!-- Html code with syntax highlighting -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello World</title>
+  </head>
+  <body>
+    <p>Hello, World!</p>
+  </body>
+</html>
+{% endhighlight %}
 
 ## Hyperlink
 
