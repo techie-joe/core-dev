@@ -86,7 +86,7 @@ Foo::Bar.new.profile
 This line has not been changed
 ```
 
-###### SASS
+###### Sass
 
 ```sass
 // SASS code with syntax highlighting

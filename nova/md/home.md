@@ -15,7 +15,7 @@ description: Home template.
 </style>
 <div class="hero_block box">
   <h1 class="hero-title">🦅 Heroic title</h1>
-  <p class="hero-description">Your site's description or sub-title.</p>
+  <p class="hero-description">Your site's description.</p>
 </div>
 
 {{ thin_hr }}
