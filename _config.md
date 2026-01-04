@@ -1,7 +1,7 @@
 ```yml
 # _config.pug
 version      : 0.0.4
-revision     : 2512.04.2110
+revision     : 2512.04.2419
 title        : Dove
 description  : A theme development project.
 author       : Techie Joe
@@ -12,8 +12,8 @@ home_url     : /dove
 lang         : en-US
 theme_color  : #222
 color_scheme : light dark
-ghost        : bG9jYWxob3N0LGxvY2FsaG9zdDo0MDAwLHRlY2hpZS1qb2UuZ2l0aHViLmlv
 
+ghost                : bG9jYWxob3N0LGxvY2FsaG9zdDo0MDAwLHRlY2hpZS1qb2UuZ2l0aHViLmlv
 google_analytics     : [nil]
 cloudflare_analytics : [nil]
 
@@ -28,7 +28,7 @@ revision     : {{ site.revision | default: "[nil]" }}{{'.'}}{{ site.github.build
 title        : {{ site.title | default: "[nil]" }}
 description  : {{ site.description | default: "[nil]" }}
 author       : {{ site.author | default: "[nil]" }}
-year         : {{ site.year | default: "[nil]" }}
+year         : {{ "now" | date: "%Y" }}
 base_url     : {{ site.base_url | default: "[nil]" }}
 home_url     : {{ site.home_url | default: "[nil]" }}
 
@@ -38,8 +38,8 @@ remote_theme : {{ site.remote_theme | default: "[nil]" }}
 lang         : {{ site.lang | default: "[nil]" }}
 theme_color  : {{ site.theme_color | jsonify | default: "[nil]" }}
 color_scheme : {{ site.color_scheme | default: "[nil]" }}
-ghost        : {{ site.ghost | default: "[nil]" }}
 
+ghost                : {{ site.ghost | default: "[nil]" }}
 google_analytics     : {{ site.google_analytics | default: "[nil]" }}
 cloudflare_analytics : {{ site.cloudflare_analytics | default: "[nil]" }}
 

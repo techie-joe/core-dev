@@ -16,11 +16,12 @@ $pre_bg  : #f4f4f4;
 // ---------------------------------------------------------------
 %std_bg { background-color:$bg }
 %std_border { border-color:$grey_border }
-%std_margin { margin:.5em 0 }
+%std_margin { margin:1em 0 }
 // ---------------------------------------------------------------
 body { @extend .scrollable; }
 ._app { overflow:initial;position:initial }
 body { color:$text_color }
+b,strong { color:color.adjust($text_color, $lightness: 5%) }
 h1,h2,h3,h4,h5,h6,.hero { color:#000 }
 hr { border-width:2px; &.thin { border-width:1px } }
 u,a,abbr,abbr[title] {
@@ -30,13 +31,14 @@ u,a,abbr,abbr[title] {
   text-decoration-skip-ink:initial;
 }
 ._sub,._sup,sub,sup { margin:0;@extend .smaller; }
+._p,p { @extend %std_margin; }
 blockquote { border-left:.5rem solid $grey_border }
 tt { @extend .mono; }
 kbd { @extend ._kbd; }
 ._kbd,kbd { padding:.25em .5em;@extend .smallest; }
 img { @extend .text-grey; }
-dt { margin-block-start:.5em }
-dd { margin-block-end:.5em }
+dt { margin-block-start:1em }
+dd { margin-block-end:1em }
 details { 
   & { @extend %std_margin; }
   summary {
@@ -44,17 +46,17 @@ details {
     p { @extend .inline; }
   }
 }
-._li,li { margin:.25em .7em }
 article {
   img { border-radius:5px }
 }
 .markdown-body {
   & { margin-top:0 !important } // to align with top bar
   code,tt,kbd { background-color:$code_bg;color:$code_tc }
-  pre { code,tt { @extend .no_bg;color:inherit } }
+  pre { code,tt { @extend .no_bg;@extend .inherit_color; } }
   blockquote { box-shadow:none }
   summary { @extend .ma0; }
   table {
+    & { display:table;width:auto }
     thead tr,
     tr:nth-child(2n) { background-color:#e5e5e5 }
     &.borderless { tr { background:none !important } }
@@ -64,19 +66,17 @@ article {
 }
 ._header {
   h1 { @extend .mt0;@extend .ba0; } // logo holder
-  ._logo {
-    & { font-size:1.5rem;line-height:1.5 }
-    a {
-      @extend .block;
-      padding:.25rem;
-      margin:-.25rem;
-    }
-  }
+  ._logo a { @extend .block;padding:.25rem;margin:-.25rem; }
+}
+._logo a,
+._nav a {
+  & { @extend .text-slategrey; }
+  &:hover { @extend .text-blue; }
 }
 ._theme_switch {
   a {
     font-size:1.25em;
-    margin:.6rem;
+    margin:.1rem; // to align with logo
     @extend .inherit_color;
   }
 }
@@ -113,19 +113,25 @@ pre.highlight { @extend .scrollable; }
   td.code,
   td.gutter { vertical-align:top }
 }
-.task-list { padding-left:.25em; ul,ol { padding-left:2em } }
+ul.task-list,
+ol.task-list {
+  & { padding-left:0 }
+  ul,ol { padding-left:2em }
+  li { margin:.25em 0 }
+}
 a.footnote { @extend .ma0; }
 .footnotes {
   & { @extend .ba0; }
   ul,ol { list-style-position:inside }
   li>p { @extend .inline; }
+  li { margin:.25em .7em }
 }
 ._footer {
   & { margin-bottom: 4rem !important }
   ._layout { font-size:1em;@extend .pa0; }
 }
 ._copyright_text,
-._credit_link { background-color: $bg !important }
+._credit_link { background-color:$bg !important }
 // ---------------------------------------------------------------
 $dark_bg : color.invert($bg);
 $dark_text_color : color.invert($text_color);
@@ -137,6 +143,7 @@ $dark_pre_bg  : #171717;
 %dark_std_border { border-color:color.invert($grey_border) }
 ._dark {
   body { color:$dark_text_color }
+  b,strong { color:color.adjust($dark_text_color, $lightness: 5%) }
   h1,h2,h3,h4,h5,h6,.hero { color:#fff }
   ._kbd,kbd {
     background-color:#2f2f2f;
@@ -146,7 +153,7 @@ $dark_pre_bg  : #171717;
   .markdown-body {
     blockquote { @extend %dark_std_border; }
     code,tt,kbd { background-color:$dark_code_bg;color:$dark_code_tc }
-    pre { code,tt { @extend .no_bg;color:inherit } }
+    pre { code,tt { @extend .no_bg;@extend .inherit_color; } }
     table {
       thead tr,
       tr:nth-child(2n) { background-color: #1b1b1b }
@@ -154,5 +161,5 @@ $dark_pre_bg  : #171717;
   }
   .box { @extend %dark_std_border; }
   ._copyright_text,
-  ._credit_link { background-color: $dark_bg !important }
+  ._credit_link { background-color:$dark_bg !important }
 }

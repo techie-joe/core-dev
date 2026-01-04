@@ -16,7 +16,9 @@ description: A theme development project.
     <meta id="_color_scheme" name="color-scheme" content="light dark"/>
     <meta id="_theme_color" name="theme-color" content="#222"/>
     <style>.isvg svg { width:1em;height:1em }</style>
+    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
     <style>
+      ._header h1 { margin-top:1em }
       #pages_ ul,
       #posts_ ul,
       .markdown-body .rapat { margin:1rem 0;padding-left:1.3em }
@@ -24,7 +26,6 @@ description: A theme development project.
       #posts_ ul li,
       .markdown-body .rapat li { margin-left:0 }
     </style>
-    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
 {% include layout_head.html %}
 <!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
@@ -61,11 +62,6 @@ description: A theme development project.
                                 <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
                               </svg></i></i><a href="/dove/mallet/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/404.html">404</a>
                         </li>
-                        <li><a href="/dove/nova/"><b>Nova</b></a><i class="_icon"><i class="isvg">
-                              <svg viewBox="0 0 24 24">
-                                <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                              </svg></i></i><a href="/dove/nova/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/nova/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/nova/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/nova/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/nova/404.html">404</a>
-                        </li>
                         <li><a href="/dove/prime/"><b>Prime</b></a><i class="_icon"><i class="isvg">
                               <svg viewBox="0 0 24 24">
                                 <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
@@ -80,7 +76,7 @@ description: A theme development project.
 {{ nav_test | markdownify }}
                 </nav>
                 <hr class="thin"/>{%- endif %}
-                <p class="text-grey">These are supporting posts and pages for the project.</p>{%- capture pages %}{% include pages.md exclude="" %}{%- endcapture %}{%- capture posts %}{% include posts.md exclude="" %}{%- endcapture %}
+                <p class="text-grey">Development posts and pages.</p>{%- capture pages %}{% include pages.md exclude="" %}{%- endcapture %}{%- capture posts %}{% include posts.md exclude="" %}{%- endcapture %}
                 <div class="flex" style="gap:3rem">
                   <div id="pages_" style="min-width:250px">
                     <h3 class="mt-0">Pages</h3>{{ pages | markdownify }}

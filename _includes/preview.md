@@ -1,6 +1,6 @@
 {% include ui.html %}
 
-Hero message and _colored text_{: .n.text-red } grabs attention
+Hero message and _colored text_{: .n.text-red } to grab attention
 {: .hero }
 
 # Theme preview
@@ -55,12 +55,12 @@ or <mark>mark</mark> texts.
 ## Heading 1
 {: .h1 }
 
-H1 holds everything together. It is the anchor of a document. Without it, paragraphs would simply drift into void. Usually there is only one per page dedicated for the main title. But you can also mock an H1 using the `h1` class.
+H1 is the anchor of a document. Without it, everything would simply drift into void. Usually there is only one per page, dedicated for the main title. But if you need more, you can make other heading to appear as the main title using the `h1` class.
 {: .text-justify }
 
 ## Heading 2
 
-H2 is the reliable lieutenant of headings. It organizes sections, leads the battalions of texts, and secretly dreams of being an H1 someday. Don't tell it the truth. Let it dream.
+H2 is the pack leader. It organizes sections, leads a group of texts and contents together, and secretly dreams of being supreme someday. Don't tell it the truth. Let it dream.
 {: .text-justify.text-grey }
 
 ### Heading 3
@@ -295,7 +295,7 @@ This block expands like curtains on opening night, then folds back up as if noth
 
 ### HTML table
 
-<table class="full-width" style="max-width:500px">
+<table class="width-full" style="max-width:500px">
 <thead>
   <tr>
       <th class="text-left">Label</th>

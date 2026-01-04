@@ -52,11 +52,13 @@ truncate      : {{ string | truncate: 15 }}
 
 ###### date
 
-{%- assign date     = '2005-03-09T20:10:30' %}
+{%- assign date = '2005-03-09T20:10:30' %}
+{%- assign date_format = "%A, %B %d, %Y @ %I:%M:%S %p" %}
 
 ```yml
 date : {{ date }}
-date : {{ date | date: "%A, %B %d, %Y @ %I:%M:%S %p" }}
+date : {{ date | date: date_format }}
+now  : {{ "now" | date: date_format }}
 ```
 
 | -- | :-------------------------------- | ----- | 

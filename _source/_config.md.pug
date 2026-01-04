@@ -13,8 +13,8 @@ include ./_layouts/_dove
   lang         : !{lang}
   theme_color  : !{theme_color}
   color_scheme : !{color_scheme}
-  ghost        : !{ghost}
 
+  ghost                : !{ghost||"[nil]"}
   google_analytics     : !{google_analytics||"[nil]"}
   cloudflare_analytics : !{cloudflare_analytics||"[nil]"}
 
@@ -30,7 +30,7 @@ include ./_layouts/_dove
   title        : {{ site.title | default: "[nil]" }}
   description  : {{ site.description | default: "[nil]" }}
   author       : {{ site.author | default: "[nil]" }}
-  year         : {{ site.year | default: "[nil]" }}
+  year         : {{ "now" | date: "%Y" }}
   base_url     : {{ site.base_url | default: "[nil]" }}
   home_url     : {{ site.home_url | default: "[nil]" }}
 
@@ -40,8 +40,8 @@ include ./_layouts/_dove
   lang         : {{ site.lang | default: "[nil]" }}
   theme_color  : {{ site.theme_color | jsonify | default: "[nil]" }}
   color_scheme : {{ site.color_scheme | default: "[nil]" }}
-  ghost        : {{ site.ghost | default: "[nil]" }}
 
+  ghost                : {{ site.ghost | default: "[nil]" }}
   google_analytics     : {{ site.google_analytics | default: "[nil]" }}
   cloudflare_analytics : {{ site.cloudflare_analytics | default: "[nil]" }}
 

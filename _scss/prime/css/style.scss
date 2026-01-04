@@ -49,6 +49,7 @@ article {
   figure.highlight { @extend .ma0; }
   img { @extend .no_bg;@extend .text-grey; }
   table {
+    & { display:table;width:auto }
     &, th, td { @extend %std_border; }
     thead tr { background-color:#e7e7e7 }
     tr:nth-child(2n) { background-color:#f7f7f7 }
@@ -78,6 +79,10 @@ article {
   a:focus { @extend .inherit_color; }
   a:hover { @extend .text-blue; }
 }
+._nav a {
+  & { @extend .text-slategrey; }
+  &:hover { @extend .text-blue; }
+}
 .itext,
 .isvg { line-height:.8 }
 .box { border-radius:5px;padding:.5em 1em;@extend %std_border; }
@@ -93,6 +98,7 @@ article {
     @extend .border-slategrey;
   }
 }
+._nav_common .button { @extend .text-slategrey; }
 div.highlight { overflow:hidden }
 pre.highlight { @extend .scrollable; }
 .highlight {

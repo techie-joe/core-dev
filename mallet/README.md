@@ -1,21 +1,22 @@
-# About the Dove project
+# Techie Joe's Mallet
 
-🕊️ **Dove** is a theme development project. We are working on the following themes.
+## ⚒️ Mallet is a Jekyll theme for GitHub Pages
 
-- **[techie-joe/core](https://github.com/techie-joe/core)**
-- **[techie-joe/mallet](https://github.com/techie-joe/mallet)**
-- **[techie-joe/prime](https://github.com/techie-joe/prime)**
+```yml
+remote_theme: techie-joe/mallet
+remote_theme_version  : {{ site.version }}
+remote_theme_revision : {{ site.revision }}
+```
 
----
+Preview the theme to see what it looks like, or **[start using](#how-to-use)** it today!
 
-Dove provides a **flexible foundation for your own designs** or preferred frameworks. Build your website using **Markdown**, **Pug** or **HTML** with layouts and components ready to go. Style any page instantly, just by linking to these assets. Our primary goal is to provide users with an **easy way to build a website**. We aim to meet the needs of the vast majority of users out of the box, including those with specific needs to customize further. Start with a massive leap ahead, then you may customize everything from global defaults to individual components.
+<a href="./preview" title="See how you can use this template to build websites" class="_bt -l -blue" style="width:10rem;height:3rem;font-size:1.2rem;">Preview</a>
 
-> **Let Dove handles the foundation so you can focus on your code.**
+## Build faster on GitHub Pages
 
----
+**Mallet** helps you build websites on GitHub Pages. Build your website using **Markdown**, **Pug** or **HTML** with layouts and components ready to go. Style any page instantly, just by linking to these assets. Our primary goal is to provide users with an **easy way to build a website**. We aim to meet the needs of the vast majority of users out of the box, including those with specific needs to customize further. Start with a massive leap ahead, then you may customize everything from global defaults to individual components.
 
-> [!WARNING]  
-> **Dove is constantly under active development. Use with caution, future update may break your site. Visit individual theme's homepage for a stable release.**
+> **Your design, your framework, your content. Powered by Mallet.**
 
 ---
 
@@ -27,7 +28,7 @@ To use the theme on your site:
 
     ```yml
     # the location of the remote_theme.
-    remote_theme: techie-joe/dove
+    remote_theme: techie-joe/mallet
 
     # add jekyll-remote-theme to the plugins list.
     plugins:
@@ -75,7 +76,7 @@ To add your own custom styles:
     ```scss
     ---
     ---
-    @import "dove";
+    @import "mallet";
     ```
 
 2. Add any custom CSS (or SASS, including imports) you'd like immediately after the `@import` line.
@@ -84,7 +85,7 @@ To add your own custom styles:
 
 ### Layouts
 
-All [template layouts](https://github.com/techie-joe/dove/tree/master/_layouts) in the `_layouts` folder and [template components](https://github.com/techie-joe/dove/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. To override a file, create a mirror copy in your site's repository reflecting the exact path and file-name.
+All [template layouts](https://github.com/techie-joe/mallet/tree/master/_layouts) in the `_layouts` folder and [template components](https://github.com/techie-joe/mallet/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. To override a file, create a mirror copy in your site's repository reflecting the exact path and file-name.
 
 For example, to change the default layout:
 
@@ -103,7 +104,7 @@ Templates rely on URLs supplied by GitHub such as links to your repository or li
 
 To override the default URLs:
 
-1. Look at [the template source](https://github.com/techie-joe/dove/blob/master/_layouts/prime.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
+1. Look at [the template source](https://github.com/techie-joe/mallet/blob/master/_layouts/prime.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
 
 2. Specify the URL you'd like to use in your site's `_config.yml` file. Jekyll will use the URL you specified, instead of the default one.  
 
@@ -124,7 +125,7 @@ For more information, see [the Jekyll variables documentation](https://jekyllrb.
 To run the template locally:
 
 1. Clone the template's repository into your computer:
-    > `git clone https://github.com/techie-joe/dove`
+    > `git clone https://github.com/techie-joe/mallet`
 
 2. Go to the cloned directory.
 
@@ -141,29 +142,10 @@ To run the template locally:
 
 6. Visit [localhost:4000](//localhost:4000) in your browser to see the template.
 
-## Running tests
-
-The template contains a minimal test suite, to ensure a site with the template would build successfully.
-
-To run the tests:
-
-1. Run `script/bootstrap` to install necessary dependencies.
-    > _This is a required one-time setup before other script can function._
-
-2. Then run `script/cibuild` to start the test.
-
-## Contributing
-
-Interested in contributing to the Dove project? We'd love your help. Dove is an open source project, built one contribution at a time by users like you. Go ahead and [start a discussion](https://github.com/techie-joe/dove/discussions).
-
-<!--
-See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
--->
-
 ## Roadmap
 
-See the [open issues](https://github.com/techie-joe/dove/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/techie-joe/mallet/issues) for a list of proposed features (and known issues).
 
 ## License
 
-**Dove** is an open source project licensed under the [MIT LICENSE](//github.com/techie-joe/dove/blob/main/LICENSE). You're allowed to use the code with conditions only requiring preservation of copyright and license notices.
+**Mallet** is an open source project licensed under the [MIT LICENSE](//github.com/techie-joe/mallet/blob/main/LICENSE). You're allowed to use the code with conditions only requiring preservation of copyright and license notices.

@@ -1,20 +1,6 @@
-# the location of the remote_theme.
-# remote_theme: techie-joe/dove
+# ============================================
 # theme: dove
-
-# add jekyll-remote-theme to the plugins list.
-plugins:
-  - jekyll-seo-tag
-  - jekyll-github-metadata
-  # - jekyll-remote-theme
-  # - jekyll-paginate
-  # - jekyll-redirect-from
-  # - jekyll-sitemap
-  # - jekyll-feed
-  # - jemoji
-
-version       : '0.0.5'
-revision      : '2601.5'
+# ============================================
 
 title         : Dove
 description   : A theme development project.
@@ -22,7 +8,9 @@ description   : A theme development project.
 # description : Short description of your site's purpose.
 
 author        : Techie Joe
-year          : 2025
+
+version       : '0.0.5'
+revision      : '2601.5'
 
 baseurl       : '/dove'
 base_url      : '/dove'
@@ -55,30 +43,39 @@ sass:
 defaults:
   - scope:
       path: ""
-    values:
+  - values:
       layout: default
 
-# exclude these files from Jekyll production site (_site).
+plugins:
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+  # - jekyll-paginate
+  # - jekyll-redirect-from
+  # - jekyll-sitemap
+  # - jekyll-feed
+  # - jemoji
+
+# exclude these from Jekyll production (_site).
 exclude:
-- ".editorconfig"
-- ".github"
-- ".gitignore"
-- ".sass-cache"
-- ".jekyll-cache"
-- ".jekyll-metadata"
-- "*.gem"
-- "*.gemspec"
-- Gemfile
-- Gemfile.lock
-- ".bundle"
-- vendor
-- script
-- node_modules
-- package-lock.json
-- package.json
-- gulpfile.js
-- CNAME
-- "*.x"
-- "*.ignore"
-- "*.backup"
-- "*.localhost"
+  - ".editorconfig"
+  - ".github"
+  - ".gitignore"
+  - ".sass-cache"
+  - ".jekyll-cache"
+  - ".jekyll-metadata"
+  - "*.gem"
+  - "*.gemspec"
+  - Gemfile
+  - Gemfile.lock
+  - ".bundle"
+  - vendor
+  - script
+  - node_modules
+  - package-lock.json
+  - package.json
+  - gulpfile.js
+  - CNAME
+  - "*.x"
+  - "*.ignore"
+  - "*.backup"
+  - "*.localhost"

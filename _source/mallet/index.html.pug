@@ -2,7 +2,7 @@ extends _html
 block append vars
   - path   = 'index.html'
   - title  = `Mallet`
-  - description = `Smooth theme for your site.`
+  - description = `Mallet is a Jekyll theme for GitHub Pages.`
 block header
   h1|{% include dove/logo.html %}
 block nav
@@ -18,7 +18,7 @@ block content
     .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
     .hero_block .hero-hr { margin-top:45px }
   .hero_block.box
-    h1.hero-title ⚒️ !{title}
+    h1.hero-title ⚒️ !{author+"'s"} !{title}
     p.hero-description !{description}
 
   +thin_hr
@@ -36,3 +36,7 @@ block content
   +thin_hr
   nav.mv
     +test_nav(layout_name)
+
+  +thin_hr
+  nav.mv
+    +a('about.html')| About  

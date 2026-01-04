@@ -1,12 +1,13 @@
 extends _html
 block append vars
   - path   = 'index.html'
-block prepend style
+block append style
   //- style.
     @media (prefers-color-scheme: dark) {
       html,body { background-color:#000 }
     }
   style.
+    ._header h1 { margin-top:1em }
     #pages_ ul,
     #posts_ ul,
     .markdown-body .rapat { margin:1rem 0;padding-left:1.3em }
@@ -35,14 +36,14 @@ block content
       nav: ul.rapat
         li: +index_nav('core')
         li: +index_nav('mallet')
-        li: +index_nav('nova')
+        //- li: +index_nav('nova')
         li: +index_nav('prime')
   +thin_hr
   |{%- if site.github.environment == 'development' -%}
   nav: +include('nav_test','dove/nav_test.md')
   +thin_hr
   |{%- endif %}
-  p.text-grey These are supporting posts and pages for the project.
+  p.text-grey Development posts and pages.
   //- - exclude_pages = [ ].join(",");
   //- - exclude_posts = [ ].join(",");
   +capture('pages')|{% include pages.md exclude="!{exclude_pages}" %}

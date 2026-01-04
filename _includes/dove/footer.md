@@ -8,28 +8,29 @@
 
 {%- else %}
 
-{%- capture footer %}
-
-{{ thin_hr }}
-
+{%- capture dove_footer %}
 **Dove**
-{{ angle }}
+{{- angle -}}
 [Repository](https://github.com/techie-joe/dove){: target="_dove_repository" }
 {{- bull -}}
 [Proto](https://techie-joe.github.io/proto){: target="_proto" }
+{%- endcapture %}
 
-{{ thin_hr }}
-
+{%- capture tj_footer %}
 **Techie Joe's**
-{{ angle }}
+{{- angle -}}
 [Website](https://techie-joe.github.io){: target="_techiejoe_website" }
 {{- bull -}}
 [Profile](https://github.com/techie-joe){: target="_techiejoe_profile" }
 {{- bull -}}
 [ThemeJs](/nova/site/themejs){: target="_themejs" }
-
 {%- endcapture %}
 
-<nav>{{ footer | markdownify }}</nav>
+<nav class="_nav">
+{{- thin_hr -}}
+{{- dove_footer | markdownify -}}
+{{- thin_hr -}}
+{{- tj_footer | markdownify -}}
+</nav>
 
 {%- endif %}
