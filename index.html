@@ -71,25 +71,27 @@ description: A theme development project.
                     </nav>
                   </div>
                 </div>
-                <hr class="thin"/>{%- if site.github.environment == 'development' -%}
-                <nav>{%- capture nav_test %}{%- include dove/nav_test.md %}{%- endcapture %}
-{{ nav_test | markdownify }}
-                </nav>
-                <hr class="thin"/>{%- endif %}
+                <hr class="thin"/>
                 <p class="text-grey">Development posts and pages.</p>{%- capture pages %}{% include pages.md exclude="" %}{%- endcapture %}{%- capture posts %}{% include posts.md exclude="" %}{%- endcapture %}
                 <div class="flex" style="gap:3rem">
                   <div id="pages_" style="min-width:250px">
                     <h3 class="mt-0">Pages</h3>{{ pages | markdownify }}
-                    <ul>
-                      <li><a href="404">404</a>
-                      </li>
-                    </ul>
+                    <nav>
+                      <ul>
+                        <li><a href="404">404</a>
+                        </li>
+                      </ul>
+                    </nav>
                   </div>
                   <div id="posts_" style="min-width:250px">
                     <h3 class="mt-0">Posts</h3>{{ posts | markdownify }}
                   </div>
                 </div>
-                <hr class="thin"/>
+                <hr class="thin"/>{%- if site.github.environment == 'development' -%}
+                <nav>{%- capture nav_test %}{%- include dove/nav_test.md %}{%- endcapture %}
+{{ nav_test | markdownify }}
+                </nav>
+                <hr class="thin"/>{%- endif %}
                 <h3>Configurations</h3>{%- capture config %}{%- include_relative _config.md %}{%- endcapture %}
 {{ config | markdownify }}
               </div>

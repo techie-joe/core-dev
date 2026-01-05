@@ -94,8 +94,6 @@ mixin sna(ref)
     +a([base_url,ref].join('/')): block
 
 mixin site_nav(sub)
-  +sna(sub+"/preview.html")| Preview
-  +bull
   +sna(sub+"/home.html")| Home
   +bull
   +sna(sub+"/page.html")| Page
@@ -105,8 +103,20 @@ mixin site_nav(sub)
   +sna(sub+"/404.html")| 404
 
 mixin test_nav(sub)
-  b| Test
-  +angle
+  +sna(sub+"/preview.html")| Preview
+  +bull
   +sna(sub+"/test_colors.html")| Colors
   +bull
   +sna(sub+"/test_code-blocks.html")| Code blocks
+
+mixin page_footer
+  .mt-6
+  hr
+  h2 Other pages
+  +include('pages','pages.md')
+
+mixin post_footer
+  .mt-6
+  hr
+  h2 Other posts
+  +include('posts','posts.md')

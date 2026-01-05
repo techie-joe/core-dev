@@ -10,7 +10,8 @@ remote_theme_revision : {{ site.revision }}
 
 Preview the theme to see what it looks like, or **[start using](#how-to-use)** it today!
 
-<a href="./preview" title="See how you can use this template to build websites" class="_bt -l -blue" style="width:10rem;height:3rem;font-size:1.2rem;">Preview</a>
+<a href="./preview" title="See what the template looks like." class="_bt -blue" style="width:10rem;height:3rem;font-size:1.2rem;">Preview</a>
+<a href="./templates" title="See how you can use this template to build your website" class="_bt" style="width:10rem;height:3rem;font-size:1.2rem;font-weight:normal;">Templates</a>
 
 ## Build faster on GitHub Pages
 
@@ -24,20 +25,19 @@ Preview the theme to see what it looks like, or **[start using](#how-to-use)** i
 
 To use the theme on your site:
 
-1. Update the `_config.yml` file in the root of your repository. Clear out any existing values of `theme`. Then add the following lines to the file:
+1. Add the following lines to the `_config.yml` file in the root of your repository:
 
     ```yml
-    # the location of the remote_theme.
     remote_theme: techie-joe/mallet
-
-    # add jekyll-remote-theme to the plugins list.
     plugins:
         - jekyll-remote-theme
     ```
 
-2. After that, activate **GitHub Pages**.
+2. Clear out any existing values of `theme`.
 
-For detailed instruction, see [Techie Joe's GitHub Pages Walkthrough](https://techie-joe.github.io/library/github-pages/).
+3. Then, activate **GitHub Pages**.
+
+_For detailed instruction, see [Techie Joe's GitHub Pages Walkthrough](https://techie-joe.github.io/library/github-pages/)._
 
 ## How to customize
 
@@ -81,7 +81,7 @@ To add your own custom styles:
 
 2. Add any custom CSS (or SASS, including imports) you'd like immediately after the `@import` line.
 
-> _**Note:** To change the template's SASS variables, you must set new values before the `@import` line in your stylesheet._
+_**Note:** To change the template's SASS variables, you must set new values before the `@import` line in your stylesheet._
 
 ### Layouts
 
@@ -89,10 +89,10 @@ All [template layouts](https://github.com/techie-joe/mallet/tree/master/_layouts
 
 For example, to change the default layout:
 
-1. Copy `/_layouts/default.html` file from the template's repository into your site's repository reflecting the exact path and file-name.
+1. Copy `/_layouts/default.html` file from the template's repository into your site's repository using the same path and file-name.
 2. Then customize the layout as you'd like.
 
-> _**Pro-tip:** click "raw" to make copying easier._
+_**Pro-tip:** click "raw" to make copying easier._
 
 ### Analytics code
 
@@ -118,7 +118,7 @@ To override the default URLs:
 
     > _**Note:** You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`._
 
-For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
+_For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/)._
 
 ## Previewing the template locally
 
@@ -144,7 +144,7 @@ To run the template locally:
 
 ## Roadmap
 
-See the [open issues](https://github.com/techie-joe/mallet/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/techie-joe/mallet/issues) for a list of proposed features and known issues.
 
 ## License
 

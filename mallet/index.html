@@ -2,7 +2,7 @@
 index: false
 layout: html
 use_pug: true
-title: Mallet
+title: Techie Joe's Mallet
 description: Mallet is a Jekyll theme for GitHub Pages.
 ---
 <!DOCTYPE html>
@@ -37,38 +37,8 @@ description: Mallet is a Jekyll theme for GitHub Pages.
           </nav>
           <main class="_main">
             <article class="_article">
-              <div class="_layout">
-                <style>
-                  .hero_block { padding:1rem 2rem }
-                  .hero_block .hero-title { margin-top:1rem }
-                  .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
-                  .hero_block .hero-hr { margin-top:45px }
-                </style>
-                <div class="hero_block box">
-                  <h1 class="hero-title">⚒️ Techie Joe's Mallet</h1>
-                  <p class="hero-description">Mallet is a Jekyll theme for GitHub Pages.</p>
-                </div>
-                <hr class="thin"/>
-                <nav class="mv"><b>Html</b><i class="_icon"><i class="isvg">
-                      <svg viewBox="0 0 24 24">
-                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                      </svg></i></i><a href="/dove/mallet/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/404.html">404</a>
-                </nav>
-                <hr class="thin"/>
-                <nav class="mv"><b>Markdown</b><i class="_icon"><i class="isvg">
-                      <svg viewBox="0 0 24 24">
-                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                      </svg></i></i><a href="/dove/mallet/md/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/md/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/md/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/md/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/md/404.html">404</a>
-                </nav>
-                <hr class="thin"/>
-                <nav class="mv"><b>Test</b><i class="_icon"><i class="isvg">
-                      <svg viewBox="0 0 24 24">
-                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                      </svg></i></i><a href="/dove/mallet/test_colors.html">Colors</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/test_code-blocks.html">Code blocks</a>
-                </nav>
-                <hr class="thin"/>
-                <nav class="mv"><a href="about.html">About  </a>
-                </nav>
+              <div class="_layout">{%- capture about %}{%- include_relative about.md %}{%- endcapture %}
+{{ about | markdownify }}
               </div>
             </article>
           </main>

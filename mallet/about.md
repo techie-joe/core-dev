@@ -1,6 +1,7 @@
 ---
 layout: mallet
 index: false
+# use_header: false
 use_nav: false
 use_footer: edit_link_only
 title: About

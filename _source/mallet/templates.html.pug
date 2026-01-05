@@ -1,15 +1,10 @@
-extends _html
+extends _html_preview
 block append vars
   - path   = 'index.html'
-  - title  = `Nova`
-  - description = `New theme for your site.`
-block header
-  h1|{% include dove/logo.html %}
+  - title  = `Mallet Templates`
+  - description = `Essential collection suitable for any project.`
 block nav
   +hide_nav
-block footer
-  //- no site footer
-  +_edit_link
 block content
   style.
     .hero_block { padding:1rem 2rem }
@@ -17,21 +12,24 @@ block content
     .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
     .hero_block .hero-hr { margin-top:45px }
   .hero_block.box
-    h1.hero-title 🌌 !{title}
+    h1.hero-title ⚒️ !{title}
     p.hero-description !{description}
 
+  nav.mv
+    +a('about')| About  
   +thin_hr
+
+  nav.mv
+    +test_nav(layout_name)
+  +thin_hr
+
   nav.mv
     b Html
     +angle
     +site_nav(layout_name)
-
   +thin_hr
+
   nav.mv
     b Markdown
     +angle
     +site_nav(layout_name+'/md')
-
-  +thin_hr
-  nav.mv
-    +test_nav(layout_name)

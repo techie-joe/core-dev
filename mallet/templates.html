@@ -2,13 +2,13 @@
 index: false
 layout: html
 use_pug: true
-title: Prime
-description: Simple theme for your site.
+title: Mallet Templates
+description: Essential collection suitable for any project.
 ---
 <!DOCTYPE html>
-<html class="_prime_layout no_js" lang="en-US">
-<!-- path   : prime/index.html -->
-<!-- layout : _source/_layouts/prime -->
+<html class="_mallet_layout no_js" lang="en-US">
+<!-- path   : mallet/index.html -->
+<!-- layout : _source/_layouts/mallet -->
   <head>
     <meta charset="utf-8"/>
 {% seo %}
@@ -17,17 +17,17 @@ description: Simple theme for your site.
     <meta id="_color_scheme" name="color-scheme" content="light dark"/>
     <meta id="_theme_color" name="theme-color" content="#222"/>
     <style>.isvg svg { width:1em;height:1em }</style>
-    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
+    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/mallet/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
 {% include layout_head.html %}
 <!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="_views">
-      <div class="_view">
-        <div class="_layout container-lg px-3 my-3 markdown-body">
+      <div class="_view _app __fadein">
+        <div class="_layout container-lg markdown-body">
           <header class="_header">
             <div class="_layout">
-              <h1>{% include dove/logo.html %}</h1>
+              <h1>{% include dove/logo.html name="mallet" %}</h1>
             </div>
           </header>
           <nav class="_nav">
@@ -45,23 +45,25 @@ description: Simple theme for your site.
                   .hero_block .hero-hr { margin-top:45px }
                 </style>
                 <div class="hero_block box">
-                  <h1 class="hero-title">🦅 Prime</h1>
-                  <p class="hero-description">Simple theme for your site.</p>
+                  <h1 class="hero-title">⚒️ Mallet Templates</h1>
+                  <p class="hero-description">Essential collection suitable for any project.</p>
                 </div>
+                <nav class="mv"><a href="about">About  </a>
+                </nav>
+                <hr class="thin"/>
+                <nav class="mv"><a href="/dove/mallet/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/test_colors.html">Colors</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/test_code-blocks.html">Code blocks</a>
+                </nav>
                 <hr class="thin"/>
                 <nav class="mv"><b>Html</b><i class="_icon"><i class="isvg">
                       <svg viewBox="0 0 24 24">
                         <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                      </svg></i></i><a href="/dove/prime/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/404.html">404</a>
+                      </svg></i></i><a href="/dove/mallet/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/404.html">404</a>
                 </nav>
                 <hr class="thin"/>
                 <nav class="mv"><b>Markdown</b><i class="_icon"><i class="isvg">
                       <svg viewBox="0 0 24 24">
                         <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                      </svg></i></i><a href="/dove/prime/md/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/md/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/md/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/md/404.html">404</a>
-                </nav>
-                <hr class="thin"/>
-                <nav class="mv"><a href="/dove/prime/preview.html">Preview</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/test_colors.html">Colors</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/prime/test_code-blocks.html">Code blocks</a>
+                      </svg></i></i><a href="/dove/mallet/md/home.html">Home</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/md/page.html">Page</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/md/post.html">Post</a><i class="_icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/md/404.html">404</a>
                 </nav>
               </div>
             </article>
@@ -71,7 +73,7 @@ description: Simple theme for your site.
               <hr class="thin"/>
               <p class="text-right text-grey"><small>
                   This site is open source.
-                  <a href="https://github.com/techie-joe/dove/edit/main/_source/prime/index.html.pug">Improve this page</a>.</small></p>
+                  <a href="https://github.com/techie-joe/dove/edit/main/_source/mallet/index.html.pug">Improve this page</a>.</small></p>
             </div>
           </footer>
         </div>

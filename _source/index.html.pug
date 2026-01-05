@@ -39,10 +39,6 @@ block content
         //- li: +index_nav('nova')
         li: +index_nav('prime')
   +thin_hr
-  |{%- if site.github.environment == 'development' -%}
-  nav: +include('nav_test','dove/nav_test.md')
-  +thin_hr
-  |{%- endif %}
   p.text-grey Development posts and pages.
   //- - exclude_pages = [ ].join(",");
   //- - exclude_posts = [ ].join(",");
@@ -52,10 +48,14 @@ block content
     #pages_(style="min-width:250px")
       h3.mt-0 Pages
       |{{ pages | markdownify }}
-      ul: li: +a('404') 404
+      nav: ul: li: +a('404') 404
     #posts_(style="min-width:250px")
       h3.mt-0 Posts
       |{{ posts | markdownify }}
   +thin_hr
+  |{%- if site.github.environment == 'development' -%}
+  nav: +include('nav_test','dove/nav_test.md')
+  +thin_hr
+  |{%- endif %}
   h3 Configurations
   +include_relative('config','_config.md')
