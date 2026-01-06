@@ -1,0 +1,1 @@
+plugins_dir   layouts_dir   includes_dir  data_dir      cache_dir     base_url     home_url       

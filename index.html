@@ -94,7 +94,7 @@ description: A theme development project.
 {{ nav_test | markdownify }}
                 </nav>
                 <hr class="thin"/>{%- endif %}
-                <h3>Configurations</h3>{%- capture config %}{%- include_relative _config.md %}{%- endcapture %}
+                <h3>Configurations</h3>{%- capture config %}{%- include_relative config.md %}{%- endcapture %}
 {{ config | markdownify }}
               </div>
             </article>
