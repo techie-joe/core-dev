@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default-post
 title: "Some titles are just so long ..."
 full-title: "Some titles are just so long they deserve a check to see if things will break well, this should be long enough"
 categories: misc

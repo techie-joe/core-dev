@@ -1,14 +1,8 @@
-extends _html
+extends about
 block append vars
   - path   = 'index.html'
   - title  = `Techie Joe's Mallet`
   - description = `Mallet is a Jekyll theme for GitHub Pages.`
 block header
   h1|{% include dove/logo.html %}
-block nav
-  +hide_nav
-block footer
-  //- no footer
-  +_edit_link
-block content
-  +include_relative('about','about.md')
+  //- +hide_header

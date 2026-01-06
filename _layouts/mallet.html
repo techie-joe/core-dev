@@ -1,8 +1,10 @@
 {%- assign layout_name = "mallet" -%}
 <!doctype html>
 <html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no_js _{{ layout_name }}_layout">
-  <!-- path   : {{ page.path }} -->
-  <!-- layout : _layouts/{{ page.layout }} -->
+  <!-- path        : {{ page.path }} -->
+  <!-- layout      : _layouts/{{ page.layout }} -->
+  <!-- title       : {{ page.title | default: "(untitled)" }} -->
+  <!-- description : {{ page.description | default: "(undescribed)" }} -->
   <head>
     <meta charset="{{ site.encoding | default: 'utf-8' }}" />
     {% seo %}

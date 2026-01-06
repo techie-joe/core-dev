@@ -1,13 +1,8 @@
-extends /_source/_layouts/mallet
-block append update_vars
-  - path = [layout_name,path].join('/')
-block prepend front_matter
-  +l| index: false
-block header
-  h1|{% include dove/logo.html name="!{layout_name}" %}
+extends _html
 block nav
-  nav.mv: +test_nav(layout_name)
+  nav.mv: +template_nav(layout_name)
   +thin_hr
 block footer
-  //- no site footer
+  +thin_hr
+  nav._common_nav.mv: +template_nav(layout_name)
   +_edit_link

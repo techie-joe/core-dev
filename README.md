@@ -6,18 +6,12 @@
 - **[techie-joe/mallet](https://github.com/techie-joe/mallet)**
 - **[techie-joe/prime](https://github.com/techie-joe/prime)**
 
----
+Dove provides a **flexible foundation for your own designs** or preferred frameworks. Build websites on GitHub Pages using **ready-to-go templates and components**. You can build using **Markdown**, **Pug** or **HTML**. Set and style any page instantly, just by referring to the pre-configured assets. Our goal is to provide users with an **easy way to build a website**. We'd like to meet the needs of the vast majority of users, including those who need to customize further. Start building with a massive leap ahead, and customize everything from global defaults to individual components to suit your need.
 
-Dove provides a **flexible foundation for your own designs** or preferred frameworks. Build your website using **Markdown**, **Pug** or **HTML** with layouts and components ready to go. Style any page instantly, just by linking to these assets. Our primary goal is to provide users with an **easy way to build a website**. We aim to meet the needs of the vast majority of users out of the box, including those with specific needs to customize further. Start with a massive leap ahead, then you may customize everything from global defaults to individual components.
-
-> **Let Dove handles the foundation so you can focus on your code.**
-
----
+> **Dove handles the foundation so you can focus on your code.**
 
 > [!WARNING]  
 > **Dove is constantly under active development. Use with caution, future update may break your site. Visit individual theme's homepage for a stable release.**
-
----
 
 ## How to use
 

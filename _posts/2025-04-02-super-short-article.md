@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default-post
 categories: misc
 ---
 # {{ page.title }}

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default-post
 author: Techie Joe
 comments: false
 ---

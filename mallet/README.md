@@ -8,18 +8,16 @@ remote_theme_version  : {{ site.version }}
 remote_theme_revision : {{ site.revision }}
 ```
 
-Preview the theme to see what it looks like, or **[start using](#how-to-use)** it today!
+Preview the theme to see what it looks like and **[start using it](#how-to-use)** today!
 
 <a href="./preview" title="See what the template looks like." class="_bt -blue" style="width:10rem;height:3rem;font-size:1.2rem;">Preview</a>
 <a href="./templates" title="See how you can use this template to build your website" class="_bt" style="width:10rem;height:3rem;font-size:1.2rem;font-weight:normal;">Templates</a>
 
 ## Build faster on GitHub Pages
 
-**Mallet** helps you build websites on GitHub Pages. Build your website using **Markdown**, **Pug** or **HTML** with layouts and components ready to go. Style any page instantly, just by linking to these assets. Our primary goal is to provide users with an **easy way to build a website**. We aim to meet the needs of the vast majority of users out of the box, including those with specific needs to customize further. Start with a massive leap ahead, then you may customize everything from global defaults to individual components.
+Finish building your site quicker. **Mallet** helps you build websites on GitHub Pages using **ready-to-go templates and components**. You can build using **Markdown**, **Pug** or **HTML**. Set and style any page instantly, just by referring to the pre-configured assets. Our goal is to provide users with an **easy way to build a website**. We'd like to meet the needs of the vast majority of users, including those who need to customize further. Start building with a massive leap ahead, and customize everything from global defaults to individual components to suit your need.
 
-> **Your design, your framework, your content. Powered by Mallet.**
-
----
+> **Your design, your content, your way. Powered by Mallet.**
 
 ## How to use
 

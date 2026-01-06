@@ -9,7 +9,7 @@ block update_vars
   block front_matter
     +l
     .
-      layout: html
+      layout: raw
       use_pug: true
       title: !{title}
       description: !{description}
@@ -17,8 +17,10 @@ block update_vars
 block html
   doctype html
   html(lang=lang||'en-US' class=htmlClass.join(' '))
-    +l|<!-- path   : !{path} -->
-    +l|<!-- layout : _source/_layouts/!{layout_name} -->
+    +l|<!-- path        : !{path} -->
+    +l|<!-- layout      : _source/_layouts/!{layout_name} -->
+    +l|<!-- title       : !{title} -->
+    +l|<!-- description : !{description} -->
     head
       block head
         meta(charset=charset||'utf-8')/

@@ -9,11 +9,6 @@
 
 **Md**
 {{- angle -}}
-{%- assign _path = _prev | append: '.md' %}
-{%- if page.path == _path -%}
-**Preview**{%- else %}[Preview]({{ site.base_url }}/{{ _prev }})
-{%- endif %}
-{{- bull -}}
 {%- assign _path = _home | append: '.md' %}
 {%- if page.path == _path -%}
 **Home**{%- else %}[Home]({{ site.base_url }}/{{ _home }})
@@ -38,4 +33,9 @@
 
 {% comment %}
 **[{{ _sub | capitalize }}]({{ site.base_url }}/{{ _sub }})**
+{%- assign _path = _prev | append: '.md' %}
+{%- if page.path == _path -%}
+**Preview**{%- else %}[Preview]({{ site.base_url }}/{{ _prev }})
+{%- endif %}
+{{- bull -}}
 {% endcomment %}

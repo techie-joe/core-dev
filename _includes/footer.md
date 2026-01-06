@@ -19,6 +19,6 @@ This site is open source. {% github_edit_link "Improve this page" %}.
 {%- else %}{{- _custom_footer -}}
 {%- endif %}
 {%- endunless %}
-{{- thin_hr -}}
-{{- _github_edit_link -}}
+{{ thin_hr }}
+{{ _github_edit_link }}
 {%- endif %}

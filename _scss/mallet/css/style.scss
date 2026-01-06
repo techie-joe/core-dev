@@ -21,8 +21,8 @@ $pre_bg  : #f4f4f4;
 body { @extend .scrollable; }
 ._app { overflow:initial;position:initial }
 body { color:$text_color }
-b,strong { color:color.adjust($text_color, $lightness: 5%) }
-h1,h2,h3,h4,h5,h6,.hero { color:#000 }
+._b,b,strong { color:color.adjust($text_color, $lightness: 5%) }
+h1,h2,h3,h4,h5,h6,.h1,.h2,.hero { color:#000 }
 hr { border-width:2px; &.thin { border-width:1px } }
 u,a,abbr,abbr[title] {
   text-underline-offset:.15em;
@@ -32,6 +32,8 @@ u,a,abbr,abbr[title] {
 }
 ._sub,._sup,sub,sup { margin:0;@extend .smaller; }
 ._p,p { @extend %std_margin; }
+ul,ol { @extend %std_margin; }
+small { @extend .small; }
 blockquote { border-left:.5rem solid $grey_border }
 tt { @extend .mono; }
 kbd { @extend ._kbd; }
@@ -62,12 +64,17 @@ article {
     &.borderless { tr { background:none !important } }
   }
   ._layout { margin:0 auto;@extend .pa0; }
-  .highlight pre { @extend .ma0; }
+  .hero { @extend .hero; }
+  .highlight {
+    pre { @extend .ma0; }
+    .hll { background-color:rgba(#fa0,.2) }
+  }
 }
 ._header {
   h1 { @extend .mt0;@extend .ba0; } // logo holder
   ._logo a { @extend .block;padding:.25rem;margin:-.25rem; }
 }
+._common_nav a,
 ._logo a,
 ._nav a {
   & { @extend .text-slategrey; }
@@ -107,7 +114,6 @@ div.highlight { @extend .no_overflow; }
 pre.highlight { @extend .scrollable; }
 .highlight {
   .mh  { @extend .ma0; }
-  .hll { background-color:rgba($text-yellow,.15); }
 }
 .rouge-table {
   td.code,
@@ -143,8 +149,8 @@ $dark_pre_bg  : #171717;
 %dark_std_border { border-color:color.invert($grey_border) }
 ._dark {
   body { color:$dark_text_color }
-  b,strong { color:color.adjust($dark_text_color, $lightness: 5%) }
-  h1,h2,h3,h4,h5,h6,.hero { color:#fff }
+  ._b,b,strong { color:color.adjust($dark_text_color, $lightness: 5%) }
+  h1,h2,h3,h4,h5,h6,.h1,.h2,.hero { color:#fff }
   ._kbd,kbd {
     background-color:#2f2f2f;
     color:#d3d3d3;

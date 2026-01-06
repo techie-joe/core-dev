@@ -66,7 +66,7 @@ mixin hide_nav
   style| ._nav{display:none !important}
 
 mixin hide_footer
-  style| ._footerv{display:none !important}
+  style| ._footer{display:none !important}
 
 mixin _edit_link
   +thin_hr
@@ -103,11 +103,16 @@ mixin site_nav(sub)
   +sna(sub+"/404.html")| 404
 
 mixin test_nav(sub)
-  +sna(sub+"/preview.html")| Preview
-  +bull
   +sna(sub+"/test_colors.html")| Colors
   +bull
   +sna(sub+"/test_code-blocks.html")| Code blocks
+
+mixin template_nav(sub)
+  +sna(sub+"/")| About
+  +bull
+  +sna(sub+"/preview.html")| Preview
+  +bull
+  +sna(sub+"/templates.html")| Templates
 
 mixin page_footer
   .mt-6

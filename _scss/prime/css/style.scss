@@ -8,7 +8,7 @@
 %_960  { max-width:960px;  @extend .mc; position:relative }
 // ---------------------------------------------------------------
 $bg : #fff;
-$text_color  : #222;
+$text_color  : #333;
 $grey_border : #ccc;
 $code_bg : rgba(#ddd,.7);
 $code_tc : #444;
@@ -19,6 +19,7 @@ $pre_bg  : #f4f4f4;
 %std_margin { margin:16px 0 }
 // ---------------------------------------------------------------
 body { @extend .scroll_y; }
+h1,h2,h3,h4,h5,h6,.h1,.h2,.hero { color:#000 }
 u,a,abbr { text-underline-offset:.15em }
 details { 
   & { @extend %std_margin; }
@@ -46,7 +47,6 @@ article {
   kbd { padding:.5em }
   code,tt,kbd { background-color:$code_bg;color:$code_tc }
   pre { code,tt { @extend .no_bg; } }
-  figure.highlight { @extend .ma0; }
   img { @extend .no_bg;@extend .text-grey; }
   table {
     & { display:table;width:auto }
@@ -54,8 +54,13 @@ article {
     thead tr { background-color:#e7e7e7 }
     tr:nth-child(2n) { background-color:#f7f7f7 }
   }
-  .highlight,pre,
-  .highlight pre { border-radius:5px;background-color:$pre_bg }
+  .hero { @extend .hero; }
+  .highlight pre,
+  .highlight,pre { border-radius:5px;background-color:$pre_bg }
+  .highlight {
+    .hll { background-color:rgba(#fa0,.2) }
+  }
+  figure.highlight { @extend .ml0;@extend .mr0; }
   .task-list { padding-left:.25em; ul,ol { padding-left:2em } }
   ._footer { margin-bottom:4rem !important }
 }
@@ -79,6 +84,7 @@ article {
   a:focus { @extend .inherit_color; }
   a:hover { @extend .text-blue; }
 }
+._common_nav a,
 ._nav a {
   & { @extend .text-slategrey; }
   &:hover { @extend .text-blue; }
@@ -99,11 +105,10 @@ article {
   }
 }
 ._nav_common .button { @extend .text-slategrey; }
-div.highlight { overflow:hidden }
+div.highlight { @extend .no_overflow; }
 pre.highlight { @extend .scrollable; }
 .highlight {
-  .mh  { margin:0 }
-  .hll { background-color:rgba(#fb0,.15); }
+  .mh  { @extend .ma0; }
 }
 .rouge-table {
   td.code,
@@ -124,6 +129,8 @@ $dark_pre_bg  : #171717;
 %dark_std_border { border-color:color.invert($grey_border) }
 ._dark {
   body { color:color.invert($text_color);@extend %dark_std_bg; }
+  b,strong { color:color.adjust($dark_text_color, $lightness: 10%) }
+  h1,h2,h3,h4,h5,h6,.h1,.h2,.hero { color:#fff }
   .markdown-body {
     hr { border-color:color.invert($grey_border) }
     h1,h2 { @extend %dark_std_border; }
@@ -136,26 +143,30 @@ $dark_pre_bg  : #171717;
       thead tr { background-color:#242424 }
       tr:nth-child(2n) { background-color:#141414 }
     }
-    .highlight,pre,
-    .highlight pre { background-color:$dark_pre_bg }
+    .highlight pre,
+    .highlight,pre { background-color:$dark_pre_bg }
   }
   .box { @extend %dark_std_border; }
 }
 // ---------------------------------------------------------------
 ._dark {
   .highlight {
-    .err { background-color:#fdd;color:#d22 }
+    .o,
+    .k,.kd,.kp { color:#dcb }
+    .m,
+    .kc,
+    .no,.nv { color:#0bb }
+    .vi,
+    .na { color:#099 }
+    .nd { color:#496 }
+    .ni { color:#b4b }
+    .ss { color:#a6d }
+    .nt,.nc,.nn,.nb { color:#48b }
+    .ne,.nf,.nl { color:#d54 }
+    .gr,.gt,
+    .s,.si,.s1,.s2 { color:#f36; }
     .gd { background-color:rgba($text-red,.25);color:$text-white }
     .gi { background-color:rgba($text-green,.25);color:$text-white }
-    .ss { color:#939 }
-    .si,.s1,.s2,
-    .gr,.gt { color: #f36; }
-    .ne,.nf,.nl { color:#b33 }
-    .nd { color:#475; }
-    .ni { color: #a3a; }
-    .no { color: #0aa }
-    .o { color:#fff }
-    .nt,.nc,.nn { color: #37a; }
-    .k,.kd,.kc,.kp { color:#dbd6d1 }
+    .err { background-color:#fff;color:#d33 }
   }
 }
