@@ -88,33 +88,34 @@ mixin main_view
       +include('footer','footer.md')
 
 mixin sna(ref)
-  if ref == path || ref+'index.html' == path
+  - _path = removePathExt(path,'html');
+  if ref == _path || ref+'index.html' == _path
     b: block
   else
     +a([base_url,ref].join('/')): block
 
 mixin site_nav(sub)
-  +sna(sub+"/home.html")| Home
+  +sna(sub+"/home")| Home
   +bull
-  +sna(sub+"/page.html")| Page
+  +sna(sub+"/page")| Page
   +bull
-  +sna(sub+"/post.html")| Post
+  +sna(sub+"/post")| Post
   +bull
-  +sna(sub+"/404.html")| 404
+  +sna(sub+"/404")| 404
 
 mixin test_nav(sub)
-  +sna(sub+"/test_colors.html")| Colors
+  +sna(sub+"/test_colors")| Colors
   +bull
-  +sna(sub+"/test_code-blocks.html")| Code blocks
+  +sna(sub+"/test_code-blocks")| Code blocks
 
 mixin template_nav(sub)
   +sna(sub+"/")| About
   +bull
-  +sna(sub+"/preview.html")| Preview
+  +sna(sub+"/preview")| Preview
   +bull
-  +sna(sub+"/templates.html")| Templates
+  +sna(sub+"/templates")| Templates
   +bull
-  +sna(sub+"/test.html")| Test
+  +sna(sub+"/test")| Test
 
 mixin page_footer
   .mt-6

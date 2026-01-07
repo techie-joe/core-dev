@@ -1,7 +1,7 @@
 ```yml
 # _config.pug
-version      : 0.0.4
-revision     : 2512.04.4103
+version      : 0.0.6
+revision     : 2601.06.4557
 title        : Dove
 description  : A theme development project.
 author       : Techie Joe

@@ -6,6 +6,10 @@
 {%- assign _page = _sub | append: '/md/page' %}
 {%- assign _post = _sub | append: '/md/post' %}
 {%- assign _404  = _sub | append: '/md/404' %}
+{%- assign _more = _sub | append: '/templates' %}
+{%- capture __more -%}
+[(more..)]({{ site.base_url }}/{{ _more }})
+{%- endcapture %}
 
 **Md**
 {{- angle -}}
@@ -28,6 +32,7 @@
 {%- if page.path == _path -%}
 **404**{%- else %}[404]({{ site.base_url }}/{{ _404 }})
 {%- endif %}
+{{- bull -}}<small>{{ __more }}</small>
 
 {{ thin_hr }}
 

@@ -1,5 +1,7 @@
 extends _html
 block nav
+  nav.mv: +template_nav(layout_name)
+  +thin_hr
   nav.mv: +test_nav(layout_name)
   +thin_hr
 block footer
