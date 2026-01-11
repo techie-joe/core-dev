@@ -8,11 +8,10 @@ description: Home template.
 {%- include ui.html %}
 
 <style>
-  .hero_block { padding:1rem 2rem }
-  .hero_block .hero-title { margin-top:1rem }
-  .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
-  .hero_block .hero-hr { margin-top:45px }
-  ._article #icon {
+  #hero_block { padding:1rem 2rem }
+  #hero_block h1 { margin-top:1rem }
+  #hero_block h2 { border:0;font-weight:normal;font-size:1.2em }
+  #hero_block #icon {
     position: absolute;
     font-size:1em;
     opacity:.2;
@@ -23,10 +22,10 @@ description: Home template.
     scale:14;
   }
 </style>
-<div class="hero_block box no_overflow">
+<div id="hero_block" class="box no_overflow">
   <div class="relative"><div id="icon">⚒️</div></div>
-  <h1 class="hero-title">⚒️ Site title</h1>
-  <p class="hero-description">Your site's description.</p>
+  <h1>⚒️ Site title</h1>
+  <h2>Your site's description</h2>
 </div>
 
 {{ thin_hr }}
