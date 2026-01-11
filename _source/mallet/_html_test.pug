@@ -1,7 +1,12 @@
-extends _html_samples
-block append nav
+extends _html
+block nav
+  nav.mv: +samples_nav(layout_name)
+  +thin_hr
   nav.mv: +test_nav(layout_name)
   +thin_hr
-block prepend footer
+block footer
   +thin_hr
   nav._common_nav.mv: +test_nav(layout_name)
+  +thin_hr
+  nav._common_nav.mv: +samples_nav(layout_name)
+  +_edit_link
