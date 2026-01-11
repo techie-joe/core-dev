@@ -1,17 +1,7 @@
-extends _html_preview
+extends _html_test
 block append vars
   - path   = 'test.html'
   - title  = `Test`
   - description = `Test page.`
-block footer
-  //- no footer
 block content
-  nav.mv
-    +test_nav(layout_name)
-
-  +thin_hr
-
-  nav.mv
-    +sna(layout_name+"/test_page")| Test Page
-
-  div(style="margin-top:3rem")
+  pre.highlight: code !{icon} !{removeLastDot(description)}

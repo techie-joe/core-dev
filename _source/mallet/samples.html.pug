@@ -1,0 +1,53 @@
+extends _html_samples
+block append vars
+  - path   = 'samples.html'
+  - title  = `Samples`
+  - description = `Theme samples.`
+block append style
+  style.
+    ._article h2:first-of-type {
+      border:0;
+      margin-bottom:2rem;
+      margin-top:-0.5em;
+    }
+    ._article #icon {
+      position: absolute;
+      font-size:1em;
+      opacity:.2;
+      right:10em;
+      line-height:1;
+      z-index:-1;
+      top:5em;
+      scale:14;
+    }
+block content
+  .relative: #icon !{icon}
+  - title  = `Theme samples`
+  - description = `Essential templates for any website.`
+  h1.hero !{title}
+  h2 !{icon} !{removeLastDot(description)}
+
+  nav.mv
+    b Html
+    +angle
+    +site_nav(layout_name)
+
+  nav.mv
+    b Md
+    +angle
+    +site_nav(layout_name+'/md')
+
+  div(style="margin-top:3rem")
+  p.
+    #[strong #[a(href="./preview") Preview the theme]] to see what it looks like and #[strong #[a(href="./#how-to-use") start using it]] today!
+
+  +thin_hr
+  nav.mv
+    +test_nav(layout_name)
+
+  +if_dev
+    +thin_hr
+    nav.mv
+      +sna(layout_name+"/test")| Test page
+
+  div(style="margin-top:3rem")

@@ -2,16 +2,16 @@
 
 ## ⚒️ Mallet is a Jekyll theme for GitHub Pages
 
+**[Preview the theme](./preview)** to see what it looks like and **[start using it](./#how-to-use)** today!
+
 ```yml
 remote_theme: techie-joe/mallet
 remote_theme_version  : {{ site.version }}
 remote_theme_revision : {{ site.revision }}
 ```
 
-Preview the theme to see what it looks like and **[start using it](#how-to-use)** today!
-
 <a href="./preview" title="See what the template looks like." class="_bt -blue" style="width:10rem;height:3rem;font-size:1.2rem;">Preview</a>
-<a href="./templates" title="See how you can use this template to build your website" class="_bt" style="width:10rem;height:3rem;font-size:1.2rem;font-weight:normal;">Templates</a>
+<a href="./samples" title="See how you can use this template to build your website" class="_bt" style="width:10rem;height:3rem;font-size:1.2rem;font-weight:normal;">Samples</a>
 
 ## Build faster on GitHub Pages
 

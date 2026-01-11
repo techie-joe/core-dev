@@ -53,9 +53,8 @@ block content
       h3.mt-0 Posts
       |{{ posts | markdownify }}
   +thin_hr
-  |{%- if site.github.environment == 'development' -%}
-  nav: +include('nav_test','dove/nav_test.md')
-  +thin_hr
-  |{%- endif %}
+  +if_dev
+    nav: +include('nav_test','dove/nav_test.md')
+    +thin_hr
   h3 Configurations
   +include_relative('config','config.md')

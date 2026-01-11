@@ -7,7 +7,7 @@ Hero message and _colored text_{: .n.text-red } to grab attention
 
 ![Featured image](https://techie-joe.github.io/core/images/299-400x300.jpg){: .float-right.ml.mb width=400 height=400 }
 
-Welcome to the demo! This page provide a glimpse of the theme's appearance. The `text-justify` class will neatly align a paragraph. While the `big-first` class will enlarge the first letter. If you want to nudge the first line, use the `indent` class. Indentation gives a sense of order and clarity, making an article easier to read. You may also include [images](#include-images) and [hyperlinks](#hyperlink) to make things more engaging.
+Welcome to the demo! This page provide a glimpse of the theme's appearance. The `text-justify` class will neatly align a paragraph. While the `big-first` class will enlarge the first letter. If you want to nudge the first line, use the `indent` class. Indentation gives a sense of order and clarity, making an article easier to read. You may also include [images](#images) and [hyperlinks](#hyperlink) to make things more engaging.
 {: .text-justify.big-first }
 
 **Leave whitespace between paragraphs for clarity.**
@@ -15,7 +15,7 @@ Welcome to the demo! This page provide a glimpse of the theme's appearance. The 
 **You may notice some gibberish text in this demo.** It's just a placeholder content added to help you visualize how the layout, spacing and typography will appear once real content is in place. The gibberish text itself doesn't carry any meaning, it's simply there to fill the empty areas and make the overall design feel balanced and complete. Each line and section shows something different, though none of it is meant to be understood literally. It's more of a creative illusion, a way to showcase how color, contrast, and structure come together to create a theme. It honors the "look-and-feel" metaphor for how design can shift and vary in perspective. That's the beauty of visual design. Every layout tells its own silent story, even when the words themselves means nothing at all.
 {: .indent.text-justify.text-grey }
 
-> [Open the legacy demo page](legacy).
+> [Open the legacy demo page](legacy) or see how you can [start using it](./#how-to-use) today!
 
 {{ thin_hr }}
 
@@ -154,7 +154,7 @@ Footnote can be written in multiple lines[^3].
 
 Normally you would use number as reference, but you can use word[^note] as well.
 
-## Include images
+## Images
 
 ![Large image](https://techie-joe.github.io/core/images/299-1024x368.jpg){: alt="Large image" .width-full }
 

@@ -3,13 +3,25 @@ block append vars
   - path   = 'home.html'
   - title  = `Home`
   - description = 'Home template'
-block content
+block append style
   style.
     .hero_block { padding:1rem 2rem }
     .hero_block .hero-title { margin-top:1rem }
     .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
     .hero_block .hero-hr { margin-top:45px }
-  .hero_block.box
+    ._article #icon {
+      position: absolute;
+      font-size:1em;
+      opacity:.2;
+      right:10em;
+      line-height:1;
+      z-index:-1;
+      top:5em;
+      scale:14;
+    }
+block content
+  .hero_block.box.no_overflow
+    .relative: #icon !{icon}
     h1.hero-title ⚒️ Site title
     p.hero-description Your site's description.
 

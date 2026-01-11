@@ -6,9 +6,9 @@
 {%- assign _page = _sub | append: '/md/page' %}
 {%- assign _post = _sub | append: '/md/post' %}
 {%- assign _404  = _sub | append: '/md/404' %}
-{%- assign _more = _sub | append: '/templates' %}
+{%- assign _more = _sub | append: '/samples' %}
 {%- capture __more -%}
-[(more..)]({{ site.base_url }}/{{ _more }})
+[more..]({{ site.base_url }}/{{ _more }})
 {%- endcapture %}
 
 **Md**

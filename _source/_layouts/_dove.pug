@@ -72,6 +72,11 @@ mixin _edit_link
   +thin_hr
   p.text-right.text-grey: small: +edit_link(path)
 
+mixin if_dev
+  |{%- if site.github.environment == 'development' -%}
+  block
+  |{%- endif %}
+
 mixin main_view
   header._header: ._layout
     block header
@@ -108,14 +113,12 @@ mixin test_nav(sub)
   +bull
   +sna(sub+"/test_code-blocks")| Code blocks
 
-mixin template_nav(sub)
+mixin samples_nav(sub)
   +sna(sub+"/")| About
   +bull
   +sna(sub+"/preview")| Preview
   +bull
-  +sna(sub+"/templates")| Templates
-  +bull
-  +sna(sub+"/test")| Test
+  +sna(sub+"/samples")| Samples
 
 mixin page_footer
   .mt-6
