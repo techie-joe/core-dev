@@ -123,7 +123,7 @@
   line-height:1;
 }
 
-.icon { font-style:normal }
+.icon { &,i { font-style:normal !important }}
 .itext,
 .isvg,
 .isvg svg {

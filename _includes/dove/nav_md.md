@@ -1,16 +1,15 @@
 {%- include ui.html %}
 
 {%- assign _sub = include.sub | default: '' %}
-{%- assign _prev = _sub | append: '/md/preview' %}
+{%- assign _main = _sub | append: '/samples' %}
 {%- assign _home = _sub | append: '/md/home' %}
 {%- assign _page = _sub | append: '/md/page' %}
 {%- assign _post = _sub | append: '/md/post' %}
 {%- assign _404  = _sub | append: '/md/404' %}
-{%- assign _more = _sub | append: '/samples' %}
-{%- capture __more -%}
-[more..]({{ site.base_url }}/{{ _more }})
-{%- endcapture %}
 
+{%- assign _path = _main %}
+[Samples]({{ site.base_url }}/{{ _main }})
+{{- colon -}}
 **Md**
 {{- angle -}}
 {%- assign _path = _home | append: '.md' %}
@@ -32,7 +31,6 @@
 {%- if page.path == _path -%}
 **404**{%- else %}[404]({{ site.base_url }}/{{ _404 }})
 {%- endif %}
-{{- bull -}}<small>{{ __more }}</small>
 
 {{ thin_hr }}
 

@@ -64,19 +64,19 @@ mixin svgi(d,viewBox,opacity,fill)
 //- ==============================================================
 
 mixin isvg(d,cls)
-  i._icon(class=cls): i.isvg&attributes(attributes): +svgi(d)
+  i.icon(class=cls): i.isvg&attributes(attributes): +svgi(d)
 
 mixin fa(cls)
-  i._icon(class=cls): i.fa&attributes(attributes): block
+  i.icon(class=cls): i.fa&attributes(attributes): block
 
 mixin fas(cls)
-  i._icon(class=cls): i.fas&attributes(attributes): block
+  i.icon(class=cls): i.fas&attributes(attributes): block
 
 mixin far(cls)
-  i._icon(class=cls): i.far&attributes(attributes): block
+  i.icon(class=cls): i.far&attributes(attributes): block
 
 mixin fab(cls)
-  i._icon(class=cls): i.fab&attributes(attributes): block
+  i.icon(class=cls): i.fab&attributes(attributes): block
 
 mixin itext(cls)
-  i._icon(class=cls): i.itext&attributes(attributes): block
+  i.icon(class=cls): i.itext&attributes(attributes): block

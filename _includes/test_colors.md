@@ -1,5 +1,10 @@
 {% include ui.html %}
 
+##### Base
+
+**black**{: .text-white.bg-black.pa_5.ph }
+**white**{: .text-black.bg-white.pa_5.ph }
+
 ##### Borders
 
 {%- capture bqs %}
@@ -32,10 +37,6 @@
     #bqs blockquote { padding-right:0 }
   }
 </style>
-
-
-**black**{: .text-white.bg-black.pa_5.ph }
-**white**{: .text-black.bg-white.pa_5.ph }
 
 ##### Horizontal lines
 
