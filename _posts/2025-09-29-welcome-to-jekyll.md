@@ -1,5 +1,6 @@
 ---
 layout: default-post
+title: Welcome to Jekyll
 ---
 # {{ page.title }}
 

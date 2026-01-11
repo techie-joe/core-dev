@@ -1,7 +1,7 @@
 ---
 layout: default-post
-title: "Some titles are just so long ..."
-full-title: "Some titles are just so long they deserve a check to see if things will break well, this should be long enough"
+title: "Very long title deserve ..."
+full-title: "Very long title deserve a check to see if things will break well - this should be long enough to see how it goes"
 categories: misc
 ---
 # {{ page.full-title }}
