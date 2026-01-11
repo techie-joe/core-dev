@@ -1,0 +1,13 @@
+extends _html_samples
+block append vars
+  - path   = 'about.html'
+  - title  = `About`
+  - description = `About Techie Joe's Mallet.`
+block nav
+  +hide_nav
+block append style
+  style.
+    ._article h1 { border:0;font-size:3em;font-weight:bold }
+    ._footer { margin-top:3rem }
+block content
+  +include_relative('about','README.md')

@@ -1,9 +1,6 @@
-extends _html
+extends _html_samples
 block append vars
   - path   = 'legacy.html'
   - title  = `Legacy`
 block content
   +include('legacy','preview-legacy.md')
-block footer
-  //- no site footer
-  +_edit_link
