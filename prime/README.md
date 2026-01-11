@@ -1,6 +1,6 @@
 # The Prime Theme
 
-## 🌌 Prime is a Jekyll theme for GitHub Pages
+## 🦅 Prime is a Jekyll theme for GitHub Pages
 
 **[Preview the theme](./preview)** to see what it looks like and **[start using it](./#how-to-use)** today!
 
@@ -15,9 +15,9 @@ remote_theme_revision : {{ site.revision }}
 
 ## Build faster on GitHub Pages
 
-Finish building your site quicker. **Mallet** helps you build websites on GitHub Pages using **ready-to-go templates and components**. You can build using **Markdown**, **Pug** or **HTML**. Set and style any page instantly, just by referring to the pre-configured assets. Our goal is to provide users with an **easy way to build a website**. We'd like to meet the needs of the vast majority of users, including those who need to customize further. Start building with a massive leap ahead, and customize everything from global defaults to individual components to suit your need.
+Finish building your site quicker. **Prime** helps you build websites on GitHub Pages using **ready-to-go templates and components**. You can build using **Markdown**, **Pug** or **HTML**. Set and style any page instantly, just by referring to the pre-configured assets. Our goal is to provide users with an **easy way to build a website**. We'd like to meet the needs of the vast majority of users, including those who need to customize further. Start building with a massive leap ahead, and customize everything from global defaults to individual components to suit your need.
 
-> **Your design, your content, your way. Powered by Mallet.**
+> **Your design, your content, your way. Powered by Prime.**
 
 ## How to use
 
@@ -26,7 +26,7 @@ To use the theme on your site:
 1. Add the following lines to the `_config.yml` file in the root of your repository:
 
     ```yml
-    remote_theme: techie-joe/mallet
+    remote_theme: techie-joe/prime
     plugins:
         - jekyll-remote-theme
     ```
@@ -74,7 +74,7 @@ To add your own custom styles:
     ```scss
     ---
     ---
-    @import "mallet";
+    @import "prime";
     ```
 
 2. Add any custom CSS (or SASS, including imports) you'd like immediately after the `@import` line.
@@ -83,7 +83,7 @@ _**Note:** To change the template's SASS variables, you must set new values befo
 
 ### Layouts
 
-All [template layouts](https://github.com/techie-joe/mallet/tree/master/_layouts) in the `_layouts` folder and [template components](https://github.com/techie-joe/mallet/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. To override a file, create a mirror copy in your site's repository reflecting the exact path and file-name.
+All [template layouts](https://github.com/techie-joe/prime/tree/master/_layouts) in the `_layouts` folder and [template components](https://github.com/techie-joe/prime/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. To override a file, create a mirror copy in your site's repository reflecting the exact path and file-name.
 
 For example, to change the default layout:
 
@@ -102,7 +102,7 @@ Templates rely on URLs supplied by GitHub such as links to your repository or li
 
 To override the default URLs:
 
-1. Look at [the template source](https://github.com/techie-joe/mallet/blob/master/_layouts/prime.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
+1. Look at [the template source](https://github.com/techie-joe/prime/blob/master/_layouts/prime.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
 
 2. Specify the URL you'd like to use in your site's `_config.yml` file. Jekyll will use the URL you specified, instead of the default one.  
 
@@ -123,7 +123,7 @@ _For more information, see [the Jekyll variables documentation](https://jekyllrb
 To run the template locally:
 
 1. Clone the template's repository into your computer:
-    > `git clone https://github.com/techie-joe/mallet`
+    > `git clone https://github.com/techie-joe/prime`
 
 2. Go to the cloned directory.
 
@@ -142,8 +142,8 @@ To run the template locally:
 
 ## Roadmap
 
-See the [open issues](https://github.com/techie-joe/mallet/issues) for a list of proposed features and known issues.
+See the [open issues](https://github.com/techie-joe/prime/issues) for a list of proposed features and known issues.
 
 ## License
 
-**Mallet** is an open source project licensed under the [MIT LICENSE](//github.com/techie-joe/mallet/blob/main/LICENSE). You're allowed to use the code with conditions only requiring preservation of copyright and license notices.
+**Prime** is an open source project licensed under the [MIT LICENSE](//github.com/techie-joe/prime/blob/main/LICENSE). You're allowed to use the code with conditions only requiring preservation of copyright and license notices.

@@ -23,8 +23,8 @@ description: Home template.
   }
 </style>
 <div id="hero_block" class="box no_overflow">
-  <div class="relative"><div id="icon">🌌</div></div>
-  <h1>🌌 Site title</h1>
+  <div class="relative"><div id="icon">🦅</div></div>
+  <h1>🦅 Site title</h1>
   <h2>Your site's description</h2>
 </div>
 
