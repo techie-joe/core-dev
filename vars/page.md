@@ -8,6 +8,12 @@ description: Page Variables on this site.
 
 {% include_relative _vars_nav.md %}
 
+{{ thin_hr }}
+
 {% include vars-page.md %}
+
+{{ thin_hr }}
+
+{% include_relative _vars_nav.md %}
 
 {% comment %} --- end of page --- {% endcomment %}

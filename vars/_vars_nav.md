@@ -21,7 +21,5 @@
 {%- endif %}
 {: style="margin:1rem 0" }
 
-{{ thin_hr }}
-
 {% comment %}
 {% endcomment %}

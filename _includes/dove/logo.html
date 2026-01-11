@@ -1,7 +1,7 @@
 {%- assign _logo = include.name | default: page.layout %}
 {%- case _logo %}
 {%- when 'prime' or 'prime-page' or 'prime-post' %}
-<span class="_logo"><a href="{{ site.home_url }}/prime">🦅 Prime</a></span>
+<span class="_logo"><a href="{{ site.home_url }}/prime">🦅 The Prime Theme</a></span>
 {%- when 'nova' or 'nova-page' or 'nova-post' %}
 <span class="_logo"><a href="{{ site.home_url }}/nova">🌌 Nova</a></span>
 {%- when 'mallet' or 'mallet-page' or 'mallet-post' %}
@@ -9,5 +9,5 @@
 {%- when 'core' or 'core-page' or 'core-post' %}
 <span class="_logo"><a href="{{ site.home_url }}/core">💎 Core</a></span>
 {%- else %}
-<span class="_logo"><a href="{{ site.home_url }}/">🕊️ Dove</a></span>
+<span class="_logo"><a href="{{ site.home_url }}/">🕊️ The Dove Project</a></span>
 {%- endcase %}

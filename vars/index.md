@@ -7,6 +7,8 @@ description: Variables on this site.
 
 {% include_relative _vars_nav.md %}
 
+{{ thin_hr }}
+
 {%- assign word_key = "[0] key,[1] key,[n] keys" %}
 
 **{% include mod-plural.md val=keys word=word_key %} :**{{' '}}
@@ -39,5 +41,9 @@ description: Variables on this site.
 {%- include mod-peek.md val=theme %}
 ```
 {: .no_max_height }
+
+{{ thin_hr }}
+
+{% include_relative _vars_nav.md %}
 
 {% comment %} --- end of page --- {% endcomment %}
