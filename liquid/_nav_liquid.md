@@ -5,7 +5,7 @@
 {%- endif %}
 {{- bull -}}
 {%- if page.path == 'liquid/list.md' -%}
-**Handling Liquid List**{%- else -%}[Handling Liquid List]({{ site.base_url }}/liquid/list)
+**Liquid list**{%- else -%}[Liquid list]({{ site.base_url }}/liquid/list)
 {%- endif %}
 
 {% comment %}

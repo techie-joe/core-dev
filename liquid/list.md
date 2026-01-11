@@ -1,7 +1,7 @@
 ---
 index: false
 use_footer: edit_link_only
-title: Handling Liquid List
+title: Liquid list
 description: Handling Liquid List.
 ---
 {%- include ui.html %}
