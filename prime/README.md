@@ -83,12 +83,12 @@ _**Note:** To change the template's SASS variables, you must set new values befo
 
 ### Layouts
 
-All [template layouts](https://github.com/techie-joe/prime/tree/master/_layouts) in the `_layouts` folder and [template components](https://github.com/techie-joe/prime/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. To override a file, create a mirror copy in your site's repository reflecting the exact path and file-name.
+All [template layouts](https://github.com/techie-joe/prime/tree/master/_layouts) in the `_layouts` folder and [template components](https://github.com/techie-joe/prime/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. To override a file, create a mirror copy of that file in your site's repository reflecting the exact path and file-name.
 
 For example, to change the default layout:
 
-1. Copy `/_layouts/default.html` file from the template's repository into your site's repository using the same path and file-name.
-2. Then customize the layout as you'd like.
+1. Create a copy of `/_layouts/default.html` in your site's repository.
+2. Then customize it as you'd like.
 
 _**Pro-tip:** click "raw" to make copying easier._
 
