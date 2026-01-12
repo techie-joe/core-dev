@@ -9,8 +9,8 @@ description   : A theme development project.
 
 author        : Techie Joe
 
-version       : '0.0.6'
-revision      : '2601.06'
+version       : '0.0.7'
+revision      : '2601.07'
 
 baseurl       : '/dove'
 base_url      : '/dove'

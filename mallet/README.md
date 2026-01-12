@@ -15,7 +15,7 @@ remote_theme_revision : {{ site.revision }}
 
 ## Build faster on GitHub Pages
 
-Finish building your site quicker. **Mallet** helps you build websites on GitHub Pages using **ready-to-go templates and components**. You can build using **Markdown**, **Pug** or **HTML**. Set and style any page instantly, just by referring to the pre-configured assets. Our goal is to provide users with an **easy way to build a website**. We'd like to meet the needs of the vast majority of users, including those who need to customize further. Start building with a massive leap ahead, and customize everything from global defaults to individual components to suit your need.
+Finish building your site quicker. **Mallet** helps you build websites on GitHub Pages using **ready-to-go templates and components**. You can build using **Markdown**, **Pug** or **HTML**. Set and style any page instantly, just by referring to the pre-configured assets. Our goal is to provide users with an **easy way to build a website**. We aim to meet the needs of the vast majority of users, including those who need to customize further. Start building with a massive leap ahead, and customize everything from global defaults to individual components to suit your need.
 
 > **Your design, your content, your way. Powered by Mallet.**
 
@@ -23,7 +23,7 @@ Finish building your site quicker. **Mallet** helps you build websites on GitHub
 
 To use the theme on your site:
 
-1. Add the following lines to the `_config.yml` file in the root of your repository:
+1. Add the following lines to the `_config.yml` file in the root of your GitHub repository:
 
     ```yml
     remote_theme: techie-joe/mallet
@@ -102,7 +102,11 @@ Templates rely on URLs supplied by GitHub such as links to your repository or li
 
 To override the default URLs:
 
-1. Look at [the template source](https://github.com/techie-joe/mallet/blob/master/_layouts/prime.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
+1. Look at [the template source](https://github.com/techie-joe/mallet/blob/master/_layouts/prime.html) to determine the name of the variable. It will be in the form of:
+
+    ```
+    {{ site.github.zip_url }}
+    ```
 
 2. Specify the URL you'd like to use in your site's `_config.yml` file. Jekyll will use the URL you specified, instead of the default one.  
 
@@ -123,7 +127,10 @@ _For more information, see [the Jekyll variables documentation](https://jekyllrb
 To run the template locally:
 
 1. Clone the template's repository into your computer:
-    > `git clone https://github.com/techie-joe/mallet`
+
+    ```
+    git clone https://github.com/techie-joe/mallet
+    ```
 
 2. Go to the cloned directory.
 

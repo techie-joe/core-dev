@@ -16,7 +16,7 @@ var fun = function lang(l) {
   return true;
 }
 /*
-  Javascript comment block
+  comment block
 */
 ```
 
@@ -28,12 +28,11 @@ GitHubPages::Dependencies.gems.each do |gem, version|
   s.add_dependency(gem, "= #{version}")
 end
 =begin
-  Ruby comment block
+  comment block
 =end
 ```
 
 ```ruby
-# Ruby codes
 foo ||= bar
 foo / bar
 21 + 54 = 0
@@ -47,10 +46,9 @@ foo / bar
 ```
 
 ```ruby
-# Ruby includes
+# Ruby module
 include Enumerable
 
-# Ruby module
 module Foo
   class Bar
     LIPSUM = "lorem ipsum dolor sit"
@@ -103,9 +101,12 @@ This line has not been changed
 
 {% raw %}
 ```liquid
-{%- assign variable = value_or_expression | filter: 'filter_expression' %}
-{{ variable }}
-{% comment %} Liquid code with syntax highlighting {% endcomment %}
+# Liquid code with syntax highlighting
+{%- assign variable = value | filter: 'filter_expression' %}
+{{ variable | default: "[default_value]" }}
+{{ json | jsonify }}
+{{ markdown | markdownify }}
+{% comment %} comment block {% endcomment %}
 ```
 {% endraw %}
 

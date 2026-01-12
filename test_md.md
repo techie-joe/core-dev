@@ -7,10 +7,6 @@ testing: false
 ---
 {%- include ui.html %}
 
-{%- capture _menu %}{%- include dove/nav_test.md %}{%- endcapture -%}
-<nav>{{ _menu | markdownify }}</nav>
-{{ thin_hr }}
-
 {%- if page.testing %}
 
 {%- assign pad = "           " %}

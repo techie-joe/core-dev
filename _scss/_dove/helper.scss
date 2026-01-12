@@ -20,19 +20,20 @@
 .inline  { display:inline }
 .block   { display:block }
 .inblock { display:inline-block }
+.inflex  { display:inline-flex }
 
-.flex { display:flex }
-.fill { flex:1 }
-.fit  { flex:0 }
+.flex    { display:flex }
+.fill    { flex:1 }
+.fit     { flex:0 }
+
+.relative { position:relative }
+.absolute { position:absolute }
 
 .width-full { width:100% }
 .width-fit  { max-width:100% }
 
 .float-left  { float:left }
 .float-right { float:right }
-
-.relative { position:relative }
-.absolute { position:absolute }
 
 .text-left    { text-align:left }
 .text-right   { text-align:right }
@@ -117,14 +118,15 @@
 }
 
 .button {
-  @extend .inblock;
+  @extend .inflex;
   @extend .no_u;
   padding:.5em;
   border:1px solid;
   margin:.25rem .25rem;
   border-radius:.25em;
   line-height:1;
-  text-align:center;
+  justify-content:center;
+  align-items:center;
 }
 
 .icon { &,i { font-style:normal !important }}

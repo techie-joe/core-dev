@@ -9,6 +9,10 @@
 {%- else %}
 
 {%- capture dove_footer %}
+{{- thin_hr -}}
+{%- unless page.path == 'pages.md' or page.path == 'posts.md' -%}
+{%- include dove/nav.md %}
+{%- endunless %}
 **Dove**
 {{- angle -}}
 [Repository](https://github.com/techie-joe/dove){: target="_dove_repository" }
@@ -17,6 +21,7 @@
 {%- endcapture %}
 
 {%- capture tj_footer %}
+{{- thin_hr -}}
 **Techie Joe's**
 {{- angle -}}
 [Website](https://techie-joe.github.io){: target="_techiejoe_website" }
@@ -27,9 +32,7 @@
 {%- endcapture %}
 
 <nav class="_nav">
-{{- thin_hr -}}
 {{- dove_footer | markdownify -}}
-{{- thin_hr -}}
 {{- tj_footer | markdownify -}}
 </nav>
 

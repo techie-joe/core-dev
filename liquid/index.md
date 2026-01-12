@@ -9,13 +9,16 @@ description: Basic Liquid syntaxes.
 
 # {{ page.title }}
 
-###### assigning values & rendering it
+###### syntax
 
 {% raw %}
 ```liquid
-{%- assign variable = value_or_expression | filter: 'filter_expression' %}
-{{ variable | default: "[default-value]" }}
-{{ json_variable | jsonify }}
+# Liquid code with syntax highlighting
+{%- assign variable = value | filter: 'filter_expression' %}
+{{ variable | default: "[default_value]" }}
+{{ json | jsonify }}
+{{ markdown | markdownify }}
+{% comment %} comment block {% endcomment %}
 ```
 {% endraw %}
 
@@ -108,7 +111,7 @@ else :
 ###### loops
 
 ```yml
-(1..9){{' : '}}
+(1..9) {{' : '}}
 {%- for i in (1..9) -%}
 {{ i }}
 {%- unless forloop.last -%}{{','}}{%- endunless %}

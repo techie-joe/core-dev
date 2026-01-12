@@ -21,6 +21,17 @@ description: A theme development project.
     <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
     <style>
       ._header h1 { margin-top:1em }
+      ._header h2 { padding-bottom:1.3em;margin-top:-0.7em }
+      ._header #icon {
+        position: absolute;
+        font-size:1em;
+        opacity:.2;
+        right:10em;
+        line-height:1;
+        z-index:-1;
+        top:5em;
+        scale:14;
+      }
       #pages_ ul,
       #posts_ ul,
       .markdown-body .rapat { margin:1rem 0;padding-left:1.3em }
@@ -37,6 +48,9 @@ description: A theme development project.
         <div class="_layout container-lg px-3 my-3 markdown-body">
           <header class="_header">
             <div class="_layout">
+              <div class="relative">
+                <div id="icon">🕊️</div>
+              </div>
               <h1>🕊️ The Dove Project</h1>
             </div>
           </header>
@@ -52,25 +66,23 @@ description: A theme development project.
                   <div class="fill" id="themes_">
                     <h3 class="mt-0">Themes</h3>
                     <p class="text-grey">We are working on the following themes.</p>
-                    <nav>
-                      <ul class="rapat">
-                        <li><a href="/dove/core/"><b>Core</b></a><i class="icon"><i class="isvg">
-                              <svg viewBox="0 0 24 24">
-                                <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                              </svg></i></i><a href="/dove/core/preview.html">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/home.html">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/page.html">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/post.html">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/404.html">404</a>
-                        </li>
-                        <li><a href="/dove/mallet/"><b>Mallet</b></a><i class="icon"><i class="isvg">
-                              <svg viewBox="0 0 24 24">
-                                <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                              </svg></i></i><a href="/dove/mallet/preview.html">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/home.html">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/page.html">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/post.html">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/404.html">404</a>
-                        </li>
-                        <li><a href="/dove/prime/"><b>Prime</b></a><i class="icon"><i class="isvg">
-                              <svg viewBox="0 0 24 24">
-                                <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                              </svg></i></i><a href="/dove/prime/preview.html">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/prime/home.html">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/prime/page.html">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/prime/post.html">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/prime/404.html">404</a>
-                        </li>
-                      </ul>
-                    </nav>
+                    <ul class="rapat">
+                      <li><b><a href="/dove/core/">Core</a></b><i class="icon"><i class="isvg">
+                            <svg viewBox="0 0 24 24">
+                              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                            </svg></i></i><a href="/dove/core/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/samples">Samples</a>
+                      </li>
+                      <li><b><a href="/dove/mallet/">Mallet</a></b><i class="icon"><i class="isvg">
+                            <svg viewBox="0 0 24 24">
+                              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                            </svg></i></i><a href="/dove/mallet/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/samples">Samples</a>
+                      </li>
+                      <li><b><a href="/dove/prime/">Prime</a></b><i class="icon"><i class="isvg">
+                            <svg viewBox="0 0 24 24">
+                              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
+                            </svg></i></i><a href="/dove/prime/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/prime/samples">Samples</a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <hr class="thin"/>
@@ -78,21 +90,17 @@ description: A theme development project.
                 <div class="flex" style="gap:3rem">
                   <div id="pages_" style="min-width:250px">
                     <h3 class="mt-0">Pages</h3>{{ pages | markdownify }}
-                    <nav>
-                      <ul>
-                        <li><a href="404">404</a>
-                        </li>
-                      </ul>
-                    </nav>
+                    <ul>
+                      <li><a href="404">404</a>
+                      </li>
+                    </ul>
                   </div>
                   <div id="posts_" style="min-width:250px">
                     <h3 class="mt-0">Posts</h3>{{ posts | markdownify }}
                   </div>
                 </div>
-                <hr class="thin"/>{%- if site.github.environment == 'development' -%}
-                <nav>{%- capture nav_test %}{%- include dove/nav_test.md %}{%- endcapture %}
+                <hr class="thin"/>{%- if site.github.environment == 'development' -%}{%- capture nav_test %}{%- include dove/nav_test.md %}{%- endcapture %}
 {{ nav_test | markdownify }}
-                </nav>
                 <hr class="thin"/>{%- endif %}
                 <h3>Configurations</h3>{%- capture config %}{%- include_relative config.md %}{%- endcapture %}
 {{ config | markdownify }}
