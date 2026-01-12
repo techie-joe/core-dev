@@ -102,11 +102,13 @@ Templates rely on URLs supplied by GitHub such as links to your repository or li
 
 To override the default URLs:
 
-1. Look at [the template source](https://github.com/techie-joe/mallet/blob/master/_layouts/prime.html) to determine the name of the variable. It will be in the form of:
+1. Look at the template source (in the `_layouts` and `_includes` folder) to determine the name of the variable. It will be in the form of:
 
-    ```
+    {% raw %}
+    ```liquid
     {{ site.github.zip_url }}
     ```
+    {% endraw %}
 
 2. Specify the URL you'd like to use in your site's `_config.yml` file. Jekyll will use the URL you specified, instead of the default one.  
 

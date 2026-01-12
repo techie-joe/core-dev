@@ -1,0 +1,8 @@
+extends _html
+block nav
+  nav.mv: +samples_nav(layout_name)
+  +thin_hr
+block footer
+  +thin_hr
+  nav._common_nav.mv: +samples_nav(layout_name)
+  +_edit_link

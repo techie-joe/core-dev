@@ -1,37 +1,23 @@
-extends _html
+extends about
 block append vars
   - path   = 'index.html'
   - title  = `Core`
-  - description = `Minimal theme for your site.`
+  - description = `Basic theme for your site.`
+block append style
+  style.
+    ._article h2:first-of-type { padding-bottom:1.3em;margin-top:-0.7em }
+    ._article #icon {
+      position: absolute;
+      font-size:1em;
+      opacity:.2;
+      right:10em;
+      line-height:1;
+      z-index:-1;
+      top:5em;
+      scale:14;
+    }
 block header
   h1|{% include dove/logo.html %}
-block nav
-  +hide_nav
-block footer
-  //- no site footer
-  +_edit_link
-block content
-  style.
-    .hero_block { padding:1rem 2rem }
-    .hero_block .hero-title { margin-top:1rem }
-    .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
-    .hero_block .hero-hr { margin-top:45px }
-  .hero_block.box
-    h1.hero-title 💎 !{title}
-    p.hero-description !{description}
-
-  +thin_hr
-  nav.mv
-    b Html
-    +angle
-    +site_nav(layout_name)
-
-  +thin_hr
-  nav.mv
-    b Markdown
-    +angle
-    +site_nav(layout_name+'/md')
-
-  +thin_hr
-  nav.mv
-    +test_nav(layout_name)
+  //- +hide_header
+block prepend content
+  .relative: #icon !{icon}

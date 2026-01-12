@@ -20,6 +20,21 @@ description: Home template
     <meta id="_theme_color" name="theme-color" content="#222"/>
     <style>.isvg svg { width:1em;height:1em }</style>
     <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/core/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
+    <style>
+      #hero_block { padding:1rem 2rem }
+      #hero_block h1 { margin-top:1rem }
+      #hero_block h2 { border:0;font-weight:normal;font-size:1.2em;margin-top:1rem }
+      #hero_block #icon {
+        position: absolute;
+        font-size:1em;
+        opacity:.2;
+        right:10em;
+        line-height:1;
+        z-index:-1;
+        top:5em;
+        scale:14;
+      }
+    </style>
 {% include layout_head.html %}
 <!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
@@ -34,10 +49,10 @@ description: Home template
           </header>
           <nav class="_nav">
             <div class="_layout">
-              <div class="mv"><b>Html</b><i class="icon"><i class="isvg">
+              <div class="mv"><a href="/dove/core/samples">Samples</a><i class="icon"><i class="isvg">
                     <svg viewBox="0 0 24 24">
                       <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                    </svg></i></i><b>Home</b><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/page">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/post">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/404">404</a>
+                    </svg></i></i><b>Html</b><i class="icon"><i class="itext">:</i></i><b>Home</b><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/page">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/post">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/404">404</a>
               </div>
               <hr class="thin"/>
             </div>
@@ -45,15 +60,12 @@ description: Home template
           <main class="_main">
             <article class="_article">
               <div class="_layout">
-                <style>
-                  .hero_block { padding:1rem 2rem }
-                  .hero_block .hero-title { margin-top:1rem }
-                  .hero_block .hero-description { margin-left: 3.3rem; font-size: 1.1em; }
-                  .hero_block .hero-hr { margin-top:45px }
-                </style>
-                <div class="hero_block box">
-                  <h1 class="hero-title">💎 Main title</h1>
-                  <p class="hero-description">Your site's description.</p>
+                <div class="box no_overflow" id="hero_block">
+                  <div class="relative">
+                    <div id="icon">💎</div>
+                  </div>
+                  <h1>💎 Site title</h1>
+                  <h2>Site slogan or description</h2>
                 </div>
                 <hr class="thin"/>
                 <p><code>// home content</code></p>
