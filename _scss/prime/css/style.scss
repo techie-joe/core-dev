@@ -89,8 +89,7 @@ article {
   & { @extend .text-slategrey; }
   &:hover { @extend .text-blue; }
 }
-.itext,
-.isvg { line-height:.8 }
+.itext { vertical-align:baseline }
 .box { border-radius:5px;padding:.5em 1em;@extend %std_border; }
 .button {
   &.primary {

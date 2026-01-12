@@ -87,8 +87,7 @@ article {
     @extend .inherit_color;
   }
 }
-.itext,
-.isvg { line-height:.8 }
+.itext { vertical-align:baseline }
 .box {
   padding:.5em 1em;
   @extend %std_border;
