@@ -1,11 +1,16 @@
+-
+  now   = new Date()
+  today = now.toGMTString()
+  year  = now.getFullYear()
+
+//- ==============================================================
 include /_config
+//- ==============================================================
 -
   site_title       = title;
   site_description = description;
 
-  now   = new Date()
-  today = now.toGMTString()
-  year  = now.getFullYear()
+  revision = [revision,now.getHours()*100+now.getMinutes()*100+now.getSeconds()].join('.')
 
   js   = {
     //- javascripts
@@ -42,6 +47,7 @@ include /_config
 
 //- ==============================================================
 //- functions
+//- ==============================================================
 -
   onclick = ( _script='' ) => 'event.preventDefault();' + _script;
   capitalize = s => s.replace(/\w\S*/g, w => w[0].toUpperCase() + w.slice(1).toLowerCase());
@@ -49,82 +55,5 @@ include /_config
   removePathExt = (path,ext) => path.replace(new RegExp(`\\.${ext}$`), '');
 
 //- ==============================================================
-
 include _mixins
-
 //- ==============================================================
-
-mixin layout_head
-  |<!-- layout_head -->
-  //- +fonts
-  //- +icons
-  //- +manifest
-
-mixin fonts
-  link(rel="preconnect" href="https://fonts.googleapis.com")/
-  link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)/
-  link(rel="stylesheet" href="https://fonts.googleapis.com/css2?"+fonts.join('&'))#_fonts/
-
-mixin icons
-  //- prioritization sequence: first match, exact-size, type, then "any".
-  link(rel="apple-touch-icon" type="image/png"     sizes="180x180" href=base_url+"/icons/apple-touch-icon.png")/
-  link(rel="icon"             type="image/png"     sizes="32x32"   href=base_url+"/icons/favicon-32x32.png")/
-  link(rel="icon"             type="image/png"     sizes="16x16"   href=base_url+"/icons/favicon-16x16.png")/
-  link(rel="shortcut icon"    type="image/x-icon"  sizes="any"     href=base_url+"/icons/favicon.ico")/
-
-mixin manifest
-  //- enable manifest if you're building a PWA Apps
-  link(rel="manifest" href!=`${base_url}/manifest.json?r=${revision}`)/
-
-//- ==============================================================
-
-mixin layout_body
-  +copyright
-  +credit
-  +themejs
-  +anchor
-  +google_analytics
-
-//- ==============================================================
-
-mixin edit_link(path)
-  | This site is open source.
-  | #[a(href=`${source_url}/edit/main/_source/${path}.pug`)| Improve this page].
-
-mixin copyright
-  ._copyright
-    span._copyright_text| @ by #{author} !{year}
-
-mixin credit
-  ._credit: a._credit_link(href='https://techie-joe.github.io/dove')| ✨ Made with Dove
-
-mixin theme_switch(title='Change Theme (Alt+T)')
-  ._theme_switch._needjs: a(href='#' onclick!=onclick(js.themeChange) title=title)
-    +isvg(svgi.compare)
-
-mixin themejs
-  script|window.ghost='!{ghost}';
-  +js(`${base_url}/assets/themejs/themejs_v2.0.js?r=${revision}`)
-
-mixin anchor
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous")
-  script|anchors?.add();
-
-mixin google_analytics
-  if google_analytics
-    script(async src="https://www.googletagmanager.com/gtag/js?id="+google_analytics)
-    script.
-      window.dataLayer=window.dataLayer||[];
-      function gtag(){window.dataLayer.push(arguments);}
-      gtag('js',new Date());
-      gtag('config','!{ google_analytics }');
-
-mixin fouc
-  style.
-    ._fouc { visibility: hidden !important }
-  script.
-    ((d=document,q=(d.documentElement||d.body).classList,c='_fouc',x='_tx')=>{
-      q.add(c,x);d.addEventListener('DOMContentLoaded',e=>{
-        setTimeout(e=>{q.remove(c);q.remove(x)},300);
-      });
-    })();

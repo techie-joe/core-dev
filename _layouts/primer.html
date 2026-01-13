@@ -1,19 +1,22 @@
 {%- assign layout_name = "primer" -%}
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="_dark">
+<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no_js">
   <!-- path        : {{ page.path }} -->
   <!-- layout      : _layouts/{{ page.layout }} -->
   <!-- title       : {{ page.title | default: "(untitled)" }} -->
   <!-- description : {{ page.description | default: "(undescribed)" }} -->
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
     {% seo %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta id="_theme-color"  name="theme-color"  content="{{ page.theme_color | default: site.theme_color | default: '' }}" />
+    <meta id="_color-scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}" />
     <style>
       .isvg svg { width:1em;height:1em }
     </style>
     <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/primer/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}" />
+    {% include layout_head.html %}
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
@@ -28,8 +31,10 @@
         This site is open source. {% github_edit_link "Improve this page" %}.
       </div>
       {% endif %}
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
+    </div>{% comment %} end of container {% endcomment %}
+    {% include layout_body.html %}
+    <script>
+      ((de=document.documentElement)=>de.className=de.className.replace('no_js','js'))();
+    </script>
   </body>
 </html>

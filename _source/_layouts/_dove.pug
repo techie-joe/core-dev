@@ -1,7 +1,39 @@
 include _main
--
-  revision = [revision,now.getHours()*100+now.getMinutes()*100+now.getSeconds()].join('.')
 
+//- ==============================================================
+//- mixins
+//- ==============================================================
+
+mixin front_matter
+  !='---'
+  block
+  !='\n---\n'
+
+mixin yml
+  !='```yml\n'
+  block
+  !='\n```\n'
+
+mixin capture(id='')
+  !=`{%- capture ${id} %}`
+  block
+  !=`{%- endcapture %}`
+
+mixin include(id='',path='',args="",filter=" | markdownify")
+  +capture(id)!=`{%- include ${path}${args} %}`
+  +l!=`{{ ${id}${filter} }}`
+
+mixin include_relative(id='',path='',args="",filter=" | markdownify")
+  +capture(id)!=`{%- include_relative ${path}${args} %}`
+  +l!=`{{ ${id}${filter} }}`
+
+mixin if_dev(environment)
+  !=`{%- if site.github.environment == '${environment}' -%}`
+  block
+  !=`{%- endif %}`
+
+//- ==============================================================
+//- icons
 //- ==============================================================
 
 mixin _itext
@@ -28,97 +60,76 @@ mixin angle
 mixin _angle
   +_isvg(svgi.angle)
 
-mixin thin_hr
-  hr.thin/
-
-mixin front_matter
-  !='---'
-  block
-  !='\n---\n'
-
-mixin yml
-  !='```yml\n'
-  block
-  !='\n```\n'
-
-mixin capture(id='')
-  !=`{%- capture ${id} %}`
-  block
-  !=`{%- endcapture %}`
-
-mixin include(id='',path='',args="",filter=" | markdownify")
-  +capture(id)!=`{%- include ${path}${args} %}`
-  +l!=`{{ ${id}${filter} }}`
-
-mixin include_relative(id='',path='',args="",filter=" | markdownify")
-  +capture(id)!=`{%- include_relative ${path}${args} %}`
-  +l!=`{{ ${id}${filter} }}`
-
+//- ==============================================================
+//- mixins
 //- ==============================================================
 
 mixin main_style
-  link#_style(rel="stylesheet" href!=`{{ site.base_url }}/assets/${layout_name}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
+  block main_style
+    link#_style(rel="stylesheet" href!=`{{ site.base_url }}/assets/${layout_name}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
+
+mixin thin_hr
+  hr.thin/
 
 mixin hide_header
-  style| ._header{display:none !important}
+  style.
+    ._header{display:none !important}
 
 mixin hide_nav
-  style| ._nav{display:none !important}
+  style.
+    ._nav{display:none !important}
 
 mixin hide_footer
-  style| ._footer{display:none !important}
+  style.
+    ._footer{display:none !important}
+
+mixin edit_link(path)
+  | This site is open source.
+  | #[a(href=`${source_url}/edit/main/_source/${path}.pug`)| Improve this page].
 
 mixin _edit_link
   +thin_hr
   p.text-right.text-grey: small: +edit_link(path)
 
-mixin if_dev
-  |{%- if site.github.environment == 'development' -%}
-  block
-  |{%- endif %}
-
 mixin main_view
-  header._header: ._layout
-    block header
+  block main_view
+    header._header: ._layout._header_layout: block header
       +include('header','header.md')
-  nav._nav: ._layout
-    block nav
+    nav._nav: ._layout._nav_layout: block nav
       +include('nav','nav.md')
-  main._main: article._article: ._layout
-    block content
+    article._article: ._layout._article_layout: block content
       h1 !{title}
-      p: code // !{title} (content)
-  footer._footer: ._layout
-    block footer
+      p: code // page content
+    footer._footer: ._layout._footer_layout: block footer
       +include('footer','footer.md')
 
-mixin sna(ref)
+mixin sn(ref)
   - _path = removePathExt(path,'html');
   if ref == _path || ref+'index.html' == _path
     b: block
   else
     +a([base_url,ref].join('/')): block
 
-mixin site_nav(sub)
-  +sna(sub+"/home")| Home
+mixin samples_nav(sub)
+  +sn(sub+"/")| About
   +bull
-  +sna(sub+"/page")| Page
+  +sn(sub+"/preview")| Preview
   +bull
-  +sna(sub+"/post")| Post
-  +bull
-  +sna(sub+"/404")| 404
+  +sn(sub+"/samples")| Samples
 
 mixin test_nav(sub)
-  +sna(sub+"/test_colors")| Colors
+  +sn(sub+"/test_colors")| Colors
   +bull
-  +sna(sub+"/test_code-blocks")| Code blocks
+  +sn(sub+"/test_code-blocks")| Code blocks
 
-mixin samples_nav(sub)
-  +sna(sub+"/")| About
+mixin site_nav(sub)
+  +sn(sub+"/home")| Home
   +bull
-  +sna(sub+"/preview")| Preview
+  +sn(sub+"/page")| Page
   +bull
-  +sna(sub+"/samples")| Samples
+  +sn(sub+"/post")| Post
+  +bull
+  +sn(sub+"/404")| 404
 
 mixin page_footer
   .mt-6
@@ -131,3 +142,74 @@ mixin post_footer
   hr
   h2 Other posts
   +include('posts','posts.md')
+
+//- ==============================================================
+
+//- mixin layout_head
+  |<!-- layout_head -->
+  //- +fonts
+  //- +icons
+  //- +manifest
+
+//- mixin fonts
+  link(rel="preconnect" href="https://fonts.googleapis.com")/
+  link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)/
+  link(rel="stylesheet" href="https://fonts.googleapis.com/css2?"+fonts.join('&'))#_fonts/
+
+//- mixin icons
+  //- prioritization sequence: first match, exact-size, type, then "any".
+  link(rel="apple-touch-icon" type="image/png"     sizes="180x180" href=base_url+"/icons/apple-touch-icon.png")/
+  link(rel="icon"             type="image/png"     sizes="32x32"   href=base_url+"/icons/favicon-32x32.png")/
+  link(rel="icon"             type="image/png"     sizes="16x16"   href=base_url+"/icons/favicon-16x16.png")/
+  link(rel="shortcut icon"    type="image/x-icon"  sizes="any"     href=base_url+"/icons/favicon.ico")/
+
+//- mixin manifest
+  //- enable manifest if you're building a PWA Apps
+  link(rel="manifest" href!=`${base_url}/manifest.json?r=${revision}`)/
+
+//- ==============================================================
+
+//- mixin layout_body
+  +copyright
+  +credit
+  +themejs
+  +anchor
+  +google_analytics
+
+//- mixin copyright
+  ._copyright
+    span._copyright_text| @ by #{author} !{year}
+
+//- mixin credit
+  ._credit: a._credit_link(href='https://techie-joe.github.io/dove')| ✨ Made with Dove
+
+//- mixin theme_switch(title='Change Theme (Alt+T)')
+  ._theme_switch._need_js: a(href='#' onclick!=onclick(js.themeChange) title=title)
+    +isvg(svgi.compare)
+
+//- mixin themejs
+  script|window.ghost='!{ghost}';
+  +js(`${base_url}/assets/themejs/themejs_v2.0.js?r=${revision}`)
+
+//- mixin anchor
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous")
+  script|anchors?.add();
+
+//- mixin google_analytics
+  if google_analytics
+    script(async src="https://www.googletagmanager.com/gtag/js?id="+google_analytics)
+    script.
+      window.dataLayer=window.dataLayer||[];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js',new Date());
+      gtag('config','!{ google_analytics }');
+
+//- mixin fouc
+  style.
+    ._fouc { visibility: hidden !important }
+  script.
+    ((d=document,q=(d.documentElement||d.body).classList,c='_fouc',x='_tx')=>{
+      q.add(c,x);d.addEventListener('DOMContentLoaded',e=>{
+        setTimeout(e=>{q.remove(c);q.remove(x)},300);
+      });
+    })();

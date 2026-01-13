@@ -1,14 +1,15 @@
 extends html
-block vars
+block append vars
   -
     layout_name = 'mallet'
-    htmlClass = [`_${layout_name}_layout`,'no_js']
-    bodyClass = []
-block style
+    html_class  = [`_${layout_name}_layout`,'no_js']
+block append style
   +main_style
 block body
-  ._views
-    ._view._app.__fadein: ._layout.container-lg.markdown-body: +main_view
-    ._view: ._layout: +l|{% include theme_switch.html %}
-    +l|{% include layout_body.html %}
-  //- ._views
+  main._view: ._main_layout._layout.container-lg.markdown-body: +main_view
+  aside._view._topbar_view: ._topbar_layout._layout.container-lg
+    +l|{% include theme_switch.html %}
+  aside._view._lowbar_view: ._lowbar_layout._layout.container-lg
+    +l|{% include copyright.html %}
+    +l|{% include credit.html %}
+  +l|{% include layout_body.html %}

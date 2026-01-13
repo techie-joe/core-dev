@@ -41,49 +41,47 @@ description: Theme samples.
 <!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
-    <div class="_views">
-      <div class="_view">
-        <div class="_layout">
+    <div class="_body_layout _layout">
+      <main class="_view">
+        <div class="_layout _main_layout">
           <header class="_header">
-            <div class="_layout">
+            <div class="_layout _header_layout">
               <h1>{% include dove/logo.html name="core" %}</h1>
             </div>
           </header>
           <nav class="_nav">
-            <div class="_layout">
+            <div class="_layout _nav_layout">
               <nav class="mv"><a href="/dove/core/">About</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><b>Samples</b>
               </nav>
               <hr class="thin"/>
             </div>
           </nav>
-          <main class="_main">
-            <article class="_article">
-              <div class="_layout">
-                <div class="relative">
-                  <div id="icon">💎</div>
-                </div>
-                <h1 class="hero">Theme samples</h1>
-                <h2>💎 Essential templates for any website</h2>
-                <nav class="mv"><b>Html</b><i class="icon"><i class="itext">:</i></i><a href="/dove/core/home">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/page">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/post">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/404">404</a>
-                </nav>
-                <nav class="mv"><b>Md</b><i class="icon"><i class="itext">:</i></i><a href="/dove/core/md/home">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/md/page">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/md/post">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/md/404">404</a>
-                </nav>
-                <div style="margin-top:3rem"></div>
-                <p><strong><a href="./preview">Preview the theme</a></strong> to see how it looks and <strong><a href="./#how-to-use">start using it</a></strong> today!
-                  
-                </p>
-                <hr class="thin"/>
-                <nav class="mv"><a href="/dove/core/test_colors">Colors</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/test_code-blocks">Code blocks</a>
-                </nav>{%- if site.github.environment == 'development' -%}
-                <hr class="thin"/>
-                <nav class="mv"><a href="/dove/core/test">Test page</a>
-                </nav>{%- endif %}
-                <div style="margin-top:3rem"></div>
+          <article class="_article">
+            <div class="_layout _article_layout">
+              <div class="relative">
+                <div id="icon">💎</div>
               </div>
-            </article>
-          </main>
+              <h1 class="hero">Theme samples</h1>
+              <h2>💎 Essential templates for any website</h2>
+              <nav class="mv"><b>Html</b><i class="icon"><i class="itext">:</i></i><a href="/dove/core/home">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/page">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/post">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/404">404</a>
+              </nav>
+              <nav class="mv"><b>Md</b><i class="icon"><i class="itext">:</i></i><a href="/dove/core/md/home">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/md/page">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/md/post">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/md/404">404</a>
+              </nav>
+              <div style="margin-top:3rem"></div>
+              <p><strong><a href="./preview">Preview the theme</a></strong> to see how it looks and <strong><a href="./#how-to-use">start using it</a></strong> today!
+                
+              </p>
+              <hr class="thin"/>
+              <nav class="mv"><a href="/dove/core/test_colors">Colors</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/test_code-blocks">Code blocks</a>
+              </nav>{%- if site.github.environment == 'undefined' -%}
+              <hr class="thin"/>
+              <nav class="mv"><a href="/dove/core/test">Test page</a>
+              </nav>{%- endif %}
+              <div style="margin-top:3rem"></div>
+            </div>
+          </article>
           <footer class="_footer">
-            <div class="_layout">
+            <div class="_layout _footer_layout">
               <hr class="thin"/>
               <nav class="_common_nav mv"><a href="/dove/core/">About</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><b>Samples</b>
               </nav>
@@ -94,13 +92,20 @@ description: Theme samples.
             </div>
           </footer>
         </div>
-      </div>
-      <div class="_view">
-        <div class="_layout">
+      </main>
+      <aside class="_view _topbar_view">
+        <div class="_layout _topbar_layout">
 {% include theme_switch.html %}
         </div>
-      </div>
+      </aside>
+      <aside class="_view _lowbar_view">
+        <div class="_layout _lowbar_layout">
+{% include copyright.html %}
+{% include credit.html %}
+        </div>
+      </aside>
 {% include layout_body.html %}
+      <script>((de=document.documentElement)=>de.className=de.className.replace('no_js','js'))();</script>
     </div>
   </body>
 </html>

@@ -24,16 +24,16 @@ description: Page template.
 <!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
-    <div class="_views">
-      <div class="_view _app __fadein">
-        <div class="_layout container-lg markdown-body">
+    <div class="_body_layout _layout">
+      <main class="_view">
+        <div class="_main_layout _layout container-lg markdown-body">
           <header class="_header">
-            <div class="_layout">
+            <div class="_layout _header_layout">
               <h1>{% include dove/logo.html name="mallet" %}</h1>
             </div>
           </header>
           <nav class="_nav">
-            <div class="_layout">
+            <div class="_layout _nav_layout">
               <div class="mv"><a href="/dove/mallet/samples">Samples</a><i class="icon"><i class="isvg">
                     <svg viewBox="0 0 24 24">
                       <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
@@ -42,20 +42,18 @@ description: Page template.
               <hr class="thin"/>
             </div>
           </nav>
-          <main class="_main">
-            <article class="_article">
-              <div class="_layout">
-                <h1>Page title</h1>
-                <p><code>// page content</code></p>
-                <div class="mt-6"></div>
-                <hr/>
-                <h2>Other pages</h2>{%- capture pages %}{%- include pages.md %}{%- endcapture %}
+          <article class="_article">
+            <div class="_layout _article_layout">
+              <h1>Page title</h1>
+              <p><code>// page content</code></p>
+              <div class="mt-6"></div>
+              <hr/>
+              <h2>Other pages</h2>{%- capture pages %}{%- include pages.md %}{%- endcapture %}
 {{ pages | markdownify }}
-              </div>
-            </article>
-          </main>
+            </div>
+          </article>
           <footer class="_footer">
-            <div class="_layout">
+            <div class="_layout _footer_layout">
               <hr class="thin"/>
               <p><code>// site footer</code></p>
               <hr class="thin"/>
@@ -65,13 +63,20 @@ description: Page template.
             </div>
           </footer>
         </div>
-      </div>
-      <div class="_view">
-        <div class="_layout">
+      </main>
+      <aside class="_view _topbar_view">
+        <div class="_topbar_layout _layout container-lg">
 {% include theme_switch.html %}
         </div>
-      </div>
+      </aside>
+      <aside class="_view _lowbar_view">
+        <div class="_lowbar_layout _layout container-lg">
+{% include copyright.html %}
+{% include credit.html %}
+        </div>
+      </aside>
 {% include layout_body.html %}
+      <script>((de=document.documentElement)=>de.className=de.className.replace('no_js','js'))();</script>
     </div>
   </body>
 </html>

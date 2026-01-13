@@ -24,30 +24,28 @@ description: Test page.
 <!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
-    <div class="_views">
-      <div class="_view _app __fadein">
-        <div class="_layout container-lg markdown-body">
+    <div class="_body_layout _layout">
+      <main class="_view">
+        <div class="_main_layout _layout container-lg markdown-body">
           <header class="_header">
-            <div class="_layout">
+            <div class="_layout _header_layout">
               <h1>{% include dove/logo.html name="mallet" %}</h1>
             </div>
           </header>
           <nav class="_nav">
-            <div class="_layout">
+            <div class="_layout _nav_layout">
               <nav class="mv"><a href="/dove/mallet/">About</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/samples">Samples</a>
               </nav>
               <hr class="thin"/>
             </div>
           </nav>
-          <main class="_main">
-            <article class="_article">
-              <div class="_layout">
-                <pre class="highlight"><code># Test page</code></pre>
-              </div>
-            </article>
-          </main>
+          <article class="_article">
+            <div class="_layout _article_layout">
+              <pre class="highlight"><code># Test page</code></pre>
+            </div>
+          </article>
           <footer class="_footer">
-            <div class="_layout">
+            <div class="_layout _footer_layout">
               <hr class="thin"/>
               <p class="text-right text-grey"><small>
                   This site is open source.
@@ -55,13 +53,20 @@ description: Test page.
             </div>
           </footer>
         </div>
-      </div>
-      <div class="_view">
-        <div class="_layout">
+      </main>
+      <aside class="_view _topbar_view">
+        <div class="_topbar_layout _layout container-lg">
 {% include theme_switch.html %}
         </div>
-      </div>
+      </aside>
+      <aside class="_view _lowbar_view">
+        <div class="_lowbar_layout _layout container-lg">
+{% include copyright.html %}
+{% include credit.html %}
+        </div>
+      </aside>
 {% include layout_body.html %}
+      <script>((de=document.documentElement)=>de.className=de.className.replace('no_js','js'))();</script>
     </div>
   </body>
 </html>

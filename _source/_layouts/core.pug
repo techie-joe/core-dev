@@ -1,8 +1,7 @@
 extends html
-block vars
+block append vars
   -
     layout_name = 'core'
-    htmlClass = [`_${layout_name}_layout`,'no_js']
-    bodyClass = []
-block style
+    html_class  = [`_${layout_name}_layout`,'no_js']
+block append style
   +main_style

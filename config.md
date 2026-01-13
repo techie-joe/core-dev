@@ -1,7 +1,7 @@
 ```yml
 # _config.pug
 version      : 0.0.7
-revision     : 2601.07.7306
+revision     : 2601.07.527
 title        : Dove
 description  : A theme development project.
 author       : Techie Joe
@@ -13,9 +13,7 @@ lang         : en-US
 theme_color  : #222
 color_scheme : light dark
 
-ghost                : bG9jYWxob3N0LGxvY2FsaG9zdDo0MDAwLHRlY2hpZS1qb2UuZ2l0aHViLmlv
-google_analytics     : [nil]
-cloudflare_analytics : [nil]
+ghost        : bG9jYWxob3N0LGxvY2FsaG9zdDo0MDAwLHRlY2hpZS1qb2UuZ2l0aHViLmlv
 
 source_url   : https://github.com/techie-joe/dove
 ```

@@ -29,11 +29,11 @@ block header
   .relative: #icon !{icon}
   h1 🕊️ The !{site_title} Project
 mixin index_nav(sub)
-  b: +sna(sub+"/")| !{capitalize(sub)}
+  b: +sn(sub+"/")| !{capitalize(sub)}
   +angle
-  +sna(sub+"/preview")| Preview
+  +sn(sub+"/preview")| Preview
   +bull
-  +sna(sub+"/samples")| Samples
+  +sn(sub+"/samples")| Samples
 block content
   .flex(style="gap:3rem")
     .fill#themes_

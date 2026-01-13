@@ -20,42 +20,28 @@
     <!--[if lt IE 9]><script src="//unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"><![endif]-->
   </head>
   <body>
-    <div class="_views">
-      <div class="_view _app __fadein">
-        <div class="_layout container-lg markdown-body">
-          <header class="_header">
-            <div class="_layout">
-              {% capture header -%}{% include header.md %}{%- endcapture %}
-              {{ header | markdownify }}
-            </div>
-          </header>
-          <nav class="_nav">
-            <div class="_layout">
-              {% capture nav -%}{% include nav.md %}{%- endcapture %}
-              {{ nav | markdownify }}
-            </div>
-          </nav>
-          <main class="_main">
-            <article class="_article">
-              <div class="_layout">
-                {{ content }}
-              </div>
-            </article>
-          </main>
-          <footer class="_footer">
-            <div class="_layout">
-              {% capture footer -%}{% include footer.md %}{%- endcapture %}
-              {{ footer | markdownify }}
-            </div>
-          </footer>
-        </div>{% comment %} end of _layout {% endcomment %}
-      </div>{% comment %} end of _view {% endcomment %}
-      <div class="_view">
-        <div class="_layout">
-            {% include theme_switch.html %}
-          </div>
-      </div>
+    <div class="_body_layout _layout">
+      <main class="_view">
+        <div class="_main_layout _layout container-lg markdown-body">
+          {% capture layout_content -%}{% include layout_content.html %}{%- endcapture %}
+          {{ layout_content | markdownify }}
+        </div>
+      </main>
+      <aside class="_view _topbar_view">
+        <div class="_layout _topbar_layout container-lg">
+          {% include theme_switch.html %}
+        </div>
+      </aside>
+      <aside class="_view _lowbar_view">
+        <div class="_layout _lowbar_layout container-lg">
+          {% include copyright.html %}
+          {% include credit.html %}
+        </div>
+      </aside>
       {% include layout_body.html %}
-    </div>{% comment %} end of _views {% endcomment %}
+      <script>
+        ((de=document.documentElement)=>de.className=de.className.replace('no_js','js'))();
+      </script>
+    </div>
   </body>
 </html>
