@@ -8,16 +8,17 @@ description: Home template
 <!DOCTYPE html>
 <html class="_mallet_layout no_js" lang="en-US">
 <!-- path        : mallet/home.html -->
-<!-- layout      : _source/_layouts/mallet -->
-<!-- title       : Home -->
-<!-- description : Home template -->
+<!-- layout      : {{ page.layout }} -->
+<!-- source      : _source/_layouts/mallet.pug -->
+<!-- title       : {{ page.title | default: "(untitled)" }} -->
+<!-- description : {{ page.description | default: "(undescribed)" }} -->
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="{{ site.encoding | default: 'utf-8' }}"/>
 {% seo %}
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta id="_color_scheme" name="color-scheme" content="light dark"/>
-    <meta id="_theme_color" name="theme-color" content="#222"/>
+    <meta id="_theme_color" name="theme-color" content="{{ page.theme_color | default: site.theme_color | default: '' }}"/>
+    <meta id="_color_scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}"/>
     <style>.isvg svg { width:1em;height:1em }</style>
     <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/mallet/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
     <style>
@@ -83,12 +84,12 @@ description: Home template
         </div>
       </main>
       <aside class="_view _topbar_view">
-        <div class="_topbar_layout _layout container-lg">
+        <div class="_layout _topbar_layout container-lg">
 {% include theme_switch.html %}
         </div>
       </aside>
       <aside class="_view _lowbar_view">
-        <div class="_lowbar_layout _layout container-lg">
+        <div class="_layout _lowbar_layout container-lg">
 {% include copyright.html %}
 {% include credit.html %}
         </div>

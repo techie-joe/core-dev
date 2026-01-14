@@ -8,16 +8,17 @@ description: Color samples.
 <!DOCTYPE html>
 <html class="_core_layout no_js" lang="en-US">
 <!-- path        : core/test_colors.html -->
-<!-- layout      : _source/_layouts/core -->
-<!-- title       : Colors -->
-<!-- description : Color samples. -->
+<!-- layout      : {{ page.layout }} -->
+<!-- source      : _source/_layouts/core.pug -->
+<!-- title       : {{ page.title | default: "(untitled)" }} -->
+<!-- description : {{ page.description | default: "(undescribed)" }} -->
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="{{ site.encoding | default: 'utf-8' }}"/>
 {% seo %}
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta id="_color_scheme" name="color-scheme" content="light dark"/>
-    <meta id="_theme_color" name="theme-color" content="#222"/>
+    <meta id="_theme_color" name="theme-color" content="{{ page.theme_color | default: site.theme_color | default: '' }}"/>
+    <meta id="_color_scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}"/>
     <style>.isvg svg { width:1em;height:1em }</style>
     <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/core/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
 {% include layout_head.html %}
@@ -43,8 +44,7 @@ description: Color samples.
             </div>
           </nav>
           <article class="_article">
-            <div class="_layout _article_layout">{%- capture test %}{%- include test_colors.md %}{%- endcapture %}
-{{ test | markdownify }}
+            <div class="_layout _article_layout">{%- capture test %}{%- include test_colors.md %}{%- endcapture %}{{ test | markdownify }}
             </div>
           </article>
           <footer class="_footer">

@@ -21,16 +21,22 @@ mixin capture(id='')
 
 mixin include(id='',path='',args="",filter=" | markdownify")
   +capture(id)!=`{%- include ${path}${args} %}`
-  +l!=`{{ ${id}${filter} }}`
+  !=`{{ ${id}${filter} }}`
 
 mixin include_relative(id='',path='',args="",filter=" | markdownify")
   +capture(id)!=`{%- include_relative ${path}${args} %}`
-  +l!=`{{ ${id}${filter} }}`
+  !=`{{ ${id}${filter} }}`
 
-mixin if_dev(environment)
+mixin if_env(environment)
   !=`{%- if site.github.environment == '${environment}' -%}`
   block
   !=`{%- endif %}`
+
+mixin if_dev
+  +if_env('development'): block
+
+mixin if_prod
+  +if_env('production'): block
 
 //- ==============================================================
 //- icons
@@ -65,8 +71,7 @@ mixin _angle
 //- ==============================================================
 
 mixin main_style
-  block main_style
-    link#_style(rel="stylesheet" href!=`{{ site.base_url }}/assets/${layout_name}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
+  link#_style(rel="stylesheet" href!=`{{ site.base_url }}/assets/${layout_name}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
 
 mixin thin_hr
   hr.thin/
@@ -92,16 +97,15 @@ mixin _edit_link
   p.text-right.text-grey: small: +edit_link(path)
 
 mixin main_view
-  block main_view
-    header._header: ._layout._header_layout: block header
-      +include('header','header.md')
-    nav._nav: ._layout._nav_layout: block nav
-      +include('nav','nav.md')
-    article._article: ._layout._article_layout: block content
-      h1 !{title}
-      p: code // page content
-    footer._footer: ._layout._footer_layout: block footer
-      +include('footer','footer.md')
+  header._header: ._layout._header_layout: block header
+    +include('header','header.md')
+  nav._nav: ._layout._nav_layout: block nav
+    +include('nav','nav.md')
+  article._article: ._layout._article_layout: block content
+    h1 !{title}
+    p: code // page content
+  footer._footer: ._layout._footer_layout: block footer
+    +include('footer','footer.md')
 
 mixin sn(ref)
   - _path = removePathExt(path,'html');

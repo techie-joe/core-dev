@@ -6,23 +6,20 @@ description: Testing something here.
 testing: false
 ---
 {%- include ui.html %}
-
-{%- if page.testing %}
-
-{%- assign pad = "           " %}
-
-```yml
-# test goes here
-```
-
-{%- else %}
+{%- if page.testing == false %}
 {%-
   include 404.md
   title = "Sorry"
   description = "There is nothing to show here."
 %}
-{%- endif %}
+{%- else %}
+{%- assign pad = "           " %}
 
+```yml
+# testing ..
+```
+
+{%- endif %}
 {% comment %}
 {% include mod-inspect.md val=page pad=pad %}
 {% endcomment %}
