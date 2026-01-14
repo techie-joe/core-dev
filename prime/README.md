@@ -15,7 +15,7 @@ remote_theme_revision : {{ site.revision }}
 
 ## Build faster on GitHub Pages
 
-Finish building your site quicker. **Prime** helps you build websites on GitHub Pages using **ready-to-go templates and components**. You can build using **Markdown**, **Pug** or **HTML**. Set and style any page instantly, just by referring to the pre-configured assets. Our goal is to provide users with an **easy way to build a website**. We aim to meet the needs of the vast majority of users, including those who need to customize further. Start building with a massive leap ahead, and customize everything from global defaults to individual components to suit your need.
+Finish building your site quicker. **Prime** helps you build websites on GitHub Pages using **ready-to-go templates and components**. You can build using **Markdown**, **Pug** or **HTML**. Set and style any page instantly, just by referring to the pre-configured assets. Our goal is to provide users with a **quick and easy way to build a website**. Get a massive head start, then customize every detail as needed, from global defaults to individual components.
 
 > **Your design, your content, your way. Powered by Prime.**
 
@@ -35,13 +35,13 @@ To use the theme on your site:
 
 3. Then, activate **GitHub Pages**.
 
-_For detailed instruction, see [Techie Joe's GitHub Pages Walkthrough](https://techie-joe.github.io/library/github-pages/)._
+_For detailed instruction, see [The GitHub Pages Walkthrough](https://techie-joe.github.io/library/github-pages/)._
 
 ## How to customize
 
 ### Configuration variables
 
-Set the following variables in your site's `_config.yml`:
+Set the following variables in your site's `_config.yml` file.
 
 ```yml
 title       : "The title of your site"
@@ -77,7 +77,7 @@ To add your own custom styles:
     @import "prime";
     ```
 
-2. Add any custom CSS (or SASS, including imports) you'd like immediately after the `@import` line.
+2. Add any custom styles immediately after the `@import` line.
 
 _**Note:** To change the template's SASS variables, you must set new values before the `@import` line in your stylesheet._
 
@@ -87,7 +87,7 @@ All [template layouts](https://github.com/techie-joe/prime/tree/master/_layouts)
 
 For example, to change the default layout:
 
-1. Create a copy of `/_layouts/default.html` in your site's repository.
+1. Copy the `/_layouts/default.html` files to your site's repository.
 2. Then customize it as you'd like.
 
 _**Pro-tip:** click "raw" to make copying easier._
@@ -96,9 +96,9 @@ _**Pro-tip:** click "raw" to make copying easier._
 
 Paste the analytics code into your site's `_includes/google_analytics.html` file.
 
-### Overriding GitHub-generated URLs
+### Overriding GitHub URLs
 
-Templates rely on URLs supplied by GitHub such as links to your repository or links to download your project.
+Templates rely on GitHub URLs, such as links to your repository or links to download your project.
 
 To override the default URLs:
 
@@ -112,7 +112,7 @@ To override the default URLs:
 
 2. Specify the URL you'd like to use in your site's `_config.yml` file. Jekyll will use the URL you specified, instead of the default one.  
 
-    For example, if the variable was `site.github.url`, add the following:
+    For example, if the variable was `site.github.zip_url`, add the following:
 
     ```yml
     github:
@@ -124,7 +124,7 @@ To override the default URLs:
 
 _For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/)._
 
-## Previewing the template locally
+## Running the template locally
 
 To run the template locally:
 
