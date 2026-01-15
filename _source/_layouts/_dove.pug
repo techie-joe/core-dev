@@ -70,9 +70,6 @@ mixin _angle
 //- mixins
 //- ==============================================================
 
-mixin main_style
-  link#_style(rel="stylesheet" href!=`{{ site.baseurl }}/assets/${layout_name}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
-
 mixin thin_hr
   hr.thin/
 

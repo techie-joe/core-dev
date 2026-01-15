@@ -6,12 +6,13 @@ title: Colors
 description: Color samples.
 ---
 <!DOCTYPE html>
-<html class="no_js _mallet_layout" lang="{{ page.lang | default: site.lang | default: 'en-US' }}">
 <!-- path        : {{ page.path }} -->
 <!-- layout      : {{ page.layout }} -->
 <!-- source      : _source/_layouts/mallet.pug -->
-<!-- title       : {{ page.title | default: "(untitled)" }} -->
-<!-- description : {{ page.description | default: "(undescribed)" }} -->
+<!-- title       : {{ page.title | default: site.title | default: "(untitled)" }} -->
+<!-- description : {{ page.description | default: site.description | default: "(undescribed)" }} -->
+<!-- copyright   : @ {{ site.author | default: site.github.owner_display_name | default:'(unknown)' }} {{ "now" | date: "%Y" }} -->
+<html class="no_js _mallet_layout" lang="{{ page.lang | default: site.lang | default: 'en-US' }}">
   <head>
     <meta charset="{{ site.encoding | default: 'utf-8' }}"/>
 {% seo %}

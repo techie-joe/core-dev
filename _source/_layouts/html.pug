@@ -1,6 +1,7 @@
 include _dove
 block vars
   - layout_name = 'html'
+  - layout_type = '.pug'
 block update_vars
 block front_matters
   +front_matter: block front_matter
@@ -13,15 +14,37 @@ block front_matters
     if description
       +l|description: !{description}
     //- 
+
+mixin main_style
+  link#_style(rel="stylesheet" href!=`{{ site.baseurl }}/assets/${ layout_name }/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
+
+mixin main_block
+  header._header: ._layout._header_layout: block header
+    +include('header','header.md')
+  nav._nav: ._layout._nav_layout: block nav
+    +include('nav','nav.md')
+  article._article: ._layout._article_layout: block content
+    h1 {{ page.title | default: '(untitled)' }}
+    p: code // page content
+  footer._footer: ._layout._footer_layout: block footer
+    +include('footer','footer.md')
+
+mixin topbar
+  +l|{% include theme_switch.html %}
+
+mixin lowbar
+  +l|{% include copyright.html %}
+  +l|{% include credit.html %}
+
 block html
   doctype html
+  +l|<!-- path        : {{ page.path }} -->
+  +l|<!-- layout      : {{ page.layout }} -->
+  +l|<!-- source      : _source/_layouts/!{ layout_name }!{ layout_type } -->
+  +l|<!-- title       : {{ page.title | default: site.title | default: "(untitled)" }} -->
+  +l|<!-- description : {{ page.description | default: site.description | default: "(undescribed)" }} -->
+  +l|<!-- copyright   : @ {{ site.author | default: site.github.owner_display_name | default:'(unknown)' }} {{ "now" | date: "%Y" }} -->
   html(lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class=`no_js _${ layout_name }_layout`)
-    block html_note
-      +l|<!-- path        : {{ page.path }} -->
-      +l|<!-- layout      : {{ page.layout }} -->
-      +l|<!-- source      : _source/_layouts/!{layout_name}.pug -->
-      +l|<!-- title       : {{ page.title | default: "(untitled)" }} -->
-      +l|<!-- description : {{ page.description | default: "(undescribed)" }} -->
     head: block head
       meta(charset="{{ site.encoding | default: 'utf-8' }}")/
       +l|{% seo %}
@@ -38,20 +61,11 @@ block html
     body: ._body_layout._layout
       block body
         main._view: ._layout._main_layout: block main
-          header._header: ._layout._header_layout: block header
-            +include('header','header.md')
-          nav._nav: ._layout._nav_layout: block nav
-            +include('nav','nav.md')
-          article._article: ._layout._article_layout: block content
-            h1 {{ page.title | default: '(untitled)' }}
-            p: code // page content
-          footer._footer: ._layout._footer_layout: block footer
-            +include('footer','footer.md')
+          +main_block
         aside._view._topbar_view: ._layout._topbar_layout: block topbar
-          +l|{% include theme_switch.html %}
+          +topbar
         aside._view._lowbar_view: ._layout._lowbar_layout: block lowbar
-          +l|{% include copyright.html %}
-          +l|{% include credit.html %}
+          +lowbar
         +l|{% include layout_body.html %}
       block script
         script.

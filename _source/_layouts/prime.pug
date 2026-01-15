@@ -5,18 +5,9 @@ block main_style
   +main_style
 block body
   main._view: ._layout._main_layout.container-lg.px-3.my-3.markdown-body: block main
-    header._header: ._layout._header_layout: block header
-      +include('header','header.md')
-    nav._nav: ._layout._nav_layout: block nav
-      +include('nav','nav.md')
-    article._article: ._layout._article_layout: block content
-      h1 {{ page.title | default: '(untitled)' }}
-      p: code // page content
-    footer._footer: ._layout._footer_layout: block footer
-      +include('footer','footer.md')
+    +main_block
   aside._view._topbar_view: ._layout._topbar_layout.container-lg.px-3: block topbar
-    +l|{% include theme_switch.html %}
+    +topbar
   aside._view._lowbar_view: ._layout._lowbar_layout.container-lg.px-3: block lowbar
-    +l|{% include copyright.html %}
-    +l|{% include credit.html %}
+    +lowbar
   +l|{% include layout_body.html %}
