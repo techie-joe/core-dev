@@ -71,7 +71,7 @@ mixin _angle
 //- ==============================================================
 
 mixin main_style
-  link#_style(rel="stylesheet" href!=`{{ site.base_url }}/assets/${layout_name}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
+  link#_style(rel="stylesheet" href!=`{{ site.baseurl }}/assets/${layout_name}/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}`)/
 
 mixin thin_hr
   hr.thin/
@@ -90,50 +90,39 @@ mixin hide_footer
 
 mixin edit_link(path)
   | This site is open source.
-  | #[a(href=`${source_url}/edit/main/_source/${path}.pug`)| Improve this page].
+  | #[a(href=`{{ site.github.repository_url }}/edit/main/_source/${path}.pug`)| Improve this page].
 
 mixin _edit_link
   +thin_hr
   p.text-right.text-grey: small: +edit_link(path)
-
-mixin main_view
-  header._header: ._layout._header_layout: block header
-    +include('header','header.md')
-  nav._nav: ._layout._nav_layout: block nav
-    +include('nav','nav.md')
-  article._article: ._layout._article_layout: block content
-    h1 !{title}
-    p: code // page content
-  footer._footer: ._layout._footer_layout: block footer
-    +include('footer','footer.md')
 
 mixin sn(ref)
   - _path = removePathExt(path,'html');
   if ref == _path || ref+'index.html' == _path
     b: block
   else
-    +a([base_url,ref].join('/')): block
+    +a(['{{ site.baseurl }}',ref].join('/')): block
 
-mixin samples_nav(sub)
-  +sn(sub+"/")| About
+mixin samples_nav(ref)
+  +sn(ref+"/")| About
   +bull
-  +sn(sub+"/preview")| Preview
+  +sn(ref+"/preview")| Preview
   +bull
-  +sn(sub+"/samples")| Samples
+  +sn(ref+"/samples")| Samples
 
-mixin test_nav(sub)
-  +sn(sub+"/test_colors")| Colors
+mixin test_nav(ref)
+  +sn(ref+"/test_colors")| Colors
   +bull
-  +sn(sub+"/test_code-blocks")| Code blocks
+  +sn(ref+"/test_code-blocks")| Code blocks
 
-mixin site_nav(sub)
-  +sn(sub+"/home")| Home
+mixin site_nav(ref)
+  +sn(ref+"/home")| Home
   +bull
-  +sn(sub+"/page")| Page
+  +sn(ref+"/page")| Page
   +bull
-  +sn(sub+"/post")| Post
+  +sn(ref+"/post")| Post
   +bull
-  +sn(sub+"/404")| 404
+  +sn(ref+"/404")| 404
 
 mixin page_footer
   .mt-6
@@ -148,65 +137,6 @@ mixin post_footer
   +include('posts','posts.md')
 
 //- ==============================================================
-
-//- mixin layout_head
-  |<!-- layout_head -->
-  //- +fonts
-  //- +icons
-  //- +manifest
-
-//- mixin fonts
-  link(rel="preconnect" href="https://fonts.googleapis.com")/
-  link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)/
-  link(rel="stylesheet" href="https://fonts.googleapis.com/css2?"+fonts.join('&'))#_fonts/
-
-//- mixin icons
-  //- prioritization sequence: first match, exact-size, type, then "any".
-  link(rel="apple-touch-icon" type="image/png"     sizes="180x180" href=base_url+"/icons/apple-touch-icon.png")/
-  link(rel="icon"             type="image/png"     sizes="32x32"   href=base_url+"/icons/favicon-32x32.png")/
-  link(rel="icon"             type="image/png"     sizes="16x16"   href=base_url+"/icons/favicon-16x16.png")/
-  link(rel="shortcut icon"    type="image/x-icon"  sizes="any"     href=base_url+"/icons/favicon.ico")/
-
-//- mixin manifest
-  //- enable manifest if you're building a PWA Apps
-  link(rel="manifest" href!=`${base_url}/manifest.json?r=${revision}`)/
-
-//- ==============================================================
-
-//- mixin layout_body
-  +copyright
-  +credit
-  +themejs
-  +anchor
-  +google_analytics
-
-//- mixin copyright
-  ._copyright
-    span._copyright_text| @ by #{author} !{year}
-
-//- mixin credit
-  ._credit: a._credit_link(href='https://techie-joe.github.io/dove')| ✨ Made with Dove
-
-//- mixin theme_switch(title='Change Theme (Alt+T)')
-  ._theme_switch._need_js: a(href='#' onclick!=onclick(js.themeChange) title=title)
-    +isvg(svgi.compare)
-
-//- mixin themejs
-  script|window.ghost='!{ghost}';
-  +js(`${base_url}/assets/themejs/themejs_v2.0.js?r=${revision}`)
-
-//- mixin anchor
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous")
-  script|anchors?.add();
-
-//- mixin google_analytics
-  if google_analytics
-    script(async src="https://www.googletagmanager.com/gtag/js?id="+google_analytics)
-    script.
-      window.dataLayer=window.dataLayer||[];
-      function gtag(){window.dataLayer.push(arguments);}
-      gtag('js',new Date());
-      gtag('config','!{ google_analytics }');
 
 //- mixin fouc
   style.

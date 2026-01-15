@@ -1,47 +1,20 @@
 ```yml
-# _config.pug
-version      : 0.0.8
-revision     : 2601.08.1701
-title        : Dove
-description  : A theme development project.
-author       : Techie Joe
-year         : 2026
-base_url     : /dove
-home_url     : /dove
-
-lang         : en-US
-theme_color  : #222
-color_scheme : light dark
-
-ghost        : bG9jYWxob3N0LGxvY2FsaG9zdDo0MDAwLHRlY2hpZS1qb2UuZ2l0aHViLmlv
-
-source_url   : https://github.com/techie-joe/dove
-```
-{: #config_pug }
-<style>article #config_pug pre.highlight { max-height:213px }</style>
-```yml
-# _config.yml
-version      : {{ site.version | default: "[nil]" }}
-revision     : {{ site.revision | default: "[nil]" }}{{'.'}}{{ site.github.build_revision | default: "[nil]" }}
 title        : {{ site.title | default: "[nil]" }}
 description  : {{ site.description | default: "[nil]" }}
 author       : {{ site.author | default: "[nil]" }}
-year         : {{ "now" | date: "%Y" }}
-base_url     : {{ site.base_url | default: "[nil]" }}
-home_url     : {{ site.home_url | default: "[nil]" }}
 
-theme        : {{ site.theme | default: "[nil]" }}
-remote_theme : {{ site.remote_theme | default: "[nil]" }}
+version      : {{ site.version | default: "[nil]" }}
+revision     : {{ site.revision | default: "[nil]" }}{{'.'}}{{ site.github.build_revision | default: "[nil]" }}
+
+baseurl      : {{ site.baseurl | default: "[nil]" }}
+home_url     : {{ site.home_url | default: "[nil]" }}
+live_url     : {{ site.live_url | default: "[nil]" }}
 
 lang         : {{ site.lang | default: "[nil]" }}
-theme_color  : {{ site.theme_color | jsonify | default: "[nil]" }}
-color_scheme : {{ site.color_scheme | default: "[nil]" }}
 
 ghost                : {{ site.ghost | default: "[nil]" }}
 google_analytics     : {{ site.google_analytics | default: "[nil]" }}
 cloudflare_analytics : {{ site.cloudflare_analytics | default: "[nil]" }}
-
-source_url   : {{ site.github.repository_url }}
 ```
 {: #config_yml }
-<style>article #config_yml pre.highlight { max-height:213px }</style>
+<style>article #config_yml pre.highlight {  }</style>

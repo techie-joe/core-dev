@@ -6,9 +6,9 @@
 - **[techie-joe/mallet](https://github.com/techie-joe/mallet)**
 - **[techie-joe/prime](https://github.com/techie-joe/prime)**
 
-Dove provides a **flexible foundation for your own designs** or preferred frameworks. Build websites on GitHub Pages using **ready-to-go templates and components**. You can build using **Markdown**, **Pug** or **HTML**. Set and style any page instantly, just by referring to the pre-configured assets. Our goal is to provide users with a **quick and easy way to build a website**. Get a massive head start, then customize every detail as needed, from global defaults to individual components.
+We provide users with a **quick and easy way to build a website**. Build your website on GitHub Pages using **ready-to-go templates and components**. You can use **Markdown**, **Pug** or **HTML** to code your website. Set and style any page instantly, just by referring to the pre-configured assets. Should you require further personalization, you can customize every detail as needed, from global defaults to specific components.
 
-> **Dove handles the foundation so you can focus on your code.**
+> **Dove handles the necessary foundation so you can focus on your code.**
 
 > [!WARNING]  
 > **Dove is constantly under active development. Use with caution, future update may break your site. Visit individual theme's homepage for a stable release.**
@@ -39,7 +39,7 @@ Set the following variables in your site's `_config.yml` file.
 
 ```yml
 title       : "The title of your site"
-description : "Short description of your site's purpose."
+description : "Short description of your site."
 ```
 
 Additionally, you may also set:

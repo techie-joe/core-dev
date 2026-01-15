@@ -8,37 +8,37 @@
 {%- assign _404  = _sub | append: '/md/404' %}
 
 {%- assign _path = _main %}
-[Samples]({{ site.base_url }}/{{ _main }})
+[Samples]({{ site.baseurl }}/{{ _main }})
 {{- angle -}}
 **Md**
 {{- colon -}}
 {%- assign _path = _home | append: '.md' %}
 {%- if page.path == _path -%}
-**Home**{%- else %}[Home]({{ site.base_url }}/{{ _home }})
+**Home**{%- else %}[Home]({{ site.baseurl }}/{{ _home }})
 {%- endif %}
 {{- bull -}}
 {%- assign _path = _page | append: '.md' %}
 {%- if page.path == _path -%}
-**Page**{%- else %}[Page]({{ site.base_url }}/{{ _page }})
+**Page**{%- else %}[Page]({{ site.baseurl }}/{{ _page }})
 {%- endif %}
 {{- bull -}}
 {%- assign _path = _post | append: '.md' %}
 {%- if page.path == _path -%}
-**Post**{%- else %}[Post]({{ site.base_url }}/{{ _post }})
+**Post**{%- else %}[Post]({{ site.baseurl }}/{{ _post }})
 {%- endif %}
 {{- bull -}}
 {%- assign _path = _404 | append: '.md' %}
 {%- if page.path == _path -%}
-**404**{%- else %}[404]({{ site.base_url }}/{{ _404 }})
+**404**{%- else %}[404]({{ site.baseurl }}/{{ _404 }})
 {%- endif %}
 
 {{ thin_hr }}
 
 {% comment %}
-**[{{ _sub | capitalize }}]({{ site.base_url }}/{{ _sub }})**
+**[{{ _sub | capitalize }}]({{ site.baseurl }}/{{ _sub }})**
 {%- assign _path = _prev | append: '.md' %}
 {%- if page.path == _path -%}
-**Preview**{%- else %}[Preview]({{ site.base_url }}/{{ _prev }})
+**Preview**{%- else %}[Preview]({{ site.baseurl }}/{{ _prev }})
 {%- endif %}
 {{- bull -}}
 {% endcomment %}

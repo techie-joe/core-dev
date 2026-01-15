@@ -6,7 +6,7 @@ title: Samples
 description: Theme samples.
 ---
 <!DOCTYPE html>
-<html class="_mallet_layout no_js" lang="en-US">
+<html class="no_js _mallet_layout" lang="{{ page.lang | default: site.lang | default: 'en-US' }}">
 <!-- path        : {{ page.path }} -->
 <!-- layout      : {{ page.layout }} -->
 <!-- source      : _source/_layouts/mallet.pug -->
@@ -20,7 +20,7 @@ description: Theme samples.
     <meta id="_theme_color" name="theme-color" content="{{ page.theme_color | default: site.theme_color | default: '' }}"/>
     <meta id="_color_scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}"/>
     <style>.isvg svg { width:1em;height:1em }</style>
-    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/mallet/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
+    <link id="_style" rel="stylesheet" href="{{ site.baseurl }}/assets/mallet/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
     <style>
       ._article h2:first-of-type {
         border:0;
@@ -52,7 +52,7 @@ description: Theme samples.
           </header>
           <nav class="_nav">
             <div class="_layout _nav_layout">
-              <nav class="mv"><a href="/dove/mallet/">About</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><b>Samples</b>
+              <nav class="mv"><a href="{{ site.baseurl }}/mallet/">About</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/mallet/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><b>Samples</b>
               </nav>
               <hr class="thin"/>
             </div>
@@ -64,19 +64,19 @@ description: Theme samples.
               </div>
               <h1 class="hero">Theme samples</h1>
               <h2>⚒️ Essential templates for any website</h2>
-              <nav class="mv"><b>Html</b><i class="icon"><i class="itext">:</i></i><a href="/dove/mallet/home">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/page">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/post">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/404">404</a>
+              <nav class="mv"><b>Html</b><i class="icon"><i class="itext">:</i></i><a href="{{ site.baseurl }}/mallet/home">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/mallet/page">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/mallet/post">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/mallet/404">404</a>
               </nav>
-              <nav class="mv"><b>Md</b><i class="icon"><i class="itext">:</i></i><a href="/dove/mallet/md/home">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/md/page">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/md/post">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/md/404">404</a>
+              <nav class="mv"><b>Md</b><i class="icon"><i class="itext">:</i></i><a href="{{ site.baseurl }}/mallet/md/home">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/mallet/md/page">Page</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/mallet/md/post">Post</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/mallet/md/404">404</a>
               </nav>
               <div style="margin-top:3rem"></div>
               <p><strong><a href="./preview">Preview the theme</a></strong> to see how it looks and <strong><a href="./#how-to-use">start using it</a></strong> today!
                 
               </p>
               <hr class="thin"/>
-              <nav class="mv"><a href="/dove/mallet/test_colors">Colors</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/test_code-blocks">Code blocks</a>
+              <nav class="mv"><a href="{{ site.baseurl }}/mallet/test_colors">Colors</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/mallet/test_code-blocks">Code blocks</a>
               </nav>{%- if site.github.environment == 'development' -%}
               <hr class="thin"/>
-              <nav class="mv"><a href="/dove/mallet/test">Test page</a>
+              <nav class="mv"><a href="{{ site.baseurl }}/mallet/test">Test page</a>
               </nav>{%- endif %}
               <div style="margin-top:3rem"></div>
             </div>
@@ -84,12 +84,12 @@ description: Theme samples.
           <footer class="_footer">
             <div class="_layout _footer_layout">
               <hr class="thin"/>
-              <nav class="_common_nav mv"><a href="/dove/mallet/">About</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><b>Samples</b>
+              <nav class="_common_nav mv"><a href="{{ site.baseurl }}/mallet/">About</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/mallet/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><b>Samples</b>
               </nav>
               <hr class="thin"/>
               <p class="text-right text-grey"><small>
                   This site is open source.
-                  <a href="https://github.com/techie-joe/dove/edit/main/_source/mallet/samples.html.pug">Improve this page</a>.</small></p>
+                  <a href="{{ site.github.repository_url }}/edit/main/_source/mallet/samples.html.pug">Improve this page</a>.</small></p>
             </div>
           </footer>
         </div>

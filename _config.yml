@@ -5,22 +5,19 @@
 title         : Dove
 description   : A theme development project.
 # title       : The title of your site
-# description : Short description of your site's purpose.
-
+# description : Short description of your site.
 author        : Techie Joe
 
-version       : '0.0.8'
-revision      : '2601.08'
+version       : '0.0.9'
+revision      : '2601.09'
 
 baseurl       : '/dove'
-base_url      : '/dove'
 home_url      : '/dove'
+live_url      : 'https://techie-joe.github.io/dove'
 
 lang          : 'en-US'
-theme_color   : '#222'
-color_scheme  : light dark
 
-ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLGxvY2FsaG9zdDo0MDAw
+ghost: bG9jYWxob3N0OjQwMDAsdGVjaGllLWpvZS5naXRodWIuaW8
 # ghost: 'your-tracking-id'
 # to track your ThemeJs.
 

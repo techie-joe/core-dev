@@ -6,7 +6,7 @@ title: Post
 description: Post template.
 ---
 <!DOCTYPE html>
-<html class="_mallet_layout no_js" lang="en-US">
+<html class="no_js _mallet_layout" lang="{{ page.lang | default: site.lang | default: 'en-US' }}">
 <!-- path        : {{ page.path }} -->
 <!-- layout      : {{ page.layout }} -->
 <!-- source      : _source/_layouts/mallet.pug -->
@@ -20,7 +20,7 @@ description: Post template.
     <meta id="_theme_color" name="theme-color" content="{{ page.theme_color | default: site.theme_color | default: '' }}"/>
     <meta id="_color_scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}"/>
     <style>.isvg svg { width:1em;height:1em }</style>
-    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/mallet/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
+    <link id="_style" rel="stylesheet" href="{{ site.baseurl }}/assets/mallet/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
 {% include layout_head.html %}
 <!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
@@ -35,10 +35,10 @@ description: Post template.
           </header>
           <nav class="_nav">
             <div class="_layout _nav_layout">
-              <div class="mv"><a href="/dove/mallet/samples">Samples</a><i class="icon"><i class="isvg">
+              <div class="mv"><a href="{{ site.baseurl }}/mallet/samples">Samples</a><i class="icon"><i class="isvg">
                     <svg viewBox="0 0 24 24">
                       <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                    </svg></i></i><b>Html</b><i class="icon"><i class="itext">:</i></i><a href="/dove/mallet/home">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/page">Page</a><i class="icon"><i class="itext">&bull;</i></i><b>Post</b><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/404">404</a>
+                    </svg></i></i><b>Html</b><i class="icon"><i class="itext">:</i></i><a href="{{ site.baseurl }}/mallet/home">Home</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/mallet/page">Page</a><i class="icon"><i class="itext">&bull;</i></i><b>Post</b><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/mallet/404">404</a>
               </div>
               <hr class="thin"/>
             </div>
@@ -59,7 +59,7 @@ description: Post template.
               <hr class="thin"/>
               <p class="text-right text-grey"><small>
                   This site is open source.
-                  <a href="https://github.com/techie-joe/dove/edit/main/_source/mallet/post.html.pug">Improve this page</a>.</small></p>
+                  <a href="{{ site.github.repository_url }}/edit/main/_source/mallet/post.html.pug">Improve this page</a>.</small></p>
             </div>
           </footer>
         </div>

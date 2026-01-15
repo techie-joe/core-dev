@@ -1,27 +1,27 @@
 include _dove
 block vars
-  -
-    layout_name = 'html'
-    html_class  = []
-    body_class  = []
+  - layout_name = 'html'
 block update_vars
-  - html_class.push(...[`_${layout_name}_layout`,'no_js']);
-+front_matter: block front_matter
-  +l
-  .
-    layout: raw
-    use_pug: true
-    title: !{title||'(untitled)'}
-    description: !{description||'(undescribed)'}
-  //- 
+block front_matters
+  +front_matter: block front_matter
+    +l
+    .
+      layout: raw
+      use_pug: true
+    if title
+      +l|title: !{title}
+    if description
+      +l|description: !{description}
+    //- 
 block html
   doctype html
-  html(lang=lang||'en-US' class=html_class.join(' '))
-    +l|<!-- path        : {{ page.path }} -->
-    +l|<!-- layout      : {{ page.layout }} -->
-    +l|<!-- source      : _source/_layouts/!{layout_name}.pug -->
-    +l|<!-- title       : {{ page.title | default: "(untitled)" }} -->
-    +l|<!-- description : {{ page.description | default: "(undescribed)" }} -->
+  html(lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class=`no_js _${ layout_name }_layout`)
+    block html_note
+      +l|<!-- path        : {{ page.path }} -->
+      +l|<!-- layout      : {{ page.layout }} -->
+      +l|<!-- source      : _source/_layouts/!{layout_name}.pug -->
+      +l|<!-- title       : {{ page.title | default: "(untitled)" }} -->
+      +l|<!-- description : {{ page.description | default: "(undescribed)" }} -->
     head: block head
       meta(charset="{{ site.encoding | default: 'utf-8' }}")/
       +l|{% seo %}
@@ -35,10 +35,18 @@ block html
         block main_style
       +l|{% include layout_head.html %}
       +l|<!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
-    body(class=body_class.join(' ')): ._body_layout._layout
+    body: ._body_layout._layout
       block body
         main._view: ._layout._main_layout: block main
-          +main_view
+          header._header: ._layout._header_layout: block header
+            +include('header','header.md')
+          nav._nav: ._layout._nav_layout: block nav
+            +include('nav','nav.md')
+          article._article: ._layout._article_layout: block content
+            h1 {{ page.title | default: '(untitled)' }}
+            p: code // page content
+          footer._footer: ._layout._footer_layout: block footer
+            +include('footer','footer.md')
         aside._view._topbar_view: ._layout._topbar_layout: block topbar
           +l|{% include theme_switch.html %}
         aside._view._lowbar_view: ._layout._lowbar_layout: block lowbar

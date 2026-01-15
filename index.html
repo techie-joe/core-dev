@@ -1,11 +1,9 @@
 ---
 layout: raw
 use_pug: true
-title: Dove
-description: A theme development project.
 ---
 <!DOCTYPE html>
-<html class="_prime_layout no_js" lang="en-US">
+<html class="no_js _prime_layout" lang="{{ page.lang | default: site.lang | default: 'en-US' }}">
 <!-- path        : {{ page.path }} -->
 <!-- layout      : {{ page.layout }} -->
 <!-- source      : _source/_layouts/prime.pug -->
@@ -19,7 +17,7 @@ description: A theme development project.
     <meta id="_theme_color" name="theme-color" content="{{ page.theme_color | default: site.theme_color | default: '' }}"/>
     <meta id="_color_scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}"/>
     <style>.isvg svg { width:1em;height:1em }</style>
-    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
+    <link id="_style" rel="stylesheet" href="{{ site.baseurl }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
     <style>
       ._header h1 { margin-top:1em }
       ._header h2 { padding-bottom:1.3em;margin-top:-0.7em }
@@ -52,7 +50,7 @@ description: A theme development project.
               <div class="relative">
                 <div id="icon">🕊️</div>
               </div>
-              <h1>🕊️ The Dove Project</h1>
+              <h1>🕊️ The {{ site.title }} Project</h1>
             </div>
           </header>
           <nav class="_nav">
@@ -66,20 +64,20 @@ description: A theme development project.
                   <h3 class="mt-0">Themes</h3>
                   <p class="text-grey">We are working on the following themes.</p>
                   <ul class="rapat">
-                    <li><b><a href="/dove/core/">Core</a></b><i class="icon"><i class="isvg">
+                    <li><b><a href="{{ site.baseurl }}/core/">Core</a></b><i class="icon"><i class="isvg">
                           <svg viewBox="0 0 24 24">
                             <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                          </svg></i></i><a href="/dove/core/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/core/samples">Samples</a>
+                          </svg></i></i><a href="{{ site.baseurl }}/core/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/core/samples">Samples</a>
                     </li>
-                    <li><b><a href="/dove/mallet/">Mallet</a></b><i class="icon"><i class="isvg">
+                    <li><b><a href="{{ site.baseurl }}/mallet/">Mallet</a></b><i class="icon"><i class="isvg">
                           <svg viewBox="0 0 24 24">
                             <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                          </svg></i></i><a href="/dove/mallet/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/mallet/samples">Samples</a>
+                          </svg></i></i><a href="{{ site.baseurl }}/mallet/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/mallet/samples">Samples</a>
                     </li>
-                    <li><b><a href="/dove/prime/">Prime</a></b><i class="icon"><i class="isvg">
+                    <li><b><a href="{{ site.baseurl }}/prime/">Prime</a></b><i class="icon"><i class="isvg">
                           <svg viewBox="0 0 24 24">
                             <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" fill-opacity="1"></path>
-                          </svg></i></i><a href="/dove/prime/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/prime/samples">Samples</a>
+                          </svg></i></i><a href="{{ site.baseurl }}/prime/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/prime/samples">Samples</a>
                     </li>
                   </ul>
                 </div>

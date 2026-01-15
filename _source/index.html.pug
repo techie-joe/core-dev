@@ -27,13 +27,13 @@ block append style
     .markdown-body .rapat li { margin-left:0 }
 block header
   .relative: #icon !{icon}
-  h1 🕊️ The !{site_title} Project
-mixin index_nav(sub)
-  b: +sn(sub+"/")| !{capitalize(sub)}
+  h1 🕊️ The {{ site.title }} Project
+mixin index_nav(ref)
+  b: +sn(ref+"/")| !{capitalize(ref)}
   +angle
-  +sn(sub+"/preview")| Preview
+  +sn(ref+"/preview")| Preview
   +bull
-  +sn(sub+"/samples")| Samples
+  +sn(ref+"/samples")| Samples
 block content
   .flex(style="gap:3rem")
     .fill#themes_

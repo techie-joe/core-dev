@@ -1,8 +1,12 @@
+---
+layout: raw
+use_pug: true
+---
 <!DOCTYPE html>
 <html class="no_js _core_layout" lang="{{ page.lang | default: site.lang | default: 'en-US' }}">
 <!-- path        : {{ page.path }} -->
 <!-- layout      : {{ page.layout }} -->
-<!-- src.layout  : _source/_layouts/core.html.pug -->
+<!-- source      : _source/_layouts/core.pug -->
 <!-- title       : {{ page.title | default: "(untitled)" }} -->
 <!-- description : {{ page.description | default: "(undescribed)" }} -->
   <head>
@@ -13,7 +17,7 @@
     <meta id="_theme_color" name="theme-color" content="{{ page.theme_color | default: site.theme_color | default: '' }}"/>
     <meta id="_color_scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}"/>
     <style>.isvg svg { width:1em;height:1em }</style>
-    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/core/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
+    <link id="_style" rel="stylesheet" href="{{ site.baseurl }}/assets/core/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
 {% include layout_head.html %}
 <!--[if lt IE 9]><script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   </head>
@@ -21,7 +25,22 @@
     <div class="_body_layout _layout">
       <main class="_view">
         <div class="_layout _main_layout">
-{% include layout_content.html %}
+          <header class="_header">
+            <div class="_layout _header_layout">{%- capture header %}{%- include header.md %}{%- endcapture %}{{ header | markdownify }}
+            </div>
+          </header>
+          <nav class="_nav">
+            <div class="_layout _nav_layout">{%- capture nav %}{%- include nav.md %}{%- endcapture %}{{ nav | markdownify }}
+            </div>
+          </nav>
+          <article class="_article">
+            <div class="_layout _article_layout">{{ content }}
+            </div>
+          </article>
+          <footer class="_footer">
+            <div class="_layout _footer_layout">{%- capture footer %}{%- include footer.md %}{%- endcapture %}{{ footer | markdownify }}
+            </div>
+          </footer>
         </div>
       </main>
       <aside class="_view _topbar_view">

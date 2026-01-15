@@ -1,14 +1,3 @@
-extends html_md
-block vars
-  - layout_name = 'prime'
-block main_style
-  +main_style
-block body
-  main._view: ._layout._main_layout.container-lg.px-3.my-3.markdown-body: block main
-    +l|{% include layout_content.html %}
-  aside._view._topbar_view: ._layout._topbar_layout.container-lg.px-3: block topbar
-    +l|{% include theme_switch.html %}
-  aside._view._lowbar_view: ._layout._lowbar_layout.container-lg.px-3: block lowbar
-    +l|{% include copyright.html %}
-    +l|{% include credit.html %}
-  +l|{% include layout_body.html %}
+extends prime
+block content
+  |{{ content }}

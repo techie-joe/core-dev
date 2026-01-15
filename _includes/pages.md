@@ -10,7 +10,7 @@
       {%- assign title = p.title | default:'(untitled)' %}
       {%- if p.path == 'index.html' %}{%- assign title = 'Home' %}{%- endif %}
       {%- if p.path != page.path -%}
-        - [{{ title }}]({{ site.base_url }}{{ p.url }})
+        - [{{ title }}]({{ site.baseurl }}{{ p.url }})
         {%- else -%}
         - {{ title }}
       {%- endif %}

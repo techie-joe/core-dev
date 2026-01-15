@@ -11,7 +11,7 @@
 {%
   include mod-inspect.md
   val=site
-  include="keys,size,title,description,author,year,time,timezone,version,revision,url,host,port,baseurl,base_url,home_url,paginate_path,permalink,encoding,lang,theme_color,color_scheme,ghost,google_analytics,cloudflare_analytics,highlighter,markdown,markdown_ext,data_dir,cache_dir,includes_dir,layouts_dir,plugins_dir,collections_dir,excerpt_separator,limit_posts,detach,future,incremental,lsi,quiet,safe,serving,show_drafts,show_downloads,show_dir_listing,strict_front_matter,unpublished,verbose,watch,related_posts,config,theme,kramdown,liquid,sass,keep_files,include,exclude,whitelist,plugins,defaults,data,collections,documents,posts,categories,tags,pages,html_pages,static_files,github"
+  include="keys,size,title,description,author,time,timezone,version,revision,host,port,url,baseurl,home_url,live_url,paginate_path,permalink,encoding,lang,ghost,google_analytics,cloudflare_analytics,highlighter,markdown,markdown_ext,data_dir,cache_dir,includes_dir,layouts_dir,plugins_dir,collections_dir,excerpt_separator,limit_posts,detach,future,incremental,lsi,quiet,safe,serving,show_drafts,show_downloads,show_dir_listing,strict_front_matter,unpublished,verbose,watch,related_posts,config,theme,kramdown,liquid,sass,keep_files,include,exclude,whitelist,plugins,defaults,data,collections,documents,posts,categories,tags,pages,html_pages,static_files,github"
   json="excerpt_separator,data_dir,cache_dir,includes_dir,layouts_dir,plugins_dir,collections_dir,keep_files,include,exclude,whitelist,plugins"
   bloi="size,paginator,config,defaults,data,collections,documents,posts,categories,tags,pages,static_files,html_pages"
   blok="keys,sass,kramdown,liquid"

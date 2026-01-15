@@ -6,7 +6,7 @@ title: Prime
 description: Simple theme for your site.
 ---
 <!DOCTYPE html>
-<html class="_prime_layout no_js" lang="en-US">
+<html class="no_js _prime_layout" lang="{{ page.lang | default: site.lang | default: 'en-US' }}">
 <!-- path        : {{ page.path }} -->
 <!-- layout      : {{ page.layout }} -->
 <!-- source      : _source/_layouts/prime.pug -->
@@ -20,7 +20,7 @@ description: Simple theme for your site.
     <meta id="_theme_color" name="theme-color" content="{{ page.theme_color | default: site.theme_color | default: '' }}"/>
     <meta id="_color_scheme" name="color-scheme" content="{{ page.color_scheme | default: site.color_scheme | default: 'light dark' }}"/>
     <style>.isvg svg { width:1em;height:1em }</style>
-    <link id="_style" rel="stylesheet" href="{{ site.base_url }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
+    <link id="_style" rel="stylesheet" href="{{ site.baseurl }}/assets/prime/css/style.css?r={{ site.revision | default: '0' }}.{{ site.github.build_revision | default: '0' }}"/>
     <style>
       ._article h1 { border:0;font-size:3em;font-weight:bold }
       ._footer { margin-top:3rem }
@@ -68,12 +68,12 @@ description: Simple theme for your site.
           <footer class="_footer">
             <div class="_layout _footer_layout">
               <hr class="thin"/>
-              <nav class="_common_nav mv"><a href="/dove/prime/">About</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/prime/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="/dove/prime/samples">Samples</a>
+              <nav class="_common_nav mv"><a href="{{ site.baseurl }}/prime/">About</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/prime/preview">Preview</a><i class="icon"><i class="itext">&bull;</i></i><a href="{{ site.baseurl }}/prime/samples">Samples</a>
               </nav>
               <hr class="thin"/>
               <p class="text-right text-grey"><small>
                   This site is open source.
-                  <a href="https://github.com/techie-joe/dove/edit/main/_source/prime/index.html.pug">Improve this page</a>.</small></p>
+                  <a href="{{ site.github.repository_url }}/edit/main/_source/prime/index.html.pug">Improve this page</a>.</small></p>
             </div>
           </footer>
         </div>
