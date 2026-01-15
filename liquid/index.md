@@ -1,23 +1,24 @@
 ---
 use_footer: edit_link_only
-title: Liquid basics
-description: Basic Liquid syntaxes.
+title: Liquid
+description: Liquid basics.
 ---
 {%- include ui.html %}
-{%- include_relative _nav_liquid.md %}
-{{ thin_hr }}
 
-# {{ page.title }}
+# Liquid basics
 
 ###### syntax
 
 {% raw %}
 ```liquid
 # Liquid code with syntax highlighting
-{%- assign variable = value | filter: 'filter_expression' %}
+{% assign variable = value | filter: 'filter_expression' %}
 {{ variable | default: "[default_value]" }}
 {{ json | jsonify }}
 {{ markdown | markdownify }}
+{% include filename.ext %}
+{% include_relative filename.ext %}
+{% capture it %} capture block {% endcapture %}{{ it }}
 {% comment %} comment block {% endcomment %}
 ```
 {% endraw %}
@@ -128,6 +129,45 @@ numbers{{' : '}}
 {% raw %}Use `{% break %}` and `{% continue %}` to get out of a loop. 
 Use `{% else %}` to handle empty arrays.{% endraw %}
 
+###### list
+
+{%- assign list_x = 'a,m,b,n,c,o,z,y,x' | split: ',' %}
+
+```liquid
+{% raw %}{%- assign list_x = 'a,m,b,n,c,o,z,y,x' | split: ',' %}{% endraw %}
+```
+
+```yml
+list_x   : {{ list_x }} [{{ list_x | size | append: ' items' }}]
+jsonify  : {{ list_x | jsonify }}
+join     : {{ list_x | join: ',' }}
+order    : {{ list_x | first }}{{' ... '}}{{ list_x | last }}
+loop     : # {% for item in list_x %}[{{ item }}]{{' '}}{%- endfor %}
+sort     : {{ list_x | sort | jsonify }}
+reverse  : {{ list_x | reverse | jsonify }}
+slice    : {{ list_x | sort | slice: 3, 3 | jsonify }}
+```
+
+{%- assign list_a = 'apple,banana,cherry' | split: ',' %}
+
+```liquid
+{% raw %}{%- assign list_a = 'apple,banana,cherry' | split: ',' %}{% endraw %}
+```
+
+```yml
+list_a   : {{ list_a | jsonify }} [{{ list_a | size | append: ' items' }}]
+```
+
+{%- assign list_a = list_a | join: ',' | prepend: 'pear,' | append: ',durian' | split: ',' %}
+
+```liquid
+{% raw %}{%- assign list_a = list_a | join: ',' | prepend: 'pear,' | append: ',durian' | split: ',' %}{% endraw %}
+```
+
+```yml
+list_a   : {{ list_a | jsonify }} [{{ list_a | size | append: ' items' }}]
+```
+
 ###### capture
 
 {% capture block -%} **captured block** {%- endcapture %}
@@ -146,19 +186,11 @@ Use `markdownify` before using it inside an HTML block.
 `raw` skips liquid. 
 Using **white-space modifier** `-` with it will cause build error.  
 
-
+{%- assign _raw = '% raw %' %}
 
 ```liquid
-{% raw %}{{ 'everything inside raw will be rendered as-is' }}{% endraw %}
+{% raw %}{{ by | default: 'everything inside raw will be rendered as-is' }}{% endraw %}
 ```
-
-###### comment
-
-{% raw %}
-```liquid
-{% comment %} Comment block will not appear in the rendered page. {% endcomment %}
-```
-{% endraw %}
 
 ## Unsupported Liquid Syntaxes
 
@@ -173,9 +205,3 @@ Github Pages does not support `echo` and `render` at the moment.
 %}
 ```
 {% endraw %}
-
-{: .mt-6 }
-
-{{ thin_hr }}
-
-{% include_relative _nav_liquid.md %}
