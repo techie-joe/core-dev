@@ -15,7 +15,7 @@ remote_theme_revision : {{ site.revision }}
 
 ## Build faster on GitHub Pages
 
-We provide users with a **quick and easy way to build a website**. Build your website on GitHub Pages using **ready-to-go templates and components**. You can use **Markdown**, **Pug** or **HTML** to code your website. Set and style any page instantly, just by referring to the pre-configured assets. Should you require further personalization, you can customize every detail as needed, from global defaults to specific components.
+Get a **quick and easy way to build a website**. Build your website on GitHub Pages using **ready-to-go templates and components**. You can use **Markdown**, **Pug** or **HTML** to code your website. Set and style any page instantly, just by referring to the pre-configured assets. Should you require any further personalization, you can customize every detail as needed, from global defaults to specific components.
 
 > **Your design, your content, your way.**
 
@@ -23,7 +23,7 @@ We provide users with a **quick and easy way to build a website**. Build your we
 
 To use the theme on your site:
 
-1. Add the following lines to the `_config.yml` file in the root of your GitHub repository:
+1. Add the following lines to the `_config.yml` file at the root of your site's repository:
 
     ```yml
     remote_theme: techie-joe/prime
@@ -33,7 +33,7 @@ To use the theme on your site:
 
 2. Clear out any existing values of `theme`.
 
-3. Then, activate **GitHub Pages**.
+3. Then, activate **GitHub Pages** for your site.
 
 _For detailed instruction, see [The GitHub Pages Walkthrough](https://techie-joe.github.io/library/github-pages/)._
 
@@ -79,15 +79,15 @@ To add your own custom styles:
 
 2. Add any custom styles immediately after the `@import` line.
 
-_**Note:** To change the template's SASS variables, you must set new values before the `@import` line in your stylesheet._
+_**Note:** To change the theme's SASS variables, you must set new values before the `@import` line in your stylesheet._
 
 ### Layouts
 
-All [template layouts](https://github.com/techie-joe/prime/tree/master/_layouts) in the `_layouts` folder and [template components](https://github.com/techie-joe/prime/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. To override a file, create a mirror copy of that file in your site's repository reflecting the exact path and file-name.
+All [theme layouts](https://github.com/techie-joe/prime/tree/master/_layouts) in the `_layouts` folder and [theme components](https://github.com/techie-joe/prime/tree/master/_includes) in the `_includes` folder provide a good starting point of things you can customize. To override a file, create a mirror copy of that file in your site's repository reflecting the exact path and file-name.
 
 For example, to change the default layout:
 
-1. Copy the `/_layouts/default.html` files to your site's repository.
+1. Copy the `/_layouts/default.html` file to your site's repository.
 2. Then customize it as you'd like.
 
 _**Pro-tip:** click "raw" to make copying easier._
@@ -96,13 +96,13 @@ _**Pro-tip:** click "raw" to make copying easier._
 
 Paste the analytics code into your site's `_includes/google_analytics.html` file.
 
-### Overriding GitHub URLs
+### Overriding GitHub values
 
-Templates rely on GitHub URLs, such as links to your repository or links to download your project.
+The theme rely on GitHub values, such as links to your repository or links to download your project.
 
-To override the default URLs:
+To override the default values:
 
-1. Look at the template source (in the `_layouts` and `_includes` folder) to determine the name of the variable. It will be in the form of:
+1. Look at the theme source file (in the `_layouts` and `_includes` folder) to determine the name of the variable. It will be in the form of:
 
     {% raw %}
     ```liquid
@@ -110,7 +110,7 @@ To override the default URLs:
     ```
     {% endraw %}
 
-2. Specify the URL you'd like to use in your site's `_config.yml` file. Jekyll will use the URL you specified, instead of the default one.  
+2. Specify the value you'd like to use in your site's `_config.yml` file. Jekyll will use the value you specified, instead of the default one.  
 
     For example, if the variable was `site.github.zip_url`, add the following:
 
@@ -120,15 +120,15 @@ To override the default URLs:
         # another_url: another_value
     ```
 
-    > _**Note:** You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`._
+    > _**Note:** Ignore the `site.` prefix, and maintain the two space indent for each sub variables._
 
-_For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/)._
+_For more information, see [Jekyll documentation on Variables](https://jekyllrb.com/docs/variables/)._
 
-## Running the template locally
+## Running the theme locally
 
-To run the template locally:
+To run the theme locally:
 
-1. Clone the template's repository into your computer:
+1. Clone the theme's repository into your computer:
     
     ```
     git clone https://github.com/techie-joe/prime
@@ -136,7 +136,7 @@ To run the template locally:
 
 2. Go to the cloned directory.
 
-3. Add the following to your site's `Gemfile`:
+3. Add the following code to your site's `Gemfile`:
 
     ```ruby
     gem "github-pages", group: :jekyll_plugins

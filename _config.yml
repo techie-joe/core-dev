@@ -8,8 +8,8 @@ description   : A theme development project.
 # description : Short description of your site.
 author        : Techie Joe
 
-version       : '0.0.9'
-revision      : '2601.09'
+version       : '0.0.10'
+revision      : '2601.10'
 
 baseurl       : '/dove'
 home_url      : '/dove'

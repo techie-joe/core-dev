@@ -85,12 +85,12 @@ now  : {{ "now" | date: date_format }}
 ###### controls
 
 ```yml
-if true : {% if true -%} when true {%- endif %}
-elsif true : {% if false -%}  {%- elsif true -%} when true {%- endif %}
-else : {% if false -%} when false {%- else -%} otherwise {%- endif %}
+if true : {% if true -%} then true {%- endif %}
+elsif true : {% if false -%} then false {%- elsif true -%} then true {%- endif %}
+else : {% if false -%} then false {%- else -%} otherwise {%- endif %}
 
-unless true  : {% unless true  -%} when not true {%- else -%} when true {%- endunless %}
-unless false : {% unless false -%} when not false {%- else -%} when false {%- endunless %}
+unless true  : {% unless true  -%} then true {%- else -%} otherwise {%- endunless %}
+unless false : {% unless false -%} then true {%- else -%} otherwise {%- endunless %}
 
 {% assign a = 'a' -%}
 case a :

@@ -3,6 +3,7 @@ permalink: posts
 title: Posts
 description: List of all posts on this site.
 ---
+
 # {{ page.title }}
 
 {{ page.description }}

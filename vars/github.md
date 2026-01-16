@@ -16,5 +16,4 @@ description: Github Variables on this site.
 
 {% include_relative _vars_nav.md %}
 
-
 {% comment %} --- end of page --- {% endcomment %}

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name          = "dove"
-  s.version       = "0.0.9"
+  s.version       = "0.0.10"
   s.authors       = ["Techie Joe"]
   s.email         = ["techie-joe@outlook.com"]
   s.homepage      = "https://github.com/techie-joe/dove"

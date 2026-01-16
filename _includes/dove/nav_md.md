@@ -36,9 +36,4 @@
 
 {% comment %}
 **[{{ _sub | capitalize }}]({{ site.baseurl }}/{{ _sub }})**
-{%- assign _path = _prev | append: '.md' %}
-{%- if page.path == _path -%}
-**Preview**{%- else %}[Preview]({{ site.baseurl }}/{{ _prev }})
-{%- endif %}
-{{- bull -}}
 {% endcomment %}
