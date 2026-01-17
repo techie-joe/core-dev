@@ -21,5 +21,5 @@ testing: false
 
 {%- endif %}
 {% comment %}
-{% include mod-inspect.md val=page pad=pad %}
+{% include inspect.md val=page pad=pad %}
 {% endcomment %}

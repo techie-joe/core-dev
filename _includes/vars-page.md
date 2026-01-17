@@ -4,7 +4,7 @@
 
 ```yml
 {%
-  include mod-inspect.md
+  include inspect.md
   val=page
   include="title,description,layout,name,dir,path,url,content,excerpt"
   pad="             "
@@ -16,7 +16,7 @@
 
 ```yml
 {%
-  include mod-inspect.md
+  include inspect.md
   val=layout
   pad="             "
 %}

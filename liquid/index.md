@@ -12,46 +12,79 @@ description: Liquid basics.
 {% raw %}
 ```liquid
 # Liquid code with syntax highlighting
-{% assign variable = value | filter: 'filter_expression' %}
-{{ variable | default: "[default_value]" }}
+{% assign variable = value | filter: filter_expression, 'or value' %}
+{{ variable | default: value | default: "[default_value]" }}
 {{ json | jsonify }}
 {{ markdown | markdownify }}
-{% include filename.ext %}
-{% include_relative filename.ext %}
+{% include filename.ext arg = value %}
+{% include_relative filename.ext argument = value  %}
+{% if true -%} then true {%- else -%} then otherwise {%- endif %}
+{% unless true  -%} normally {%- else -%} otherwise {%- endunless %}
+{% case x %}{%- when a -%} x is a {%- else -%} otherwise {%- endcase %}
 {% capture it %} capture block {% endcapture %}{{ it }}
 {% comment %} comment block {% endcomment %}
+```
+```liquid
+{% assign numbers = (1..9) %}
+{% if true and false or x == y %}{% endif %}
 ```
 {% endraw %}
 
 > nil, "" and 0 are treated as **false**
 {: .mono.smaller }
 
-###### numbers
-
-{%- assign numbers = (1..9) %}
+###### controls
 
 ```yml
-numbers  : {{ numbers | jsonify }} [{{ numbers | size | append: ' items' }}]
+if true : {% if true -%} then true {%- else -%} then otherwise {%- endif %}
+elsif true : {% if false -%} then false {%- elsif true -%} then true {%- endif %}
+else : {% if false -%} then false {%- else -%} then otherwise {%- endif %}
+
+unless false : {% unless false -%} normally {%- else -%} otherwise {%- endunless %}
+unless true  : {% unless true  -%} normally {%- else -%} otherwise {%- endunless %}
+
+case x : {%- assign a = 'x is a' %}
+when a : {%- assign x = a %}
+{%- case x %}
+{%- when a %} {{ a }}
+{%- else %} otherwise 
+{%- endcase %}
+else   : {%- assign x = 'otherwise' %}
+{%- case x %}
+{%- when a %} {{ a }}
+{%- else %} otherwise 
+{%- endcase %}
 ```
 
 ###### strings
 
-{%- assign string   = 'jAmEs  r  pEtErSoN .' %}
+{%- assign string = ' jAmEs,  pEtErSoN . ' %}
 
 ```yml
 string        : {{ string | jsonify }} [{{ string | size | append: ' characters' }}]
 
-# replace: ' r ' | remove: '.'
-{%- assign string = string | replace: ' r ', ' ' | remove: '.' | split: ' ' | join: ' ' %}
+# replace: ',' | remove: '.' | strip
+{%- assign string = string | replace: ',', ' ' | remove: '.' | strip %}
 string        : {{ string | jsonify }} [{{ string | size | append: ' characters' }}]
-upcase        : {{ string | upcase }}
-downcase      : {{ string | downcase }}
-capitalize    : {{ string | capitalize }}
 
-# capitalize | replace: "peterson", "Rodney" | prepend: 'Mr. ' | append: ' (age 42)'
-{%- assign string = string | capitalize | replace: "peterson", "Rodney" | prepend: 'Mr. ' | append: ' (age 42)' %}
+# split: ' ' | join: ' '
+{%- assign string = string | split: ' ' | join: ' ' %}
 string        : {{ string | jsonify }} [{{ string | size | append: ' characters' }}]
-truncate      : {{ string | truncate: 15 }}
+
+upcase        : {{ string | upcase | jsonify }}
+downcase      : {{ string | downcase | jsonify }}
+capitalize    : {{ string | capitalize | jsonify }}
+
+# titleize is not working, you have to use titleized
+titleize      : {{ string | titleize | jsonify }}
+titleized     : {% include titleized.md string=string %}{{ titleized_string | jsonify }}
+
+# downcase | replace: "james", "smith" | prepend: 'Mr. ' | append: ' Jr.'
+{%- assign string = string | downcase | replace: "james", "smith" | prepend: 'mr ' | append: ' jr' %}
+{% include titleized.md string = string %}
+{%- assign string = titleized_string %}
+string        : {{ string | jsonify }} [{{ string | size | append: ' characters' }}]
+truncate      : {{ string | truncate: 15 | jsonify }}
 ```
 
 ###### date
@@ -82,47 +115,33 @@ now  : {{ "now" | date: date_format }}
 | %p | AM/PM indicator (uppercase) | PM |
 {: .simple }
 
-###### controls
-
-```yml
-if true : {% if true -%} then true {%- endif %}
-elsif true : {% if false -%} then false {%- elsif true -%} then true {%- endif %}
-else : {% if false -%} then false {%- else -%} otherwise {%- endif %}
-
-unless true  : {% unless true  -%} then true {%- else -%} otherwise {%- endunless %}
-unless false : {% unless false -%} then true {%- else -%} otherwise {%- endunless %}
-
-{% assign a = 'a' -%}
-case a :
-{%- case a -%}
-  {%- when 'a' %} when 'a'
-{%- endcase %}
-else :
-{%- case a -%}
-  {%- else %} otherwise 
-{%- endcase %}
-
-# Check a blank string with the `blank` object.
-{% if '' == blank -%} works {%- else -%} not working {%- endif %}
-
-# Compare with `empty` to check whether an object exists before accessing any of its attributes.
-{% if undefined == empty -%} works {%- else -%} not working {%- endif %}
-```
-
 ###### loops
 
-```yml
-(1..9) {{' : '}}
-{%- for i in (1..9) -%}
-{{ i }}
-{%- unless forloop.last -%}{{','}}{%- endunless %}
-{%- endfor %}
+{%- assign numbers = (1..9) %}
 
-numbers{{' : '}}
-{%- assign numbers = "one,two,three,four,five,six,seven,eight,nine,ten" | split:"," %}
-{%- for n in numbers limit:5 -%}
-[{{ forloop.index | append: ',' }}{{ n | append: ','}}{%- cycle 'odd', 'even' %}]
-{%- unless forloop.last -%}{{' '}}{%- endunless %}
+```liquid
+{% raw %}{%- assign numbers = (1..9) %}{% endraw %}
+```
+
+```yml
+numbers : {{ numbers | jsonify }} [{{ numbers | size | append: ' items' }}]
+{{''-}}
+numbers : {{''-}}
+{%- for i in (1..19) limit:9 %}{{- i }}
+{%- unless forloop.last -%},{%- endunless %}
+{%- endfor %}
+{{-''-}}
+{%- assign number_names = "one,two,three,four,five,six,seven,eight,nine,ten" | split:"," %}
+{%- for n in number_names %}
+{%- if forloop.index == 3 %}{{nl | append: '# skipped 3' }}{% continue %}{% endif %}
+{%- if forloop.index == 6 %}{{nl | append: '# break at 6' }}{% break %}{% endif %}
+{% include label.md text=n pad="       " %} : {{'['-}}
+{{- forloop.index }},
+{%- cycle '"odd"', '"even"' %}
+{{-']'}}
+{%- endfor %}
+{%- for n in emptiness %}
+{%- else %}{{nl | append: '# emptiness' }}
 {%- endfor %}
 ```
 
@@ -131,41 +150,41 @@ Use `{% else %}` to handle empty arrays.{% endraw %}
 
 ###### list
 
-{%- assign list_x = 'a,m,b,n,c,o,z,y,x' | split: ',' %}
+{%- assign chars = 'a,m,b,n,c,o,z,y,x' | split: ',' %}
 
 ```liquid
-{% raw %}{%- assign list_x = 'a,m,b,n,c,o,z,y,x' | split: ',' %}{% endraw %}
+{% raw %}{%- assign chars = 'a,m,b,n,c,o,z,y,x' | split: ',' %}{% endraw %}
 ```
 
 ```yml
-list_x   : {{ list_x }} [{{ list_x | size | append: ' items' }}]
-jsonify  : {{ list_x | jsonify }}
-join     : {{ list_x | join: ',' }}
-order    : {{ list_x | first }}{{' ... '}}{{ list_x | last }}
-loop     : # {% for item in list_x %}[{{ item }}]{{' '}}{%- endfor %}
-sort     : {{ list_x | sort | jsonify }}
-reverse  : {{ list_x | reverse | jsonify }}
-slice    : {{ list_x | sort | slice: 3, 3 | jsonify }}
+chars    : [{{ chars }}] [{{ chars | size | append: ' items' }}]
+jsonify  : {{ chars | jsonify }}
+join     : {{ chars | join: ',' | jsonify }}
+order    : {{ chars | first }}{{' ... '}}{{ chars | last }}
+loop     : {% for item in chars %}{{ item }}{% unless forloop.last %}{{'-'}}{%- endunless %}{%- endfor %}
+reverse  : {{ chars | reverse | jsonify }}
+sort     : {{ chars | sort | jsonify }}
+slice    : {{ chars | slice: 3, 3 | jsonify }}
 ```
 
-{%- assign list_a = 'apple,banana,cherry' | split: ',' %}
+{%- assign fruits = 'apple,banana,cherry' | split: ',' %}
 
 ```liquid
-{% raw %}{%- assign list_a = 'apple,banana,cherry' | split: ',' %}{% endraw %}
+{% raw %}{%- assign fruits = 'apple,banana,cherry' | split: ',' %}{% endraw %}
 ```
 
 ```yml
-list_a   : {{ list_a | jsonify }} [{{ list_a | size | append: ' items' }}]
+fruits   : {{ fruits | jsonify }} [{{ fruits | size | append: ' items' }}]
 ```
 
-{%- assign list_a = list_a | join: ',' | prepend: 'pear,' | append: ',durian' | split: ',' %}
+{%- assign fruits = fruits | join: ',' | prepend: 'pear,' | append: ',durian' | split: ',' %}
 
 ```liquid
-{% raw %}{%- assign list_a = list_a | join: ',' | prepend: 'pear,' | append: ',durian' | split: ',' %}{% endraw %}
+{% raw %}{%- assign fruits = fruits | join: ',' | prepend: 'pear,' | append: ',durian' | split: ',' %}{% endraw %}
 ```
 
 ```yml
-list_a   : {{ list_a | jsonify }} [{{ list_a | size | append: ' items' }}]
+fruits   : {{ fruits | jsonify }} [{{ fruits | size | append: ' items' }}]
 ```
 
 ###### capture
@@ -182,14 +201,16 @@ Use `markdownify` before using it inside an HTML block.
 <div class="box ba text-center">{{ note_md | markdownify }}</div>
 
 ###### raw
-
 `raw` skips liquid. 
-Using **white-space modifier** `-` with it will cause build error.  
+But using **white-space modifier** `-` with it will cause build error.  
 
-{%- assign _raw = '% raw %' %}
+{%- assign _raw = '% raw %' | prepend: '{' | append: '}' %}
+{%- assign _end_raw = '% endraw %' | prepend: '{' | append: '}' %}
 
 ```liquid
+{{ _raw -}}
 {% raw %}{{ by | default: 'everything inside raw will be rendered as-is' }}{% endraw %}
+{{- _end_raw }}
 ```
 
 ## Unsupported Liquid Syntaxes
@@ -205,3 +226,13 @@ Github Pages does not support `echo` and `render` at the moment.
 %}
 ```
 {% endraw %}
+
+Looks like the following syntax isn't working.
+
+```yml
+# Check a blanks against the blank keyword.
+{% if blanks == blank -%} blanks is blank {%- else -%} blank is not working {%- endif %}
+
+# Compare an emptiness against the empty keyword.
+{% if emptiness == empty -%} emptiness is empty {%- else -%} empty is not working {%- endif %}
+```

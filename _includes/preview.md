@@ -193,7 +193,7 @@ Collapsible content. _(click for more)_{: .small }
 The details and summary block, is a collapsible accordion of destiny where content hides until poked by the click of curiosity. It is the digital equivalent of whispering, “psst, wanna see something cool?” and then rolling out a red carpet of hidden paragraphs, secret snippets, or the occasional diagram that nobody asked for. The summary is the bouncer at the door, deciding whether the reader gets a glimpse inside or stays staring at the title forever, while details hoards all the juicy stuff like a dragon sitting on its markdown gold.
 {: .text-grey.text-justify }
 {%- endcapture %}
-{%- include mod-details.md %}
+{%- include details.md %}
 
 {%- capture _summary %}
 Style with `box`. _(click for more)_{: .small }
@@ -202,7 +202,7 @@ Style with `box`. _(click for more)_{: .small }
 This block expands like curtains on opening night, then folds back up as if nothing ever happened, gaslighting your memory of what you just saw. Authors toss long-winded explanations, secret Easter eggs, or poorly formatted cat ASCII art inside it, knowing only the brave will click. In its most chaotic form, the details block nests within itself, collapsing collapsibles within collapsibles until the reader spirals into an abyss of disclosure toggles, wondering whether the summary is summary enough to summarize the summaries.
 {: .text-grey.text-justify }
 {%- endcapture %}
-{%- include mod-details.md %}{: .box }
+{%- include details.md %}{: .box }
 
 ## Ordered list
 

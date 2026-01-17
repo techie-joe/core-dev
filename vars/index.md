@@ -11,34 +11,34 @@ description: Variables on this site.
 
 {%- assign word_key = "[0] key,[1] key,[n] keys" %}
 
-**{% include mod-plural.md val=keys word=word_key %} :**{{' '}}
+**{% include plural.md val=keys word=word_key %} :**{{' '}}
 {{- keys | sort | join: ", " }}
 {: .box.highlight.pa.smaller.mono }
 
 ```yml
 # content : [blob - content of the current page]
-{%- include mod-peek.md val=content word="[0] byte,[1] byte,[n] bytes" %}
+{%- include peek.md val=content word="[0] byte,[1] byte,[n] bytes" %}
 
 # highlighter_prefix : {{ highlighter_prefix | jsonify }}
 # highlighter_suffix : {{ highlighter_suffix | jsonify }}
 
 # jekyll : [{{ jekyll }}]
-{%- include mod-peek.md val=jekyll %}
+{%- include peek.md val=jekyll %}
 
 # layout{{ ' : ' }}
-{%- include mod-peek.md val=layout %}
+{%- include peek.md val=layout %}
 
 # page : [json]
-{%- include mod-peek.md val=page word="[0] page,[1] page,[n] pages" %}
+{%- include peek.md val=page word="[0] page,[1] page,[n] pages" %}
 
 # paginator{{ ' : ' }}
-{%- include mod-peek.md val=paginator %}
+{%- include peek.md val=paginator %}
 
 # site : [{{ site }}]
-{%- include mod-peek.md val=site %}
+{%- include peek.md val=site %}
 
 # theme{{ ' : ' }}
-{%- include mod-peek.md val=theme %}
+{%- include peek.md val=theme %}
 ```
 {: .no_max_height }
 

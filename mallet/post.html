@@ -48,9 +48,11 @@ description: Post template.
             <div class="_layout _article_layout">
               <h1>Post title</h1>
               <p><code>// post content</code></p>
-              <div class="mt-6"></div>
-              <hr/>
-              <h2>Other posts</h2>{%- capture posts %}{%- include posts.md %}{%- endcapture %}{{ posts | markdownify }}
+              <aside>
+                <div class="mt-6"></div>
+                <hr/>
+                <h2>Other posts</h2>{%- capture posts %}{%- include posts.md %}{%- endcapture %}{{ posts | markdownify }}
+              </aside>
             </div>
           </article>
           <footer class="_footer">

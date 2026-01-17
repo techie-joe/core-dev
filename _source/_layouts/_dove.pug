@@ -122,16 +122,18 @@ mixin site_nav(ref)
   +sn(ref+"/404")| 404
 
 mixin page_footer
-  .mt-6
-  hr
-  h2 Other pages
-  +include('pages','pages.md')
+  aside
+    .mt-6
+    hr
+    h2 Other pages
+    +include('pages','pages.md')
 
 mixin post_footer
-  .mt-6
-  hr
-  h2 Other posts
-  +include('posts','posts.md')
+  aside
+    .mt-6
+    hr
+    h2 Other posts
+    +include('posts','posts.md')
 
 //- ==============================================================
 

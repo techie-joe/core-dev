@@ -8,7 +8,7 @@
 
 ```yml
 {%
-  include mod-inspect.md
+  include inspect.md
   val=site.github
   include="project_title,project_tagline,repository_name,repository_nwo,repository_url,url,baseurl,language,archived,disabled,private,show_downloads,is_project_page,is_user_page,hostname,environment,pages_env,pages_hostname,build_revision,api_url,help_url,clone_url,issues_url,releases_url,tar_url,zip_url,wiki_url,owner_display_name,owner_name,owner_url,owner_gravatar_url,source,license,owner,latest_release,releases,contributors"
   blok="license,owner,versions"
@@ -23,7 +23,7 @@
 
 ```yml
 {%
-  include mod-inspect.md
+  include inspect.md
   val=site.github.license
   pad=pad
 %}
@@ -34,7 +34,7 @@
 
 ```yml
 {%
-  include mod-inspect.md
+  include inspect.md
   val=site.github.owner
   include=owner_keys
   pad=pad
@@ -45,16 +45,16 @@
 ###### site.github.releases
 
 ```yml
-# {% include mod-plural.md val=site.github.releases word="[0] release,[1] release,[n] releases" %}
+# {% include plural.md val=site.github.releases word="[0] release,[1] release,[n] releases" %}
 {%- if site.github.releases %}
   {%- assign sorted_releases = site.github.releases | sort %}
   {%- if sorted_releases.size > 0 %}
     {%- assign release = sorted_releases[0] -%}
     {{-nl-}} # release.{{ forloop.index | append: ' - ' -}}
-    {%- include mod-plural.md val=release word=word_key %}
+    {%- include plural.md val=release word=word_key %}
     {{-nl-}}
     {%-
-      include mod-inspect.md
+      include inspect.md
       val=release
       pad=pad
     %}
@@ -67,15 +67,15 @@
 ###### site.github.contributors
 
 ```yml
-# {% include mod-plural.md val=site.github.contributors word="[0] contributor,[1] contributor,[n] contributors" %}
+# {% include plural.md val=site.github.contributors word="[0] contributor,[1] contributor,[n] contributors" %}
 {%- if site.github.contributors %}
   {%- assign sorted_contributors = site.github.contributors | sort: "login" %}
   {%- for user in sorted_contributors %}
     {{-nl-}} # contributor.{{ forloop.index | append: ' - ' }}
-    {%- include mod-plural.md val=user word=word_key %}
+    {%- include plural.md val=user word=word_key %}
     {{-nl-}}
     {%-
-      include mod-inspect.md
+      include inspect.md
       val=user
       include="type,login,id,node_id,html_url"
       pad="                   "
@@ -89,7 +89,7 @@
 ###### site.github.versions
 
 ```yml
-# {% include mod-plural.md word=word_key val=site.github.versions %}
+# {% include plural.md word=word_key val=site.github.versions %}
 {%- if site.github.versions %}
   {%- assign sorted_versions = site.github.versions | sort %}
   {%- for v in sorted_versions %}

@@ -39,16 +39,16 @@
   {%- assign _val = include.val[key] %}
   {%- if n > 0 %} {{-nl-}} {%- endif %}
   {{- _tab -}}
-  {%- include mod-label.md text=key pad=_pad %}{{-' : '-}}
+  {%- include label.md text=key pad=_pad %}{{-' : '-}}
   {%- if _val == nil %} {{- '[nil]' }}
   {%- elsif _val == 0 %} {{- '0' }}
   {%- elsif _val == false %} {{- 'false' }}
   {%- elsif _val == blank %} {{- '[blank]' }}
   {%- elsif _val == empty %} {{- '[empty]' | append: _val }}
-  {%- elsif _blok contains key -%} [{%- include mod-plural.md val=_val word=word_key %}]
-  {%- elsif _bloc contains key -%} [{%- include mod-plural.md val=_val.keys word=word_key %}]
-  {%- elsif _blob contains key -%} [{%- include mod-plural.md val=_val word=word_character %}]
-  {%- elsif _bloi contains key -%} [{%- include mod-plural.md val=_val %}]
+  {%- elsif _blok contains key -%} [{%- include plural.md val=_val word=word_key %}]
+  {%- elsif _bloc contains key -%} [{%- include plural.md val=_val.keys word=word_key %}]
+  {%- elsif _blob contains key -%} [{%- include plural.md val=_val word=word_character %}]
+  {%- elsif _bloi contains key -%} [{%- include plural.md val=_val %}]
   {%- elsif _ref_id contains key -%} [{{- "" | append: _val.id }}]
   {%- elsif _json contains key -%} {{- _val | jsonify }}
   {%- else %} {{- "" | append: _val }}
@@ -62,7 +62,7 @@
 {%- for key in _peek %}
   {%- assign _val = include.val[key] %}
   {{-nl-}} # {{ key }} {{-' : '-}}
-  {%- include mod-peek.md val=_val %}
+  {%- include peek.md val=_val %}
   {%- if _val %}
   {{- _tab -}} peek : # {{ _val | prepend: "" | truncate: 100 }}
   {%- endif %}
