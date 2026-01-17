@@ -85,7 +85,7 @@ use_pug: true
               </div>
               <hr class="thin"/>
               <p class="text-grey">Development posts and pages.</p>{%- capture pages %}{% include pages.md exclude="" %}{%- endcapture %}{%- capture posts %}{% include posts.md exclude="" %}{%- endcapture %}
-              <div class="flex" style="gap:3rem">
+              <div class="flex" style="gap:3rem;flex-flow:wrap">
                 <div id="pages_" style="min-width:250px">
                   <h3 class="mt-0">Pages</h3>{{ pages | markdownify }}
                   <ul>

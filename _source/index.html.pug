@@ -50,7 +50,7 @@ block content
   //- - exclude_posts = [ ].join(",");
   +capture('pages')|{% include pages.md exclude="!{exclude_pages}" %}
   +capture('posts')|{% include posts.md exclude="!{exclude_posts}" %}
-  .flex(style="gap:3rem")
+  .flex(style="gap:3rem;flex-flow:wrap")
     #pages_(style="min-width:250px")
       h3.mt-0 Pages
       |{{ pages | markdownify }}
